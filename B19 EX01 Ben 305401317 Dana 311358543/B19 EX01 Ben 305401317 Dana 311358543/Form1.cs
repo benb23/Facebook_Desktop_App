@@ -31,5 +31,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
