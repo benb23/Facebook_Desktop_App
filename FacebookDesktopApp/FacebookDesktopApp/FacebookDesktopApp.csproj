@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Facebook">
-      <HintPath>..\..\..\..\..\Downloads\01_FB01_BasicFacebookFeatures.V6.8.0.17\01_FB01_BasicFacebookFeatures.V6.8.0.17\FBApi\Facebook.dll</HintPath>
+      <HintPath>dll\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\..\..\..\..\Downloads\01_FB01_BasicFacebookFeatures.V6.8.0.17\01_FB01_BasicFacebookFeatures.V6.8.0.17\FBApi\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>dll\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
