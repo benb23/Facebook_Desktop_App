@@ -18,7 +18,7 @@ namespace FacebookDesktopApp
         {
             InitializeComponent();
         }
-
+        
 
         User m_LoggedInUser;
 
@@ -97,11 +97,11 @@ namespace FacebookDesktopApp
 
         private void fetchUserInfo()
         {
-            picture_smallPictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            if (m_LoggedInUser.Posts.Count > 0)
-            {
-                textBoxStatus.Text = m_LoggedInUser.Posts[0].Message;
-            }
+            //picture_smallPictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
+            //if (m_LoggedInUser.Posts.Count > 0)
+            //{
+            //    textBoxStatus.Text = m_LoggedInUser.Posts[0].Message;
+            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
