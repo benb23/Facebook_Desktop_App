@@ -78,5 +78,25 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             //    textBoxStatus.Text = m_FacebookDesktopLogic.LoggedInUser.Posts[0].Message;
             //}
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
