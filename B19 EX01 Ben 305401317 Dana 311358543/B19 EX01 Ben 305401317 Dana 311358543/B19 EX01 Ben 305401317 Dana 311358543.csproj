@@ -107,6 +107,12 @@
   <ItemGroup>
     <None Include="Resources\LoginButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacebookDesktopLogic\FacebookDesktopLogic.csproj">
+      <Project>{a9500c99-76c7-4d50-9364-9387d84d7c10}</Project>
+      <Name>FacebookDesktopLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
