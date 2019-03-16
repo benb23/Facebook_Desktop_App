@@ -37,7 +37,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageHome = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,24 +46,27 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageAlbums = new System.Windows.Forms.TabPage();
+            this.tabPageGame = new System.Windows.Forms.TabPage();
+            this.tabPageSettings = new System.Windows.Forms.TabPage();
+            this.tabPageLogIn = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPageFriends = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabPageHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tabPageLogIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.tabPageFriends.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,11 +144,12 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Controls.Add(this.tabPage4);
-            this.tabControl.Controls.Add(this.tabPage5);
-            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPageHome);
+            this.tabControl.Controls.Add(this.tabPageAlbums);
+            this.tabControl.Controls.Add(this.tabPageGame);
+            this.tabControl.Controls.Add(this.tabPageSettings);
+            this.tabControl.Controls.Add(this.tabPageLogIn);
+            this.tabControl.Controls.Add(this.tabPageFriends);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tabControl.Location = new System.Drawing.Point(6, 0);
             this.tabControl.Margin = new System.Windows.Forms.Padding(6);
@@ -154,24 +158,25 @@
             this.tabControl.Size = new System.Drawing.Size(1702, 1167);
             this.tabControl.TabIndex = 0;
             // 
-            // tabPage2
+            // tabPageHome
             // 
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.pictureBox5);
-            this.tabPage2.Controls.Add(this.pictureBox3);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Location = new System.Drawing.Point(8, 44);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage2.Size = new System.Drawing.Size(1686, 1115);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Home";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageHome.Controls.Add(this.label6);
+            this.tabPageHome.Controls.Add(this.textBox3);
+            this.tabPageHome.Controls.Add(this.label5);
+            this.tabPageHome.Controls.Add(this.label4);
+            this.tabPageHome.Controls.Add(this.label3);
+            this.tabPageHome.Controls.Add(this.pictureBox5);
+            this.tabPageHome.Controls.Add(this.pictureBox3);
+            this.tabPageHome.Controls.Add(this.textBox1);
+            this.tabPageHome.Location = new System.Drawing.Point(8, 44);
+            this.tabPageHome.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPageHome.Name = "tabPageHome";
+            this.tabPageHome.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPageHome.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageHome.TabIndex = 1;
+            this.tabPageHome.Text = "Home";
+            this.tabPageHome.UseVisualStyleBackColor = true;
+            this.tabPageHome.Click += new System.EventHandler(this.tabPageHome_Click);
             // 
             // label6
             // 
@@ -254,6 +259,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(164, 50);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.createPostButton_Click);
             // 
             // textBox1
             // 
@@ -264,51 +270,51 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(718, 96);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.post_TextChanged);
             // 
-            // tabPage3
+            // tabPageAlbums
             // 
-            this.tabPage3.Location = new System.Drawing.Point(8, 44);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
-            this.tabPage3.Size = new System.Drawing.Size(1692, 1115);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Albums";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageAlbums.Location = new System.Drawing.Point(8, 44);
+            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPageAlbums.Name = "tabPageAlbums";
+            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPageAlbums.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageAlbums.TabIndex = 2;
+            this.tabPageAlbums.Text = "Albums";
+            this.tabPageAlbums.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // tabPageGame
             // 
-            this.tabPage4.Location = new System.Drawing.Point(8, 44);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1692, 1115);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Game";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPageGame.Location = new System.Drawing.Point(8, 44);
+            this.tabPageGame.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPageGame.Name = "tabPageGame";
+            this.tabPageGame.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageGame.TabIndex = 3;
+            this.tabPageGame.Text = "Game";
+            this.tabPageGame.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // tabPageSettings
             // 
-            this.tabPage5.Location = new System.Drawing.Point(8, 44);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1692, 1115);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Settings";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPageSettings.Location = new System.Drawing.Point(8, 44);
+            this.tabPageSettings.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPageSettings.Name = "tabPageSettings";
+            this.tabPageSettings.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageSettings.TabIndex = 4;
+            this.tabPageSettings.Text = "Settings";
+            this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // tabPageLogIn
             // 
-            this.tabPage1.Controls.Add(this.pictureBox4);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(8, 44);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1692, 1115);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Login";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageLogIn.Controls.Add(this.pictureBox4);
+            this.tabPageLogIn.Controls.Add(this.label2);
+            this.tabPageLogIn.Controls.Add(this.label1);
+            this.tabPageLogIn.Location = new System.Drawing.Point(8, 44);
+            this.tabPageLogIn.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPageLogIn.Name = "tabPageLogIn";
+            this.tabPageLogIn.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageLogIn.TabIndex = 5;
+            this.tabPageLogIn.Text = "Login";
+            this.tabPageLogIn.UseVisualStyleBackColor = true;
             // 
             // pictureBox4
             // 
@@ -344,6 +350,17 @@
             this.label1.Text = "Welcome to FacebookDesktop Application";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // tabPageFriends
+            // 
+            this.tabPageFriends.Controls.Add(this.listBoxFriends);
+            this.tabPageFriends.Location = new System.Drawing.Point(8, 44);
+            this.tabPageFriends.Name = "tabPageFriends";
+            this.tabPageFriends.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageFriends.TabIndex = 6;
+            this.tabPageFriends.Text = "Friends";
+            this.tabPageFriends.UseVisualStyleBackColor = true;
+            this.tabPageFriends.Click += new System.EventHandler(this.tabPageFriends_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tabControl);
@@ -353,6 +370,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1708, 1173);
             this.panel2.TabIndex = 1;
+            // 
+            // listBoxFriends
+            // 
+            this.listBoxFriends.FormattingEnabled = true;
+            this.listBoxFriends.ItemHeight = 30;
+            this.listBoxFriends.Location = new System.Drawing.Point(55, 65);
+            this.listBoxFriends.Name = "listBoxFriends";
+            this.listBoxFriends.Size = new System.Drawing.Size(405, 274);
+            this.listBoxFriends.TabIndex = 0;
+            this.listBoxFriends.SelectedIndexChanged += new System.EventHandler(this.friendsList_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -372,13 +399,14 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabPageHome.ResumeLayout(false);
+            this.tabPageHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabPageLogIn.ResumeLayout(false);
+            this.tabPageLogIn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.tabPageFriends.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -393,13 +421,13 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageHome;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPageAlbums;
+        private System.Windows.Forms.TabPage tabPageGame;
+        private System.Windows.Forms.TabPage tabPageSettings;
+        private System.Windows.Forms.TabPage tabPageLogIn;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -410,6 +438,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TabPage tabPageFriends;
+        private System.Windows.Forms.ListBox listBoxFriends;
     }
 }
 
