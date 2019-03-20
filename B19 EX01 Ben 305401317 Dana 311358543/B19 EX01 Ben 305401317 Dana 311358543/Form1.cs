@@ -17,6 +17,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
     {
         private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.GetFacebookDesktopLogic();
         private bool m_IsfriendListLoaded = false;
+        private bool m_IsPostsLoaded = false;
 
         public Form1()
         {
@@ -53,7 +54,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         }
         
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void logInButton_Click_(object sender, EventArgs e)
         {
             bool isLogIn = m_FacebookDesktopLogic.LoginAndInit();
             if(isLogIn)
@@ -68,8 +69,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchUserInfo()
         {
-            pictureBox2.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-            textBox2.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
+            userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
             //if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count > 0)
             //{
             //    textBoxStatus.Text = m_FacebookDesktopLogic.LoggedInUser.Posts[0].Message;
@@ -96,15 +97,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         }
 
-        private void tabPageFriends_Click(object sender, EventArgs e)
-        {
-            if (!m_IsfriendListLoaded)
-            {
-                fetchFriends();
-                m_IsfriendListLoaded = true;
-            }
-        }
-
         private void fetchFriends()
         {
             listBoxFriends.Items.Clear();
@@ -121,9 +113,28 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
-        private void tabPageHome_Click(object sender, EventArgs e)
+        private void fetchPosts()
         {
-            
+            foreach (Post post in m_FacebookDesktopLogic.LoggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    listBoxMyPosts.Items.Add(post.Message);
+                }
+                else if (post.Caption != null)
+                {
+                    listBoxMyPosts.Items.Add(post.Caption);
+                }
+                else
+                {
+                    listBoxMyPosts.Items.Add(string.Format("[{0}]", post.Type));
+                }
+            }
+
+            if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count == 0)
+            {
+                MessageBox.Show("No Posts to retrieve :(");
+            }
         }
 
         private void createPostButton_Click(object sender, EventArgs e)
@@ -140,5 +151,61 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
 
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            FacebookService.Logout(doAfterLogOut);
+        }
+
+        private void doAfterLogOut()
+        {
+
+        }
+
+        private void listBoxMyPosts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageHome;
+            if (!m_IsPostsLoaded)
+            {
+                fetchPosts();
+                m_IsPostsLoaded = true;
+            }
+        }
+
+        private void albumsButton_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageAlbums;
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageLogIn;
+        }
+
+        private void friendsButton_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageFriends;
+            if (!m_IsfriendListLoaded)
+            {
+                fetchFriends();
+                m_IsfriendListLoaded = true;
+            }
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageSettings;
+        }
+
+        private void gameButton_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageGame;
+        }
+
     }
 }

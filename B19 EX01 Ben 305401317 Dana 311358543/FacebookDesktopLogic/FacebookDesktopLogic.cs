@@ -36,7 +36,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             /// Use the FacebookService.Login method to display the login form to any user who wish to use this application.
             /// You can then save the result.AccessToken for future auto-connect to this user:
-            LoginResult result = FacebookService.Login("352758402005372", /// (desig patter's "Design Patterns Course App 2.4" app)
+            LoginResult result = FacebookService.Login("1450160541956417"/*"352758402005372"*/, /// (desig patter's "Design Patterns Course App 2.4" app)
 
                 "public_profile",
                 "email",

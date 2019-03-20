@@ -31,41 +31,50 @@
             this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.userNametextBox = new System.Windows.Forms.TextBox();
+            this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.homeButton = new System.Windows.Forms.Button();
+            this.albumsButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.friendsButton = new System.Windows.Forms.Button();
+            this.settingsButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageLogIn = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPageHome = new System.Windows.Forms.TabPage();
+            this.recentPostsLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.listBoxMyPosts = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.createPostLabel = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
             this.tabPageGame = new System.Windows.Forms.TabPage();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
-            this.tabPageLogIn = new System.Windows.Forms.TabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPageFriends = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.tabPageLogIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPageHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPageLogIn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPageFriends.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +82,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(176)))));
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -80,6 +90,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2172, 73);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1572, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 25);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "label7";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox1
             // 
@@ -101,39 +121,44 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // textBox2
+            // userNametextBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(46, 395);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 48);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Ben Bublil";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userNametextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.userNametextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userNametextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNametextBox.Location = new System.Drawing.Point(46, 395);
+            this.userNametextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.userNametextBox.Name = "userNametextBox";
+            this.userNametextBox.Size = new System.Drawing.Size(302, 48);
+            this.userNametextBox.TabIndex = 1;
+            this.userNametextBox.Text = "Ben Bublil";
+            this.userNametextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox2
+            // userPictureBox
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Red;
-            this.pictureBox2.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox2.Location = new System.Drawing.Point(46, 25);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(372, 358);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.userPictureBox.BackColor = System.Drawing.Color.Red;
+            this.userPictureBox.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.userPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.userPictureBox.Location = new System.Drawing.Point(46, 25);
+            this.userPictureBox.Margin = new System.Windows.Forms.Padding(6);
+            this.userPictureBox.Name = "userPictureBox";
+            this.userPictureBox.Size = new System.Drawing.Size(372, 358);
+            this.userPictureBox.TabIndex = 0;
+            this.userPictureBox.TabStop = false;
+            this.userPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
-            this.flowLayoutPanel1.Controls.Add(this.textBox2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Controls.Add(this.userPictureBox);
+            this.flowLayoutPanel1.Controls.Add(this.userNametextBox);
+            this.flowLayoutPanel1.Controls.Add(this.homeButton);
+            this.flowLayoutPanel1.Controls.Add(this.albumsButton);
+            this.flowLayoutPanel1.Controls.Add(this.loginButton);
+            this.flowLayoutPanel1.Controls.Add(this.friendsButton);
+            this.flowLayoutPanel1.Controls.Add(this.settingsButton);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 73);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -142,13 +167,73 @@
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
+            // homeButton
+            // 
+            this.homeButton.Location = new System.Drawing.Point(43, 452);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(147, 78);
+            this.homeButton.TabIndex = 2;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
+            // albumsButton
+            // 
+            this.albumsButton.Location = new System.Drawing.Point(196, 452);
+            this.albumsButton.Name = "albumsButton";
+            this.albumsButton.Size = new System.Drawing.Size(141, 78);
+            this.albumsButton.TabIndex = 3;
+            this.albumsButton.Text = "Albums";
+            this.albumsButton.UseVisualStyleBackColor = true;
+            this.albumsButton.Click += new System.EventHandler(this.albumsButton_Click);
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(43, 536);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(147, 79);
+            this.loginButton.TabIndex = 4;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // friendsButton
+            // 
+            this.friendsButton.Location = new System.Drawing.Point(196, 536);
+            this.friendsButton.Name = "friendsButton";
+            this.friendsButton.Size = new System.Drawing.Size(141, 79);
+            this.friendsButton.TabIndex = 5;
+            this.friendsButton.Text = "Friends";
+            this.friendsButton.UseVisualStyleBackColor = true;
+            this.friendsButton.Click += new System.EventHandler(this.friendsButton_Click);
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(43, 621);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(148, 79);
+            this.settingsButton.TabIndex = 6;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 621);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 79);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.gameButton_Click);
+            // 
             // tabControl
             // 
+            this.tabControl.Controls.Add(this.tabPageLogIn);
             this.tabControl.Controls.Add(this.tabPageHome);
             this.tabControl.Controls.Add(this.tabPageAlbums);
             this.tabControl.Controls.Add(this.tabPageGame);
             this.tabControl.Controls.Add(this.tabPageSettings);
-            this.tabControl.Controls.Add(this.tabPageLogIn);
             this.tabControl.Controls.Add(this.tabPageFriends);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tabControl.Location = new System.Drawing.Point(6, 0);
@@ -158,13 +243,61 @@
             this.tabControl.Size = new System.Drawing.Size(1702, 1167);
             this.tabControl.TabIndex = 0;
             // 
+            // tabPageLogIn
+            // 
+            this.tabPageLogIn.Controls.Add(this.pictureBox4);
+            this.tabPageLogIn.Controls.Add(this.label2);
+            this.tabPageLogIn.Controls.Add(this.label1);
+            this.tabPageLogIn.Location = new System.Drawing.Point(8, 44);
+            this.tabPageLogIn.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPageLogIn.Name = "tabPageLogIn";
+            this.tabPageLogIn.Size = new System.Drawing.Size(1686, 1115);
+            this.tabPageLogIn.TabIndex = 5;
+            this.tabPageLogIn.Text = "Login";
+            this.tabPageLogIn.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.LoginButton;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox4.Location = new System.Drawing.Point(732, 240);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(200, 58);
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.logInButton_Click_);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(536, 140);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(646, 30);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "For full access to this application, you need to log in first";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(436, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(843, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome to FacebookDesktop Application";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // tabPageHome
             // 
+            this.tabPageHome.Controls.Add(this.recentPostsLabel);
             this.tabPageHome.Controls.Add(this.label6);
-            this.tabPageHome.Controls.Add(this.textBox3);
             this.tabPageHome.Controls.Add(this.label5);
+            this.tabPageHome.Controls.Add(this.listBoxMyPosts);
             this.tabPageHome.Controls.Add(this.label4);
-            this.tabPageHome.Controls.Add(this.label3);
+            this.tabPageHome.Controls.Add(this.createPostLabel);
             this.tabPageHome.Controls.Add(this.pictureBox5);
             this.tabPageHome.Controls.Add(this.pictureBox3);
             this.tabPageHome.Controls.Add(this.textBox1);
@@ -176,7 +309,18 @@
             this.tabPageHome.TabIndex = 1;
             this.tabPageHome.Text = "Home";
             this.tabPageHome.UseVisualStyleBackColor = true;
-            this.tabPageHome.Click += new System.EventHandler(this.tabPageHome_Click);
+            // 
+            // recentPostsLabel
+            // 
+            this.recentPostsLabel.AutoSize = true;
+            this.recentPostsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentPostsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.recentPostsLabel.Location = new System.Drawing.Point(793, 27);
+            this.recentPostsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.recentPostsLabel.Name = "recentPostsLabel";
+            this.recentPostsLabel.Size = new System.Drawing.Size(222, 30);
+            this.recentPostsLabel.TabIndex = 8;
+            this.recentPostsLabel.Text = "My Recent Posts";
             // 
             // label6
             // 
@@ -188,17 +332,6 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Date that create";
             // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(32, 386);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(718, 115);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -209,6 +342,16 @@
             this.label5.Size = new System.Drawing.Size(258, 30);
             this.label5.TabIndex = 4;
             this.label5.Text = "firstName lastName";
+            // 
+            // listBoxMyPosts
+            // 
+            this.listBoxMyPosts.FormattingEnabled = true;
+            this.listBoxMyPosts.ItemHeight = 30;
+            this.listBoxMyPosts.Location = new System.Drawing.Point(798, 63);
+            this.listBoxMyPosts.Name = "listBoxMyPosts";
+            this.listBoxMyPosts.Size = new System.Drawing.Size(375, 244);
+            this.listBoxMyPosts.TabIndex = 7;
+            this.listBoxMyPosts.SelectedIndexChanged += new System.EventHandler(this.listBoxMyPosts_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -222,18 +365,18 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Posts";
             // 
-            // label3
+            // createPostLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(27, 27);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 30);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Create Post";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.createPostLabel.AutoSize = true;
+            this.createPostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createPostLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.createPostLabel.Location = new System.Drawing.Point(27, 27);
+            this.createPostLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.createPostLabel.Name = "createPostLabel";
+            this.createPostLabel.Size = new System.Drawing.Size(159, 30);
+            this.createPostLabel.TabIndex = 2;
+            this.createPostLabel.Text = "Create Post";
+            this.createPostLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox5
             // 
@@ -303,55 +446,9 @@
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
             // 
-            // tabPageLogIn
-            // 
-            this.tabPageLogIn.Controls.Add(this.pictureBox4);
-            this.tabPageLogIn.Controls.Add(this.label2);
-            this.tabPageLogIn.Controls.Add(this.label1);
-            this.tabPageLogIn.Location = new System.Drawing.Point(8, 44);
-            this.tabPageLogIn.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPageLogIn.Name = "tabPageLogIn";
-            this.tabPageLogIn.Size = new System.Drawing.Size(1686, 1115);
-            this.tabPageLogIn.TabIndex = 5;
-            this.tabPageLogIn.Text = "Login";
-            this.tabPageLogIn.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.LoginButton;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Location = new System.Drawing.Point(732, 240);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(200, 58);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(536, 140);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(646, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "For full access to this application, you need to log in first";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(436, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(843, 48);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to FacebookDesktop Application";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // tabPageFriends
             // 
+            this.tabPageFriends.Controls.Add(this.MyFriendsLabel);
             this.tabPageFriends.Controls.Add(this.listBoxFriends);
             this.tabPageFriends.Location = new System.Drawing.Point(8, 44);
             this.tabPageFriends.Name = "tabPageFriends";
@@ -359,7 +456,28 @@
             this.tabPageFriends.TabIndex = 6;
             this.tabPageFriends.Text = "Friends";
             this.tabPageFriends.UseVisualStyleBackColor = true;
-            this.tabPageFriends.Click += new System.EventHandler(this.tabPageFriends_Click);
+            // 
+            // MyFriendsLabel
+            // 
+            this.MyFriendsLabel.AutoSize = true;
+            this.MyFriendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MyFriendsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MyFriendsLabel.Location = new System.Drawing.Point(50, 45);
+            this.MyFriendsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MyFriendsLabel.Name = "MyFriendsLabel";
+            this.MyFriendsLabel.Size = new System.Drawing.Size(175, 30);
+            this.MyFriendsLabel.TabIndex = 3;
+            this.MyFriendsLabel.Text = "My Friends : ";
+            // 
+            // listBoxFriends
+            // 
+            this.listBoxFriends.FormattingEnabled = true;
+            this.listBoxFriends.ItemHeight = 30;
+            this.listBoxFriends.Location = new System.Drawing.Point(55, 91);
+            this.listBoxFriends.Name = "listBoxFriends";
+            this.listBoxFriends.Size = new System.Drawing.Size(480, 604);
+            this.listBoxFriends.TabIndex = 0;
+            this.listBoxFriends.SelectedIndexChanged += new System.EventHandler(this.friendsList_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -370,16 +488,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1708, 1173);
             this.panel2.TabIndex = 1;
-            // 
-            // listBoxFriends
-            // 
-            this.listBoxFriends.FormattingEnabled = true;
-            this.listBoxFriends.ItemHeight = 30;
-            this.listBoxFriends.Location = new System.Drawing.Point(55, 65);
-            this.listBoxFriends.Name = "listBoxFriends";
-            this.listBoxFriends.Size = new System.Drawing.Size(405, 274);
-            this.listBoxFriends.TabIndex = 0;
-            this.listBoxFriends.SelectedIndexChanged += new System.EventHandler(this.friendsList_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -395,18 +503,19 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.tabPageLogIn.ResumeLayout(false);
+            this.tabPageLogIn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPageHome.ResumeLayout(false);
             this.tabPageHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tabPageLogIn.ResumeLayout(false);
-            this.tabPageLogIn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPageFriends.ResumeLayout(false);
+            this.tabPageFriends.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -416,8 +525,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.PictureBox userPictureBox;
+        private System.Windows.Forms.TextBox userNametextBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TabControl tabControl;
@@ -433,13 +542,22 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label createPostLabel;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TabPage tabPageFriends;
         private System.Windows.Forms.ListBox listBoxFriends;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBoxMyPosts;
+        private System.Windows.Forms.Label recentPostsLabel;
+        private System.Windows.Forms.Label MyFriendsLabel;
+        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Button albumsButton;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button friendsButton;
+        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
