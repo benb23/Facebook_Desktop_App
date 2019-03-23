@@ -164,6 +164,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
                 postIndex++;
             }
+            
         }
         private void createPostButton_Click(object sender, EventArgs e)
         {
