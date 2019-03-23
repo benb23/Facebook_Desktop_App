@@ -32,19 +32,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelLogOut = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.userNametextBox = new System.Windows.Forms.TextBox();
-            this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.homePictureBox = new System.Windows.Forms.PictureBox();
-            this.albumsPictureBox = new System.Windows.Forms.PictureBox();
-            this.friendsPictureBox = new System.Windows.Forms.PictureBox();
-            this.settingsPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageLogIn = new System.Windows.Forms.TabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageHome = new System.Windows.Forms.TabPage();
@@ -53,53 +46,36 @@
             this.likesLabel3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.post3Content = new System.Windows.Forms.Label();
-            this.postPictureBox = new System.Windows.Forms.PictureBox();
             this.post3Publisher = new System.Windows.Forms.Label();
             this.post3Date = new System.Windows.Forms.Label();
             this.post3 = new System.Windows.Forms.Panel();
             this.likesLabel2 = new System.Windows.Forms.Label();
             this.likes2 = new System.Windows.Forms.Label();
             this.post2Content = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.post2Publisher = new System.Windows.Forms.Label();
             this.post2Date = new System.Windows.Forms.Label();
             this.post1 = new System.Windows.Forms.Panel();
             this.likesLabel1 = new System.Windows.Forms.Label();
             this.likes1 = new System.Windows.Forms.Label();
             this.post1Content = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.post1Publisher = new System.Windows.Forms.Label();
             this.post1Date = new System.Windows.Forms.Label();
             this.post2 = new System.Windows.Forms.Panel();
             this.likesLabel0 = new System.Windows.Forms.Label();
             this.likes0 = new System.Windows.Forms.Label();
             this.post0Content = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.post0Publisher = new System.Windows.Forms.Label();
             this.post0Date = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.createPostLabel = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
             this.album0Panel = new System.Windows.Forms.Panel();
             this.albumName0 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.album1Panel = new System.Windows.Forms.Panel();
             this.albumName1 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.album2Panel = new System.Windows.Forms.Panel();
             this.albumName2 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageGame = new System.Windows.Forms.TabPage();
             this.tabPageSettings = new System.Windows.Forms.TabPage();
             this.tabPageFriends = new System.Windows.Forms.TabPage();
@@ -110,47 +86,75 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.labelCalendar = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.userPictureBox = new System.Windows.Forms.PictureBox();
+            this.homePictureBox = new System.Windows.Forms.PictureBox();
+            this.albumsPictureBox = new System.Windows.Forms.PictureBox();
+            this.friendsPictureBox = new System.Windows.Forms.PictureBox();
+            this.settingsPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFaceCupid = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.postPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabPageLogIn.SuspendLayout();
+            this.tabPageHome.SuspendLayout();
+            this.postsPanel.SuspendLayout();
+            this.post0.SuspendLayout();
+            this.post3.SuspendLayout();
+            this.post1.SuspendLayout();
+            this.post2.SuspendLayout();
+            this.tabPageAlbums.SuspendLayout();
+            this.album0Panel.SuspendLayout();
+            this.album1Panel.SuspendLayout();
+            this.album2Panel.SuspendLayout();
+            this.tabPageFriends.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabPageCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).BeginInit();
-            this.tabControl.SuspendLayout();
-            this.tabPageLogIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tabPageHome.SuspendLayout();
-            this.postsPanel.SuspendLayout();
-            this.post0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postPictureBox)).BeginInit();
-            this.post3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.post1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.post2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPageAlbums.SuspendLayout();
-            this.album0Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            this.album1Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.album2Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabPageFriends.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tabPageCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -176,19 +180,6 @@
             this.labelLogOut.TabIndex = 2;
             this.labelLogOut.Text = "Log Out";
             this.labelLogOut.Click += new System.EventHandler(this.labelLogOut_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.FDlogo1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(1088, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label7
             // 
@@ -217,19 +208,6 @@
             this.userNametextBox.Text = "Ben Bublil";
             this.userNametextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userPictureBox
-            // 
-            this.userPictureBox.BackColor = System.Drawing.Color.Red;
-            this.userPictureBox.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.userPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.userPictureBox.Location = new System.Drawing.Point(23, 13);
-            this.userPictureBox.Name = "userPictureBox";
-            this.userPictureBox.Size = new System.Drawing.Size(186, 186);
-            this.userPictureBox.TabIndex = 0;
-            this.userPictureBox.TabStop = false;
-            this.userPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
@@ -239,52 +217,14 @@
             this.flowLayoutPanel1.Controls.Add(this.albumsPictureBox);
             this.flowLayoutPanel1.Controls.Add(this.friendsPictureBox);
             this.flowLayoutPanel1.Controls.Add(this.settingsPictureBox);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBoxCalendar);
+            this.flowLayoutPanel1.Controls.Add(this.pictureBoxFaceCupid);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 38);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 10, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 610);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // homePictureBox
-            // 
-            this.homePictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.home;
-            this.homePictureBox.Location = new System.Drawing.Point(23, 262);
-            this.homePictureBox.Name = "homePictureBox";
-            this.homePictureBox.Size = new System.Drawing.Size(188, 31);
-            this.homePictureBox.TabIndex = 10;
-            this.homePictureBox.TabStop = false;
-            this.homePictureBox.Click += new System.EventHandler(this.homePictureBox_Click);
-            // 
-            // albumsPictureBox
-            // 
-            this.albumsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.albums;
-            this.albumsPictureBox.Location = new System.Drawing.Point(23, 299);
-            this.albumsPictureBox.Name = "albumsPictureBox";
-            this.albumsPictureBox.Size = new System.Drawing.Size(188, 31);
-            this.albumsPictureBox.TabIndex = 11;
-            this.albumsPictureBox.TabStop = false;
-            this.albumsPictureBox.Click += new System.EventHandler(this.albumsPictureBox_Click_1);
-            // 
-            // friendsPictureBox
-            // 
-            this.friendsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.friends;
-            this.friendsPictureBox.Location = new System.Drawing.Point(23, 336);
-            this.friendsPictureBox.Name = "friendsPictureBox";
-            this.friendsPictureBox.Size = new System.Drawing.Size(188, 31);
-            this.friendsPictureBox.TabIndex = 12;
-            this.friendsPictureBox.TabStop = false;
-            this.friendsPictureBox.Click += new System.EventHandler(this.friendsPictureBox_Click_1);
-            // 
-            // settingsPictureBox
-            // 
-            this.settingsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.setings;
-            this.settingsPictureBox.Location = new System.Drawing.Point(23, 373);
-            this.settingsPictureBox.Name = "settingsPictureBox";
-            this.settingsPictureBox.Size = new System.Drawing.Size(188, 31);
-            this.settingsPictureBox.TabIndex = 13;
-            this.settingsPictureBox.TabStop = false;
-            this.settingsPictureBox.Click += new System.EventHandler(this.settingsPictureBox_Click_1);
             // 
             // tabControl
             // 
@@ -314,17 +254,6 @@
             this.tabPageLogIn.Text = "Login";
             this.tabPageLogIn.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.LoginButton;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Location = new System.Drawing.Point(366, 125);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 30);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.logInButton_Click_);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -350,8 +279,8 @@
             this.tabPageHome.Controls.Add(this.postsPanel);
             this.tabPageHome.Controls.Add(this.label4);
             this.tabPageHome.Controls.Add(this.createPostLabel);
-            this.tabPageHome.Controls.Add(this.pictureBox3);
             this.tabPageHome.Controls.Add(this.textBox1);
+            this.tabPageHome.Controls.Add(this.pictureBox3);
             this.tabPageHome.Location = new System.Drawing.Point(4, 25);
             this.tabPageHome.Name = "tabPageHome";
             this.tabPageHome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
@@ -416,18 +345,6 @@
             this.post3Content.Size = new System.Drawing.Size(58, 16);
             this.post3Content.TabIndex = 7;
             this.post3Content.Text = "content";
-            // 
-            // postPictureBox
-            // 
-            this.postPictureBox.BackColor = System.Drawing.Color.Red;
-            this.postPictureBox.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.postPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.postPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.postPictureBox.Location = new System.Drawing.Point(12, 8);
-            this.postPictureBox.Name = "postPictureBox";
-            this.postPictureBox.Size = new System.Drawing.Size(66, 66);
-            this.postPictureBox.TabIndex = 2;
-            this.postPictureBox.TabStop = false;
             // 
             // post3Publisher
             // 
@@ -494,18 +411,6 @@
             this.post2Content.TabIndex = 7;
             this.post2Content.Text = "content";
             // 
-            // pictureBox14
-            // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Red;
-            this.pictureBox14.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox14.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox14.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(66, 66);
-            this.pictureBox14.TabIndex = 2;
-            this.pictureBox14.TabStop = false;
-            // 
             // post2Publisher
             // 
             this.post2Publisher.AutoSize = true;
@@ -570,18 +475,6 @@
             this.post1Content.Size = new System.Drawing.Size(58, 16);
             this.post1Content.TabIndex = 7;
             this.post1Content.Text = "content";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Red;
-            this.pictureBox5.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(66, 66);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
             // 
             // post1Publisher
             // 
@@ -649,18 +542,6 @@
             this.post0Content.TabIndex = 7;
             this.post0Content.Text = "content";
             // 
-            // pictureBox13
-            // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Red;
-            this.pictureBox13.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox13.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox13.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(66, 66);
-            this.pictureBox13.TabIndex = 2;
-            this.pictureBox13.TabStop = false;
-            // 
             // post0Publisher
             // 
             this.post0Publisher.AutoSize = true;
@@ -703,18 +584,6 @@
             this.createPostLabel.TabIndex = 2;
             this.createPostLabel.Text = "Create Post";
             this.createPostLabel.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.PostClickButton;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Location = new System.Drawing.Point(293, 89);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(82, 26);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.createPostButton_Click);
             // 
             // textBox1
             // 
@@ -766,42 +635,6 @@
             this.albumName0.Text = "name";
             this.albumName0.Click += new System.EventHandler(this.label8_Click);
             // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Location = new System.Drawing.Point(373, 45);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox16.TabIndex = 3;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Location = new System.Drawing.Point(249, 45);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox17.TabIndex = 2;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Location = new System.Drawing.Point(132, 45);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox18.TabIndex = 1;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Location = new System.Drawing.Point(16, 45);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox19.TabIndex = 0;
-            this.pictureBox19.TabStop = false;
-            // 
             // album1Panel
             // 
             this.album1Panel.Controls.Add(this.albumName1);
@@ -827,42 +660,6 @@
             this.albumName1.TabIndex = 6;
             this.albumName1.Text = "name";
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Location = new System.Drawing.Point(373, 45);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Location = new System.Drawing.Point(249, 45);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox10.TabIndex = 2;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Location = new System.Drawing.Point(132, 45);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Location = new System.Drawing.Point(16, 45);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox12.TabIndex = 0;
-            this.pictureBox12.TabStop = false;
-            // 
             // album2Panel
             // 
             this.album2Panel.Controls.Add(this.albumName2);
@@ -887,42 +684,6 @@
             this.albumName2.Size = new System.Drawing.Size(46, 16);
             this.albumName2.TabIndex = 5;
             this.albumName2.Text = "name";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Location = new System.Drawing.Point(373, 37);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(249, 37);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(132, 37);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(16, 37);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // tabPageGame
             // 
@@ -1020,11 +781,274 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(13, 225);
+            this.label3.Location = new System.Drawing.Point(13, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Upcoming Birthdays";
+            // 
+            // userPictureBox
+            // 
+            this.userPictureBox.BackColor = System.Drawing.Color.Red;
+            this.userPictureBox.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.userPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.userPictureBox.Location = new System.Drawing.Point(23, 13);
+            this.userPictureBox.Name = "userPictureBox";
+            this.userPictureBox.Size = new System.Drawing.Size(186, 186);
+            this.userPictureBox.TabIndex = 0;
+            this.userPictureBox.TabStop = false;
+            this.userPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // homePictureBox
+            // 
+            this.homePictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.home;
+            this.homePictureBox.Location = new System.Drawing.Point(23, 262);
+            this.homePictureBox.Name = "homePictureBox";
+            this.homePictureBox.Size = new System.Drawing.Size(188, 31);
+            this.homePictureBox.TabIndex = 10;
+            this.homePictureBox.TabStop = false;
+            this.homePictureBox.Click += new System.EventHandler(this.homePictureBox_Click);
+            // 
+            // albumsPictureBox
+            // 
+            this.albumsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.albums;
+            this.albumsPictureBox.Location = new System.Drawing.Point(23, 299);
+            this.albumsPictureBox.Name = "albumsPictureBox";
+            this.albumsPictureBox.Size = new System.Drawing.Size(188, 31);
+            this.albumsPictureBox.TabIndex = 11;
+            this.albumsPictureBox.TabStop = false;
+            this.albumsPictureBox.Click += new System.EventHandler(this.albumsPictureBox_Click_1);
+            // 
+            // friendsPictureBox
+            // 
+            this.friendsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.friends;
+            this.friendsPictureBox.Location = new System.Drawing.Point(23, 336);
+            this.friendsPictureBox.Name = "friendsPictureBox";
+            this.friendsPictureBox.Size = new System.Drawing.Size(188, 31);
+            this.friendsPictureBox.TabIndex = 12;
+            this.friendsPictureBox.TabStop = false;
+            this.friendsPictureBox.Click += new System.EventHandler(this.friendsPictureBox_Click_1);
+            // 
+            // settingsPictureBox
+            // 
+            this.settingsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.setings;
+            this.settingsPictureBox.Location = new System.Drawing.Point(23, 373);
+            this.settingsPictureBox.Name = "settingsPictureBox";
+            this.settingsPictureBox.Size = new System.Drawing.Size(188, 31);
+            this.settingsPictureBox.TabIndex = 13;
+            this.settingsPictureBox.TabStop = false;
+            this.settingsPictureBox.Click += new System.EventHandler(this.settingsPictureBox_Click_1);
+            // 
+            // pictureBoxCalendar
+            // 
+            this.pictureBoxCalendar.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.calendar;
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(23, 410);
+            this.pictureBoxCalendar.Name = "pictureBoxCalendar";
+            this.pictureBoxCalendar.Size = new System.Drawing.Size(188, 31);
+            this.pictureBoxCalendar.TabIndex = 14;
+            this.pictureBoxCalendar.TabStop = false;
+            // 
+            // pictureBoxFaceCupid
+            // 
+            this.pictureBoxFaceCupid.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.faceCupid;
+            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(23, 447);
+            this.pictureBoxFaceCupid.Name = "pictureBoxFaceCupid";
+            this.pictureBoxFaceCupid.Size = new System.Drawing.Size(188, 31);
+            this.pictureBoxFaceCupid.TabIndex = 15;
+            this.pictureBoxFaceCupid.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.LoginButton;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox4.Location = new System.Drawing.Point(366, 125);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 30);
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.logInButton_Click_);
+            // 
+            // postPictureBox
+            // 
+            this.postPictureBox.BackColor = System.Drawing.Color.Red;
+            this.postPictureBox.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.postPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.postPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.postPictureBox.Location = new System.Drawing.Point(12, 8);
+            this.postPictureBox.Name = "postPictureBox";
+            this.postPictureBox.Size = new System.Drawing.Size(66, 66);
+            this.postPictureBox.TabIndex = 2;
+            this.postPictureBox.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BackColor = System.Drawing.Color.Red;
+            this.pictureBox14.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox14.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.pictureBox14.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox14.TabIndex = 2;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Red;
+            this.pictureBox5.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BackColor = System.Drawing.Color.Red;
+            this.pictureBox13.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox13.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.pictureBox13.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox13.TabIndex = 2;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.PostClickButton;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Location = new System.Drawing.Point(293, 89);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(82, 26);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.createPostButton_Click);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Location = new System.Drawing.Point(373, 45);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox16.TabIndex = 3;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Location = new System.Drawing.Point(249, 45);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox17.TabIndex = 2;
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Location = new System.Drawing.Point(132, 45);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox18.TabIndex = 1;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Location = new System.Drawing.Point(16, 45);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox19.TabIndex = 0;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(373, 45);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(249, 45);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox10.TabIndex = 2;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Location = new System.Drawing.Point(132, 45);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(16, 45);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox12.TabIndex = 0;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(373, 37);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(249, 37);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox7.TabIndex = 2;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(132, 37);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(16, 37);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 98);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.FDlogo1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
+            this.pictureBox1.Size = new System.Drawing.Size(1088, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // mainForm
             // 
@@ -1038,58 +1062,60 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPageLogIn.ResumeLayout(false);
             this.tabPageLogIn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPageHome.ResumeLayout(false);
             this.tabPageHome.PerformLayout();
             this.postsPanel.ResumeLayout(false);
             this.post0.ResumeLayout(false);
             this.post0.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.postPictureBox)).EndInit();
             this.post3.ResumeLayout(false);
             this.post3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.post1.ResumeLayout(false);
             this.post1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.post2.ResumeLayout(false);
             this.post2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPageAlbums.ResumeLayout(false);
             this.album0Panel.ResumeLayout(false);
             this.album0Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.album1Panel.ResumeLayout(false);
             this.album1Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.album2Panel.ResumeLayout(false);
             this.album2Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPageFriends.ResumeLayout(false);
             this.tabPageFriends.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tabPageCalendar.ResumeLayout(false);
             this.tabPageCalendar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1176,6 +1202,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelCalendar;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.PictureBox pictureBoxCalendar;
+        private System.Windows.Forms.PictureBox pictureBoxFaceCupid;
     }
 }
 
