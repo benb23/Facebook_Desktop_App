@@ -63,7 +63,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 tabControl.SelectedTab = tabPageHome;
                 if (!m_IsPostsLoaded)
                 {
-                    fetchPosts();
+                    loadHomeTab();
                     m_IsPostsLoaded = true;
                 }
             }
@@ -125,7 +125,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
-        private void fetchPosts()
+        private void fetchMyRecentPosts()
         {
             foreach (Post post in m_FacebookDesktopLogic.LoggedInUser.Posts)
             {
@@ -149,6 +149,21 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
+        private void fetchPosts()
+        {
+            int postIndex = 0;
+
+            foreach(Panel post in postsPanel.Controls)
+            {
+                (post.Controls[0] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
+                (post.Controls[1] as PictureBox).LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+                (post.Controls[2] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Name;
+                (post.Controls[3] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
+
+
+                postIndex++;
+            }
+        }
         private void createPostButton_Click(object sender, EventArgs e)
         {
             m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
@@ -184,9 +199,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             tabControl.SelectedTab = tabPageHome;
             if (!m_IsPostsLoaded)
             {
-                fetchPosts();
+                loadHomeTab();
                 m_IsPostsLoaded = true;
             }
+        }
+
+        private void loadHomeTab()
+        {
+            fetchMyRecentPosts();
+            fetchPosts();
         }
 
         private void albumsButton_Click(object sender, EventArgs e)
