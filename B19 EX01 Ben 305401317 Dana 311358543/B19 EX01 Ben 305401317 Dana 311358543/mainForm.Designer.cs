@@ -468,8 +468,8 @@
             this.tabPageAlbums.UseVisualStyleBackColor = true;
 
             //todo: change?
-            this.AutoScrollMargin = new System.Drawing.Size(20, 20);
-            this.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);  
+            this.tabPageAlbums.AutoScrollMargin = new System.Drawing.Size(20, 20);
+            this.tabPageAlbums.AutoScrollMinSize = new System.Drawing.Size(this.Width, this.Height);  
             // 
             // album0Panel
             // 
