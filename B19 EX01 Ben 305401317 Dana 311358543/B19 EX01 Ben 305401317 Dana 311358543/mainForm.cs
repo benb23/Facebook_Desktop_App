@@ -332,5 +332,37 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             FacebookService.Logout(doAfterLogOut);
         }
+
+        private void homePictureBox_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageHome;
+        }
+
+        private void albumsPictureBox_Click_1(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageAlbums;
+            updateLatestPhotos();
+
+        }
+
+        private void settingsPictureBox_Click_1(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageSettings;
+        }
+
+        private void friendsPictureBox_Click_1(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageFriends;
+            if (!m_IsfriendListLoaded)
+            {
+                fetchFriends();
+                m_IsfriendListLoaded = true;
+            }
+        }
+
+        private void labelLogOut_Click_1(object sender, EventArgs e)
+        {
+            FacebookService.Logout(doAfterLogOut);
+        }
     }
 }
