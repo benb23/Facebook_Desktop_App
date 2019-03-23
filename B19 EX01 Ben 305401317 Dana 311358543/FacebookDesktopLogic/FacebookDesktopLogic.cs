@@ -106,5 +106,25 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             return m_IsLogIn;
         }
 
+        public List<string> GetLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
+        {
+            List<string> Photos = new List<string>();
+
+            int numOfPhotos = 0;
+            Album album = m_LoggedInUser.Albums[i_AlbumNumber];
+
+            for (int i = 0; i < album.Photos.Count; i++)
+            {
+                Photos.Add(album.Photos[i].PictureNormalURL);
+                numOfPhotos++;
+                if (numOfPhotos > i_NumOfItems)
+                {
+                    break;
+                }
+            }
+
+
+            return Photos;
+        }
     }
 }
