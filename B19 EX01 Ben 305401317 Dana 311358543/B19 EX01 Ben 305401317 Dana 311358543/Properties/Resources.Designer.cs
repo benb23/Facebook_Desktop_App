@@ -73,6 +73,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap albums {
+            get {
+                object obj = ResourceManager.GetObject("albums", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FDlogo {
             get {
                 object obj = ResourceManager.GetObject("FDlogo", resourceCulture);
@@ -86,6 +96,26 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         internal static System.Drawing.Bitmap FDlogo1 {
             get {
                 object obj = ResourceManager.GetObject("FDlogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap friends {
+            get {
+                object obj = ResourceManager.GetObject("friends", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         internal static System.Drawing.Bitmap ProfileCircle {
             get {
                 object obj = ResourceManager.GetObject("ProfileCircle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setings {
+            get {
+                object obj = ResourceManager.GetObject("setings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
