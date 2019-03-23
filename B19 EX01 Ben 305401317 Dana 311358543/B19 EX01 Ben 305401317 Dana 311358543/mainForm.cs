@@ -281,7 +281,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void gameButton_Click(object sender, EventArgs e)
         {
-            tabControl.SelectedTab = tabPageGame;
+            tabControl.SelectedTab = tabPageCupid;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -365,6 +365,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void labelLogOut_Click_1(object sender, EventArgs e)
         {
             FacebookService.Logout(doAfterLogOut);
+        }
+
+        private void pictureBoxCalendar_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageCalendar;
+        }
+
+        private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageCupid;
         }
     }
 }
