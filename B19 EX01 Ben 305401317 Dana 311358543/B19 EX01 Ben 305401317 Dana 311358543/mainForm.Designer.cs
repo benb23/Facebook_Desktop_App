@@ -49,13 +49,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageHome = new System.Windows.Forms.TabPage();
-            this.recentPostsLabel = new System.Windows.Forms.Label();
-            this.post3Date = new System.Windows.Forms.Label();
+            this.postsPanel = new System.Windows.Forms.Panel();
+            this.post0 = new System.Windows.Forms.Panel();
+            this.post3Content = new System.Windows.Forms.Label();
+            this.postPictureBox = new System.Windows.Forms.PictureBox();
             this.post3Publisher = new System.Windows.Forms.Label();
-            this.listBoxMyPosts = new System.Windows.Forms.ListBox();
+            this.post3Date = new System.Windows.Forms.Label();
+            this.post3 = new System.Windows.Forms.Panel();
+            this.post2Content = new System.Windows.Forms.Label();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.post2Publisher = new System.Windows.Forms.Label();
+            this.post2Date = new System.Windows.Forms.Label();
+            this.post1 = new System.Windows.Forms.Panel();
+            this.post1Content = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.post1Publisher = new System.Windows.Forms.Label();
+            this.post1Date = new System.Windows.Forms.Label();
+            this.post2 = new System.Windows.Forms.Panel();
+            this.post0Content = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.post0Publisher = new System.Windows.Forms.Label();
+            this.post0Date = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.createPostLabel = new System.Windows.Forms.Label();
-            this.postPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
@@ -83,24 +99,6 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.post0 = new System.Windows.Forms.Panel();
-            this.post3Content = new System.Windows.Forms.Label();
-            this.post1 = new System.Windows.Forms.Panel();
-            this.post1Content = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.post1Publisher = new System.Windows.Forms.Label();
-            this.post1Date = new System.Windows.Forms.Label();
-            this.post2 = new System.Windows.Forms.Panel();
-            this.post0Content = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.post0Publisher = new System.Windows.Forms.Label();
-            this.post0Date = new System.Windows.Forms.Label();
-            this.post3 = new System.Windows.Forms.Panel();
-            this.post2Content = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.post2Publisher = new System.Windows.Forms.Label();
-            this.post2Date = new System.Windows.Forms.Label();
-            this.postsPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
@@ -109,7 +107,15 @@
             this.tabPageLogIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPageHome.SuspendLayout();
+            this.postsPanel.SuspendLayout();
+            this.post0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postPictureBox)).BeginInit();
+            this.post3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.post1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.post2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPageAlbums.SuspendLayout();
             this.album0Panel.SuspendLayout();
@@ -129,14 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPageFriends.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.post0.SuspendLayout();
-            this.post1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.post2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.post3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.postsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -350,8 +348,6 @@
             // tabPageHome
             // 
             this.tabPageHome.Controls.Add(this.postsPanel);
-            this.tabPageHome.Controls.Add(this.recentPostsLabel);
-            this.tabPageHome.Controls.Add(this.listBoxMyPosts);
             this.tabPageHome.Controls.Add(this.label4);
             this.tabPageHome.Controls.Add(this.createPostLabel);
             this.tabPageHome.Controls.Add(this.pictureBox3);
@@ -365,73 +361,39 @@
             this.tabPageHome.Text = "Home";
             this.tabPageHome.UseVisualStyleBackColor = true;
             // 
-            // recentPostsLabel
+            // postsPanel
             // 
-            this.recentPostsLabel.AutoSize = true;
-            this.recentPostsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recentPostsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.recentPostsLabel.Location = new System.Drawing.Point(793, 27);
-            this.recentPostsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.recentPostsLabel.Name = "recentPostsLabel";
-            this.recentPostsLabel.Size = new System.Drawing.Size(222, 30);
-            this.recentPostsLabel.TabIndex = 8;
-            this.recentPostsLabel.Text = "My Recent Posts";
+            this.postsPanel.Controls.Add(this.post0);
+            this.postsPanel.Controls.Add(this.post3);
+            this.postsPanel.Controls.Add(this.post1);
+            this.postsPanel.Controls.Add(this.post2);
+            this.postsPanel.Location = new System.Drawing.Point(32, 302);
+            this.postsPanel.Name = "postsPanel";
+            this.postsPanel.Size = new System.Drawing.Size(667, 649);
+            this.postsPanel.TabIndex = 13;
             // 
-            // post3Date
+            // post0
             // 
-            this.post3Date.AutoSize = true;
-            this.post3Date.Location = new System.Drawing.Point(169, 46);
-            this.post3Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post3Date.Name = "post3Date";
-            this.post3Date.Size = new System.Drawing.Size(194, 30);
-            this.post3Date.TabIndex = 6;
-            this.post3Date.Text = "Date that create";
+            this.post0.Controls.Add(this.post3Content);
+            this.post0.Controls.Add(this.postPictureBox);
+            this.post0.Controls.Add(this.post3Publisher);
+            this.post0.Controls.Add(this.post3Date);
+            this.post0.Dock = System.Windows.Forms.DockStyle.Top;
+            this.post0.Location = new System.Drawing.Point(0, 471);
+            this.post0.Name = "post0";
+            this.post0.Size = new System.Drawing.Size(667, 157);
+            this.post0.TabIndex = 9;
             // 
-            // post3Publisher
+            // post3Content
             // 
-            this.post3Publisher.AutoSize = true;
-            this.post3Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post3Publisher.Location = new System.Drawing.Point(169, 16);
-            this.post3Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post3Publisher.Name = "post3Publisher";
-            this.post3Publisher.Size = new System.Drawing.Size(258, 30);
-            this.post3Publisher.TabIndex = 4;
-            this.post3Publisher.Text = "firstName lastName";
-            // 
-            // listBoxMyPosts
-            // 
-            this.listBoxMyPosts.FormattingEnabled = true;
-            this.listBoxMyPosts.ItemHeight = 30;
-            this.listBoxMyPosts.Location = new System.Drawing.Point(798, 63);
-            this.listBoxMyPosts.Name = "listBoxMyPosts";
-            this.listBoxMyPosts.Size = new System.Drawing.Size(375, 244);
-            this.listBoxMyPosts.TabIndex = 7;
-            this.listBoxMyPosts.SelectedIndexChanged += new System.EventHandler(this.listBoxMyPosts_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(27, 255);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 30);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Posts";
-            // 
-            // createPostLabel
-            // 
-            this.createPostLabel.AutoSize = true;
-            this.createPostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createPostLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.createPostLabel.Location = new System.Drawing.Point(27, 27);
-            this.createPostLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.createPostLabel.Name = "createPostLabel";
-            this.createPostLabel.Size = new System.Drawing.Size(159, 30);
-            this.createPostLabel.TabIndex = 2;
-            this.createPostLabel.Text = "Create Post";
-            this.createPostLabel.Click += new System.EventHandler(this.label3_Click);
+            this.post3Content.AutoSize = true;
+            this.post3Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post3Content.Location = new System.Drawing.Point(169, 102);
+            this.post3Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post3Content.Name = "post3Content";
+            this.post3Content.Size = new System.Drawing.Size(103, 30);
+            this.post3Content.TabIndex = 7;
+            this.post3Content.Text = "content";
             // 
             // postPictureBox
             // 
@@ -445,6 +407,223 @@
             this.postPictureBox.Size = new System.Drawing.Size(131, 126);
             this.postPictureBox.TabIndex = 2;
             this.postPictureBox.TabStop = false;
+            // 
+            // post3Publisher
+            // 
+            this.post3Publisher.AutoSize = true;
+            this.post3Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post3Publisher.Location = new System.Drawing.Point(169, 16);
+            this.post3Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post3Publisher.Name = "post3Publisher";
+            this.post3Publisher.Size = new System.Drawing.Size(258, 30);
+            this.post3Publisher.TabIndex = 4;
+            this.post3Publisher.Text = "firstName lastName";
+            // 
+            // post3Date
+            // 
+            this.post3Date.AutoSize = true;
+            this.post3Date.Location = new System.Drawing.Point(169, 46);
+            this.post3Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post3Date.Name = "post3Date";
+            this.post3Date.Size = new System.Drawing.Size(194, 30);
+            this.post3Date.TabIndex = 6;
+            this.post3Date.Text = "Date that create";
+            // 
+            // post3
+            // 
+            this.post3.Controls.Add(this.post2Content);
+            this.post3.Controls.Add(this.pictureBox14);
+            this.post3.Controls.Add(this.post2Publisher);
+            this.post3.Controls.Add(this.post2Date);
+            this.post3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.post3.Location = new System.Drawing.Point(0, 314);
+            this.post3.Name = "post3";
+            this.post3.Size = new System.Drawing.Size(667, 157);
+            this.post3.TabIndex = 12;
+            // 
+            // post2Content
+            // 
+            this.post2Content.AutoSize = true;
+            this.post2Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post2Content.Location = new System.Drawing.Point(169, 102);
+            this.post2Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post2Content.Name = "post2Content";
+            this.post2Content.Size = new System.Drawing.Size(103, 30);
+            this.post2Content.TabIndex = 7;
+            this.post2Content.Text = "content";
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BackColor = System.Drawing.Color.Red;
+            this.pictureBox14.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox14.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.pictureBox14.Location = new System.Drawing.Point(23, 16);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(131, 126);
+            this.pictureBox14.TabIndex = 2;
+            this.pictureBox14.TabStop = false;
+            // 
+            // post2Publisher
+            // 
+            this.post2Publisher.AutoSize = true;
+            this.post2Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post2Publisher.Location = new System.Drawing.Point(169, 16);
+            this.post2Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post2Publisher.Name = "post2Publisher";
+            this.post2Publisher.Size = new System.Drawing.Size(258, 30);
+            this.post2Publisher.TabIndex = 4;
+            this.post2Publisher.Text = "firstName lastName";
+            // 
+            // post2Date
+            // 
+            this.post2Date.AutoSize = true;
+            this.post2Date.Location = new System.Drawing.Point(169, 46);
+            this.post2Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post2Date.Name = "post2Date";
+            this.post2Date.Size = new System.Drawing.Size(194, 30);
+            this.post2Date.TabIndex = 6;
+            this.post2Date.Text = "Date that create";
+            // 
+            // post1
+            // 
+            this.post1.Controls.Add(this.post1Content);
+            this.post1.Controls.Add(this.pictureBox5);
+            this.post1.Controls.Add(this.post1Publisher);
+            this.post1.Controls.Add(this.post1Date);
+            this.post1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.post1.Location = new System.Drawing.Point(0, 157);
+            this.post1.Name = "post1";
+            this.post1.Size = new System.Drawing.Size(667, 157);
+            this.post1.TabIndex = 10;
+            // 
+            // post1Content
+            // 
+            this.post1Content.AutoSize = true;
+            this.post1Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post1Content.Location = new System.Drawing.Point(169, 102);
+            this.post1Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post1Content.Name = "post1Content";
+            this.post1Content.Size = new System.Drawing.Size(103, 30);
+            this.post1Content.TabIndex = 7;
+            this.post1Content.Text = "content";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Red;
+            this.pictureBox5.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.pictureBox5.Location = new System.Drawing.Point(23, 16);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(131, 126);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // post1Publisher
+            // 
+            this.post1Publisher.AutoSize = true;
+            this.post1Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post1Publisher.Location = new System.Drawing.Point(169, 16);
+            this.post1Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post1Publisher.Name = "post1Publisher";
+            this.post1Publisher.Size = new System.Drawing.Size(258, 30);
+            this.post1Publisher.TabIndex = 4;
+            this.post1Publisher.Text = "firstName lastName";
+            // 
+            // post1Date
+            // 
+            this.post1Date.AutoSize = true;
+            this.post1Date.Location = new System.Drawing.Point(169, 46);
+            this.post1Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post1Date.Name = "post1Date";
+            this.post1Date.Size = new System.Drawing.Size(194, 30);
+            this.post1Date.TabIndex = 6;
+            this.post1Date.Text = "Date that create";
+            // 
+            // post2
+            // 
+            this.post2.Controls.Add(this.post0Content);
+            this.post2.Controls.Add(this.pictureBox13);
+            this.post2.Controls.Add(this.post0Publisher);
+            this.post2.Controls.Add(this.post0Date);
+            this.post2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.post2.Location = new System.Drawing.Point(0, 0);
+            this.post2.Name = "post2";
+            this.post2.Size = new System.Drawing.Size(667, 157);
+            this.post2.TabIndex = 11;
+            // 
+            // post0Content
+            // 
+            this.post0Content.AutoSize = true;
+            this.post0Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post0Content.Location = new System.Drawing.Point(169, 102);
+            this.post0Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post0Content.Name = "post0Content";
+            this.post0Content.Size = new System.Drawing.Size(103, 30);
+            this.post0Content.TabIndex = 7;
+            this.post0Content.Text = "content";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BackColor = System.Drawing.Color.Red;
+            this.pictureBox13.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
+            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox13.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            this.pictureBox13.Location = new System.Drawing.Point(23, 16);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(131, 126);
+            this.pictureBox13.TabIndex = 2;
+            this.pictureBox13.TabStop = false;
+            // 
+            // post0Publisher
+            // 
+            this.post0Publisher.AutoSize = true;
+            this.post0Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post0Publisher.Location = new System.Drawing.Point(169, 16);
+            this.post0Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post0Publisher.Name = "post0Publisher";
+            this.post0Publisher.Size = new System.Drawing.Size(258, 30);
+            this.post0Publisher.TabIndex = 4;
+            this.post0Publisher.Text = "firstName lastName";
+            // 
+            // post0Date
+            // 
+            this.post0Date.AutoSize = true;
+            this.post0Date.Location = new System.Drawing.Point(169, 46);
+            this.post0Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post0Date.Name = "post0Date";
+            this.post0Date.Size = new System.Drawing.Size(194, 30);
+            this.post0Date.TabIndex = 6;
+            this.post0Date.Text = "Date that create";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(27, 251);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(222, 30);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "My Recent Posts";
+            // 
+            // createPostLabel
+            // 
+            this.createPostLabel.AutoSize = true;
+            this.createPostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createPostLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.createPostLabel.Location = new System.Drawing.Point(27, 27);
+            this.createPostLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.createPostLabel.Name = "createPostLabel";
+            this.createPostLabel.Size = new System.Drawing.Size(159, 30);
+            this.createPostLabel.TabIndex = 2;
+            this.createPostLabel.Text = "Create Post";
+            this.createPostLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -720,211 +899,6 @@
             this.panel2.Size = new System.Drawing.Size(1708, 1054);
             this.panel2.TabIndex = 1;
             // 
-            // post0
-            // 
-            this.post0.Controls.Add(this.post3Content);
-            this.post0.Controls.Add(this.postPictureBox);
-            this.post0.Controls.Add(this.post3Publisher);
-            this.post0.Controls.Add(this.post3Date);
-            this.post0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post0.Location = new System.Drawing.Point(0, 471);
-            this.post0.Name = "post0";
-            this.post0.Size = new System.Drawing.Size(667, 157);
-            this.post0.TabIndex = 9;
-            // 
-            // post3Content
-            // 
-            this.post3Content.AutoSize = true;
-            this.post3Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post3Content.Location = new System.Drawing.Point(169, 102);
-            this.post3Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post3Content.Name = "post3Content";
-            this.post3Content.Size = new System.Drawing.Size(103, 30);
-            this.post3Content.TabIndex = 7;
-            this.post3Content.Text = "content";
-            // 
-            // post1
-            // 
-            this.post1.Controls.Add(this.post1Content);
-            this.post1.Controls.Add(this.pictureBox5);
-            this.post1.Controls.Add(this.post1Publisher);
-            this.post1.Controls.Add(this.post1Date);
-            this.post1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post1.Location = new System.Drawing.Point(0, 157);
-            this.post1.Name = "post1";
-            this.post1.Size = new System.Drawing.Size(667, 157);
-            this.post1.TabIndex = 10;
-            // 
-            // post1Content
-            // 
-            this.post1Content.AutoSize = true;
-            this.post1Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post1Content.Location = new System.Drawing.Point(169, 102);
-            this.post1Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post1Content.Name = "post1Content";
-            this.post1Content.Size = new System.Drawing.Size(103, 30);
-            this.post1Content.TabIndex = 7;
-            this.post1Content.Text = "content";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Red;
-            this.pictureBox5.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 16);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(131, 126);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // post1Publisher
-            // 
-            this.post1Publisher.AutoSize = true;
-            this.post1Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post1Publisher.Location = new System.Drawing.Point(169, 16);
-            this.post1Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post1Publisher.Name = "post1Publisher";
-            this.post1Publisher.Size = new System.Drawing.Size(258, 30);
-            this.post1Publisher.TabIndex = 4;
-            this.post1Publisher.Text = "firstName lastName";
-            // 
-            // post1Date
-            // 
-            this.post1Date.AutoSize = true;
-            this.post1Date.Location = new System.Drawing.Point(169, 46);
-            this.post1Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post1Date.Name = "post1Date";
-            this.post1Date.Size = new System.Drawing.Size(194, 30);
-            this.post1Date.TabIndex = 6;
-            this.post1Date.Text = "Date that create";
-            // 
-            // post2
-            // 
-            this.post2.Controls.Add(this.post0Content);
-            this.post2.Controls.Add(this.pictureBox13);
-            this.post2.Controls.Add(this.post0Publisher);
-            this.post2.Controls.Add(this.post0Date);
-            this.post2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post2.Location = new System.Drawing.Point(0, 0);
-            this.post2.Name = "post2";
-            this.post2.Size = new System.Drawing.Size(667, 157);
-            this.post2.TabIndex = 11;
-            // 
-            // post0Content
-            // 
-            this.post0Content.AutoSize = true;
-            this.post0Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post0Content.Location = new System.Drawing.Point(169, 102);
-            this.post0Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post0Content.Name = "post0Content";
-            this.post0Content.Size = new System.Drawing.Size(103, 30);
-            this.post0Content.TabIndex = 7;
-            this.post0Content.Text = "content";
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Red;
-            this.pictureBox13.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox13.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox13.Location = new System.Drawing.Point(23, 16);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(131, 126);
-            this.pictureBox13.TabIndex = 2;
-            this.pictureBox13.TabStop = false;
-            // 
-            // post0Publisher
-            // 
-            this.post0Publisher.AutoSize = true;
-            this.post0Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post0Publisher.Location = new System.Drawing.Point(169, 16);
-            this.post0Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post0Publisher.Name = "post0Publisher";
-            this.post0Publisher.Size = new System.Drawing.Size(258, 30);
-            this.post0Publisher.TabIndex = 4;
-            this.post0Publisher.Text = "firstName lastName";
-            // 
-            // post0Date
-            // 
-            this.post0Date.AutoSize = true;
-            this.post0Date.Location = new System.Drawing.Point(169, 46);
-            this.post0Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post0Date.Name = "post0Date";
-            this.post0Date.Size = new System.Drawing.Size(194, 30);
-            this.post0Date.TabIndex = 6;
-            this.post0Date.Text = "Date that create";
-            // 
-            // post3
-            // 
-            this.post3.Controls.Add(this.post2Content);
-            this.post3.Controls.Add(this.pictureBox14);
-            this.post3.Controls.Add(this.post2Publisher);
-            this.post3.Controls.Add(this.post2Date);
-            this.post3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post3.Location = new System.Drawing.Point(0, 314);
-            this.post3.Name = "post3";
-            this.post3.Size = new System.Drawing.Size(667, 157);
-            this.post3.TabIndex = 12;
-            // 
-            // post2Content
-            // 
-            this.post2Content.AutoSize = true;
-            this.post2Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post2Content.Location = new System.Drawing.Point(169, 102);
-            this.post2Content.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post2Content.Name = "post2Content";
-            this.post2Content.Size = new System.Drawing.Size(103, 30);
-            this.post2Content.TabIndex = 7;
-            this.post2Content.Text = "content";
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Red;
-            this.pictureBox14.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.Untitled_5;
-            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox14.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
-            this.pictureBox14.Location = new System.Drawing.Point(23, 16);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(131, 126);
-            this.pictureBox14.TabIndex = 2;
-            this.pictureBox14.TabStop = false;
-            // 
-            // post2Publisher
-            // 
-            this.post2Publisher.AutoSize = true;
-            this.post2Publisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.post2Publisher.Location = new System.Drawing.Point(169, 16);
-            this.post2Publisher.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post2Publisher.Name = "post2Publisher";
-            this.post2Publisher.Size = new System.Drawing.Size(258, 30);
-            this.post2Publisher.TabIndex = 4;
-            this.post2Publisher.Text = "firstName lastName";
-            // 
-            // post2Date
-            // 
-            this.post2Date.AutoSize = true;
-            this.post2Date.Location = new System.Drawing.Point(169, 46);
-            this.post2Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.post2Date.Name = "post2Date";
-            this.post2Date.Size = new System.Drawing.Size(194, 30);
-            this.post2Date.TabIndex = 6;
-            this.post2Date.Text = "Date that create";
-            // 
-            // postsPanel
-            // 
-            this.postsPanel.Controls.Add(this.post0);
-            this.postsPanel.Controls.Add(this.post3);
-            this.postsPanel.Controls.Add(this.post1);
-            this.postsPanel.Controls.Add(this.post2);
-            this.postsPanel.Location = new System.Drawing.Point(31, 321);
-            this.postsPanel.Name = "postsPanel";
-            this.postsPanel.Size = new System.Drawing.Size(667, 649);
-            this.postsPanel.TabIndex = 13;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -948,7 +922,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPageHome.ResumeLayout(false);
             this.tabPageHome.PerformLayout();
+            this.postsPanel.ResumeLayout(false);
+            this.post0.ResumeLayout(false);
+            this.post0.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.postPictureBox)).EndInit();
+            this.post3.ResumeLayout(false);
+            this.post3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.post1.ResumeLayout(false);
+            this.post1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.post2.ResumeLayout(false);
+            this.post2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPageAlbums.ResumeLayout(false);
             this.album0Panel.ResumeLayout(false);
@@ -972,18 +958,6 @@
             this.tabPageFriends.ResumeLayout(false);
             this.tabPageFriends.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.post0.ResumeLayout(false);
-            this.post0.PerformLayout();
-            this.post1.ResumeLayout(false);
-            this.post1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.post2.ResumeLayout(false);
-            this.post2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.post3.ResumeLayout(false);
-            this.post3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.postsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1016,8 +990,6 @@
         private System.Windows.Forms.TabPage tabPageFriends;
         private System.Windows.Forms.ListBox listBoxFriends;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBoxMyPosts;
-        private System.Windows.Forms.Label recentPostsLabel;
         private System.Windows.Forms.Label MyFriendsLabel;
         private System.Windows.Forms.Button albumsButton;
         private System.Windows.Forms.Button friendsButton;

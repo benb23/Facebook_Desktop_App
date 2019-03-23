@@ -125,29 +125,29 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
-        private void fetchMyRecentPosts()
-        {
-            foreach (Post post in m_FacebookDesktopLogic.LoggedInUser.Posts)
-            {
-                if (post.Message != null)
-                {
-                    listBoxMyPosts.Items.Add(post.Message);
-                }
-                else if (post.Caption != null)
-                {
-                    listBoxMyPosts.Items.Add(post.Caption);
-                }
-                else
-                {
-                    listBoxMyPosts.Items.Add(string.Format("[{0}]", post.Type));
-                }
-            }
+        //private void fetchMyRecentPosts()
+        //{
+        //    foreach (Post post in m_FacebookDesktopLogic.LoggedInUser.Posts)
+        //    {
+        //        if (post.Message != null)
+        //        {
+        //            listBoxMyPosts.Items.Add(post.Message);
+        //        }
+        //        else if (post.Caption != null)
+        //        {
+        //            listBoxMyPosts.Items.Add(post.Caption);
+        //        }
+        //        else
+        //        {
+        //            listBoxMyPosts.Items.Add(string.Format("[{0}]", post.Type));
+        //        }
+        //    }
 
-            if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count == 0)
-            {
-                MessageBox.Show("No Posts to retrieve :(");
-            }
-        }
+        //    if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count == 0)
+        //    {
+        //        MessageBox.Show("No Posts to retrieve :(");
+        //    }
+        //}
 
         private void fetchPosts()
         {
@@ -206,7 +206,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void loadHomeTab()
         {
-            fetchMyRecentPosts();
+            //fetchMyRecentPosts();
             fetchPosts();
         }
 
