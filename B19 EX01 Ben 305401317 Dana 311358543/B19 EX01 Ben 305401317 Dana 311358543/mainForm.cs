@@ -60,6 +60,12 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             if(isLogIn)
             {
                 fetchUserInfo();
+                tabControl.SelectedTab = tabPageHome;
+                if (!m_IsPostsLoaded)
+                {
+                    fetchPosts();
+                    m_IsPostsLoaded = true;
+                }
             }
             else
             {
@@ -152,10 +158,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-            FacebookService.Logout(doAfterLogOut);
-        }
+        //private void label7_Click(object sender, EventArgs e)
+        //{
+        //    FacebookService.Logout(doAfterLogOut);
+        //}
 
         private void doAfterLogOut()
         {
@@ -207,5 +213,19 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             tabControl.SelectedTab = tabPageGame;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            FacebookService.Logout(doAfterLogOut);
+        }
+
+        private void homeButton_Click_1(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabPageHome;
+        }
     }
 }

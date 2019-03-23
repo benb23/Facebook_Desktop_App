@@ -37,12 +37,11 @@
             this.userNametextBox = new System.Windows.Forms.TextBox();
             this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.homeButton = new System.Windows.Forms.Button();
             this.albumsButton = new System.Windows.Forms.Button();
-            this.loginButton = new System.Windows.Forms.Button();
             this.friendsButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageLogIn = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -65,6 +64,7 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.homeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
@@ -93,13 +93,10 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1572, 13);
+            this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "label7";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -153,12 +150,12 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanel1.Controls.Add(this.userPictureBox);
             this.flowLayoutPanel1.Controls.Add(this.userNametextBox);
-            this.flowLayoutPanel1.Controls.Add(this.homeButton);
             this.flowLayoutPanel1.Controls.Add(this.albumsButton);
-            this.flowLayoutPanel1.Controls.Add(this.loginButton);
             this.flowLayoutPanel1.Controls.Add(this.friendsButton);
             this.flowLayoutPanel1.Controls.Add(this.settingsButton);
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.logOutButton);
+            this.flowLayoutPanel1.Controls.Add(this.homeButton);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 73);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -167,19 +164,9 @@
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // homeButton
-            // 
-            this.homeButton.Location = new System.Drawing.Point(43, 452);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(147, 78);
-            this.homeButton.TabIndex = 2;
-            this.homeButton.Text = "Home";
-            this.homeButton.UseVisualStyleBackColor = true;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
-            // 
             // albumsButton
             // 
-            this.albumsButton.Location = new System.Drawing.Point(196, 452);
+            this.albumsButton.Location = new System.Drawing.Point(43, 452);
             this.albumsButton.Name = "albumsButton";
             this.albumsButton.Size = new System.Drawing.Size(141, 78);
             this.albumsButton.TabIndex = 3;
@@ -187,19 +174,9 @@
             this.albumsButton.UseVisualStyleBackColor = true;
             this.albumsButton.Click += new System.EventHandler(this.albumsButton_Click);
             // 
-            // loginButton
-            // 
-            this.loginButton.Location = new System.Drawing.Point(43, 536);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(147, 79);
-            this.loginButton.TabIndex = 4;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
             // friendsButton
             // 
-            this.friendsButton.Location = new System.Drawing.Point(196, 536);
+            this.friendsButton.Location = new System.Drawing.Point(190, 452);
             this.friendsButton.Name = "friendsButton";
             this.friendsButton.Size = new System.Drawing.Size(141, 79);
             this.friendsButton.TabIndex = 5;
@@ -209,7 +186,7 @@
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(43, 621);
+            this.settingsButton.Location = new System.Drawing.Point(43, 537);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(148, 79);
             this.settingsButton.TabIndex = 6;
@@ -219,13 +196,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 621);
+            this.button1.Location = new System.Drawing.Point(197, 537);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 79);
             this.button1.TabIndex = 7;
             this.button1.Text = "Game";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.gameButton_Click);
+            // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(43, 622);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(149, 79);
+            this.logOutButton.TabIndex = 8;
+            this.logOutButton.Text = "LogOut";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // tabControl
             // 
@@ -489,7 +476,17 @@
             this.panel2.Size = new System.Drawing.Size(1708, 1173);
             this.panel2.TabIndex = 1;
             // 
-            // Form1
+            // homeButton
+            // 
+            this.homeButton.Location = new System.Drawing.Point(198, 622);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(133, 79);
+            this.homeButton.TabIndex = 9;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click_1);
+            // 
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -498,7 +495,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "Form1";
+            this.Name = "mainForm";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -552,12 +549,12 @@
         private System.Windows.Forms.ListBox listBoxMyPosts;
         private System.Windows.Forms.Label recentPostsLabel;
         private System.Windows.Forms.Label MyFriendsLabel;
-        private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Button albumsButton;
-        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button friendsButton;
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button logOutButton;
+        private System.Windows.Forms.Button homeButton;
     }
 }
 
