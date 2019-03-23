@@ -75,7 +75,13 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchUserInfo()
         {
-            userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            PictureBox img = new System.Windows.Forms.PictureBox();
+            img.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            userPictureBox.BackgroundImage = img.Image.Clone() as Image;
+            
+            //userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            userPictureBox.BackgroundImage = img.Image;
+            //userPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
             userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
             //if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count > 0)
             //{
