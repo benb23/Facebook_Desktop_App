@@ -184,8 +184,8 @@
             this.userNametextBox.BackColor = System.Drawing.SystemColors.Window;
             this.userNametextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userNametextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNametextBox.Location = new System.Drawing.Point(23, 205);
-            this.userNametextBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.userNametextBox.Location = new System.Drawing.Point(40, 205);
+            this.userNametextBox.Margin = new System.Windows.Forms.Padding(20, 3, 3, 30);
             this.userNametextBox.Name = "userNametextBox";
             this.userNametextBox.Size = new System.Drawing.Size(151, 24);
             this.userNametextBox.TabIndex = 1;
@@ -230,10 +230,10 @@
             this.tabControl.Controls.Add(this.tabPageSettings);
             this.tabControl.Controls.Add(this.tabPageFriends);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.tabControl.Location = new System.Drawing.Point(3, -26);
+            this.tabControl.Location = new System.Drawing.Point(3, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(851, 633);
+            this.tabControl.Size = new System.Drawing.Size(851, 607);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageLogIn
@@ -243,7 +243,7 @@
             this.tabPageLogIn.Controls.Add(this.label1);
             this.tabPageLogIn.Location = new System.Drawing.Point(4, 25);
             this.tabPageLogIn.Name = "tabPageLogIn";
-            this.tabPageLogIn.Size = new System.Drawing.Size(843, 604);
+            this.tabPageLogIn.Size = new System.Drawing.Size(843, 578);
             this.tabPageLogIn.TabIndex = 5;
             this.tabPageLogIn.Text = "Login";
             this.tabPageLogIn.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.tabPageHome.Location = new System.Drawing.Point(4, 25);
             this.tabPageHome.Name = "tabPageHome";
             this.tabPageHome.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageHome.Size = new System.Drawing.Size(843, 578);
+            this.tabPageHome.Size = new System.Drawing.Size(843, 590);
             this.tabPageHome.TabIndex = 1;
             this.tabPageHome.Text = "Home";
             this.tabPageHome.UseVisualStyleBackColor = true;
@@ -576,7 +576,7 @@
             this.tabPageAlbums.Location = new System.Drawing.Point(4, 25);
             this.tabPageAlbums.Name = "tabPageAlbums";
             this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageAlbums.Size = new System.Drawing.Size(843, 578);
+            this.tabPageAlbums.Size = new System.Drawing.Size(843, 590);
             this.tabPageAlbums.TabIndex = 2;
             this.tabPageAlbums.Text = "Albums";
             this.tabPageAlbums.UseVisualStyleBackColor = true;
@@ -769,7 +769,7 @@
             // 
             this.tabPageGame.Location = new System.Drawing.Point(4, 25);
             this.tabPageGame.Name = "tabPageGame";
-            this.tabPageGame.Size = new System.Drawing.Size(843, 578);
+            this.tabPageGame.Size = new System.Drawing.Size(843, 590);
             this.tabPageGame.TabIndex = 3;
             this.tabPageGame.Text = "Game";
             this.tabPageGame.UseVisualStyleBackColor = true;
@@ -778,7 +778,7 @@
             // 
             this.tabPageSettings.Location = new System.Drawing.Point(4, 25);
             this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Size = new System.Drawing.Size(843, 578);
+            this.tabPageSettings.Size = new System.Drawing.Size(843, 590);
             this.tabPageSettings.TabIndex = 4;
             this.tabPageSettings.Text = "Settings";
             this.tabPageSettings.UseVisualStyleBackColor = true;
@@ -790,7 +790,7 @@
             this.tabPageFriends.Location = new System.Drawing.Point(4, 25);
             this.tabPageFriends.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageFriends.Name = "tabPageFriends";
-            this.tabPageFriends.Size = new System.Drawing.Size(843, 578);
+            this.tabPageFriends.Size = new System.Drawing.Size(843, 590);
             this.tabPageFriends.TabIndex = 6;
             this.tabPageFriends.Text = "Friends";
             this.tabPageFriends.UseVisualStyleBackColor = true;
