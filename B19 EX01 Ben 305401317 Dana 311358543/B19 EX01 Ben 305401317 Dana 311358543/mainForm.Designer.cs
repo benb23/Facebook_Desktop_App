@@ -112,6 +112,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBoxBirthDays = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -748,6 +749,7 @@
             // 
             // tabPageCalendar
             // 
+            this.tabPageCalendar.Controls.Add(this.listBoxBirthDays);
             this.tabPageCalendar.Controls.Add(this.label3);
             this.tabPageCalendar.Controls.Add(this.labelCalendar);
             this.tabPageCalendar.Controls.Add(this.monthCalendar1);
@@ -1050,6 +1052,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // listBoxBirthDays
+            // 
+            this.listBoxBirthDays.FormattingEnabled = true;
+            this.listBoxBirthDays.ItemHeight = 16;
+            this.listBoxBirthDays.Location = new System.Drawing.Point(16, 257);
+            this.listBoxBirthDays.Name = "listBoxBirthDays";
+            this.listBoxBirthDays.Size = new System.Drawing.Size(262, 212);
+            this.listBoxBirthDays.TabIndex = 5;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,6 +1215,7 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.PictureBox pictureBoxCalendar;
         private System.Windows.Forms.PictureBox pictureBoxFaceCupid;
+        private System.Windows.Forms.ListBox listBoxBirthDays;
     }
 }
 
