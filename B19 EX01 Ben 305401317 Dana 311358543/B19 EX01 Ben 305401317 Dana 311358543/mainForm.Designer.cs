@@ -99,6 +99,14 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.post0Likes = new System.Windows.Forms.Label();
+            this.post1Likes = new System.Windows.Forms.Label();
+            this.post2Likes = new System.Windows.Forms.Label();
+            this.post3Likes = new System.Windows.Forms.Label();
+            this.likes0 = new System.Windows.Forms.Label();
+            this.likes1 = new System.Windows.Forms.Label();
+            this.likes2 = new System.Windows.Forms.Label();
+            this.likes3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
@@ -374,11 +382,12 @@
             // 
             // post0
             // 
+            this.post0.Controls.Add(this.likes3);
+            this.post0.Controls.Add(this.post3Likes);
             this.post0.Controls.Add(this.post3Content);
             this.post0.Controls.Add(this.postPictureBox);
             this.post0.Controls.Add(this.post3Publisher);
             this.post0.Controls.Add(this.post3Date);
-            this.post0.Dock = System.Windows.Forms.DockStyle.Top;
             this.post0.Location = new System.Drawing.Point(0, 471);
             this.post0.Name = "post0";
             this.post0.Size = new System.Drawing.Size(667, 157);
@@ -431,6 +440,8 @@
             // 
             // post3
             // 
+            this.post3.Controls.Add(this.likes2);
+            this.post3.Controls.Add(this.post2Likes);
             this.post3.Controls.Add(this.post2Content);
             this.post3.Controls.Add(this.pictureBox14);
             this.post3.Controls.Add(this.post2Publisher);
@@ -488,6 +499,8 @@
             // 
             // post1
             // 
+            this.post1.Controls.Add(this.likes1);
+            this.post1.Controls.Add(this.post1Likes);
             this.post1.Controls.Add(this.post1Content);
             this.post1.Controls.Add(this.pictureBox5);
             this.post1.Controls.Add(this.post1Publisher);
@@ -545,6 +558,8 @@
             // 
             // post2
             // 
+            this.post2.Controls.Add(this.likes0);
+            this.post2.Controls.Add(this.post0Likes);
             this.post2.Controls.Add(this.post0Content);
             this.post2.Controls.Add(this.pictureBox13);
             this.post2.Controls.Add(this.post0Publisher);
@@ -899,6 +914,94 @@
             this.panel2.Size = new System.Drawing.Size(1708, 1054);
             this.panel2.TabIndex = 1;
             // 
+            // post0Likes
+            // 
+            this.post0Likes.AutoSize = true;
+            this.post0Likes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post0Likes.Location = new System.Drawing.Point(504, 131);
+            this.post0Likes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post0Likes.Name = "post0Likes";
+            this.post0Likes.Size = new System.Drawing.Size(81, 26);
+            this.post0Likes.TabIndex = 8;
+            this.post0Likes.Text = "Likes : ";
+            // 
+            // post1Likes
+            // 
+            this.post1Likes.AutoSize = true;
+            this.post1Likes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post1Likes.Location = new System.Drawing.Point(504, 128);
+            this.post1Likes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post1Likes.Name = "post1Likes";
+            this.post1Likes.Size = new System.Drawing.Size(81, 26);
+            this.post1Likes.TabIndex = 14;
+            this.post1Likes.Text = "Likes : ";
+            // 
+            // post2Likes
+            // 
+            this.post2Likes.AutoSize = true;
+            this.post2Likes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post2Likes.Location = new System.Drawing.Point(504, 131);
+            this.post2Likes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post2Likes.Name = "post2Likes";
+            this.post2Likes.Size = new System.Drawing.Size(81, 26);
+            this.post2Likes.TabIndex = 14;
+            this.post2Likes.Text = "Likes : ";
+            // 
+            // post3Likes
+            // 
+            this.post3Likes.AutoSize = true;
+            this.post3Likes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.post3Likes.Location = new System.Drawing.Point(504, 131);
+            this.post3Likes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.post3Likes.Name = "post3Likes";
+            this.post3Likes.Size = new System.Drawing.Size(81, 26);
+            this.post3Likes.TabIndex = 14;
+            this.post3Likes.Text = "Likes : ";
+            // 
+            // likes0
+            // 
+            this.likes0.AutoSize = true;
+            this.likes0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes0.Location = new System.Drawing.Point(580, 131);
+            this.likes0.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes0.Name = "likes0";
+            this.likes0.Size = new System.Drawing.Size(24, 26);
+            this.likes0.TabIndex = 9;
+            this.likes0.Text = "0";
+            // 
+            // likes1
+            // 
+            this.likes1.AutoSize = true;
+            this.likes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes1.Location = new System.Drawing.Point(580, 128);
+            this.likes1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes1.Name = "likes1";
+            this.likes1.Size = new System.Drawing.Size(24, 26);
+            this.likes1.TabIndex = 15;
+            this.likes1.Text = "0";
+            // 
+            // likes2
+            // 
+            this.likes2.AutoSize = true;
+            this.likes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes2.Location = new System.Drawing.Point(580, 131);
+            this.likes2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes2.Name = "likes2";
+            this.likes2.Size = new System.Drawing.Size(24, 26);
+            this.likes2.TabIndex = 14;
+            this.likes2.Text = "0";
+            // 
+            // likes3
+            // 
+            this.likes3.AutoSize = true;
+            this.likes3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes3.Location = new System.Drawing.Point(580, 131);
+            this.likes3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes3.Name = "likes3";
+            this.likes3.Size = new System.Drawing.Size(24, 26);
+            this.likes3.TabIndex = 14;
+            this.likes3.Text = "0";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1033,6 +1136,14 @@
         private System.Windows.Forms.Label post1Publisher;
         private System.Windows.Forms.Label post1Date;
         private System.Windows.Forms.Panel postsPanel;
+        private System.Windows.Forms.Label likes3;
+        private System.Windows.Forms.Label post3Likes;
+        private System.Windows.Forms.Label likes2;
+        private System.Windows.Forms.Label post2Likes;
+        private System.Windows.Forms.Label likes1;
+        private System.Windows.Forms.Label post1Likes;
+        private System.Windows.Forms.Label likes0;
+        private System.Windows.Forms.Label post0Likes;
     }
 }
 
