@@ -186,6 +186,48 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void albumsButton_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageAlbums;
+            updateLatestPhotos();
+
+        }
+
+        private void updateLatestPhotos()
+        {
+            try
+            {
+                int albumIndex = 0;
+                List<string> latestPhotos;
+
+                foreach (Panel panel in tabPageAlbums.Controls)
+                {
+                    latestPhotos = this.m_FacebookDesktopLogic.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
+
+                    while (latestPhotos.Count == 0)
+                    {
+                        albumIndex++;
+                        latestPhotos = this.m_FacebookDesktopLogic.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
+                    }
+
+                    (panel.Controls[0] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Albums[albumIndex].Name;
+                    int currentItem = 1;
+
+                    foreach (string photo in latestPhotos)
+                    {
+                        if (currentItem >= panel.Controls.Count)
+                        {
+                            break;
+                        }
+
+                        (panel.Controls[currentItem] as PictureBox).LoadAsync(photo);
+                        currentItem++;
+                    }
+
+                    albumIndex++;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading the photos.", "Photos Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -226,6 +268,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void homeButton_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageHome;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
