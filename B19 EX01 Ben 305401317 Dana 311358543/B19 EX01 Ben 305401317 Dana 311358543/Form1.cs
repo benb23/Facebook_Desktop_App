@@ -13,13 +13,13 @@ using FacebookWrapper.ObjectModel;
 
 namespace B19_EX01_Ben_305401317_Dana_311358543
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
         private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.GetFacebookDesktopLogic();
         private bool m_IsfriendListLoaded = false;
         private bool m_IsPostsLoaded = false;
 
-        public Form1()
+        public mainForm()
         {
             InitializeComponent();
         }

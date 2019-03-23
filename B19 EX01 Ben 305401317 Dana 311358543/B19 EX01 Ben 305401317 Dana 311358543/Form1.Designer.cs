@@ -1,6 +1,6 @@
 ﻿namespace B19_EX01_Ben_305401317_Dana_311358543
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
