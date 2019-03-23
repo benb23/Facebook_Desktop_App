@@ -155,11 +155,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             foreach(Panel post in postsPanel.Controls)
             {
-                //(post.Controls[0] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
-                (post.Controls[0] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
-                (post.Controls[1] as PictureBox).LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-                (post.Controls[2] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Name;
-                (post.Controls[3] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
+                (post.Controls[1] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
+                (post.Controls[2] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
+                (post.Controls[3] as PictureBox).LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+                (post.Controls[4] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Name;
+                (post.Controls[5] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
 
 
                 postIndex++;
