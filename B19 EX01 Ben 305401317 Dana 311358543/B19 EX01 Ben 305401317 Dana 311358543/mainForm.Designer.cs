@@ -65,7 +65,7 @@
             this.post1Publisher = new System.Windows.Forms.Label();
             this.post1Date = new System.Windows.Forms.Label();
             this.post2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.likes0 = new System.Windows.Forms.Label();
             this.post0Content = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.post0Publisher = new System.Windows.Forms.Label();
@@ -99,13 +99,13 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.likes1 = new System.Windows.Forms.Label();
+            this.likes2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.likesLabel0 = new System.Windows.Forms.Label();
+            this.likesLabel1 = new System.Windows.Forms.Label();
+            this.likesLabel2 = new System.Windows.Forms.Label();
+            this.likesLabel3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
@@ -383,7 +383,7 @@
             // 
             // post0
             // 
-            this.post0.Controls.Add(this.label12);
+            this.post0.Controls.Add(this.likesLabel3);
             this.post0.Controls.Add(this.label8);
             this.post0.Controls.Add(this.post3Content);
             this.post0.Controls.Add(this.postPictureBox);
@@ -444,8 +444,8 @@
             // 
             // post3
             // 
-            this.post3.Controls.Add(this.label11);
-            this.post3.Controls.Add(this.label6);
+            this.post3.Controls.Add(this.likesLabel2);
+            this.post3.Controls.Add(this.likes2);
             this.post3.Controls.Add(this.post2Content);
             this.post3.Controls.Add(this.pictureBox14);
             this.post3.Controls.Add(this.post2Publisher);
@@ -505,8 +505,8 @@
             // 
             // post1
             // 
-            this.post1.Controls.Add(this.label10);
-            this.post1.Controls.Add(this.label5);
+            this.post1.Controls.Add(this.likesLabel1);
+            this.post1.Controls.Add(this.likes1);
             this.post1.Controls.Add(this.post1Content);
             this.post1.Controls.Add(this.pictureBox5);
             this.post1.Controls.Add(this.post1Publisher);
@@ -566,8 +566,8 @@
             // 
             // post2
             // 
-            this.post2.Controls.Add(this.label9);
-            this.post2.Controls.Add(this.label3);
+            this.post2.Controls.Add(this.likesLabel0);
+            this.post2.Controls.Add(this.likes0);
             this.post2.Controls.Add(this.post0Content);
             this.post2.Controls.Add(this.pictureBox13);
             this.post2.Controls.Add(this.post0Publisher);
@@ -580,16 +580,16 @@
             this.post2.Size = new System.Drawing.Size(668, 158);
             this.post2.TabIndex = 11;
             // 
-            // label3
+            // likes0
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(622, 124);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 26);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "0";
+            this.likes0.AutoSize = true;
+            this.likes0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes0.Location = new System.Drawing.Point(622, 124);
+            this.likes0.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes0.Name = "likes0";
+            this.likes0.Size = new System.Drawing.Size(25, 26);
+            this.likes0.TabIndex = 14;
+            this.likes0.Text = "0";
             // 
             // post0Content
             // 
@@ -953,27 +953,27 @@
             this.panel2.Size = new System.Drawing.Size(1708, 981);
             this.panel2.TabIndex = 1;
             // 
-            // label5
+            // likes1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(622, 128);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 26);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "0";
+            this.likes1.AutoSize = true;
+            this.likes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes1.Location = new System.Drawing.Point(622, 128);
+            this.likes1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes1.Name = "likes1";
+            this.likes1.Size = new System.Drawing.Size(25, 26);
+            this.likes1.TabIndex = 15;
+            this.likes1.Text = "0";
             // 
-            // label6
+            // likes2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(622, 124);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 26);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "0";
+            this.likes2.AutoSize = true;
+            this.likes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likes2.Location = new System.Drawing.Point(622, 124);
+            this.likes2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likes2.Name = "likes2";
+            this.likes2.Size = new System.Drawing.Size(25, 26);
+            this.likes2.TabIndex = 15;
+            this.likes2.Text = "0";
             // 
             // label8
             // 
@@ -986,49 +986,49 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "0";
             // 
-            // label9
+            // likesLabel0
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(541, 124);
-            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 26);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Likes :";
+            this.likesLabel0.AutoSize = true;
+            this.likesLabel0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likesLabel0.Location = new System.Drawing.Point(541, 124);
+            this.likesLabel0.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likesLabel0.Name = "likesLabel0";
+            this.likesLabel0.Size = new System.Drawing.Size(82, 26);
+            this.likesLabel0.TabIndex = 15;
+            this.likesLabel0.Text = "Likes :";
             // 
-            // label10
+            // likesLabel1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(541, 124);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 26);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Likes :";
+            this.likesLabel1.AutoSize = true;
+            this.likesLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likesLabel1.Location = new System.Drawing.Point(541, 124);
+            this.likesLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likesLabel1.Name = "likesLabel1";
+            this.likesLabel1.Size = new System.Drawing.Size(82, 26);
+            this.likesLabel1.TabIndex = 16;
+            this.likesLabel1.Text = "Likes :";
             // 
-            // label11
+            // likesLabel2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label11.Location = new System.Drawing.Point(541, 124);
-            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 26);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Likes :";
+            this.likesLabel2.AutoSize = true;
+            this.likesLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likesLabel2.Location = new System.Drawing.Point(541, 124);
+            this.likesLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likesLabel2.Name = "likesLabel2";
+            this.likesLabel2.Size = new System.Drawing.Size(82, 26);
+            this.likesLabel2.TabIndex = 16;
+            this.likesLabel2.Text = "Likes :";
             // 
-            // label12
+            // likesLabel3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label12.Location = new System.Drawing.Point(541, 122);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 26);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Likes :";
+            this.likesLabel3.AutoSize = true;
+            this.likesLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likesLabel3.Location = new System.Drawing.Point(541, 122);
+            this.likesLabel3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.likesLabel3.Name = "likesLabel3";
+            this.likesLabel3.Size = new System.Drawing.Size(82, 26);
+            this.likesLabel3.TabIndex = 16;
+            this.likesLabel3.Text = "Likes :";
             // 
             // mainForm
             // 
@@ -1167,14 +1167,14 @@
         private System.Windows.Forms.PictureBox friendsPictureBox;
         private System.Windows.Forms.PictureBox settingsPictureBox;
         private System.Windows.Forms.Label labelLogOut;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label likes0;
+        private System.Windows.Forms.Label likesLabel3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label likesLabel2;
+        private System.Windows.Forms.Label likes2;
+        private System.Windows.Forms.Label likesLabel1;
+        private System.Windows.Forms.Label likes1;
+        private System.Windows.Forms.Label likesLabel0;
     }
 }
 
