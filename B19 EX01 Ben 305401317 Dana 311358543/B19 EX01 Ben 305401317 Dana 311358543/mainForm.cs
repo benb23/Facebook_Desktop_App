@@ -157,7 +157,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             {
                 (post.Controls[0] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
                 (post.Controls[1] as PictureBox).LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-                (post.Controls[2] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Name;
+                (post.Controls[2] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Name;
                 (post.Controls[3] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
 
 
