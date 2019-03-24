@@ -385,18 +385,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void fetchEvents()
         {
 
-            listBoxBirthDay.Items.Clear();
-            listBoxBirthDay.DisplayMember = "Name";
-
-            foreach (Event fbEvent in m_FacebookDesktopLogic.LoggedInUser.Events)
-            {
-                listBoxBirthDay.Items.Add(fbEvent);
-            }
-
-            if (m_FacebookDesktopLogic.LoggedInUser.Events.Count == 0)
-            {
-                MessageBox.Show("No Events to retrieve :(");
-            }
 
         }
         
