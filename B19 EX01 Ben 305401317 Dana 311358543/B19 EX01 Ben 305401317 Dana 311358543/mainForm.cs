@@ -18,6 +18,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.GetFacebookDesktopLogic();
         private bool m_IsfriendListLoaded = false;
         private bool m_IsPostsLoaded = false;
+        private List<User> m_FriendsList;
 
         public mainForm()
         {
@@ -370,11 +371,43 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCalendar;
+            fetchEvents();
+            fetchBirthDays();
+
         }
 
+        private void fetchBirthDays()
+        {
+
+
+        }
+
+        private void fetchEvents()
+        {
+
+            listBoxBirthDay.Items.Clear();
+            listBoxBirthDay.DisplayMember = "Name";
+
+            foreach (Event fbEvent in m_FacebookDesktopLogic.LoggedInUser.Events)
+            {
+                listBoxBirthDay.Items.Add(fbEvent);
+            }
+
+            if (m_FacebookDesktopLogic.LoggedInUser.Events.Count == 0)
+            {
+                MessageBox.Show("No Events to retrieve :(");
+            }
+
+        }
+        
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCupid;
+        }
+
+        private void listBoxBirthDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
