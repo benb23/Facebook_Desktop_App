@@ -12,10 +12,20 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
         private User m_LoggedInUser;
+        private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
 
         public User LoggedInUser
         {
             get { return m_LoggedInUser; }
+        }
+
+        public FacebookObjectCollection<User> LoggedInUserFriends
+        {
+            get
+            {
+                m_FriendsList = m_LoggedInUser.Friends;
+                return m_FriendsList;
+            }
         }
 
         private FacebookDesktopLogic() { }

@@ -114,7 +114,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             listBoxFriends.Items.Clear();
             listBoxFriends.DisplayMember = "Name";
-            foreach (User friend in m_FacebookDesktopLogic.LoggedInUser.Friends)
+            foreach (User friend in m_FacebookDesktopLogic.LoggedInUserFriends)
             {
                 listBoxFriends.Items.Add(friend);
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
