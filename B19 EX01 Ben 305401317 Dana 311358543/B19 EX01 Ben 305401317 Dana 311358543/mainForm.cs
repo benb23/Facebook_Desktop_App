@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper;
-using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using FacebookAppLogic;
 
 namespace B19_EX01_Ben_305401317_Dana_311358543
 {
@@ -18,6 +18,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.GetFacebookDesktopLogic();
         private bool m_IsfriendListLoaded = false;
         private bool m_IsPostsLoaded = false;
+
 
         public mainForm()
         {
@@ -113,9 +114,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             listBoxFriends.Items.Clear();
             listBoxFriends.DisplayMember = "Name";
-            foreach (User friend in m_FacebookDesktopLogic.LoggedInUserFriends)
+            foreach (User friend in m_FacebookDesktopLogic.LoggedInUser.Friends)
             {
                 listBoxFriends.Items.Add(friend);
+                m_FacebookDesktopLogic.FriendsList.Add(friend);
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
@@ -375,6 +377,68 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCupid;
+        }
+
+        private void findMyMatchButton_Click(object sender, EventArgs e)
+        {
+            if (!m_IsfriendListLoaded)
+            {
+                fetchFriends();
+                m_IsfriendListLoaded = true;
+            }
+
+            updateCheckedFields();
+            User.eGender checkedGender = getCheckedGender();
+            m_FacebookDesktopLogic.FacebookCupid.FindMyMatch(checkedGender);
+        }
+
+        private User.eGender getCheckedGender()
+        {
+            User.eGender gender ;
+
+            //todo : make sure the user choose gender!!!!!!!!!!! (else?)
+            if (checkBoxFemale.Checked)
+            {
+                gender = User.eGender.female;
+            }
+            else 
+            {
+                gender = User.eGender.male;
+            }
+
+            return gender;
+        }
+
+        private void updateCheckedFields()
+        {
+            if(checkBoxCheckIns.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckCheckIns = true;
+            }
+            if (checkBoxEvents.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckEvents = true;
+            }
+            if (checkBoxFieldOfStudy.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckFieldOfStudy = true;
+            }
+            if (checkBoxFriends.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckFriends = true;
+            }
+            if (checkBoxGroups.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckGroups = true;
+            }
+            if (checkBoxHomeTown.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckHomeTown = true;
+            }
+            if (checkBoxLikedPages.Checked)
+            {
+                m_FacebookDesktopLogic.FacebookCupid.CheckLikedPages = true;
+            }
         }
     }
 }

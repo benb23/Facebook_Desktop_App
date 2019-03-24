@@ -4,31 +4,50 @@ using System.Text;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
-namespace B19_EX01_Ben_305401317_Dana_311358543
+namespace FacebookAppLogic
 {
     public class FacebookDesktopLogic
     {
         private bool m_IsLogIn = false;
-
+        private FacebookCupid m_FacebookCupid = FacebookCupid.GetFacebookCupid();
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
         private User m_LoggedInUser;
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
+        
+        public FacebookObjectCollection<User> FriendsList
+        {
+            set { m_FriendsList = value; }
+            get { return m_FriendsList; }
+        }
+
+        public FacebookCupid FacebookCupid
+        {
+            get { return m_FacebookCupid; }
+        }
 
         public User LoggedInUser
         {
             get { return m_LoggedInUser; }
-        }
-
-        public FacebookObjectCollection<User> LoggedInUserFriends
-        {
-            get
+            set
             {
-                m_FriendsList = m_LoggedInUser.Friends;
-                return m_FriendsList;
+                m_LoggedInUser = value;
+                m_FacebookCupid.LoggedInUser = value;
             }
         }
 
-        private FacebookDesktopLogic() { }
+
+        //public FacebookObjectCollection<User> LoggedInUserFriends
+        //{
+        //    get
+        //    {
+        //        m_FriendsList = m_LoggedInUser.Friends;
+        //        //m_FacebookCupid.FriendsList = m_FriendsList;
+        //        return m_FriendsList;
+        //    }
+        //}
+
+        private FacebookDesktopLogic(){ }
+
         public static FacebookDesktopLogic GetFacebookDesktopLogic()
         {
             //todo: lock
@@ -103,7 +122,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             if (!string.IsNullOrEmpty(result.AccessToken))
             {
-                m_LoggedInUser = result.LoggedInUser;
+                LoggedInUser = result.LoggedInUser;
                 this.m_IsLogIn = true;
                 //fetchUserInfo();
             }
