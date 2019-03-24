@@ -11,7 +11,7 @@ namespace FacebookAppLogic
     public class FacebookCupid
     {
         public User LoggedInUser { get; set; }
-
+        private List<Candidate> m_CupidResult = new List<Candidate>(3);
         private static FacebookCupid s_FacebookCupid = null;
         //private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
         private List<Candidate> m_Candidates = new List<Candidate>();
@@ -26,6 +26,10 @@ namespace FacebookAppLogic
 
         private FacebookCupid() { }
 
+        public List<Candidate> Candidates
+        {
+            get { return m_Candidates; }
+        }
 
         private void initScoreValues()
         {
@@ -45,7 +49,7 @@ namespace FacebookAppLogic
             {
                 //if (friend.Gender == i_Gender)
                 {
-                    m_Candidates.Add(new Candidate(){User = friend, Score = 0 });
+                    m_Candidates.Add( new Candidate(){User = friend, Score = 0 });
                 }
             }
         }
@@ -171,14 +175,20 @@ namespace FacebookAppLogic
         {
             filterRelevantCandidatesByGender(i_checkedGender);
             scoreCandidates();
-            List<Candidate> topTree = getTopTree();
-            return topTree;
+            //sort
+            List<Candidate> sortedCandidates = m_Candidates.OrderBy(p => p.Score).ToList();
+
+            m_CupidResult.Add(sortedCandidates.Last());
+            sortedCandidates.RemoveAt(sortedCandidates.Capacity - 1);
+            m_CupidResult.Add(sortedCandidates.Last());
+            sortedCandidates.RemoveAt(sortedCandidates.Capacity - 1);
+            m_CupidResult.Add(sortedCandidates.Last());
+            sortedCandidates.RemoveAt(sortedCandidates.Capacity - 1);
+            m_CupidResult.Add(sortedCandidates.Last());
+
+            return m_CupidResult;
         }
 
-        private List<Candidate> getTopTree()
-        {
-
-        }
 
         public static FacebookCupid GetFacebookCupid()
         {

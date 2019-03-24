@@ -389,7 +389,23 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             updateCheckedFields();
             User.eGender checkedGender = getCheckedGender();
-            m_FacebookDesktopLogic.FacebookCupid.FindMyMatch(checkedGender);
+            List<Candidate> cupidResult = m_FacebookDesktopLogic.FacebookCupid.FindMyMatch(checkedGender);
+
+            match1Name.Text = cupidResult[0].User.Name;
+            match1PictureBox.LoadAsync(cupidResult[0].User.PictureNormalURL);
+            scoreLabel1.Text = cupidResult[0].Score.ToString();
+
+            match2Name.Text = cupidResult[1].User.Name;
+            match2PictureBox.LoadAsync(cupidResult[1].User.PictureNormalURL);
+            scoreLabel2.Text = cupidResult[1].Score.ToString();
+
+            match3Name.Text = cupidResult[2].User.Name;
+            match3PictureBox.LoadAsync(cupidResult[2].User.PictureNormalURL);
+            scoreLabel3.Text = cupidResult[2].Score.ToString();
+
+
+            //show score....
+
         }
 
         private User.eGender getCheckedGender()

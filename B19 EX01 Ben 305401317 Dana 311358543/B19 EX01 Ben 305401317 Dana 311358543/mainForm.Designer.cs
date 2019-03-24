@@ -103,16 +103,16 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageCupid = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.resPanel = new System.Windows.Forms.Panel();
+            this.match3Panel = new System.Windows.Forms.Panel();
+            this.match3Name = new System.Windows.Forms.Label();
+            this.match3PictureBox = new System.Windows.Forms.PictureBox();
+            this.match1Panel = new System.Windows.Forms.Panel();
+            this.match1Name = new System.Windows.Forms.Label();
+            this.match1PictureBox = new System.Windows.Forms.PictureBox();
+            this.match2Panel = new System.Windows.Forms.Panel();
+            this.match2Name = new System.Windows.Forms.Label();
+            this.match2PictureBox = new System.Windows.Forms.PictureBox();
             this.findMyMatchButton = new System.Windows.Forms.Button();
             this.genderPanel = new System.Windows.Forms.Panel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
@@ -138,6 +138,9 @@
             this.labelCalendar = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.scoreLabel1 = new System.Windows.Forms.Label();
+            this.scoreLabel2 = new System.Windows.Forms.Label();
+            this.scoreLabel3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -179,13 +182,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPageCupid.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            this.resPanel.SuspendLayout();
+            this.match3Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.match3PictureBox)).BeginInit();
+            this.match1Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.match1PictureBox)).BeginInit();
+            this.match2Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.match2PictureBox)).BeginInit();
             this.genderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -1039,7 +1042,7 @@
             // 
             // tabPageCupid
             // 
-            this.tabPageCupid.Controls.Add(this.panel6);
+            this.tabPageCupid.Controls.Add(this.resPanel);
             this.tabPageCupid.Controls.Add(this.findMyMatchButton);
             this.tabPageCupid.Controls.Add(this.genderPanel);
             this.tabPageCupid.Controls.Add(this.genderLabel);
@@ -1053,105 +1056,108 @@
             this.tabPageCupid.Text = "FaceCupid";
             this.tabPageCupid.UseVisualStyleBackColor = true;
             // 
-            // panel6
+            // resPanel
             // 
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(112, 535);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(894, 336);
-            this.panel6.TabIndex = 8;
+            this.resPanel.Controls.Add(this.scoreLabel1);
+            this.resPanel.Controls.Add(this.match3Panel);
+            this.resPanel.Controls.Add(this.match1Panel);
+            this.resPanel.Controls.Add(this.match2Panel);
+            this.resPanel.Location = new System.Drawing.Point(112, 522);
+            this.resPanel.Name = "resPanel";
+            this.resPanel.Size = new System.Drawing.Size(910, 349);
+            this.resPanel.TabIndex = 8;
             // 
-            // panel9
+            // match3Panel
             // 
-            this.panel9.Controls.Add(this.label9);
-            this.panel9.Controls.Add(this.pictureBox23);
-            this.panel9.Location = new System.Drawing.Point(604, 27);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(237, 283);
-            this.panel9.TabIndex = 2;
+            this.match3Panel.Controls.Add(this.scoreLabel3);
+            this.match3Panel.Controls.Add(this.match3Name);
+            this.match3Panel.Controls.Add(this.match3PictureBox);
+            this.match3Panel.Location = new System.Drawing.Point(604, 27);
+            this.match3Panel.Name = "match3Panel";
+            this.match3Panel.Size = new System.Drawing.Size(237, 283);
+            this.match3Panel.TabIndex = 2;
             // 
-            // label9
+            // match3Name
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Location = new System.Drawing.Point(0, 213);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 30);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "name, age";
+            this.match3Name.AutoSize = true;
+            this.match3Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.match3Name.Location = new System.Drawing.Point(0, 213);
+            this.match3Name.Name = "match3Name";
+            this.match3Name.Size = new System.Drawing.Size(133, 30);
+            this.match3Name.TabIndex = 2;
+            this.match3Name.Text = "name, age";
             // 
-            // pictureBox23
+            // match3PictureBox
             // 
-            this.pictureBox23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox23.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
-            this.pictureBox23.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(237, 213);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox23.TabIndex = 0;
-            this.pictureBox23.TabStop = false;
+            this.match3PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.match3PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
+            this.match3PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.match3PictureBox.Name = "match3PictureBox";
+            this.match3PictureBox.Size = new System.Drawing.Size(237, 213);
+            this.match3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.match3PictureBox.TabIndex = 0;
+            this.match3PictureBox.TabStop = false;
             // 
-            // panel8
+            // match1Panel
             // 
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.pictureBox22);
-            this.panel8.Location = new System.Drawing.Point(314, 27);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(237, 283);
-            this.panel8.TabIndex = 1;
+            this.match1Panel.Controls.Add(this.scoreLabel2);
+            this.match1Panel.Controls.Add(this.match1Name);
+            this.match1Panel.Controls.Add(this.match1PictureBox);
+            this.match1Panel.Location = new System.Drawing.Point(314, 27);
+            this.match1Panel.Name = "match1Panel";
+            this.match1Panel.Size = new System.Drawing.Size(237, 283);
+            this.match1Panel.TabIndex = 1;
             // 
-            // label6
+            // match1Name
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Location = new System.Drawing.Point(0, 213);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 30);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "name, age";
+            this.match1Name.AutoSize = true;
+            this.match1Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.match1Name.Location = new System.Drawing.Point(0, 213);
+            this.match1Name.Name = "match1Name";
+            this.match1Name.Size = new System.Drawing.Size(133, 30);
+            this.match1Name.TabIndex = 2;
+            this.match1Name.Text = "name, age";
             // 
-            // pictureBox22
+            // match1PictureBox
             // 
-            this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox22.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
-            this.pictureBox22.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(237, 213);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox22.TabIndex = 0;
-            this.pictureBox22.TabStop = false;
+            this.match1PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.match1PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
+            this.match1PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.match1PictureBox.Name = "match1PictureBox";
+            this.match1PictureBox.Size = new System.Drawing.Size(237, 213);
+            this.match1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.match1PictureBox.TabIndex = 0;
+            this.match1PictureBox.TabStop = false;
             // 
-            // panel7
+            // match2Panel
             // 
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.pictureBox21);
-            this.panel7.Location = new System.Drawing.Point(32, 27);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(237, 283);
-            this.panel7.TabIndex = 0;
+            this.match2Panel.Controls.Add(this.match2Name);
+            this.match2Panel.Controls.Add(this.match2PictureBox);
+            this.match2Panel.Location = new System.Drawing.Point(32, 27);
+            this.match2Panel.Name = "match2Panel";
+            this.match2Panel.Size = new System.Drawing.Size(237, 283);
+            this.match2Panel.TabIndex = 0;
             // 
-            // label5
+            // match2Name
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Location = new System.Drawing.Point(0, 213);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 30);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "name, age";
+            this.match2Name.AutoSize = true;
+            this.match2Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.match2Name.Location = new System.Drawing.Point(0, 213);
+            this.match2Name.Name = "match2Name";
+            this.match2Name.Size = new System.Drawing.Size(133, 30);
+            this.match2Name.TabIndex = 1;
+            this.match2Name.Text = "name, age";
             // 
-            // pictureBox21
+            // match2PictureBox
             // 
-            this.pictureBox21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox21.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
-            this.pictureBox21.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(237, 213);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox21.TabIndex = 0;
-            this.pictureBox21.TabStop = false;
+            this.match2PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.match2PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
+            this.match2PictureBox.Location = new System.Drawing.Point(0, 0);
+            this.match2PictureBox.Name = "match2PictureBox";
+            this.match2PictureBox.Size = new System.Drawing.Size(237, 213);
+            this.match2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.match2PictureBox.TabIndex = 0;
+            this.match2PictureBox.TabStop = false;
             // 
             // findMyMatchButton
             // 
@@ -1431,6 +1437,33 @@
             this.panel2.Size = new System.Drawing.Size(1708, 981);
             this.panel2.TabIndex = 1;
             // 
+            // scoreLabel1
+            // 
+            this.scoreLabel1.AutoSize = true;
+            this.scoreLabel1.Location = new System.Drawing.Point(101, 13);
+            this.scoreLabel1.Name = "scoreLabel1";
+            this.scoreLabel1.Size = new System.Drawing.Size(87, 30);
+            this.scoreLabel1.TabIndex = 9;
+            this.scoreLabel1.Text = "Score ";
+            // 
+            // scoreLabel2
+            // 
+            this.scoreLabel2.AutoSize = true;
+            this.scoreLabel2.Location = new System.Drawing.Point(74, -15);
+            this.scoreLabel2.Name = "scoreLabel2";
+            this.scoreLabel2.Size = new System.Drawing.Size(80, 30);
+            this.scoreLabel2.TabIndex = 10;
+            this.scoreLabel2.Text = "Score";
+            // 
+            // scoreLabel3
+            // 
+            this.scoreLabel3.AutoSize = true;
+            this.scoreLabel3.Location = new System.Drawing.Point(74, -15);
+            this.scoreLabel3.Name = "scoreLabel3";
+            this.scoreLabel3.Size = new System.Drawing.Size(80, 30);
+            this.scoreLabel3.TabIndex = 10;
+            this.scoreLabel3.Text = "Score";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1495,16 +1528,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPageCupid.ResumeLayout(false);
             this.tabPageCupid.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            this.resPanel.ResumeLayout(false);
+            this.resPanel.PerformLayout();
+            this.match3Panel.ResumeLayout(false);
+            this.match3Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.match3PictureBox)).EndInit();
+            this.match1Panel.ResumeLayout(false);
+            this.match1Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.match1PictureBox)).EndInit();
+            this.match2Panel.ResumeLayout(false);
+            this.match2Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.match2PictureBox)).EndInit();
             this.genderPanel.ResumeLayout(false);
             this.genderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
@@ -1620,16 +1654,19 @@
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Button findMyMatchButton;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox21;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox23;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox22;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel resPanel;
+        private System.Windows.Forms.Panel match2Panel;
+        private System.Windows.Forms.PictureBox match2PictureBox;
+        private System.Windows.Forms.Panel match3Panel;
+        private System.Windows.Forms.PictureBox match3PictureBox;
+        private System.Windows.Forms.Panel match1Panel;
+        private System.Windows.Forms.PictureBox match1PictureBox;
+        private System.Windows.Forms.Label match3Name;
+        private System.Windows.Forms.Label match1Name;
+        private System.Windows.Forms.Label match2Name;
+        private System.Windows.Forms.Label scoreLabel3;
+        private System.Windows.Forms.Label scoreLabel2;
+        private System.Windows.Forms.Label scoreLabel1;
     }
 }
 
