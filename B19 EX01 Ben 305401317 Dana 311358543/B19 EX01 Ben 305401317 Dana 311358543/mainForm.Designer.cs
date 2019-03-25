@@ -1080,6 +1080,7 @@
             this.sendMsgToMatchButton.Size = new System.Drawing.Size(164, 50);
             this.sendMsgToMatchButton.TabIndex = 13;
             this.sendMsgToMatchButton.TabStop = false;
+            this.sendMsgToMatchButton.Visible = false;
             this.sendMsgToMatchButton.Click += new System.EventHandler(this.sendMsgToMatchButton_Click);
             // 
             // writeMsgLabel

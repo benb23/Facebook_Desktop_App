@@ -368,7 +368,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             tabControl.SelectedTab = tabPageCalendar;
             fetchFriends();
-            FacebookCupid.instance.FriendsList = m_FacebookDesktopLogic.FriendsList;
+            Calendar.instance.FriendsList = m_FacebookDesktopLogic.FriendsList;
             Calendar.instance.initUpcomingBirthdaysUsersList();
         }
 
@@ -505,6 +505,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             FacebookCupid.instance.ChosenMatch = FacebookCupid.instance.CupidResult[i_index];
             writeMsgLabel.Visible = true;
             writeMsgTextBox.Visible = true;
+            sendMsgToMatchButton.Visible = true;
         }
 
         private void match2PictureBox_Click(object sender, EventArgs e)

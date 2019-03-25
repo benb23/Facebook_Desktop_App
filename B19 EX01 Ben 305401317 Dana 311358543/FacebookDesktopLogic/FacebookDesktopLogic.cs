@@ -26,6 +26,7 @@ namespace FacebookAppLogic
             {
                 m_LoggedInUser = value;
                 FacebookCupid.instance.LoggedInUser = value;
+                Calendar.instance.LoggedInUser = value;
             }
         }
 
