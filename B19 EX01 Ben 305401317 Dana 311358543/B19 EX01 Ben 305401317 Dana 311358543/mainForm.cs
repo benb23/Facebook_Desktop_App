@@ -76,13 +76,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchUserInfo()
         {
-            PictureBox img = new System.Windows.Forms.PictureBox();
-            img.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-            userPictureBox.BackgroundImage = img.Image.Clone() as Image;
-            
-            //userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-            userPictureBox.BackgroundImage = img.Image;
-            //userPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._22;
+            userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            userPictureBox.BackColor = Color.Red;   // TODO: ????
             userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
             //if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count > 0)
             //{
@@ -533,6 +528,22 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             Calendar.instance.wishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
         }
 
-        
+        private void userPictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void userPictureBox_BackColorChanged(object sender, EventArgs e)
+        {
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, userPictureBox.Width, userPictureBox.Height);
+            Region rg = new Region(gp);
+            userPictureBox.Region = rg;
+        }
+
+        private void genderLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

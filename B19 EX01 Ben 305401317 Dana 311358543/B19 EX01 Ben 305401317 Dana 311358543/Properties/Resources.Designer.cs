@@ -19,7 +19,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -86,6 +86,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         internal static System.Drawing.Bitmap _2428675 {
             get {
                 object obj = ResourceManager.GetObject("2428675", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5a956c11626b6 {
+            get {
+                object obj = ResourceManager.GetObject("5a956c11626b6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +173,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HappyBirthDayButton {
+            get {
+                object obj = ResourceManager.GetObject("HappyBirthDayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
@@ -226,6 +246,36 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         internal static System.Drawing.Bitmap ProfileCircle {
             get {
                 object obj = ResourceManager.GetObject("ProfileCircle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProfileCircle2 {
+            get {
+                object obj = ResourceManager.GetObject("ProfileCircle2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProfileCircle3 {
+            get {
+                object obj = ResourceManager.GetObject("ProfileCircle3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SendClickButton {
+            get {
+                object obj = ResourceManager.GetObject("SendClickButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
