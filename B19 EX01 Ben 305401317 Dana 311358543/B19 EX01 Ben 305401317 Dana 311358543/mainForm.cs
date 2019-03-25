@@ -112,18 +112,23 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchFriends()
         {
-            listBoxFriends.Items.Clear();
-            listBoxFriends.DisplayMember = "Name";
-            foreach (User friend in m_FacebookDesktopLogic.LoggedInUser.Friends)
+            if (!m_IsfriendListLoaded)
             {
-                listBoxFriends.Items.Add(friend);
-                m_FacebookDesktopLogic.FriendsList.Add(friend);
-                friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
+                listBoxFriends.Items.Clear();
+                listBoxFriends.DisplayMember = "Name";
+                foreach (User friend in m_FacebookDesktopLogic.LoggedInUser.Friends)
+                {
+                    listBoxFriends.Items.Add(friend);
+                    m_FacebookDesktopLogic.FriendsList.Add(friend);
+                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                }
 
-            if (m_FacebookDesktopLogic.LoggedInUser.Friends.Count == 0)
-            {
-                MessageBox.Show("No Friends to retrieve :(");
+                if (m_FacebookDesktopLogic.LoggedInUser.Friends.Count == 0)
+                {
+                    MessageBox.Show("No Friends to retrieve :(");
+                }
+
+                m_IsfriendListLoaded = true;
             }
         }
 
@@ -269,11 +274,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsButton_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            if (!m_IsfriendListLoaded)
-            {
-                fetchFriends();
-                m_IsfriendListLoaded = true;
-            }
+            fetchFriends();
+
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -320,11 +322,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            if (!m_IsfriendListLoaded)
-            {
-                fetchFriends();
-                m_IsfriendListLoaded = true;
-            }
+            fetchFriends();
         }
 
         private void settingsPictureBox_Click(object sender, EventArgs e)
@@ -357,11 +355,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsPictureBox_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            if (!m_IsfriendListLoaded)
-            {
-                fetchFriends();
-                m_IsfriendListLoaded = true;
-            }
+            fetchFriends();
+
         }
 
         private void labelLogOut_Click_1(object sender, EventArgs e)
@@ -372,6 +367,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCalendar;
+            fetchFriends();
+            FacebookCupid.instance.FriendsList = m_FacebookDesktopLogic.FriendsList;
+            Calendar.instance.initUpcomingBirthdaysUsersList();
         }
 
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
@@ -381,16 +379,13 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void findMyMatchButton_Click(object sender, EventArgs e)
         {
-            if (!m_IsfriendListLoaded)
-            {
-                fetchFriends();
-                m_IsfriendListLoaded = true;
-            }
+            fetchFriends();
+
 
             updateCheckedFields();
-            User.eGender checkedGender = getCheckedGender();
-            List<Candidate> cupidResult = m_FacebookDesktopLogic.FacebookCupid.FindMyMatch(checkedGender);
-
+            User.eGender? checkedGender = getCheckedGender();
+            FacebookCupid.instance.FindMyMatch(checkedGender);
+            List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;
 
             match1Name.Text = cupidResult[0].User.Name;
             match1PictureBox.LoadAsync(cupidResult[0].User.PictureNormalURL);
@@ -406,20 +401,23 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         }
 
-        private User.eGender getCheckedGender()
+        private User.eGender? getCheckedGender()
         {
-            User.eGender gender ;
+            User.eGender? gender ;
 
             //todo : make sure the user choose gender!!!!!!!!!!! (else?)
             if (checkBoxFemale.Checked)
             {
                 gender = User.eGender.female;
             }
-            else 
+            else if(checkBoxMale.Checked)
             {
                 gender = User.eGender.male;
             }
-
+            else
+            {
+                gender = null;
+            }
             return gender;
         }
 
@@ -427,32 +425,113 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if(checkBoxCheckIns.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckCheckIns = true;
+                FacebookCupid.instance.CheckCheckIns = true;
             }
             if (checkBoxEvents.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckEvents = true;
+                FacebookCupid.instance.CheckEvents = true;
             }
             if (checkBoxFieldOfStudy.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckFieldOfStudy = true;
+                FacebookCupid.instance.CheckFieldOfStudy = true;
             }
             if (checkBoxFriends.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckFriends = true;
+                FacebookCupid.instance.CheckFriends = true;
             }
             if (checkBoxGroups.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckGroups = true;
+                FacebookCupid.instance.CheckGroups = true;
             }
             if (checkBoxHomeTown.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckHomeTown = true;
+                FacebookCupid.instance.CheckHomeTown = true;
             }
             if (checkBoxLikedPages.Checked)
             {
-                m_FacebookDesktopLogic.FacebookCupid.CheckLikedPages = true;
+                FacebookCupid.instance.CheckLikedPages = true;
             }
         }
+
+        private void findMatchButtonPictureBox_Click(object sender, EventArgs e)
+        {
+            fetchFriends();
+            FacebookCupid.instance.FriendsList = m_FacebookDesktopLogic.FriendsList;
+
+            updateCheckedFields();
+            User.eGender? checkedGender = getCheckedGender();
+            FacebookCupid.instance.FindMyMatch(checkedGender);
+            List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;
+
+            if (cupidResult != null && cupidResult.Count != 0)
+            {
+                match1Name.Text = cupidResult[0].User.Name;
+                match1PictureBox.LoadAsync(cupidResult[0].User.PictureNormalURL);
+                scoreLabel1.Text = cupidResult[0].Score.ToString();
+
+                match2Name.Text = cupidResult[1].User.Name;
+                match2PictureBox.LoadAsync(cupidResult[1].User.PictureNormalURL);
+                scoreLabel2.Text = cupidResult[1].Score.ToString();
+
+                match3Name.Text = cupidResult[2].User.Name;
+                match3PictureBox.LoadAsync(cupidResult[2].User.PictureNormalURL);
+                scoreLabel3.Text = cupidResult[2].Score.ToString();
+
+                choosMatchLabel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("There was a problem loading information from facebook.", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void match2Panel_Click(object sender, EventArgs e)
+        {
+            updateChosenMatch(1);
+        }
+
+        private void match1Panel_Click(object sender, EventArgs e)
+        {
+            updateChosenMatch(0);
+        }
+
+        private void match3Panel_Click(object sender, EventArgs e)
+        {
+            updateChosenMatch(2);
+        }
+
+        private void updateChosenMatch(int i_index)
+        {
+            FacebookCupid.instance.ChosenMatch = FacebookCupid.instance.CupidResult[i_index];
+            writeMsgLabel.Visible = true;
+            writeMsgTextBox.Visible = true;
+        }
+
+        private void match2PictureBox_Click(object sender, EventArgs e)
+        {
+            updateChosenMatch(1);
+        }
+
+        private void match1PictureBox_Click(object sender, EventArgs e)
+        {
+            updateChosenMatch(0);
+        }
+
+        private void match3PictureBox_Click(object sender, EventArgs e)
+        {
+            updateChosenMatch(2);
+        }
+
+        private void sendMsgToMatchButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void wishHappyBirthdayButton_Click(object sender, EventArgs e)
+        {
+            Calendar.instance.wishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
+        }
+
+        
     }
 }

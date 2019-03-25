@@ -11,10 +11,19 @@ namespace FacebookAppLogic
 {
     public class FacebookCupid
     {
+        public Candidate ChosenMatch { get; set; }
         public User LoggedInUser { get; set; }
+
         private List<Candidate> m_CupidResult = new List<Candidate>(3);
+
+        public List<Candidate> CupidResult
+        {
+            get { return m_CupidResult; }
+            set { m_CupidResult = value; }
+        }
+
         private static FacebookCupid s_FacebookCupid = null;
-        //private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
+        public FacebookObjectCollection<User> FriendsList { get; set; }
         private List<Candidate> m_Candidates = new List<Candidate>();
         private Dictionary<string, int> m_Score = new Dictionary<string, int>();
         public bool CheckFriends { get; set; }
@@ -44,13 +53,13 @@ namespace FacebookAppLogic
             m_Score.Add("FieldOfStudy", 1);
         }
 
-        public void filterRelevantCandidatesByGender(User.eGender i_Gender)
+        public void filterRelevantCandidatesByGender(User.eGender? i_Gender)
         {
             try
             {
-                foreach (User friend in LoggedInUser.Friends)
+                foreach (User friend in FriendsList)
                 {
-                    //if (friend.Gender != null && friend.Gender == i_Gender)
+                    if (i_Gender == null || friend.Gender == i_Gender)
                     {
                         m_Candidates.Add(new Candidate() { User = friend, Score = 0 });
                     }
@@ -58,7 +67,7 @@ namespace FacebookAppLogic
 
                 if(m_Candidates.Count == 0)
                 {
-                    MessageBox.Show("There was a problem filtering by gender", "Gender Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    throw new Exception();
                 }
             }
             catch
@@ -70,168 +79,148 @@ namespace FacebookAppLogic
         public void scoreCandidates()
         {
             initScoreValues();//todo: init here?
-
-            foreach(Candidate candidate in m_Candidates)
+            try
             {
-                if(CheckFriends)
+                foreach (Candidate candidate in m_Candidates)
                 {
-                    scoreCandidateAccordingToMutualFriends(candidate);
-                }
+                    if (CheckFriends)
+                    {
+                        scoreCandidateAccordingToMutualFriends(candidate);
+                    }
 
-                if(CheckGroups)
-                {
-                    scoreCandidateAccordingToMutualGroups(candidate);
-                }
+                    if (CheckGroups)
+                    {
+                        scoreCandidateAccordingToMutualGroups(candidate);
+                    }
 
-                if(CheckFieldOfStudy)
-                {
-                    scoreCandidateAccordingToFieldOfStudy(candidate);
-                }
+                    if (CheckFieldOfStudy)
+                    {
+                        scoreCandidateAccordingToFieldOfStudy(candidate);
+                    }
 
-                if(CheckHomeTown)
-                {
-                    scoreCandidateAccordingToHomeTown(candidate);
-                }
+                    if (CheckHomeTown)
+                    {
+                        scoreCandidateAccordingToHomeTown(candidate);
+                    }
 
-                if(CheckLikedPages)
-                {
-                    scoreCandidateAccordingToMutualLikedPages(candidate);
-                }
+                    if (CheckLikedPages)
+                    {
+                        scoreCandidateAccordingToMutualLikedPages(candidate);
+                    }
 
-                if(CheckCheckIns)
-                {
-                    scoreCandidateAccordingToMutualCheckIns(candidate);
-                }
+                    if (CheckCheckIns)
+                    {
+                        scoreCandidateAccordingToMutualCheckIns(candidate);
+                    }
 
-                if(CheckEvents)
-                {
-                    scoreCandidateAccordingToMutualEvents(candidate);
+                    if (CheckEvents)
+                    {
+                        scoreCandidateAccordingToMutualEvents(candidate);
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading the information from Facebook", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         public void scoreCandidateAccordingToMutualFriends(Candidate i_Candidate)
         {
-            try
-            {
-                FacebookObjectCollection<User> candidateFriends = i_Candidate.User.Friends;
+            FacebookObjectCollection<User> candidateFriends = i_Candidate.User.Friends;
 
-                if (candidateFriends != null)
+            if (candidateFriends != null)
+            {
+                foreach (User friend in candidateFriends)
                 {
-                    foreach (User friend in candidateFriends)
+                    if (LoggedInUser.Friends.Contains(friend))
                     {
-                        if (LoggedInUser.Friends.Contains(friend))
-                        {
-                            i_Candidate.Score += m_Score["Friends"];
-                        }
+                        i_Candidate.Score += m_Score["Friends"];
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading the Friends", "Friends Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         public void scoreCandidateAccordingToMutualEvents(Candidate i_Candidate)
         {
-            try
-            {
-                FacebookObjectCollection<Event> candidateEvents = i_Candidate.User.Events;
 
-                if (candidateEvents != null)
+            FacebookObjectCollection<Event> candidateEvents = i_Candidate.User.Events;
+
+            if (candidateEvents != null)
+            {
+                foreach (Event candidateEvent in candidateEvents)
                 {
-                    foreach (Event candidateEvent in candidateEvents)
+                    if (LoggedInUser.Events.Contains(candidateEvent))
                     {
-                        if (LoggedInUser.Events.Contains(candidateEvent))
-                        {
-                            i_Candidate.Score += m_Score["Events"];
-                        }
+                        i_Candidate.Score += m_Score["Events"];
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading the Events", "Events Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 }
 
         public void scoreCandidateAccordingToMutualGroups(Candidate i_Candidate)
         {
-            try
-            {
-                FacebookObjectCollection<Group> candidateGroups = i_Candidate.User.Groups;
+            FacebookObjectCollection<Group> candidateGroups = i_Candidate.User.Groups;
 
-                if (candidateGroups != null)
+            if (candidateGroups != null)
+            {
+                foreach (Group group in candidateGroups)
                 {
-                    foreach (Group group in candidateGroups)
+                    if (LoggedInUser.Groups.Contains(group))
                     {
-                        if (LoggedInUser.Groups.Contains(group))
-                        {
-                            i_Candidate.Score += m_Score["Groups"];
-                        }
+                        i_Candidate.Score += m_Score["Groups"];
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading the Groups", "Groups Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         public void scoreCandidateAccordingToMutualCheckIns(Candidate i_Candidate)
         {
-            try
-            {
-                FacebookObjectCollection<Checkin> candidateCheckins = i_Candidate.User.Checkins;
+            FacebookObjectCollection<Checkin> candidateCheckins = i_Candidate.User.Checkins;
 
-                if (candidateCheckins != null)
+            if (candidateCheckins != null)
+            {
+                foreach (Checkin checkIn in candidateCheckins)
                 {
-                    foreach (Checkin checkIn in candidateCheckins)
+                    if (LoggedInUser.Checkins.Contains(checkIn))
                     {
-                        if (LoggedInUser.Checkins.Contains(checkIn))
-                        {
-                            i_Candidate.Score += m_Score["CheckIns"];
-                        }
+                        i_Candidate.Score += m_Score["CheckIns"];
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading the CheckIns", "CheckIns Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         public void scoreCandidateAccordingToMutualLikedPages(Candidate i_Candidate)
         {
-            try
-            {
-                FacebookObjectCollection<Page> candidateLikedPages = i_Candidate.User.LikedPages;
 
-                if (candidateLikedPages != null)
+            FacebookObjectCollection<Page> candidateLikedPages = i_Candidate.User.LikedPages;
+
+            if (candidateLikedPages != null)
+            {
+                foreach (Page page in candidateLikedPages)
                 {
-                    foreach (Page page in candidateLikedPages)
+                    if (LoggedInUser.LikedPages.Contains(page))
                     {
-                        if (LoggedInUser.LikedPages.Contains(page))
-                        {
-                            i_Candidate.Score += m_Score["LikedPages"];
-                        }
+                        i_Candidate.Score += m_Score["LikedPages"];
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading the pages", "Pages Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         public void scoreCandidateAccordingToHomeTown(Candidate i_Candidate)
         {
-            City candidateCity = i_Candidate.User.Hometown;
 
-            if (candidateCity != null && candidateCity == LoggedInUser.Hometown)
+            City candidateCity = i_Candidate.User.Hometown;
+            if (candidateCity != null)
             {
-                i_Candidate.Score += m_Score["HomeTown"];
+                if (candidateCity == LoggedInUser.Hometown)
+                {
+                    i_Candidate.Score += m_Score["HomeTown"];
+                }
+            }
+            else
+            {
+                throw new Exception();
             }
         }
 
@@ -251,32 +240,41 @@ namespace FacebookAppLogic
             }
         }
 
-        public List<Candidate> FindMyMatch(User.eGender i_checkedGender)
+        public void FindMyMatch(User.eGender? i_checkedGender)
         {
             filterRelevantCandidatesByGender(i_checkedGender);
+
             scoreCandidates();
-            //sort
-            List<Candidate> sortedCandidates = m_Candidates.OrderBy(p => p.Score).ToList();
 
-            m_CupidResult.Add(sortedCandidates.Last());
-            sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
-            m_CupidResult.Add(sortedCandidates.Last());
-            sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
-            m_CupidResult.Add(sortedCandidates.Last());
-
-            return m_CupidResult;
+            if (m_Candidates.Count != 0)
+            {
+                //sort
+                List<Candidate> sortedCandidates = m_Candidates.OrderBy(p => p.Score).ToList();
+                CupidResult.Add(sortedCandidates.Last());
+                sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
+                CupidResult.Add(sortedCandidates.Last());
+                sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
+                CupidResult.Add(sortedCandidates.Last());
+            }
+            //else
+            //{
+            //    MessageBox.Show("There was a problem loading the information from Facebook", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
 
-        public static FacebookCupid GetFacebookCupid()
+        public static FacebookCupid instance
         {
-            //todo: lock
-            if (s_FacebookCupid == null)
+            get
             {
-                s_FacebookCupid = new FacebookCupid();
-            }
+                //todo: lock
+                if (s_FacebookCupid == null)
+                {
+                    s_FacebookCupid = new FacebookCupid();
+                }
 
-            return s_FacebookCupid;
+                return s_FacebookCupid;
+            }
         }
     }
 }

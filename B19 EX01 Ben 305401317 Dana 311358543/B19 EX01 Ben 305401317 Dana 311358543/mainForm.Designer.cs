@@ -103,17 +103,24 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageCupid = new System.Windows.Forms.TabPage();
+            this.sendMsgToMatchButton = new System.Windows.Forms.PictureBox();
+            this.writeMsgLabel = new System.Windows.Forms.Label();
+            this.writeMsgTextBox = new System.Windows.Forms.TextBox();
+            this.choosMatchLabel = new System.Windows.Forms.Label();
+            this.findMatchButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.resPanel = new System.Windows.Forms.Panel();
             this.match3Panel = new System.Windows.Forms.Panel();
+            this.scoreLabel3 = new System.Windows.Forms.Label();
             this.match3Name = new System.Windows.Forms.Label();
             this.match3PictureBox = new System.Windows.Forms.PictureBox();
             this.match1Panel = new System.Windows.Forms.Panel();
+            this.scoreLabel2 = new System.Windows.Forms.Label();
             this.match1Name = new System.Windows.Forms.Label();
             this.match1PictureBox = new System.Windows.Forms.PictureBox();
             this.match2Panel = new System.Windows.Forms.Panel();
+            this.scoreLabel1 = new System.Windows.Forms.Label();
             this.match2Name = new System.Windows.Forms.Label();
             this.match2PictureBox = new System.Windows.Forms.PictureBox();
-            this.findMyMatchButton = new System.Windows.Forms.Button();
             this.genderPanel = new System.Windows.Forms.Panel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -134,13 +141,12 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.tabPageCalendar = new System.Windows.Forms.TabPage();
+            this.wishHappyBirthdayButton = new System.Windows.Forms.PictureBox();
+            this.upcomingBirthdaysListBox = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelCalendar = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.scoreLabel1 = new System.Windows.Forms.Label();
-            this.scoreLabel2 = new System.Windows.Forms.Label();
-            this.scoreLabel3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -182,6 +188,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPageCupid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sendMsgToMatchButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).BeginInit();
             this.resPanel.SuspendLayout();
             this.match3Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.match3PictureBox)).BeginInit();
@@ -195,6 +203,7 @@
             this.sortPanel.SuspendLayout();
             this.tabPageFriends.SuspendLayout();
             this.tabPageCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1042,8 +1051,12 @@
             // 
             // tabPageCupid
             // 
+            this.tabPageCupid.Controls.Add(this.sendMsgToMatchButton);
+            this.tabPageCupid.Controls.Add(this.writeMsgLabel);
+            this.tabPageCupid.Controls.Add(this.writeMsgTextBox);
+            this.tabPageCupid.Controls.Add(this.choosMatchLabel);
+            this.tabPageCupid.Controls.Add(this.findMatchButtonPictureBox);
             this.tabPageCupid.Controls.Add(this.resPanel);
-            this.tabPageCupid.Controls.Add(this.findMyMatchButton);
             this.tabPageCupid.Controls.Add(this.genderPanel);
             this.tabPageCupid.Controls.Add(this.genderLabel);
             this.tabPageCupid.Controls.Add(this.SortByLabel);
@@ -1056,13 +1069,71 @@
             this.tabPageCupid.Text = "FaceCupid";
             this.tabPageCupid.UseVisualStyleBackColor = true;
             // 
+            // sendMsgToMatchButton
+            // 
+            this.sendMsgToMatchButton.BackColor = System.Drawing.Color.Transparent;
+            this.sendMsgToMatchButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.PostClickButton;
+            this.sendMsgToMatchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sendMsgToMatchButton.Location = new System.Drawing.Point(1573, 887);
+            this.sendMsgToMatchButton.Margin = new System.Windows.Forms.Padding(6);
+            this.sendMsgToMatchButton.Name = "sendMsgToMatchButton";
+            this.sendMsgToMatchButton.Size = new System.Drawing.Size(164, 50);
+            this.sendMsgToMatchButton.TabIndex = 13;
+            this.sendMsgToMatchButton.TabStop = false;
+            this.sendMsgToMatchButton.Click += new System.EventHandler(this.sendMsgToMatchButton_Click);
+            // 
+            // writeMsgLabel
+            // 
+            this.writeMsgLabel.AutoSize = true;
+            this.writeMsgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.writeMsgLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.writeMsgLabel.Location = new System.Drawing.Point(1129, 38);
+            this.writeMsgLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.writeMsgLabel.Name = "writeMsgLabel";
+            this.writeMsgLabel.Size = new System.Drawing.Size(390, 30);
+            this.writeMsgLabel.TabIndex = 12;
+            this.writeMsgLabel.Text = "Write message to your match :";
+            this.writeMsgLabel.Visible = false;
+            // 
+            // writeMsgTextBox
+            // 
+            this.writeMsgTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.writeMsgTextBox.Location = new System.Drawing.Point(1134, 71);
+            this.writeMsgTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.writeMsgTextBox.Multiline = true;
+            this.writeMsgTextBox.Name = "writeMsgTextBox";
+            this.writeMsgTextBox.Size = new System.Drawing.Size(513, 812);
+            this.writeMsgTextBox.TabIndex = 11;
+            this.writeMsgTextBox.Visible = false;
+            // 
+            // choosMatchLabel
+            // 
+            this.choosMatchLabel.AutoSize = true;
+            this.choosMatchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.choosMatchLabel.Location = new System.Drawing.Point(439, 493);
+            this.choosMatchLabel.Name = "choosMatchLabel";
+            this.choosMatchLabel.Size = new System.Drawing.Size(276, 30);
+            this.choosMatchLabel.TabIndex = 10;
+            this.choosMatchLabel.Text = "Choose your match...";
+            this.choosMatchLabel.Visible = false;
+            // 
+            // findMatchButtonPictureBox
+            // 
+            this.findMatchButtonPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.findMatchButton;
+            this.findMatchButtonPictureBox.Location = new System.Drawing.Point(400, 376);
+            this.findMatchButtonPictureBox.Name = "findMatchButtonPictureBox";
+            this.findMatchButtonPictureBox.Size = new System.Drawing.Size(324, 100);
+            this.findMatchButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.findMatchButtonPictureBox.TabIndex = 9;
+            this.findMatchButtonPictureBox.TabStop = false;
+            this.findMatchButtonPictureBox.Click += new System.EventHandler(this.findMatchButtonPictureBox_Click);
+            // 
             // resPanel
             // 
-            this.resPanel.Controls.Add(this.scoreLabel1);
             this.resPanel.Controls.Add(this.match3Panel);
             this.resPanel.Controls.Add(this.match1Panel);
             this.resPanel.Controls.Add(this.match2Panel);
-            this.resPanel.Location = new System.Drawing.Point(112, 522);
+            this.resPanel.Location = new System.Drawing.Point(122, 535);
             this.resPanel.Name = "resPanel";
             this.resPanel.Size = new System.Drawing.Size(910, 349);
             this.resPanel.TabIndex = 8;
@@ -1076,6 +1147,15 @@
             this.match3Panel.Name = "match3Panel";
             this.match3Panel.Size = new System.Drawing.Size(237, 283);
             this.match3Panel.TabIndex = 2;
+            this.match3Panel.Click += new System.EventHandler(this.match3Panel_Click);
+            // 
+            // scoreLabel3
+            // 
+            this.scoreLabel3.AutoSize = true;
+            this.scoreLabel3.Location = new System.Drawing.Point(3, 0);
+            this.scoreLabel3.Name = "scoreLabel3";
+            this.scoreLabel3.Size = new System.Drawing.Size(0, 30);
+            this.scoreLabel3.TabIndex = 10;
             // 
             // match3Name
             // 
@@ -1083,12 +1163,12 @@
             this.match3Name.Dock = System.Windows.Forms.DockStyle.Top;
             this.match3Name.Location = new System.Drawing.Point(0, 213);
             this.match3Name.Name = "match3Name";
-            this.match3Name.Size = new System.Drawing.Size(133, 30);
+            this.match3Name.Size = new System.Drawing.Size(0, 30);
             this.match3Name.TabIndex = 2;
-            this.match3Name.Text = "name, age";
             // 
             // match3PictureBox
             // 
+            this.match3PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.match3PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.match3PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
             this.match3PictureBox.Location = new System.Drawing.Point(0, 0);
@@ -1097,6 +1177,7 @@
             this.match3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.match3PictureBox.TabIndex = 0;
             this.match3PictureBox.TabStop = false;
+            this.match3PictureBox.Click += new System.EventHandler(this.match3PictureBox_Click);
             // 
             // match1Panel
             // 
@@ -1107,6 +1188,15 @@
             this.match1Panel.Name = "match1Panel";
             this.match1Panel.Size = new System.Drawing.Size(237, 283);
             this.match1Panel.TabIndex = 1;
+            this.match1Panel.Click += new System.EventHandler(this.match1Panel_Click);
+            // 
+            // scoreLabel2
+            // 
+            this.scoreLabel2.AutoSize = true;
+            this.scoreLabel2.Location = new System.Drawing.Point(3, 0);
+            this.scoreLabel2.Name = "scoreLabel2";
+            this.scoreLabel2.Size = new System.Drawing.Size(0, 30);
+            this.scoreLabel2.TabIndex = 10;
             // 
             // match1Name
             // 
@@ -1114,12 +1204,12 @@
             this.match1Name.Dock = System.Windows.Forms.DockStyle.Top;
             this.match1Name.Location = new System.Drawing.Point(0, 213);
             this.match1Name.Name = "match1Name";
-            this.match1Name.Size = new System.Drawing.Size(133, 30);
+            this.match1Name.Size = new System.Drawing.Size(0, 30);
             this.match1Name.TabIndex = 2;
-            this.match1Name.Text = "name, age";
             // 
             // match1PictureBox
             // 
+            this.match1PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.match1PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.match1PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
             this.match1PictureBox.Location = new System.Drawing.Point(0, 0);
@@ -1128,28 +1218,40 @@
             this.match1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.match1PictureBox.TabIndex = 0;
             this.match1PictureBox.TabStop = false;
+            this.match1PictureBox.Click += new System.EventHandler(this.match1PictureBox_Click);
             // 
             // match2Panel
             // 
+            this.match2Panel.Controls.Add(this.scoreLabel1);
             this.match2Panel.Controls.Add(this.match2Name);
             this.match2Panel.Controls.Add(this.match2PictureBox);
             this.match2Panel.Location = new System.Drawing.Point(32, 27);
             this.match2Panel.Name = "match2Panel";
             this.match2Panel.Size = new System.Drawing.Size(237, 283);
             this.match2Panel.TabIndex = 0;
+            this.match2Panel.Click += new System.EventHandler(this.match2Panel_Click);
+            // 
+            // scoreLabel1
+            // 
+            this.scoreLabel1.AutoSize = true;
+            this.scoreLabel1.Location = new System.Drawing.Point(3, 0);
+            this.scoreLabel1.Name = "scoreLabel1";
+            this.scoreLabel1.Size = new System.Drawing.Size(0, 30);
+            this.scoreLabel1.TabIndex = 9;
             // 
             // match2Name
             // 
             this.match2Name.AutoSize = true;
+            this.match2Name.BackColor = System.Drawing.Color.Transparent;
             this.match2Name.Dock = System.Windows.Forms.DockStyle.Top;
             this.match2Name.Location = new System.Drawing.Point(0, 213);
             this.match2Name.Name = "match2Name";
-            this.match2Name.Size = new System.Drawing.Size(133, 30);
+            this.match2Name.Size = new System.Drawing.Size(0, 30);
             this.match2Name.TabIndex = 1;
-            this.match2Name.Text = "name, age";
             // 
             // match2PictureBox
             // 
+            this.match2PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.match2PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.match2PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
             this.match2PictureBox.Location = new System.Drawing.Point(0, 0);
@@ -1158,16 +1260,7 @@
             this.match2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.match2PictureBox.TabIndex = 0;
             this.match2PictureBox.TabStop = false;
-            // 
-            // findMyMatchButton
-            // 
-            this.findMyMatchButton.Location = new System.Drawing.Point(363, 377);
-            this.findMyMatchButton.Name = "findMyMatchButton";
-            this.findMyMatchButton.Size = new System.Drawing.Size(459, 96);
-            this.findMyMatchButton.TabIndex = 6;
-            this.findMyMatchButton.Text = "Find my match ";
-            this.findMyMatchButton.UseVisualStyleBackColor = true;
-            this.findMyMatchButton.Click += new System.EventHandler(this.findMyMatchButton_Click);
+            this.match2PictureBox.Click += new System.EventHandler(this.match2PictureBox_Click);
             // 
             // genderPanel
             // 
@@ -1384,6 +1477,8 @@
             // 
             // tabPageCalendar
             // 
+            this.tabPageCalendar.Controls.Add(this.wishHappyBirthdayButton);
+            this.tabPageCalendar.Controls.Add(this.upcomingBirthdaysListBox);
             this.tabPageCalendar.Controls.Add(this.label3);
             this.tabPageCalendar.Controls.Add(this.labelCalendar);
             this.tabPageCalendar.Controls.Add(this.monthCalendar1);
@@ -1395,12 +1490,34 @@
             this.tabPageCalendar.Text = "Calendar";
             this.tabPageCalendar.UseVisualStyleBackColor = true;
             // 
+            // wishHappyBirthdayButton
+            // 
+            this.wishHappyBirthdayButton.BackColor = System.Drawing.Color.Transparent;
+            this.wishHappyBirthdayButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.PostClickButton;
+            this.wishHappyBirthdayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(340, 823);
+            this.wishHappyBirthdayButton.Margin = new System.Windows.Forms.Padding(6);
+            this.wishHappyBirthdayButton.Name = "wishHappyBirthdayButton";
+            this.wishHappyBirthdayButton.Size = new System.Drawing.Size(164, 50);
+            this.wishHappyBirthdayButton.TabIndex = 6;
+            this.wishHappyBirthdayButton.TabStop = false;
+            this.wishHappyBirthdayButton.Click += new System.EventHandler(this.wishHappyBirthdayButton_Click);
+            // 
+            // upcomingBirthdaysListBox
+            // 
+            this.upcomingBirthdaysListBox.FormattingEnabled = true;
+            this.upcomingBirthdaysListBox.ItemHeight = 30;
+            this.upcomingBirthdaysListBox.Location = new System.Drawing.Point(32, 476);
+            this.upcomingBirthdaysListBox.Name = "upcomingBirthdaysListBox";
+            this.upcomingBirthdaysListBox.Size = new System.Drawing.Size(393, 334);
+            this.upcomingBirthdaysListBox.TabIndex = 5;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(26, 413);
+            this.label3.Location = new System.Drawing.Point(26, 431);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(261, 30);
@@ -1436,33 +1553,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1708, 981);
             this.panel2.TabIndex = 1;
-            // 
-            // scoreLabel1
-            // 
-            this.scoreLabel1.AutoSize = true;
-            this.scoreLabel1.Location = new System.Drawing.Point(101, 13);
-            this.scoreLabel1.Name = "scoreLabel1";
-            this.scoreLabel1.Size = new System.Drawing.Size(87, 30);
-            this.scoreLabel1.TabIndex = 9;
-            this.scoreLabel1.Text = "Score ";
-            // 
-            // scoreLabel2
-            // 
-            this.scoreLabel2.AutoSize = true;
-            this.scoreLabel2.Location = new System.Drawing.Point(74, -15);
-            this.scoreLabel2.Name = "scoreLabel2";
-            this.scoreLabel2.Size = new System.Drawing.Size(80, 30);
-            this.scoreLabel2.TabIndex = 10;
-            this.scoreLabel2.Text = "Score";
-            // 
-            // scoreLabel3
-            // 
-            this.scoreLabel3.AutoSize = true;
-            this.scoreLabel3.Location = new System.Drawing.Point(74, -15);
-            this.scoreLabel3.Name = "scoreLabel3";
-            this.scoreLabel3.Size = new System.Drawing.Size(80, 30);
-            this.scoreLabel3.TabIndex = 10;
-            this.scoreLabel3.Text = "Score";
             // 
             // mainForm
             // 
@@ -1528,8 +1618,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPageCupid.ResumeLayout(false);
             this.tabPageCupid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sendMsgToMatchButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).EndInit();
             this.resPanel.ResumeLayout(false);
-            this.resPanel.PerformLayout();
             this.match3Panel.ResumeLayout(false);
             this.match3Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.match3PictureBox)).EndInit();
@@ -1549,6 +1640,7 @@
             this.tabPageFriends.PerformLayout();
             this.tabPageCalendar.ResumeLayout(false);
             this.tabPageCalendar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1653,7 +1745,6 @@
         private System.Windows.Forms.Label genderLabel;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.Button findMyMatchButton;
         private System.Windows.Forms.Panel resPanel;
         private System.Windows.Forms.Panel match2Panel;
         private System.Windows.Forms.PictureBox match2PictureBox;
@@ -1667,6 +1758,13 @@
         private System.Windows.Forms.Label scoreLabel3;
         private System.Windows.Forms.Label scoreLabel2;
         private System.Windows.Forms.Label scoreLabel1;
+        private System.Windows.Forms.PictureBox findMatchButtonPictureBox;
+        private System.Windows.Forms.Label choosMatchLabel;
+        private System.Windows.Forms.Label writeMsgLabel;
+        private System.Windows.Forms.TextBox writeMsgTextBox;
+        private System.Windows.Forms.PictureBox sendMsgToMatchButton;
+        private System.Windows.Forms.PictureBox wishHappyBirthdayButton;
+        private System.Windows.Forms.ListBox upcomingBirthdaysListBox;
     }
 }
 

@@ -9,7 +9,6 @@ namespace FacebookAppLogic
     public class FacebookDesktopLogic
     {
         private bool m_IsLogIn = false;
-        private FacebookCupid m_FacebookCupid = FacebookCupid.GetFacebookCupid();
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
         private User m_LoggedInUser;
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
@@ -20,18 +19,13 @@ namespace FacebookAppLogic
             get { return m_FriendsList; }
         }
 
-        public FacebookCupid FacebookCupid
-        {
-            get { return m_FacebookCupid; }
-        }
-
         public User LoggedInUser
         {
             get { return m_LoggedInUser; }
             set
             {
                 m_LoggedInUser = value;
-                m_FacebookCupid.LoggedInUser = value;
+                FacebookCupid.instance.LoggedInUser = value;
             }
         }
 
