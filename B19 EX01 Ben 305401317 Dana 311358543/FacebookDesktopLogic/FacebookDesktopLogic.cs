@@ -8,9 +8,10 @@ namespace FacebookAppLogic
 {
     public class FacebookDesktopLogic
     {
-        private bool m_IsLogIn = false;
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
-        private User m_LoggedInUser;
+
+        private bool m_IsLogIn = false;
+  
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
         
         public FacebookObjectCollection<User> FriendsList
@@ -18,6 +19,8 @@ namespace FacebookAppLogic
             set { m_FriendsList = value; }
             get { return m_FriendsList; }
         }
+
+        private User m_LoggedInUser;
 
         public User LoggedInUser
         {
@@ -30,18 +33,7 @@ namespace FacebookAppLogic
             }
         }
 
-
-        //public FacebookObjectCollection<User> LoggedInUserFriends
-        //{
-        //    get
-        //    {
-        //        m_FriendsList = m_LoggedInUser.Friends;
-        //        //m_FacebookCupid.FriendsList = m_FriendsList;
-        //        return m_FriendsList;
-        //    }
-        //}
-
-        private FacebookDesktopLogic(){ }
+        private FacebookDesktopLogic() { }
 
         public static FacebookDesktopLogic GetFacebookDesktopLogic()
         {
@@ -119,12 +111,10 @@ namespace FacebookAppLogic
             {
                 LoggedInUser = result.LoggedInUser;
                 this.m_IsLogIn = true;
-                //fetchUserInfo();
             }
             else
             {
                 this.m_IsLogIn = false;
-                //MessageBox.Show(result.ErrorMessage);
             }
 
             return m_IsLogIn;

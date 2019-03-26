@@ -2,9 +2,6 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
 namespace FacebookAppLogic
@@ -13,7 +10,6 @@ namespace FacebookAppLogic
     {
         public Candidate ChosenMatch { get; set; }
         public User LoggedInUser { get; set; }
-
         private List<Candidate> m_CupidResult = new List<Candidate>(3);
 
         public List<Candidate> CupidResult
@@ -23,9 +19,9 @@ namespace FacebookAppLogic
         }
 
         private static FacebookCupid s_FacebookCupid = null;
-        public FacebookObjectCollection<User> FriendsList { get; set; }
         private List<Candidate> m_Candidates = new List<Candidate>();
         private Dictionary<string, int> m_Score = new Dictionary<string, int>();
+        public FacebookObjectCollection<User> FriendsList { get; set; }
         public bool CheckFriends { get; set; }
         public bool CheckEvents { get; set; }
         public bool CheckGroups { get; set; }
@@ -34,7 +30,10 @@ namespace FacebookAppLogic
         public bool CheckHomeTown { get; set; }
         public bool CheckFieldOfStudy { get; set; }
 
-        private FacebookCupid() { }
+        private FacebookCupid()
+        {
+            initScoreValues();
+        }
 
         public List<Candidate> Candidates
         {
@@ -78,7 +77,7 @@ namespace FacebookAppLogic
 
         public void scoreCandidates()
         {
-            initScoreValues();//todo: init here?
+            //initScoreValues();//todo: init here?
             try
             {
                 foreach (Candidate candidate in m_Candidates)

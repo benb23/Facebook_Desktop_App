@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
@@ -19,42 +14,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private bool m_IsfriendListLoaded = false;
         private bool m_IsPostsLoaded = false;
 
-
         public mainForm()
         {
             InitializeComponent();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void post_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
         private void logInButton_Click_(object sender, EventArgs e)
         {
             bool isLogIn = m_FacebookDesktopLogic.LoginAndInit();
@@ -79,30 +43,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
             userPictureBox.BackColor = Color.Red;   // TODO: ????
             userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
-            //if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count > 0)
-            //{
-            //    textBoxStatus.Text = m_FacebookDesktopLogic.LoggedInUser.Posts[0].Message;
-            //}
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void fetchFriends()
@@ -127,31 +67,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
-        //private void fetchMyRecentPosts()
-        //{
-        //    foreach (Post post in m_FacebookDesktopLogic.LoggedInUser.Posts)
-        //    {
-        //        if (post.Message != null)
-        //        {
-        //            listBoxMyPosts.Items.Add(post.Message);
-        //        }
-        //        else if (post.Caption != null)
-        //        {
-        //            listBoxMyPosts.Items.Add(post.Caption);
-        //        }
-        //        else
-        //        {
-        //            listBoxMyPosts.Items.Add(string.Format("[{0}]", post.Type));
-        //        }
-        //    }
-
-        //    if (m_FacebookDesktopLogic.LoggedInUser.Posts.Count == 0)
-        //    {
-        //        MessageBox.Show("No Posts to retrieve :(");
-        //    }
-        //}
-
-        private void fetchPosts()
+        private void fetchRecentPosts()
         {
             int postIndex = 0;
 
@@ -163,7 +79,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 (post.Controls[4] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Name;
                 (post.Controls[5] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
 
-
                 postIndex++;
             }
             
@@ -173,27 +88,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
         }
 
-        private void friendsList_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void friendsList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void label7_Click(object sender, EventArgs e)
-        //{
-        //    FacebookService.Logout(doAfterLogOut);
-        //}
 
         private void doAfterLogOut()
-        {
-
-        }
-
-        private void listBoxMyPosts_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -210,8 +107,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void loadHomeTab()
         {
-            //fetchMyRecentPosts();
-            fetchPosts();
+            fetchRecentPosts();
         }
 
         private void albumsButton_Click(object sender, EventArgs e)
@@ -283,11 +179,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             tabControl.SelectedTab = tabPageCupid;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logOutButton_Click(object sender, EventArgs e)
         {
             FacebookService.Logout(doAfterLogOut);
@@ -296,11 +187,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void homeButton_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageHome;
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox20_Click(object sender, EventArgs e)
@@ -375,8 +261,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void findMyMatchButton_Click(object sender, EventArgs e)
         {
             fetchFriends();
-
-
             updateCheckedFields();
             User.eGender? checkedGender = getCheckedGender();
             FacebookCupid.instance.FindMyMatch(checkedGender);
@@ -528,22 +412,12 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             Calendar.instance.wishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
         }
 
-        private void userPictureBox_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void userPictureBox_BackColorChanged(object sender, EventArgs e)
         {
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(0, 0, userPictureBox.Width, userPictureBox.Height);
             Region rg = new Region(gp);
             userPictureBox.Region = rg;
-        }
-
-        private void genderLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
