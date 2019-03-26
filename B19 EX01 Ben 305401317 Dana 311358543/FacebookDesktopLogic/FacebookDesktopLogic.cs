@@ -57,16 +57,29 @@ namespace FacebookAppLogic
 
         private FacebookDesktopLogic() { }
 
-        public static FacebookDesktopLogic GetFacebookDesktopLogic()
+        public static FacebookDesktopLogic instance
         {
-            //todo: lock
-            if (s_FacebookDesktopLogic == null)
+            get
             {
-                s_FacebookDesktopLogic = new FacebookDesktopLogic();
-            }
+                if (s_FacebookDesktopLogic == null)
+                {
+                    s_FacebookDesktopLogic = new FacebookDesktopLogic();
+                }
 
-            return s_FacebookDesktopLogic;
+                return s_FacebookDesktopLogic;
+            }
         }
+        //public static FacebookDesktopLogic GetFacebookDesktopLogic()
+        //{
+            
+        //    //todo: lock
+        //    if (s_FacebookDesktopLogic == null)
+        //    {
+        //        s_FacebookDesktopLogic = new FacebookDesktopLogic();
+        //    }
+
+        //    return s_FacebookDesktopLogic;
+        //}
 
         public bool LoginAndInit()
         {

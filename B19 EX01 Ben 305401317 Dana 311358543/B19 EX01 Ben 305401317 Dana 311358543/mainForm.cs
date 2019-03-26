@@ -10,7 +10,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 {
     public partial class mainForm : Form
     {
-        private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.GetFacebookDesktopLogic();
         private bool m_IsPostsLoaded = false;
 
         public mainForm()
@@ -20,7 +19,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void logInButton_Click_(object sender, EventArgs e)
         {
-            bool isLogIn = this.m_FacebookDesktopLogic.LoginAndInit();
+            bool isLogIn = FacebookDesktopLogic.instance.LoginAndInit();
             if(isLogIn)
             {
                 fetchUserInfo();
@@ -39,9 +38,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchUserInfo()
         {
-            userPictureBox.LoadAsync(this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            userPictureBox.LoadAsync(FacebookDesktopLogic.instance.LoggedInUser.PictureNormalURL);
             userPictureBox.BackColor = Color.Red;   // TODO: ????
-            userNametextBox.Text = this.m_FacebookDesktopLogic.LoggedInUser.Name;
+            userNametextBox.Text = FacebookDesktopLogic.instance.LoggedInUser.Name;
         }
 
         private void fetchRecentPosts()
@@ -50,11 +49,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             foreach(Panel post in postsPanel.Controls)
             {
-                (post.Controls[1] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
-                (post.Controls[2] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
-                (post.Controls[3] as PictureBox).LoadAsync(this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-                (post.Controls[4] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Name;
-                (post.Controls[5] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
+                (post.Controls[1] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
+                (post.Controls[2] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Posts[postIndex].Message;
+                (post.Controls[3] as PictureBox).LoadAsync(FacebookDesktopLogic.instance.LoggedInUser.PictureNormalURL);
+                (post.Controls[4] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Name;
+                (post.Controls[5] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
 
                 postIndex++;
             }
@@ -62,7 +61,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         }
         private void createPostButton_Click(object sender, EventArgs e)
         {
-            this.m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
+            FacebookDesktopLogic.instance.LoggedInUser.PostStatus(textBox1.Text);
         }
 
 
@@ -103,15 +102,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
                 foreach (Panel panel in tabPageAlbums.Controls)
                 {
-                    latestPhotos = this.m_FacebookDesktopLogic.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
+                    latestPhotos = FacebookDesktopLogic.instance.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
 
                     while (latestPhotos.Count == 0)
                     {
                         albumIndex++;
-                        latestPhotos = this.m_FacebookDesktopLogic.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
+                        latestPhotos = FacebookDesktopLogic.instance.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
                     }
 
-                    (panel.Controls[0] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Albums[albumIndex].Name;
+                    (panel.Controls[0] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Albums[albumIndex].Name;
                     int currentItem = 1;
 
                     foreach (string photo in latestPhotos)
@@ -142,7 +141,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsButton_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            m_FacebookDesktopLogic.fetchFriends();
+            FacebookDesktopLogic.instance.fetchFriends();
 
         }
 
@@ -180,7 +179,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            m_FacebookDesktopLogic.fetchFriends();
+            FacebookDesktopLogic.instance.fetchFriends();
         }
 
         private void settingsPictureBox_Click(object sender, EventArgs e)
@@ -213,7 +212,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsPictureBox_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            m_FacebookDesktopLogic.fetchFriends();
+            FacebookDesktopLogic.instance.fetchFriends();
             initFriendsListBox();
 
         }
@@ -222,7 +221,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             listBoxFriends.Items.Clear();
             listBoxFriends.DisplayMember = "Name";
-            foreach (User friend in this.m_FacebookDesktopLogic.FriendsList)
+            foreach (User friend in FacebookDesktopLogic.instance.FriendsList)
             {
                 listBoxFriends.Items.Add(friend);
             }
@@ -236,8 +235,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCalendar;
-            m_FacebookDesktopLogic.fetchFriends();
-            Calendar.instance.FriendsList = this.m_FacebookDesktopLogic.FriendsList;
+            FacebookDesktopLogic.instance.fetchFriends();
+            Calendar.instance.FriendsList = FacebookDesktopLogic.instance.FriendsList;
             Calendar.instance.fetchBirthdays();
             initUpcomingBirthdaysListBox();
             Calendar.instance.fetchEvents();
@@ -267,10 +266,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void findMyMatchButton_Click(object sender, EventArgs e)
         {
-            m_FacebookDesktopLogic.fetchFriends();
+            FacebookDesktopLogic.instance.fetchFriends();
             updateCheckedFields();
             User.eGender? checkedGender = getCheckedGender();
-            FacebookCupid.instance.FindMyMatch(checkedGender);
+            FacebookCupid.instance.filterAndScoreCndidates(checkedGender);
             List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;
 
             match1Name.Text = cupidResult[0].User.Name;
@@ -341,12 +340,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         //look
         private void findMatchButtonPictureBox_Click(object sender, EventArgs e)
         {
-            m_FacebookDesktopLogic.fetchFriends();
-            FacebookCupid.instance.FriendsList = this.m_FacebookDesktopLogic.FriendsList;
 
             updateCheckedFields();
-            User.eGender? checkedGender = getCheckedGender();
-            FacebookCupid.instance.FindMyMatch(checkedGender);
+            FacebookCupid.instance.FindMyMatch(getCheckedGender());
             List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;
 
             if (cupidResult != null && cupidResult.Count != 0)

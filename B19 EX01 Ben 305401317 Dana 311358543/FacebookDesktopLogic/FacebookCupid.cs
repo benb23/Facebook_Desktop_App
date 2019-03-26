@@ -239,7 +239,14 @@ namespace FacebookAppLogic
             }
         }
 
-        public void FindMyMatch(User.eGender? i_checkedGender)
+        public void FindMyMatch(User.eGender? i_Gender)
+        {
+            FacebookDesktopLogic.instance.fetchFriends();
+            FacebookCupid.instance.FriendsList = FacebookDesktopLogic.instance.FriendsList;          
+            FacebookCupid.instance.filterAndScoreCndidates(i_Gender);
+        }
+
+        public void filterAndScoreCndidates(User.eGender? i_checkedGender)
         {
             filterRelevantCandidatesByGender(i_checkedGender);
 
