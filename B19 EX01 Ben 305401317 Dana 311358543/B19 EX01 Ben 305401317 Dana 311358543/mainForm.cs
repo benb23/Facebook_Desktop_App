@@ -340,7 +340,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         //look
         private void findMatchButtonPictureBox_Click(object sender, EventArgs e)
         {
-
             updateCheckedFields();
             FacebookCupid.instance.FindMyMatch(getCheckedGender());
             List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;

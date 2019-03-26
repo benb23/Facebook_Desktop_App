@@ -16,18 +16,18 @@ namespace FacebookAppLogic
         
         public FacebookObjectCollection<User> FriendsList
         {
-            set { m_FriendsList = value; }
-            get { return m_FriendsList; }
+            set { this.m_FriendsList = value; }
+            get { return this.m_FriendsList; }
         }
 
         private User m_LoggedInUser;
 
         public User LoggedInUser
         {
-            get { return m_LoggedInUser; }
+            get { return this.m_LoggedInUser; }
             set
             {
-                m_LoggedInUser = value;
+                this.m_LoggedInUser = value;
                 FacebookCupid.instance.LoggedInUser = value;
                 Calendar.instance.LoggedInUser = value;
             }
@@ -152,7 +152,7 @@ namespace FacebookAppLogic
                 this.m_IsLogIn = false;
             }
 
-            return m_IsLogIn;
+            return this.m_IsLogIn;
         }
 
         public List<string> GetLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
@@ -160,7 +160,7 @@ namespace FacebookAppLogic
             List<string> Photos = new List<string>();
 
             int numOfPhotos = 0;
-            Album album = m_LoggedInUser.Albums[i_AlbumNumber];
+            Album album = this.m_LoggedInUser.Albums[i_AlbumNumber];
 
             for (int i = 0; i < album.Photos.Count; i++)
             {

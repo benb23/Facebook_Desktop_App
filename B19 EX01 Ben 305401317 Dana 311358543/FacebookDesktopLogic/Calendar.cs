@@ -17,14 +17,14 @@ namespace FacebookAppLogic
 
         public List<User> UpcomingBirthdaysUsers
         {
-            get { return m_UpcomingBirthdaysUsers; }
+            get { return this.m_UpcomingBirthdaysUsers; }
         }
 
         private List<Event> m_UpcomingEvents = new List<Event>();
 
         public List<Event> UpcomingEvents
         {
-            get { return m_UpcomingEvents; }
+            get { return this.m_UpcomingEvents; }
         }
 
         public FacebookObjectCollection<User> FriendsList { get; set; }
@@ -50,7 +50,7 @@ namespace FacebookAppLogic
 
         public void fetchEvents()
         {
-            if (!m_IsEventsLoaded)
+            if (!this.m_IsEventsLoaded)
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace FacebookAppLogic
                     {
                         if (eventItem.StartTime.Value.Month == DateTime.Now.Month)
                         {
-                            m_UpcomingEvents.Add(eventItem);
+                            this.m_UpcomingEvents.Add(eventItem);
                         }
                     }
 
@@ -67,7 +67,7 @@ namespace FacebookAppLogic
                     //    MessageBox.Show("No Events to retrieve :(");
                     //}
 
-                    m_IsEventsLoaded = true;
+                    this.m_IsEventsLoaded = true;
                 }
                 catch
                 {
@@ -78,16 +78,16 @@ namespace FacebookAppLogic
 
         public void wishHappyBirthday(int i_Index)
         {
-            LoggedInUser.PostStatus("Happy Birthday" + m_UpcomingBirthdaysUsers[i_Index].Name);
+            LoggedInUser.PostStatus("Happy Birthday" + this.m_UpcomingBirthdaysUsers[i_Index].Name);
         }
 
         public void goToFacebookLink(int i_Index)
         {
             try
             {
-                if (m_UpcomingEvents.Count!=0 && m_UpcomingEvents[i_Index] != null)
+                if (this.m_UpcomingEvents.Count!=0 && this.m_UpcomingEvents[i_Index] != null)
                 {
-                    string link = m_UpcomingEvents[i_Index].LinkToFacebook;
+                    string link = this.m_UpcomingEvents[i_Index].LinkToFacebook;
                     System.Diagnostics.Process.Start(link);
                 }
                 else
@@ -103,7 +103,7 @@ namespace FacebookAppLogic
 
         public void fetchBirthdays()
         {
-            if (!m_IsBirthdaysLoaded)
+            if (!this.m_IsBirthdaysLoaded)
             {
                 try
                 {
@@ -111,11 +111,11 @@ namespace FacebookAppLogic
                     {
                         if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
                         {
-                            m_UpcomingBirthdaysUsers.Add(friend);
+                            this.m_UpcomingBirthdaysUsers.Add(friend);
                         }
                     }
 
-                    m_IsBirthdaysLoaded = true;
+                    this.m_IsBirthdaysLoaded = true;
                 }
                 catch
                 {

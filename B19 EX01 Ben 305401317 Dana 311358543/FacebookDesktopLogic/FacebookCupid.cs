@@ -14,8 +14,8 @@ namespace FacebookAppLogic
 
         public List<Candidate> CupidResult
         {
-            get { return m_CupidResult; }
-            set { m_CupidResult = value; }
+            get { return this.m_CupidResult; }
+            set { this.m_CupidResult = value; }
         }
 
         private static FacebookCupid s_FacebookCupid = null;
@@ -37,19 +37,19 @@ namespace FacebookAppLogic
 
         public List<Candidate> Candidates
         {
-            get { return m_Candidates; }
+            get { return this.m_Candidates; }
         }
 
         private void initScoreValues()
         {
             //todo: from file?
-            m_Score.Add("Friends", 1);
-            m_Score.Add("Events", 1);
-            m_Score.Add("Groups", 1);
-            m_Score.Add("CheckIns", 1);
-            m_Score.Add("LikedPages", 1);
-            m_Score.Add("HomeTown", 1);
-            m_Score.Add("FieldOfStudy", 1);
+            this.m_Score.Add("Friends", 1);
+            this.m_Score.Add("Events", 1);
+            this.m_Score.Add("Groups", 1);
+            this.m_Score.Add("CheckIns", 1);
+            this.m_Score.Add("LikedPages", 1);
+            this.m_Score.Add("HomeTown", 1);
+            this.m_Score.Add("FieldOfStudy", 1);
         }
 
         public void filterRelevantCandidatesByGender(User.eGender? i_Gender)
@@ -60,11 +60,11 @@ namespace FacebookAppLogic
                 {
                     if (i_Gender == null || friend.Gender == i_Gender)
                     {
-                        m_Candidates.Add(new Candidate() { User = friend, Score = 0 });
+                        this.m_Candidates.Add(new Candidate() { User = friend, Score = 0 });
                     }
                 }
 
-                if(m_Candidates.Count == 0)
+                if(this.m_Candidates.Count == 0)
                 {
                     throw new Exception();
                 }
@@ -80,7 +80,7 @@ namespace FacebookAppLogic
             //initScoreValues();//todo: init here?
             try
             {
-                foreach (Candidate candidate in m_Candidates)
+                foreach (Candidate candidate in this.m_Candidates)
                 {
                     if (CheckFriends)
                     {
@@ -134,7 +134,7 @@ namespace FacebookAppLogic
                 {
                     if (LoggedInUser.Friends.Contains(friend))
                     {
-                        i_Candidate.Score += m_Score["Friends"];
+                        i_Candidate.Score += this.m_Score["Friends"];
                     }
                 }
             }
@@ -151,7 +151,7 @@ namespace FacebookAppLogic
                 {
                     if (LoggedInUser.Events.Contains(candidateEvent))
                     {
-                        i_Candidate.Score += m_Score["Events"];
+                        i_Candidate.Score += this.m_Score["Events"];
                     }
                 }
             }
@@ -167,7 +167,7 @@ namespace FacebookAppLogic
                 {
                     if (LoggedInUser.Groups.Contains(group))
                     {
-                        i_Candidate.Score += m_Score["Groups"];
+                        i_Candidate.Score += this.m_Score["Groups"];
                     }
                 }
             }
@@ -183,7 +183,7 @@ namespace FacebookAppLogic
                 {
                     if (LoggedInUser.Checkins.Contains(checkIn))
                     {
-                        i_Candidate.Score += m_Score["CheckIns"];
+                        i_Candidate.Score += this.m_Score["CheckIns"];
                     }
                 }
             }
@@ -200,7 +200,7 @@ namespace FacebookAppLogic
                 {
                     if (LoggedInUser.LikedPages.Contains(page))
                     {
-                        i_Candidate.Score += m_Score["LikedPages"];
+                        i_Candidate.Score += this.m_Score["LikedPages"];
                     }
                 }
             }
@@ -214,7 +214,7 @@ namespace FacebookAppLogic
             {
                 if (candidateCity == LoggedInUser.Hometown)
                 {
-                    i_Candidate.Score += m_Score["HomeTown"];
+                    i_Candidate.Score += this.m_Score["HomeTown"];
                 }
             }
             else
@@ -233,7 +233,7 @@ namespace FacebookAppLogic
                 {
                     if (LoggedInUser.Educations.Contains(candidateEducation[0]))
                     {
-                        i_Candidate.Score += m_Score["HomeTown"];
+                        i_Candidate.Score += this.m_Score["HomeTown"];
                     }
                 }
             }
@@ -252,10 +252,10 @@ namespace FacebookAppLogic
 
             scoreCandidates();
 
-            if (m_Candidates.Count != 0)
+            if (this.m_Candidates.Count != 0)
             {
                 //sort
-                List<Candidate> sortedCandidates = m_Candidates.OrderBy(p => p.Score).ToList();
+                List<Candidate> sortedCandidates = this.m_Candidates.OrderBy(p => p.Score).ToList();
                 CupidResult.Add(sortedCandidates.Last());
                 sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
                 CupidResult.Add(sortedCandidates.Last());
