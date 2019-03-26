@@ -9,6 +9,13 @@ namespace FacebookAppLogic
 {
     public class FacebookDesktopLogic
     {
+        private List<Post> m_RecentPosts = new List<Post>();
+        private bool m_IsPostsLoaded = false;
+        public List<Post> RecentPosts
+        {
+            get { return m_RecentPosts; }
+        }
+
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
         private bool m_IsLogIn = false;
         public bool IsfriendListLoaded { get; set; }
@@ -153,6 +160,26 @@ namespace FacebookAppLogic
             }
 
             return this.m_IsLogIn;
+        }
+
+        public void fetchRecentPosts(int i_NumOfPosts)
+        {
+            try
+            {
+                if (!this.m_IsPostsLoaded)
+                {
+                    for (int i = 0; i < i_NumOfPosts; i++)
+                    {
+                        this.m_RecentPosts.Add(FacebookDesktopLogic.instance.LoggedInUser.Posts[i]);
+                    }
+
+                    this.m_IsPostsLoaded = true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading posts from Facebook.", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public List<string> GetLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)

@@ -152,6 +152,11 @@
             this.pictureBoxFaceCupid = new System.Windows.Forms.PictureBox();
             this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
             this.settingsPictureBox = new System.Windows.Forms.PictureBox();
+            this.toDoListLabel = new System.Windows.Forms.Label();
+            this.toDoListCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.addMissionButton = new System.Windows.Forms.PictureBox();
+            this.newMissionTextBox = new System.Windows.Forms.TextBox();
+            this.addMissionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -213,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1423,6 +1429,11 @@
             // 
             // tabPageCalendar
             // 
+            this.tabPageCalendar.Controls.Add(this.addMissionLabel);
+            this.tabPageCalendar.Controls.Add(this.newMissionTextBox);
+            this.tabPageCalendar.Controls.Add(this.addMissionButton);
+            this.tabPageCalendar.Controls.Add(this.toDoListCheckedListBox);
+            this.tabPageCalendar.Controls.Add(this.toDoListLabel);
             this.tabPageCalendar.Controls.Add(this.goToFacebookLinkButton);
             this.tabPageCalendar.Controls.Add(this.upcomingEventsLabel);
             this.tabPageCalendar.Controls.Add(this.upcomingEventsListBox);
@@ -1671,6 +1682,59 @@
             this.settingsPictureBox.TabStop = false;
             this.settingsPictureBox.Click += new System.EventHandler(this.settingsPictureBox_Click_1);
             // 
+            // toDoListLabel
+            // 
+            this.toDoListLabel.AutoSize = true;
+            this.toDoListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toDoListLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.toDoListLabel.Location = new System.Drawing.Point(1141, 23);
+            this.toDoListLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.toDoListLabel.Name = "toDoListLabel";
+            this.toDoListLabel.Size = new System.Drawing.Size(148, 30);
+            this.toDoListLabel.TabIndex = 10;
+            this.toDoListLabel.Text = "To Do List ";
+            // 
+            // toDoListCheckedListBox
+            // 
+            this.toDoListCheckedListBox.FormattingEnabled = true;
+            this.toDoListCheckedListBox.Location = new System.Drawing.Point(1146, 56);
+            this.toDoListCheckedListBox.Name = "toDoListCheckedListBox";
+            this.toDoListCheckedListBox.Size = new System.Drawing.Size(318, 292);
+            this.toDoListCheckedListBox.TabIndex = 11;
+            // 
+            // addMissionButton
+            // 
+            this.addMissionButton.BackColor = System.Drawing.Color.Transparent;
+            this.addMissionButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
+            this.addMissionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addMissionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addMissionButton.Location = new System.Drawing.Point(1146, 435);
+            this.addMissionButton.Margin = new System.Windows.Forms.Padding(6);
+            this.addMissionButton.Name = "addMissionButton";
+            this.addMissionButton.Size = new System.Drawing.Size(318, 62);
+            this.addMissionButton.TabIndex = 12;
+            this.addMissionButton.TabStop = false;
+            this.addMissionButton.Click += new System.EventHandler(this.addMissionButton_Click);
+            // 
+            // newMissionTextBox
+            // 
+            this.newMissionTextBox.Location = new System.Drawing.Point(1146, 389);
+            this.newMissionTextBox.Name = "newMissionTextBox";
+            this.newMissionTextBox.Size = new System.Drawing.Size(318, 37);
+            this.newMissionTextBox.TabIndex = 13;
+            // 
+            // addMissionLabel
+            // 
+            this.addMissionLabel.AutoSize = true;
+            this.addMissionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMissionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.addMissionLabel.Location = new System.Drawing.Point(1141, 356);
+            this.addMissionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.addMissionLabel.Name = "addMissionLabel";
+            this.addMissionLabel.Size = new System.Drawing.Size(129, 30);
+            this.addMissionLabel.TabIndex = 14;
+            this.addMissionLabel.Text = "Add Task";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1761,6 +1825,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1889,6 +1954,11 @@
         private System.Windows.Forms.Label upcomingEventsLabel;
         private System.Windows.Forms.ListBox upcomingEventsListBox;
         private System.Windows.Forms.PictureBox goToFacebookLinkButton;
+        private System.Windows.Forms.PictureBox addMissionButton;
+        private System.Windows.Forms.CheckedListBox toDoListCheckedListBox;
+        private System.Windows.Forms.Label toDoListLabel;
+        private System.Windows.Forms.Label addMissionLabel;
+        private System.Windows.Forms.TextBox newMissionTextBox;
     }
 }
 

@@ -10,7 +10,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 {
     public partial class mainForm : Form
     {
-        private bool m_IsPostsLoaded = false;
+        private bool m_IsPostsListBoxLoaded = false;
 
         public mainForm()
         {
@@ -24,10 +24,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             {
                 fetchUserInfo();
                 tabControl.SelectedTab = tabPageHome;
-                if (!this.m_IsPostsLoaded)
+                if (!this.m_IsPostsListBoxLoaded)
                 {
                     loadHomeTab();
-                    this.m_IsPostsLoaded = true;
+                    this.m_IsPostsListBoxLoaded = true;
                 }
             }
             else
@@ -43,17 +43,17 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             userNametextBox.Text = FacebookDesktopLogic.instance.LoggedInUser.Name;
         }
 
-        private void fetchRecentPosts()
+        private void initPostsPanel()
         {
             int postIndex = 0;
 
             foreach(Panel post in postsPanel.Controls)
             {
-                (post.Controls[1] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
-                (post.Controls[2] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Posts[postIndex].Message;
+                (post.Controls[1] as Label).Text = FacebookDesktopLogic.instance.RecentPosts[postIndex].LikedBy.Count.ToString();
+                (post.Controls[2] as Label).Text = FacebookDesktopLogic.instance.RecentPosts[postIndex].Message;
                 (post.Controls[3] as PictureBox).LoadAsync(FacebookDesktopLogic.instance.LoggedInUser.PictureNormalURL);
                 (post.Controls[4] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Name;
-                (post.Controls[5] as Label).Text = FacebookDesktopLogic.instance.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
+                (post.Controls[5] as Label).Text = FacebookDesktopLogic.instance.RecentPosts[postIndex].CreatedTime.Value.ToLongDateString();
 
                 postIndex++;
             }
@@ -74,16 +74,17 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void homeButton_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageHome;
-            if (!this.m_IsPostsLoaded)
+            if (!this.m_IsPostsListBoxLoaded)
             {
                 loadHomeTab();
-                this.m_IsPostsLoaded = true;
+                this.m_IsPostsListBoxLoaded = true;
             }
         }
 
         private void loadHomeTab()
         {
-            fetchRecentPosts();
+            FacebookDesktopLogic.instance.fetchRecentPosts(postsPanel.Controls.Count);
+            initPostsPanel();
         }
 
         private void albumsButton_Click(object sender, EventArgs e)
@@ -425,6 +426,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void goToFacebookLinkButton_Click(object sender, EventArgs e)
         {
             Calendar.instance.goToFacebookLink(upcomingEventsListBox.SelectedIndex);
+        }
+
+        private void addMissionButton_Click(object sender, EventArgs e)
+        {
+            toDoListCheckedListBox.Items.Add(newMissionTextBox.Text,false);
         }
     }
 }
