@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
@@ -10,6 +11,7 @@ namespace FacebookAppLogic
     {
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
         private bool m_IsLogIn = false;
+        public bool IsfriendListLoaded { get; set; }
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
         
         public FacebookObjectCollection<User> FriendsList
@@ -28,6 +30,28 @@ namespace FacebookAppLogic
                 m_LoggedInUser = value;
                 FacebookCupid.instance.LoggedInUser = value;
                 Calendar.instance.LoggedInUser = value;
+            }
+        }
+
+        public void fetchFriends()
+        {
+            if (!this.IsfriendListLoaded)
+            {
+                //listBoxFriends.Items.Clear();
+                //listBoxFriends.DisplayMember = "Name";
+                foreach (User friend in this.LoggedInUser.Friends)
+                {
+                    //listBoxFriends.Items.Add(friend);
+                    this.FriendsList.Add(friend);
+                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                }
+
+                if (this.LoggedInUser.Friends.Count == 0)
+                {
+                    MessageBox.Show("No Friends to retrieve :(");
+                }
+
+                this.IsfriendListLoaded = true;
             }
         }
 

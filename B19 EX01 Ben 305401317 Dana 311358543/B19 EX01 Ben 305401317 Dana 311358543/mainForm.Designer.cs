@@ -133,9 +133,12 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.tabPageCalendar = new System.Windows.Forms.TabPage();
+            this.goToFacebookLinkButton = new System.Windows.Forms.PictureBox();
+            this.upcomingEventsLabel = new System.Windows.Forms.Label();
+            this.upcomingEventsListBox = new System.Windows.Forms.ListBox();
             this.wishHappyBirthdayButton = new System.Windows.Forms.PictureBox();
             this.upcomingBirthdaysListBox = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.upcomingBirthdaysLabel = new System.Windows.Forms.Label();
             this.labelCalendar = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -197,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).BeginInit();
             this.tabPageFriends.SuspendLayout();
             this.tabPageCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1419,9 +1423,12 @@
             // 
             // tabPageCalendar
             // 
+            this.tabPageCalendar.Controls.Add(this.goToFacebookLinkButton);
+            this.tabPageCalendar.Controls.Add(this.upcomingEventsLabel);
+            this.tabPageCalendar.Controls.Add(this.upcomingEventsListBox);
             this.tabPageCalendar.Controls.Add(this.wishHappyBirthdayButton);
             this.tabPageCalendar.Controls.Add(this.upcomingBirthdaysListBox);
-            this.tabPageCalendar.Controls.Add(this.label3);
+            this.tabPageCalendar.Controls.Add(this.upcomingBirthdaysLabel);
             this.tabPageCalendar.Controls.Add(this.labelCalendar);
             this.tabPageCalendar.Controls.Add(this.monthCalendar1);
             this.tabPageCalendar.Location = new System.Drawing.Point(8, 44);
@@ -1432,16 +1439,52 @@
             this.tabPageCalendar.Text = "Calendar";
             this.tabPageCalendar.UseVisualStyleBackColor = true;
             // 
+            // goToFacebookLinkButton
+            // 
+            this.goToFacebookLinkButton.BackColor = System.Drawing.Color.Transparent;
+            this.goToFacebookLinkButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
+            this.goToFacebookLinkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.goToFacebookLinkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.goToFacebookLinkButton.Location = new System.Drawing.Point(473, 791);
+            this.goToFacebookLinkButton.Margin = new System.Windows.Forms.Padding(6);
+            this.goToFacebookLinkButton.Name = "goToFacebookLinkButton";
+            this.goToFacebookLinkButton.Size = new System.Drawing.Size(318, 62);
+            this.goToFacebookLinkButton.TabIndex = 9;
+            this.goToFacebookLinkButton.TabStop = false;
+            this.goToFacebookLinkButton.Click += new System.EventHandler(this.goToFacebookLinkButton_Click);
+            // 
+            // upcomingEventsLabel
+            // 
+            this.upcomingEventsLabel.AutoSize = true;
+            this.upcomingEventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upcomingEventsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.upcomingEventsLabel.Location = new System.Drawing.Point(468, 431);
+            this.upcomingEventsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.upcomingEventsLabel.Name = "upcomingEventsLabel";
+            this.upcomingEventsLabel.Size = new System.Drawing.Size(229, 30);
+            this.upcomingEventsLabel.TabIndex = 8;
+            this.upcomingEventsLabel.Text = "Upcoming Events";
+            // 
+            // upcomingEventsListBox
+            // 
+            this.upcomingEventsListBox.FormattingEnabled = true;
+            this.upcomingEventsListBox.ItemHeight = 30;
+            this.upcomingEventsListBox.Location = new System.Drawing.Point(473, 477);
+            this.upcomingEventsListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.upcomingEventsListBox.Name = "upcomingEventsListBox";
+            this.upcomingEventsListBox.Size = new System.Drawing.Size(392, 304);
+            this.upcomingEventsListBox.TabIndex = 7;
+            // 
             // wishHappyBirthdayButton
             // 
             this.wishHappyBirthdayButton.BackColor = System.Drawing.Color.Transparent;
             this.wishHappyBirthdayButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
             this.wishHappyBirthdayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.wishHappyBirthdayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(80, 806);
+            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(31, 791);
             this.wishHappyBirthdayButton.Margin = new System.Windows.Forms.Padding(6);
             this.wishHappyBirthdayButton.Name = "wishHappyBirthdayButton";
-            this.wishHappyBirthdayButton.Size = new System.Drawing.Size(308, 54);
+            this.wishHappyBirthdayButton.Size = new System.Drawing.Size(318, 62);
             this.wishHappyBirthdayButton.TabIndex = 6;
             this.wishHappyBirthdayButton.TabStop = false;
             this.wishHappyBirthdayButton.Click += new System.EventHandler(this.wishHappyBirthdayButton_Click);
@@ -1456,17 +1499,17 @@
             this.upcomingBirthdaysListBox.Size = new System.Drawing.Size(392, 304);
             this.upcomingBirthdaysListBox.TabIndex = 5;
             // 
-            // label3
+            // upcomingBirthdaysLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(26, 431);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 30);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Upcoming Birthdays";
+            this.upcomingBirthdaysLabel.AutoSize = true;
+            this.upcomingBirthdaysLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upcomingBirthdaysLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.upcomingBirthdaysLabel.Location = new System.Drawing.Point(26, 431);
+            this.upcomingBirthdaysLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.upcomingBirthdaysLabel.Name = "upcomingBirthdaysLabel";
+            this.upcomingBirthdaysLabel.Size = new System.Drawing.Size(261, 30);
+            this.upcomingBirthdaysLabel.TabIndex = 4;
+            this.upcomingBirthdaysLabel.Text = "Upcoming Birthdays";
             // 
             // labelCalendar
             // 
@@ -1483,7 +1526,6 @@
             // monthCalendar1
             // 
             this.monthCalendar1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
             this.monthCalendar1.Location = new System.Drawing.Point(32, 71);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(18, 17, 18, 17);
             this.monthCalendar1.Name = "monthCalendar1";
@@ -1705,6 +1747,7 @@
             this.tabPageFriends.PerformLayout();
             this.tabPageCalendar.ResumeLayout(false);
             this.tabPageCalendar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1801,7 +1844,7 @@
         private System.Windows.Forms.Label likes1;
         private System.Windows.Forms.Label likesLabel0;
         private System.Windows.Forms.TabPage tabPageCalendar;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label upcomingBirthdaysLabel;
         private System.Windows.Forms.Label labelCalendar;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.PictureBox pictureBoxCalendar;
@@ -1843,6 +1886,9 @@
         private System.Windows.Forms.ListBox upcomingBirthdaysListBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label upcomingEventsLabel;
+        private System.Windows.Forms.ListBox upcomingEventsListBox;
+        private System.Windows.Forms.PictureBox goToFacebookLinkButton;
     }
 }
 

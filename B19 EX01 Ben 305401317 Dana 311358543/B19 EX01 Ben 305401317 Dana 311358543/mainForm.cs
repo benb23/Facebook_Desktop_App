@@ -11,7 +11,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
     public partial class mainForm : Form
     {
         private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.GetFacebookDesktopLogic();
-        private bool m_IsfriendListLoaded = false;
         private bool m_IsPostsLoaded = false;
 
         public mainForm()
@@ -21,15 +20,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void logInButton_Click_(object sender, EventArgs e)
         {
-            bool isLogIn = m_FacebookDesktopLogic.LoginAndInit();
+            bool isLogIn = this.m_FacebookDesktopLogic.LoginAndInit();
             if(isLogIn)
             {
                 fetchUserInfo();
                 tabControl.SelectedTab = tabPageHome;
-                if (!m_IsPostsLoaded)
+                if (!this.m_IsPostsLoaded)
                 {
                     loadHomeTab();
-                    m_IsPostsLoaded = true;
+                    this.m_IsPostsLoaded = true;
                 }
             }
             else
@@ -40,31 +39,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchUserInfo()
         {
-            userPictureBox.LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+            userPictureBox.LoadAsync(this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
             userPictureBox.BackColor = Color.Red;   // TODO: ????
-            userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
-        }
-
-        private void fetchFriends()
-        {
-            if (!m_IsfriendListLoaded)
-            {
-                listBoxFriends.Items.Clear();
-                listBoxFriends.DisplayMember = "Name";
-                foreach (User friend in m_FacebookDesktopLogic.LoggedInUser.Friends)
-                {
-                    listBoxFriends.Items.Add(friend);
-                    m_FacebookDesktopLogic.FriendsList.Add(friend);
-                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-                }
-
-                if (m_FacebookDesktopLogic.LoggedInUser.Friends.Count == 0)
-                {
-                    MessageBox.Show("No Friends to retrieve :(");
-                }
-
-                m_IsfriendListLoaded = true;
-            }
+            userNametextBox.Text = this.m_FacebookDesktopLogic.LoggedInUser.Name;
         }
 
         private void fetchRecentPosts()
@@ -73,11 +50,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             foreach(Panel post in postsPanel.Controls)
             {
-                (post.Controls[1] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
-                (post.Controls[2] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
-                (post.Controls[3] as PictureBox).LoadAsync(m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
-                (post.Controls[4] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Name;
-                (post.Controls[5] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
+                (post.Controls[1] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].LikedBy.Count.ToString();
+                (post.Controls[2] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].Message;
+                (post.Controls[3] as PictureBox).LoadAsync(this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL);
+                (post.Controls[4] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Name;
+                (post.Controls[5] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex].CreatedTime.Value.ToLongDateString();
 
                 postIndex++;
             }
@@ -85,7 +62,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         }
         private void createPostButton_Click(object sender, EventArgs e)
         {
-            m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
+            this.m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
         }
 
 
@@ -98,10 +75,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void homeButton_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageHome;
-            if (!m_IsPostsLoaded)
+            if (!this.m_IsPostsLoaded)
             {
                 loadHomeTab();
-                m_IsPostsLoaded = true;
+                this.m_IsPostsLoaded = true;
             }
         }
 
@@ -134,7 +111,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                         latestPhotos = this.m_FacebookDesktopLogic.GetLatestPhotosInAlbum(albumIndex, panel.Controls.Count);
                     }
 
-                    (panel.Controls[0] as Label).Text = m_FacebookDesktopLogic.LoggedInUser.Albums[albumIndex].Name;
+                    (panel.Controls[0] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Albums[albumIndex].Name;
                     int currentItem = 1;
 
                     foreach (string photo in latestPhotos)
@@ -165,7 +142,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsButton_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            fetchFriends();
+            m_FacebookDesktopLogic.fetchFriends();
 
         }
 
@@ -203,7 +180,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            fetchFriends();
+            m_FacebookDesktopLogic.fetchFriends();
         }
 
         private void settingsPictureBox_Click(object sender, EventArgs e)
@@ -236,8 +213,19 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void friendsPictureBox_Click_1(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageFriends;
-            fetchFriends();
+            m_FacebookDesktopLogic.fetchFriends();
+            initFriendsListBox();
 
+        }
+
+        private void initFriendsListBox()
+        {
+            listBoxFriends.Items.Clear();
+            listBoxFriends.DisplayMember = "Name";
+            foreach (User friend in this.m_FacebookDesktopLogic.FriendsList)
+            {
+                listBoxFriends.Items.Add(friend);
+            }
         }
 
         private void labelLogOut_Click_1(object sender, EventArgs e)
@@ -248,9 +236,28 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCalendar;
-            fetchFriends();
-            Calendar.instance.FriendsList = m_FacebookDesktopLogic.FriendsList;
-            Calendar.instance.initUpcomingBirthdaysUsersList();
+            m_FacebookDesktopLogic.fetchFriends();
+            Calendar.instance.FriendsList = this.m_FacebookDesktopLogic.FriendsList;
+            Calendar.instance.fetchBirthdays();
+            initUpcomingBirthdaysListBox();
+            Calendar.instance.fetchEvents();
+            initUpcomingEventsListBox();
+        }
+
+        private void initUpcomingBirthdaysListBox()
+        {
+            foreach (User user in Calendar.instance.UpcomingBirthdaysUsers)
+            {
+                upcomingBirthdaysListBox.Items.Add(user.Name + " " + user.Birthday);
+            }
+        }
+
+        private void initUpcomingEventsListBox()
+        {
+            foreach (Event eventItem in Calendar.instance.UpcomingEvents)
+            {
+                upcomingEventsListBox.Items.Add(eventItem.Name + " " + eventItem.StartTime);
+            }
         }
 
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
@@ -260,7 +267,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void findMyMatchButton_Click(object sender, EventArgs e)
         {
-            fetchFriends();
+            m_FacebookDesktopLogic.fetchFriends();
             updateCheckedFields();
             User.eGender? checkedGender = getCheckedGender();
             FacebookCupid.instance.FindMyMatch(checkedGender);
@@ -331,11 +338,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 FacebookCupid.instance.CheckLikedPages = true;
             }
         }
-
+        //look
         private void findMatchButtonPictureBox_Click(object sender, EventArgs e)
         {
-            fetchFriends();
-            FacebookCupid.instance.FriendsList = m_FacebookDesktopLogic.FriendsList;
+            m_FacebookDesktopLogic.fetchFriends();
+            FacebookCupid.instance.FriendsList = this.m_FacebookDesktopLogic.FriendsList;
 
             updateCheckedFields();
             User.eGender? checkedGender = getCheckedGender();
@@ -418,6 +425,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             gp.AddEllipse(0, 0, userPictureBox.Width, userPictureBox.Height);
             Region rg = new Region(gp);
             userPictureBox.Region = rg;
+        }
+
+        private void goToFacebookLinkButton_Click(object sender, EventArgs e)
+        {
+            Calendar.instance.goToFacebookLink(upcomingEventsListBox.SelectedIndex);
         }
     }
 }
