@@ -96,8 +96,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageCupid = new System.Windows.Forms.TabPage();
             this.sendMsgToMatchButton = new System.Windows.Forms.PictureBox();
-            this.writeMsgLabel = new System.Windows.Forms.Label();
-            this.writeMsgTextBox = new System.Windows.Forms.TextBox();
+            this.postOnMatchWallLabel = new System.Windows.Forms.Label();
+            this.postOnMatchWallTextBox = new System.Windows.Forms.TextBox();
             this.choosMatchLabel = new System.Windows.Forms.Label();
             this.resPanel = new System.Windows.Forms.Panel();
             this.match3Panel = new System.Windows.Forms.Panel();
@@ -133,6 +133,11 @@
             this.MyFriendsLabel = new System.Windows.Forms.Label();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.tabPageCalendar = new System.Windows.Forms.TabPage();
+            this.addMissionLabel = new System.Windows.Forms.Label();
+            this.newMissionTextBox = new System.Windows.Forms.TextBox();
+            this.addMissionButton = new System.Windows.Forms.PictureBox();
+            this.toDoListCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.toDoListLabel = new System.Windows.Forms.Label();
             this.goToFacebookLinkButton = new System.Windows.Forms.PictureBox();
             this.upcomingEventsLabel = new System.Windows.Forms.Label();
             this.upcomingEventsListBox = new System.Windows.Forms.ListBox();
@@ -152,11 +157,6 @@
             this.pictureBoxFaceCupid = new System.Windows.Forms.PictureBox();
             this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
             this.settingsPictureBox = new System.Windows.Forms.PictureBox();
-            this.toDoListLabel = new System.Windows.Forms.Label();
-            this.toDoListCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.addMissionButton = new System.Windows.Forms.PictureBox();
-            this.newMissionTextBox = new System.Windows.Forms.TextBox();
-            this.addMissionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -205,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).BeginInit();
             this.tabPageFriends.SuspendLayout();
             this.tabPageCalendar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).BeginInit();
             this.panel2.SuspendLayout();
@@ -218,7 +219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -968,8 +968,8 @@
             // 
             this.tabPageCupid.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._5a956c11626b6;
             this.tabPageCupid.Controls.Add(this.sendMsgToMatchButton);
-            this.tabPageCupid.Controls.Add(this.writeMsgLabel);
-            this.tabPageCupid.Controls.Add(this.writeMsgTextBox);
+            this.tabPageCupid.Controls.Add(this.postOnMatchWallLabel);
+            this.tabPageCupid.Controls.Add(this.postOnMatchWallTextBox);
             this.tabPageCupid.Controls.Add(this.choosMatchLabel);
             this.tabPageCupid.Controls.Add(this.resPanel);
             this.tabPageCupid.Controls.Add(this.genderPanel);
@@ -998,31 +998,31 @@
             this.sendMsgToMatchButton.TabIndex = 13;
             this.sendMsgToMatchButton.TabStop = false;
             this.sendMsgToMatchButton.Visible = false;
-            this.sendMsgToMatchButton.Click += new System.EventHandler(this.sendMsgToMatchButton_Click);
+            this.sendMsgToMatchButton.Click += new System.EventHandler(this.postMsgOnMatchWallButton_Click);
             // 
-            // writeMsgLabel
+            // postOnMatchWallLabel
             // 
-            this.writeMsgLabel.AutoSize = true;
-            this.writeMsgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.writeMsgLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.writeMsgLabel.Location = new System.Drawing.Point(1128, 29);
-            this.writeMsgLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.writeMsgLabel.Name = "writeMsgLabel";
-            this.writeMsgLabel.Size = new System.Drawing.Size(374, 30);
-            this.writeMsgLabel.TabIndex = 12;
-            this.writeMsgLabel.Text = "Write message to your match";
-            this.writeMsgLabel.Visible = false;
+            this.postOnMatchWallLabel.AutoSize = true;
+            this.postOnMatchWallLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postOnMatchWallLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.postOnMatchWallLabel.Location = new System.Drawing.Point(1128, 29);
+            this.postOnMatchWallLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.postOnMatchWallLabel.Name = "postOnMatchWallLabel";
+            this.postOnMatchWallLabel.Size = new System.Drawing.Size(381, 30);
+            this.postOnMatchWallLabel.TabIndex = 12;
+            this.postOnMatchWallLabel.Text = "Post message on match wall :";
+            this.postOnMatchWallLabel.Visible = false;
             // 
-            // writeMsgTextBox
+            // postOnMatchWallTextBox
             // 
-            this.writeMsgTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.writeMsgTextBox.Location = new System.Drawing.Point(1134, 75);
-            this.writeMsgTextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.writeMsgTextBox.Multiline = true;
-            this.writeMsgTextBox.Name = "writeMsgTextBox";
-            this.writeMsgTextBox.Size = new System.Drawing.Size(514, 737);
-            this.writeMsgTextBox.TabIndex = 11;
-            this.writeMsgTextBox.Visible = false;
+            this.postOnMatchWallTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.postOnMatchWallTextBox.Location = new System.Drawing.Point(1134, 75);
+            this.postOnMatchWallTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.postOnMatchWallTextBox.Multiline = true;
+            this.postOnMatchWallTextBox.Name = "postOnMatchWallTextBox";
+            this.postOnMatchWallTextBox.Size = new System.Drawing.Size(514, 737);
+            this.postOnMatchWallTextBox.TabIndex = 11;
+            this.postOnMatchWallTextBox.Visible = false;
             // 
             // choosMatchLabel
             // 
@@ -1450,6 +1450,59 @@
             this.tabPageCalendar.Text = "Calendar";
             this.tabPageCalendar.UseVisualStyleBackColor = true;
             // 
+            // addMissionLabel
+            // 
+            this.addMissionLabel.AutoSize = true;
+            this.addMissionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMissionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.addMissionLabel.Location = new System.Drawing.Point(1141, 356);
+            this.addMissionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.addMissionLabel.Name = "addMissionLabel";
+            this.addMissionLabel.Size = new System.Drawing.Size(129, 30);
+            this.addMissionLabel.TabIndex = 14;
+            this.addMissionLabel.Text = "Add Task";
+            // 
+            // newMissionTextBox
+            // 
+            this.newMissionTextBox.Location = new System.Drawing.Point(1146, 389);
+            this.newMissionTextBox.Name = "newMissionTextBox";
+            this.newMissionTextBox.Size = new System.Drawing.Size(318, 37);
+            this.newMissionTextBox.TabIndex = 13;
+            // 
+            // addMissionButton
+            // 
+            this.addMissionButton.BackColor = System.Drawing.Color.Transparent;
+            this.addMissionButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
+            this.addMissionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addMissionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addMissionButton.Location = new System.Drawing.Point(1146, 435);
+            this.addMissionButton.Margin = new System.Windows.Forms.Padding(6);
+            this.addMissionButton.Name = "addMissionButton";
+            this.addMissionButton.Size = new System.Drawing.Size(318, 62);
+            this.addMissionButton.TabIndex = 12;
+            this.addMissionButton.TabStop = false;
+            this.addMissionButton.Click += new System.EventHandler(this.addMissionButton_Click);
+            // 
+            // toDoListCheckedListBox
+            // 
+            this.toDoListCheckedListBox.FormattingEnabled = true;
+            this.toDoListCheckedListBox.Location = new System.Drawing.Point(1146, 56);
+            this.toDoListCheckedListBox.Name = "toDoListCheckedListBox";
+            this.toDoListCheckedListBox.Size = new System.Drawing.Size(318, 292);
+            this.toDoListCheckedListBox.TabIndex = 11;
+            // 
+            // toDoListLabel
+            // 
+            this.toDoListLabel.AutoSize = true;
+            this.toDoListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toDoListLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.toDoListLabel.Location = new System.Drawing.Point(1141, 23);
+            this.toDoListLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.toDoListLabel.Name = "toDoListLabel";
+            this.toDoListLabel.Size = new System.Drawing.Size(148, 30);
+            this.toDoListLabel.TabIndex = 10;
+            this.toDoListLabel.Text = "To Do List ";
+            // 
             // goToFacebookLinkButton
             // 
             this.goToFacebookLinkButton.BackColor = System.Drawing.Color.Transparent;
@@ -1682,59 +1735,6 @@
             this.settingsPictureBox.TabStop = false;
             this.settingsPictureBox.Click += new System.EventHandler(this.settingsPictureBox_Click_1);
             // 
-            // toDoListLabel
-            // 
-            this.toDoListLabel.AutoSize = true;
-            this.toDoListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toDoListLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.toDoListLabel.Location = new System.Drawing.Point(1141, 23);
-            this.toDoListLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.toDoListLabel.Name = "toDoListLabel";
-            this.toDoListLabel.Size = new System.Drawing.Size(148, 30);
-            this.toDoListLabel.TabIndex = 10;
-            this.toDoListLabel.Text = "To Do List ";
-            // 
-            // toDoListCheckedListBox
-            // 
-            this.toDoListCheckedListBox.FormattingEnabled = true;
-            this.toDoListCheckedListBox.Location = new System.Drawing.Point(1146, 56);
-            this.toDoListCheckedListBox.Name = "toDoListCheckedListBox";
-            this.toDoListCheckedListBox.Size = new System.Drawing.Size(318, 292);
-            this.toDoListCheckedListBox.TabIndex = 11;
-            // 
-            // addMissionButton
-            // 
-            this.addMissionButton.BackColor = System.Drawing.Color.Transparent;
-            this.addMissionButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
-            this.addMissionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addMissionButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addMissionButton.Location = new System.Drawing.Point(1146, 435);
-            this.addMissionButton.Margin = new System.Windows.Forms.Padding(6);
-            this.addMissionButton.Name = "addMissionButton";
-            this.addMissionButton.Size = new System.Drawing.Size(318, 62);
-            this.addMissionButton.TabIndex = 12;
-            this.addMissionButton.TabStop = false;
-            this.addMissionButton.Click += new System.EventHandler(this.addMissionButton_Click);
-            // 
-            // newMissionTextBox
-            // 
-            this.newMissionTextBox.Location = new System.Drawing.Point(1146, 389);
-            this.newMissionTextBox.Name = "newMissionTextBox";
-            this.newMissionTextBox.Size = new System.Drawing.Size(318, 37);
-            this.newMissionTextBox.TabIndex = 13;
-            // 
-            // addMissionLabel
-            // 
-            this.addMissionLabel.AutoSize = true;
-            this.addMissionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMissionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.addMissionLabel.Location = new System.Drawing.Point(1141, 356);
-            this.addMissionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.addMissionLabel.Name = "addMissionLabel";
-            this.addMissionLabel.Size = new System.Drawing.Size(129, 30);
-            this.addMissionLabel.TabIndex = 14;
-            this.addMissionLabel.Text = "Add Task";
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1811,6 +1811,7 @@
             this.tabPageFriends.PerformLayout();
             this.tabPageCalendar.ResumeLayout(false);
             this.tabPageCalendar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -1825,7 +1826,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1944,8 +1944,8 @@
         private System.Windows.Forms.Label scoreLabel1;
         private System.Windows.Forms.PictureBox findMatchButtonPictureBox;
         private System.Windows.Forms.Label choosMatchLabel;
-        private System.Windows.Forms.Label writeMsgLabel;
-        private System.Windows.Forms.TextBox writeMsgTextBox;
+        private System.Windows.Forms.Label postOnMatchWallLabel;
+        private System.Windows.Forms.TextBox postOnMatchWallTextBox;
         private System.Windows.Forms.PictureBox sendMsgToMatchButton;
         private System.Windows.Forms.PictureBox wishHappyBirthdayButton;
         private System.Windows.Forms.ListBox upcomingBirthdaysListBox;

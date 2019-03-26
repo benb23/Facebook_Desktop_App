@@ -164,21 +164,14 @@ namespace FacebookAppLogic
 
         public void fetchRecentPosts(int i_NumOfPosts)
         {
-            try
+            if (!this.m_IsPostsLoaded)
             {
-                if (!this.m_IsPostsLoaded)
+                for (int i = 0; i < i_NumOfPosts; i++)
                 {
-                    for (int i = 0; i < i_NumOfPosts; i++)
-                    {
-                        this.m_RecentPosts.Add(FacebookDesktopLogic.instance.LoggedInUser.Posts[i]);
-                    }
-
-                    this.m_IsPostsLoaded = true;
+                    this.m_RecentPosts.Add(FacebookDesktopLogic.instance.LoggedInUser.Posts[i]);
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading posts from Facebook.", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.m_IsPostsLoaded = true;
             }
         }
 

@@ -52,8 +52,6 @@ namespace FacebookAppLogic
         {
             if (!this.m_IsEventsLoaded)
             {
-                try
-                {
                     foreach (Event eventItem in LoggedInUser.Events)
                     {
                         if (eventItem.StartTime.Value.Month == DateTime.Now.Month)
@@ -62,18 +60,8 @@ namespace FacebookAppLogic
                         }
                     }
 
-                    //if (m_UpcomingEvents.Count == 0)
-                    //{
-                    //    MessageBox.Show("No Events to retrieve :(");
-                    //}
-
                     this.m_IsEventsLoaded = true;
-                }
-                catch
-                {
-                    MessageBox.Show("There was a problem loading Events from Facebook ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+             }
         }
 
         public void wishHappyBirthday(int i_Index)
@@ -83,21 +71,14 @@ namespace FacebookAppLogic
 
         public void goToFacebookLink(int i_Index)
         {
-            try
+            if (this.m_UpcomingEvents.Count!=0 && this.m_UpcomingEvents[i_Index] != null)
             {
-                if (this.m_UpcomingEvents.Count!=0 && this.m_UpcomingEvents[i_Index] != null)
-                {
-                    string link = this.m_UpcomingEvents[i_Index].LinkToFacebook;
-                    System.Diagnostics.Process.Start(link);
-                }
-                else
-                {
-                    MessageBox.Show("No event selected! ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                string link = this.m_UpcomingEvents[i_Index].LinkToFacebook;
+                System.Diagnostics.Process.Start(link);
             }
-            catch
+            else
             {
-                MessageBox.Show("There was a problem loading link to Facebook event ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No event selected! ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -105,22 +86,15 @@ namespace FacebookAppLogic
         {
             if (!this.m_IsBirthdaysLoaded)
             {
-                try
+                foreach (User friend in FriendsList)
                 {
-                    foreach (User friend in FriendsList)
+                    if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
                     {
-                        if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
-                        {
-                            this.m_UpcomingBirthdaysUsers.Add(friend);
-                        }
+                        this.m_UpcomingBirthdaysUsers.Add(friend);
                     }
+                }
 
-                    this.m_IsBirthdaysLoaded = true;
-                }
-                catch
-                {
-                    MessageBox.Show("There was a problem loading friends birthdays from Facebook ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                this.m_IsBirthdaysLoaded = true;
             }
         }
 

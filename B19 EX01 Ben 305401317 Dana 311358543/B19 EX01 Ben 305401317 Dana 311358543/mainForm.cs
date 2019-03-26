@@ -83,7 +83,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void loadHomeTab()
         {
-            FacebookDesktopLogic.instance.fetchRecentPosts(postsPanel.Controls.Count);
+            try
+            {
+                FacebookDesktopLogic.instance.fetchRecentPosts(postsPanel.Controls.Count);
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading posts from Facebook.", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             initPostsPanel();
         }
 
@@ -238,9 +246,25 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             tabControl.SelectedTab = tabPageCalendar;
             FacebookDesktopLogic.instance.fetchFriends();
             Calendar.instance.FriendsList = FacebookDesktopLogic.instance.FriendsList;
-            Calendar.instance.fetchBirthdays();
+            try
+            {
+                Calendar.instance.fetchBirthdays();
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading friends birthdays from Facebook ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             initUpcomingBirthdaysListBox();
-            Calendar.instance.fetchEvents();
+
+            try
+            {
+                Calendar.instance.fetchEvents();
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading Events from Facebook ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             initUpcomingEventsListBox();
         }
 
@@ -263,28 +287,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabPageCupid;
-        }
-
-        private void findMyMatchButton_Click(object sender, EventArgs e)
-        {
-            FacebookDesktopLogic.instance.fetchFriends();
-            updateCheckedFields();
-            User.eGender? checkedGender = getCheckedGender();
-            FacebookCupid.instance.filterAndScoreCndidates(checkedGender);
-            List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;
-
-            match1Name.Text = cupidResult[0].User.Name;
-            match1PictureBox.LoadAsync(cupidResult[0].User.PictureNormalURL);
-            scoreLabel1.Text = cupidResult[0].Score.ToString();
-
-            match2Name.Text = cupidResult[1].User.Name;
-            match2PictureBox.LoadAsync(cupidResult[1].User.PictureNormalURL);
-            scoreLabel2.Text = cupidResult[1].Score.ToString();
-
-            match3Name.Text = cupidResult[2].User.Name;
-            match3PictureBox.LoadAsync(cupidResult[2].User.PictureNormalURL);
-            scoreLabel3.Text = cupidResult[2].Score.ToString();
-
         }
 
         private User.eGender? getCheckedGender()
@@ -342,7 +344,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void findMatchButtonPictureBox_Click(object sender, EventArgs e)
         {
             updateCheckedFields();
-            FacebookCupid.instance.FindMyMatch(getCheckedGender());
+            try
+            {
+                FacebookCupid.instance.FindMyMatch(getCheckedGender());
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading information from Facebook.", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             List<Candidate> cupidResult = FacebookCupid.instance.CupidResult;
 
             if (cupidResult != null && cupidResult.Count != 0)
@@ -385,8 +395,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void updateChosenMatch(int i_index)
         {
             FacebookCupid.instance.ChosenMatch = FacebookCupid.instance.CupidResult[i_index];
-            writeMsgLabel.Visible = true;
-            writeMsgTextBox.Visible = true;
+            postOnMatchWallLabel.Visible = true;
+            postOnMatchWallTextBox.Visible = true;
             sendMsgToMatchButton.Visible = true;
         }
 
@@ -405,9 +415,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             updateChosenMatch(2);
         }
 
-        private void sendMsgToMatchButton_Click(object sender, EventArgs e)
+        private void postMsgOnMatchWallButton_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                FacebookCupid.instance.postOnMatchWall(postOnMatchWallTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem posting on your friend's wall.", "Photos Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void wishHappyBirthdayButton_Click(object sender, EventArgs e)
@@ -425,7 +442,14 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void goToFacebookLinkButton_Click(object sender, EventArgs e)
         {
-            Calendar.instance.goToFacebookLink(upcomingEventsListBox.SelectedIndex);
+            try
+            {
+                Calendar.instance.goToFacebookLink(upcomingEventsListBox.SelectedIndex);
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem loading link to Facebook event ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void addMissionButton_Click(object sender, EventArgs e)

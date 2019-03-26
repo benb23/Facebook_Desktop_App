@@ -54,73 +54,58 @@ namespace FacebookAppLogic
 
         public void filterRelevantCandidatesByGender(User.eGender? i_Gender)
         {
-            try
+            foreach (User friend in FriendsList)
             {
-                foreach (User friend in FriendsList)
+                if (i_Gender == null || friend.Gender == i_Gender)
                 {
-                    if (i_Gender == null || friend.Gender == i_Gender)
-                    {
-                        this.m_Candidates.Add(new Candidate() { User = friend, Score = 0 });
-                    }
-                }
-
-                if(this.m_Candidates.Count == 0)
-                {
-                    throw new Exception();
+                    this.m_Candidates.Add(new Candidate() { User = friend, Score = 0 });
                 }
             }
-            catch
+
+            if(this.m_Candidates.Count == 0)
             {
-                MessageBox.Show("There was a problem loading the Gender", "Gender Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                throw new Exception();
             }
         }
 
         public void scoreCandidates()
         {
-            //initScoreValues();//todo: init here?
-            try
+            foreach (Candidate candidate in this.m_Candidates)
             {
-                foreach (Candidate candidate in this.m_Candidates)
+                if (CheckFriends)
                 {
-                    if (CheckFriends)
-                    {
-                        scoreCandidateAccordingToMutualFriends(candidate);
-                    }
-
-                    if (CheckGroups)
-                    {
-                        scoreCandidateAccordingToMutualGroups(candidate);
-                    }
-
-                    if (CheckFieldOfStudy)
-                    {
-                        scoreCandidateAccordingToFieldOfStudy(candidate);
-                    }
-
-                    if (CheckHomeTown)
-                    {
-                        scoreCandidateAccordingToHomeTown(candidate);
-                    }
-
-                    if (CheckLikedPages)
-                    {
-                        scoreCandidateAccordingToMutualLikedPages(candidate);
-                    }
-
-                    if (CheckCheckIns)
-                    {
-                        scoreCandidateAccordingToMutualCheckIns(candidate);
-                    }
-
-                    if (CheckEvents)
-                    {
-                        scoreCandidateAccordingToMutualEvents(candidate);
-                    }
+                    scoreCandidateAccordingToMutualFriends(candidate);
                 }
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem loading the information from Facebook", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (CheckGroups)
+                {
+                    scoreCandidateAccordingToMutualGroups(candidate);
+                }
+
+                if (CheckFieldOfStudy)
+                {
+                    scoreCandidateAccordingToFieldOfStudy(candidate);
+                }
+
+                if (CheckHomeTown)
+                {
+                    scoreCandidateAccordingToHomeTown(candidate);
+                }
+
+                if (CheckLikedPages)
+                {
+                    scoreCandidateAccordingToMutualLikedPages(candidate);
+                }
+
+                if (CheckCheckIns)
+                {
+                    scoreCandidateAccordingToMutualCheckIns(candidate);
+                }
+
+                if (CheckEvents)
+                {
+                    scoreCandidateAccordingToMutualEvents(candidate);
+                }
             }
         }
 
@@ -239,6 +224,12 @@ namespace FacebookAppLogic
             }
         }
 
+        public void postOnMatchWall(string i_Msg)
+        {
+                ChosenMatch.User.PostStatus(i_Msg);
+                MessageBox.Show("Post published successfully.", ":)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public void FindMyMatch(User.eGender? i_Gender)
         {
             FacebookDesktopLogic.instance.fetchFriends();
@@ -246,12 +237,15 @@ namespace FacebookAppLogic
             FacebookCupid.instance.filterAndScoreCndidates(i_Gender);
         }
 
-        public void filterAndScoreCndidates(User.eGender? i_checkedGender)
+        private void filterAndScoreCndidates(User.eGender? i_checkedGender)
         {
             filterRelevantCandidatesByGender(i_checkedGender);
-
             scoreCandidates();
+            setCupidResult();
+        }
 
+        private void setCupidResult()
+        {
             if (this.m_Candidates.Count != 0)
             {
                 //sort
@@ -267,7 +261,6 @@ namespace FacebookAppLogic
             //    MessageBox.Show("There was a problem loading the information from Facebook", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
         }
-
 
         public static FacebookCupid instance
         {
