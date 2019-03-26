@@ -9,9 +9,7 @@ namespace FacebookAppLogic
     public class FacebookDesktopLogic
     {
         private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
-
         private bool m_IsLogIn = false;
-  
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
         
         public FacebookObjectCollection<User> FriendsList
