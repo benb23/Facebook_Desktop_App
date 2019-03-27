@@ -456,5 +456,12 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             toDoListCheckedListBox.Items.Add(newMissionTextBox.Text,false);
         }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            float h = Screen.PrimaryScreen.WorkingArea.Height / 1.55f;
+            float w = Screen.PrimaryScreen.WorkingArea.Width / 1.4f;
+            this.ClientSize = new Size((int)w, (int)h);
+        }
     }
 }
