@@ -9,16 +9,20 @@ namespace FacebookAppLogic
 {
     public class FacebookDesktopLogic
     {
-        private List<Post> m_RecentPosts = new List<Post>();
+        private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
+        private bool m_IsLogIn = false;
         private bool m_IsPostsLoaded = false;
+        public string PictureNormalURL { get; set; }
+
+        private List<Post> m_RecentPosts = new List<Post>();
+
         public List<Post> RecentPosts
         {
             get { return m_RecentPosts; }
         }
 
-        private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
-        private bool m_IsLogIn = false;
         public bool IsfriendListLoaded { get; set; }
+
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
         
         public FacebookObjectCollection<User> FriendsList
@@ -76,17 +80,6 @@ namespace FacebookAppLogic
                 return s_FacebookDesktopLogic;
             }
         }
-        //public static FacebookDesktopLogic GetFacebookDesktopLogic()
-        //{
-            
-        //    //todo: lock
-        //    if (s_FacebookDesktopLogic == null)
-        //    {
-        //        s_FacebookDesktopLogic = new FacebookDesktopLogic();
-        //    }
-
-        //    return s_FacebookDesktopLogic;
-        //}
 
         public bool LoginAndInit()
         {

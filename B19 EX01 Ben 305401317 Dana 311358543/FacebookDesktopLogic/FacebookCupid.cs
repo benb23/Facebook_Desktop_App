@@ -10,6 +10,7 @@ namespace FacebookAppLogic
     {
         public Candidate ChosenMatch { get; set; }
         public User LoggedInUser { get; set; }
+
         private List<Candidate> m_CupidResult = new List<Candidate>(3);
 
         public List<Candidate> CupidResult
@@ -35,21 +36,16 @@ namespace FacebookAppLogic
             initScoreValues();
         }
 
-        public List<Candidate> Candidates
-        {
-            get { return this.m_Candidates; }
-        }
-
         private void initScoreValues()
         {
             //todo: from file?
-            this.m_Score.Add("Friends", 1);
-            this.m_Score.Add("Events", 1);
-            this.m_Score.Add("Groups", 1);
+            this.m_Score.Add("Friends", 10);
+            this.m_Score.Add("Events", 4);
+            this.m_Score.Add("Groups", 3);
             this.m_Score.Add("CheckIns", 1);
-            this.m_Score.Add("LikedPages", 1);
-            this.m_Score.Add("HomeTown", 1);
-            this.m_Score.Add("FieldOfStudy", 1);
+            this.m_Score.Add("LikedPages", 6);
+            this.m_Score.Add("HomeTown", 5);
+            this.m_Score.Add("FieldOfStudy", 8);
         }
 
         public void filterRelevantCandidatesByGender(User.eGender? i_Gender)
@@ -232,7 +228,6 @@ namespace FacebookAppLogic
 
         public void FindMyMatch(User.eGender? i_Gender)
         {
-            FacebookDesktopLogic.instance.fetchFriends();
             FacebookCupid.instance.FriendsList = FacebookDesktopLogic.instance.FriendsList;          
             FacebookCupid.instance.filterAndScoreCndidates(i_Gender);
         }
@@ -248,7 +243,6 @@ namespace FacebookAppLogic
         {
             if (this.m_Candidates.Count != 0)
             {
-                //sort
                 List<Candidate> sortedCandidates = this.m_Candidates.OrderBy(p => p.Score).ToList();
                 CupidResult.Add(sortedCandidates.Last());
                 sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
@@ -256,17 +250,12 @@ namespace FacebookAppLogic
                 sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
                 CupidResult.Add(sortedCandidates.Last());
             }
-            //else
-            //{
-            //    MessageBox.Show("There was a problem loading the information from Facebook", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
         }
 
         public static FacebookCupid instance
         {
             get
             {
-                //todo: lock
                 if (s_FacebookCupid == null)
                 {
                     s_FacebookCupid = new FacebookCupid();

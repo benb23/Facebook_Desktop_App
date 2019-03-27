@@ -36,12 +36,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.userNametextBox = new System.Windows.Forms.TextBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageLogIn = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageHome = new System.Windows.Forms.TabPage();
+            this.myFriendsLabel = new System.Windows.Forms.Label();
+            this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.postsPanel = new System.Windows.Forms.Panel();
             this.post0 = new System.Windows.Forms.Panel();
             this.likesLabel3 = new System.Windows.Forms.Label();
@@ -128,12 +131,11 @@
             this.checkBoxEvents = new System.Windows.Forms.CheckBox();
             this.checkBoxFriends = new System.Windows.Forms.CheckBox();
             this.findMatchButtonPictureBox = new System.Windows.Forms.PictureBox();
-            this.tabPageSettings = new System.Windows.Forms.TabPage();
-            this.tabPageFriends = new System.Windows.Forms.TabPage();
-            this.MyFriendsLabel = new System.Windows.Forms.Label();
-            this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.tabPageCalendar = new System.Windows.Forms.TabPage();
             this.notesPanel = new System.Windows.Forms.Panel();
+            this.note2TextBox = new System.Windows.Forms.TextBox();
+            this.note1TextBox = new System.Windows.Forms.TextBox();
+            this.note0TextBox = new System.Windows.Forms.TextBox();
             this.note0PictureBox = new System.Windows.Forms.PictureBox();
             this.note1PictureBox = new System.Windows.Forms.PictureBox();
             this.note2PictureBox = new System.Windows.Forms.PictureBox();
@@ -142,31 +144,29 @@
             this.addMissionButton = new System.Windows.Forms.PictureBox();
             this.toDoListCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.toDoListLabel = new System.Windows.Forms.Label();
-            this.goToFacebookLinkButton = new System.Windows.Forms.PictureBox();
             this.upcomingEventsLabel = new System.Windows.Forms.Label();
+            this.goToFacebookLinkButton = new System.Windows.Forms.PictureBox();
             this.upcomingEventsListBox = new System.Windows.Forms.ListBox();
             this.wishHappyBirthdayButton = new System.Windows.Forms.PictureBox();
             this.upcomingBirthdaysListBox = new System.Windows.Forms.ListBox();
             this.upcomingBirthdaysLabel = new System.Windows.Forms.Label();
             this.labelCalendar = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabPageloading = new System.Windows.Forms.TabPage();
+            this.loadingLabel = new System.Windows.Forms.Label();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.albumsPictureBox = new System.Windows.Forms.PictureBox();
-            this.friendsPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBoxFaceCupid = new System.Windows.Forms.PictureBox();
             this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
-            this.settingsPictureBox = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.note0TextBox = new System.Windows.Forms.TextBox();
-            this.note1TextBox = new System.Windows.Forms.TextBox();
-            this.note2TextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mainPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageLogIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -211,7 +211,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.sortPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).BeginInit();
-            this.tabPageFriends.SuspendLayout();
             this.tabPageCalendar.SuspendLayout();
             this.notesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.note0PictureBox)).BeginInit();
@@ -220,17 +219,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.tabPageloading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -301,15 +299,25 @@
             this.userNametextBox.TabIndex = 1;
             this.userNametextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Controls.Add(this.tabControl);
+            this.mainPanel.Controls.Add(this.panel3);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 73);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(2214, 983);
+            this.mainPanel.TabIndex = 1;
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageLogIn);
             this.tabControl.Controls.Add(this.tabPageHome);
             this.tabControl.Controls.Add(this.tabPageAlbums);
             this.tabControl.Controls.Add(this.tabPageCupid);
-            this.tabControl.Controls.Add(this.tabPageSettings);
-            this.tabControl.Controls.Add(this.tabPageFriends);
             this.tabControl.Controls.Add(this.tabPageCalendar);
+            this.tabControl.Controls.Add(this.tabPageloading);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tabControl.Location = new System.Drawing.Point(470, 0);
@@ -368,6 +376,8 @@
             // 
             // tabPageHome
             // 
+            this.tabPageHome.Controls.Add(this.myFriendsLabel);
+            this.tabPageHome.Controls.Add(this.listBoxFriends);
             this.tabPageHome.Controls.Add(this.postsPanel);
             this.tabPageHome.Controls.Add(this.label4);
             this.tabPageHome.Controls.Add(this.createPostLabel);
@@ -381,6 +391,28 @@
             this.tabPageHome.TabIndex = 1;
             this.tabPageHome.Text = "Home";
             this.tabPageHome.UseVisualStyleBackColor = true;
+            // 
+            // myFriendsLabel
+            // 
+            this.myFriendsLabel.AutoSize = true;
+            this.myFriendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myFriendsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.myFriendsLabel.Location = new System.Drawing.Point(852, 27);
+            this.myFriendsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.myFriendsLabel.Name = "myFriendsLabel";
+            this.myFriendsLabel.Size = new System.Drawing.Size(151, 30);
+            this.myFriendsLabel.TabIndex = 15;
+            this.myFriendsLabel.Text = "My Friends";
+            // 
+            // listBoxFriends
+            // 
+            this.listBoxFriends.FormattingEnabled = true;
+            this.listBoxFriends.ItemHeight = 30;
+            this.listBoxFriends.Location = new System.Drawing.Point(857, 63);
+            this.listBoxFriends.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxFriends.Name = "listBoxFriends";
+            this.listBoxFriends.Size = new System.Drawing.Size(478, 784);
+            this.listBoxFriends.TabIndex = 14;
             // 
             // postsPanel
             // 
@@ -1395,50 +1427,6 @@
             this.findMatchButtonPictureBox.TabStop = false;
             this.findMatchButtonPictureBox.Click += new System.EventHandler(this.findMatchButtonPictureBox_Click);
             // 
-            // tabPageSettings
-            // 
-            this.tabPageSettings.Location = new System.Drawing.Point(8, 44);
-            this.tabPageSettings.Margin = new System.Windows.Forms.Padding(6);
-            this.tabPageSettings.Name = "tabPageSettings";
-            this.tabPageSettings.Size = new System.Drawing.Size(1728, 931);
-            this.tabPageSettings.TabIndex = 4;
-            this.tabPageSettings.Text = "Settings";
-            this.tabPageSettings.UseVisualStyleBackColor = true;
-            // 
-            // tabPageFriends
-            // 
-            this.tabPageFriends.Controls.Add(this.MyFriendsLabel);
-            this.tabPageFriends.Controls.Add(this.listBoxFriends);
-            this.tabPageFriends.Location = new System.Drawing.Point(8, 44);
-            this.tabPageFriends.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageFriends.Name = "tabPageFriends";
-            this.tabPageFriends.Size = new System.Drawing.Size(1728, 931);
-            this.tabPageFriends.TabIndex = 6;
-            this.tabPageFriends.Text = "Friends";
-            this.tabPageFriends.UseVisualStyleBackColor = true;
-            // 
-            // MyFriendsLabel
-            // 
-            this.MyFriendsLabel.AutoSize = true;
-            this.MyFriendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyFriendsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.MyFriendsLabel.Location = new System.Drawing.Point(50, 44);
-            this.MyFriendsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MyFriendsLabel.Name = "MyFriendsLabel";
-            this.MyFriendsLabel.Size = new System.Drawing.Size(151, 30);
-            this.MyFriendsLabel.TabIndex = 3;
-            this.MyFriendsLabel.Text = "My Friends";
-            // 
-            // listBoxFriends
-            // 
-            this.listBoxFriends.FormattingEnabled = true;
-            this.listBoxFriends.ItemHeight = 30;
-            this.listBoxFriends.Location = new System.Drawing.Point(56, 90);
-            this.listBoxFriends.Margin = new System.Windows.Forms.Padding(4);
-            this.listBoxFriends.Name = "listBoxFriends";
-            this.listBoxFriends.Size = new System.Drawing.Size(478, 784);
-            this.listBoxFriends.TabIndex = 0;
-            // 
             // tabPageCalendar
             // 
             this.tabPageCalendar.Controls.Add(this.notesPanel);
@@ -1447,8 +1435,8 @@
             this.tabPageCalendar.Controls.Add(this.addMissionButton);
             this.tabPageCalendar.Controls.Add(this.toDoListCheckedListBox);
             this.tabPageCalendar.Controls.Add(this.toDoListLabel);
-            this.tabPageCalendar.Controls.Add(this.goToFacebookLinkButton);
             this.tabPageCalendar.Controls.Add(this.upcomingEventsLabel);
+            this.tabPageCalendar.Controls.Add(this.goToFacebookLinkButton);
             this.tabPageCalendar.Controls.Add(this.upcomingEventsListBox);
             this.tabPageCalendar.Controls.Add(this.wishHappyBirthdayButton);
             this.tabPageCalendar.Controls.Add(this.upcomingBirthdaysListBox);
@@ -1475,6 +1463,39 @@
             this.notesPanel.Name = "notesPanel";
             this.notesPanel.Size = new System.Drawing.Size(307, 899);
             this.notesPanel.TabIndex = 18;
+            // 
+            // note2TextBox
+            // 
+            this.note2TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.note2TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.note2TextBox.Location = new System.Drawing.Point(40, 676);
+            this.note2TextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.note2TextBox.Multiline = true;
+            this.note2TextBox.Name = "note2TextBox";
+            this.note2TextBox.Size = new System.Drawing.Size(232, 170);
+            this.note2TextBox.TabIndex = 21;
+            // 
+            // note1TextBox
+            // 
+            this.note1TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.note1TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.note1TextBox.Location = new System.Drawing.Point(40, 377);
+            this.note1TextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.note1TextBox.Multiline = true;
+            this.note1TextBox.Name = "note1TextBox";
+            this.note1TextBox.Size = new System.Drawing.Size(232, 170);
+            this.note1TextBox.TabIndex = 20;
+            // 
+            // note0TextBox
+            // 
+            this.note0TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.note0TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.note0TextBox.Location = new System.Drawing.Point(40, 77);
+            this.note0TextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.note0TextBox.Multiline = true;
+            this.note0TextBox.Name = "note0TextBox";
+            this.note0TextBox.Size = new System.Drawing.Size(232, 170);
+            this.note0TextBox.TabIndex = 19;
             // 
             // note0PictureBox
             // 
@@ -1514,7 +1535,7 @@
             this.addMissionLabel.AutoSize = true;
             this.addMissionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMissionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.addMissionLabel.Location = new System.Drawing.Point(904, 717);
+            this.addMissionLabel.Location = new System.Drawing.Point(1009, 727);
             this.addMissionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.addMissionLabel.Name = "addMissionLabel";
             this.addMissionLabel.Size = new System.Drawing.Size(129, 30);
@@ -1523,9 +1544,9 @@
             // 
             // newMissionTextBox
             // 
-            this.newMissionTextBox.Location = new System.Drawing.Point(909, 750);
+            this.newMissionTextBox.Location = new System.Drawing.Point(1014, 760);
             this.newMissionTextBox.Name = "newMissionTextBox";
-            this.newMissionTextBox.Size = new System.Drawing.Size(318, 37);
+            this.newMissionTextBox.Size = new System.Drawing.Size(358, 37);
             this.newMissionTextBox.TabIndex = 13;
             // 
             // addMissionButton
@@ -1534,10 +1555,10 @@
             this.addMissionButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
             this.addMissionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.addMissionButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addMissionButton.Location = new System.Drawing.Point(909, 796);
+            this.addMissionButton.Location = new System.Drawing.Point(1014, 806);
             this.addMissionButton.Margin = new System.Windows.Forms.Padding(6);
             this.addMissionButton.Name = "addMissionButton";
-            this.addMissionButton.Size = new System.Drawing.Size(318, 62);
+            this.addMissionButton.Size = new System.Drawing.Size(358, 62);
             this.addMissionButton.TabIndex = 12;
             this.addMissionButton.TabStop = false;
             this.addMissionButton.Click += new System.EventHandler(this.addMissionButton_Click);
@@ -1545,9 +1566,9 @@
             // toDoListCheckedListBox
             // 
             this.toDoListCheckedListBox.FormattingEnabled = true;
-            this.toDoListCheckedListBox.Location = new System.Drawing.Point(909, 417);
+            this.toDoListCheckedListBox.Location = new System.Drawing.Point(1014, 71);
             this.toDoListCheckedListBox.Name = "toDoListCheckedListBox";
-            this.toDoListCheckedListBox.Size = new System.Drawing.Size(318, 292);
+            this.toDoListCheckedListBox.Size = new System.Drawing.Size(353, 644);
             this.toDoListCheckedListBox.TabIndex = 11;
             // 
             // toDoListLabel
@@ -1555,12 +1576,24 @@
             this.toDoListLabel.AutoSize = true;
             this.toDoListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toDoListLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.toDoListLabel.Location = new System.Drawing.Point(904, 384);
+            this.toDoListLabel.Location = new System.Drawing.Point(1009, 23);
             this.toDoListLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.toDoListLabel.Name = "toDoListLabel";
             this.toDoListLabel.Size = new System.Drawing.Size(148, 30);
             this.toDoListLabel.TabIndex = 10;
             this.toDoListLabel.Text = "To Do List ";
+            // 
+            // upcomingEventsLabel
+            // 
+            this.upcomingEventsLabel.AutoSize = true;
+            this.upcomingEventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upcomingEventsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.upcomingEventsLabel.Location = new System.Drawing.Point(545, 23);
+            this.upcomingEventsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.upcomingEventsLabel.Name = "upcomingEventsLabel";
+            this.upcomingEventsLabel.Size = new System.Drawing.Size(229, 30);
+            this.upcomingEventsLabel.TabIndex = 8;
+            this.upcomingEventsLabel.Text = "Upcoming Events";
             // 
             // goToFacebookLinkButton
             // 
@@ -1568,7 +1601,7 @@
             this.goToFacebookLinkButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
             this.goToFacebookLinkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.goToFacebookLinkButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.goToFacebookLinkButton.Location = new System.Drawing.Point(473, 791);
+            this.goToFacebookLinkButton.Location = new System.Drawing.Point(549, 385);
             this.goToFacebookLinkButton.Margin = new System.Windows.Forms.Padding(6);
             this.goToFacebookLinkButton.Name = "goToFacebookLinkButton";
             this.goToFacebookLinkButton.Size = new System.Drawing.Size(318, 62);
@@ -1576,23 +1609,11 @@
             this.goToFacebookLinkButton.TabStop = false;
             this.goToFacebookLinkButton.Click += new System.EventHandler(this.goToFacebookLinkButton_Click);
             // 
-            // upcomingEventsLabel
-            // 
-            this.upcomingEventsLabel.AutoSize = true;
-            this.upcomingEventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upcomingEventsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.upcomingEventsLabel.Location = new System.Drawing.Point(468, 431);
-            this.upcomingEventsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.upcomingEventsLabel.Name = "upcomingEventsLabel";
-            this.upcomingEventsLabel.Size = new System.Drawing.Size(229, 30);
-            this.upcomingEventsLabel.TabIndex = 8;
-            this.upcomingEventsLabel.Text = "Upcoming Events";
-            // 
             // upcomingEventsListBox
             // 
             this.upcomingEventsListBox.FormattingEnabled = true;
             this.upcomingEventsListBox.ItemHeight = 30;
-            this.upcomingEventsListBox.Location = new System.Drawing.Point(473, 477);
+            this.upcomingEventsListBox.Location = new System.Drawing.Point(549, 71);
             this.upcomingEventsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.upcomingEventsListBox.Name = "upcomingEventsListBox";
             this.upcomingEventsListBox.Size = new System.Drawing.Size(392, 304);
@@ -1604,7 +1625,7 @@
             this.wishHappyBirthdayButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
             this.wishHappyBirthdayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.wishHappyBirthdayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(31, 791);
+            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(549, 809);
             this.wishHappyBirthdayButton.Margin = new System.Windows.Forms.Padding(6);
             this.wishHappyBirthdayButton.Name = "wishHappyBirthdayButton";
             this.wishHappyBirthdayButton.Size = new System.Drawing.Size(318, 62);
@@ -1616,7 +1637,7 @@
             // 
             this.upcomingBirthdaysListBox.FormattingEnabled = true;
             this.upcomingBirthdaysListBox.ItemHeight = 30;
-            this.upcomingBirthdaysListBox.Location = new System.Drawing.Point(32, 477);
+            this.upcomingBirthdaysListBox.Location = new System.Drawing.Point(550, 495);
             this.upcomingBirthdaysListBox.Margin = new System.Windows.Forms.Padding(4);
             this.upcomingBirthdaysListBox.Name = "upcomingBirthdaysListBox";
             this.upcomingBirthdaysListBox.Size = new System.Drawing.Size(392, 304);
@@ -1627,7 +1648,7 @@
             this.upcomingBirthdaysLabel.AutoSize = true;
             this.upcomingBirthdaysLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upcomingBirthdaysLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.upcomingBirthdaysLabel.Location = new System.Drawing.Point(26, 431);
+            this.upcomingBirthdaysLabel.Location = new System.Drawing.Point(545, 449);
             this.upcomingBirthdaysLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.upcomingBirthdaysLabel.Name = "upcomingBirthdaysLabel";
             this.upcomingBirthdaysLabel.Size = new System.Drawing.Size(261, 30);
@@ -1639,7 +1660,7 @@
             this.labelCalendar.AutoSize = true;
             this.labelCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCalendar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelCalendar.Location = new System.Drawing.Point(26, 23);
+            this.labelCalendar.Location = new System.Drawing.Point(37, 23);
             this.labelCalendar.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelCalendar.Name = "labelCalendar";
             this.labelCalendar.Size = new System.Drawing.Size(125, 30);
@@ -1649,21 +1670,42 @@
             // monthCalendar1
             // 
             this.monthCalendar1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.monthCalendar1.Location = new System.Drawing.Point(32, 71);
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.monthCalendar1.Location = new System.Drawing.Point(42, 85);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(18, 17, 18, 17);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
-            // panel2
+            // tabPageloading
             // 
-            this.panel2.Controls.Add(this.tabControl);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 73);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2214, 983);
-            this.panel2.TabIndex = 1;
+            this.tabPageloading.Controls.Add(this.loadingLabel);
+            this.tabPageloading.Controls.Add(this.pictureBox21);
+            this.tabPageloading.Location = new System.Drawing.Point(8, 44);
+            this.tabPageloading.Name = "tabPageloading";
+            this.tabPageloading.Size = new System.Drawing.Size(1728, 931);
+            this.tabPageloading.TabIndex = 8;
+            this.tabPageloading.Text = "loading";
+            this.tabPageloading.UseVisualStyleBackColor = true;
+            // 
+            // loadingLabel
+            // 
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.loadingLabel.Location = new System.Drawing.Point(726, 241);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(198, 44);
+            this.loadingLabel.TabIndex = 5;
+            this.loadingLabel.Text = "Loading...";
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.loading1;
+            this.pictureBox21.Location = new System.Drawing.Point(655, 288);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(340, 333);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.TabIndex = 4;
+            this.pictureBox21.TabStop = false;
             // 
             // panel3
             // 
@@ -1710,10 +1752,8 @@
             this.flowLayoutPanel2.Controls.Add(this.userNametextBox);
             this.flowLayoutPanel2.Controls.Add(this.homePictureBox);
             this.flowLayoutPanel2.Controls.Add(this.albumsPictureBox);
-            this.flowLayoutPanel2.Controls.Add(this.friendsPictureBox);
             this.flowLayoutPanel2.Controls.Add(this.pictureBoxFaceCupid);
             this.flowLayoutPanel2.Controls.Add(this.pictureBoxCalendar);
-            this.flowLayoutPanel2.Controls.Add(this.settingsPictureBox);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 395);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
@@ -1746,23 +1786,11 @@
             this.albumsPictureBox.TabStop = false;
             this.albumsPictureBox.Click += new System.EventHandler(this.albumsPictureBox_Click_1);
             // 
-            // friendsPictureBox
-            // 
-            this.friendsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.friendsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.friends;
-            this.friendsPictureBox.Location = new System.Drawing.Point(46, 242);
-            this.friendsPictureBox.Margin = new System.Windows.Forms.Padding(6);
-            this.friendsPictureBox.Name = "friendsPictureBox";
-            this.friendsPictureBox.Size = new System.Drawing.Size(376, 60);
-            this.friendsPictureBox.TabIndex = 12;
-            this.friendsPictureBox.TabStop = false;
-            this.friendsPictureBox.Click += new System.EventHandler(this.friendsPictureBox_Click_1);
-            // 
             // pictureBoxFaceCupid
             // 
             this.pictureBoxFaceCupid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxFaceCupid.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.faceCupid;
-            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 314);
+            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 242);
             this.pictureBoxFaceCupid.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFaceCupid.Name = "pictureBoxFaceCupid";
             this.pictureBoxFaceCupid.Size = new System.Drawing.Size(376, 60);
@@ -1774,7 +1802,7 @@
             // 
             this.pictureBoxCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCalendar.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.calendar;
-            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 386);
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 314);
             this.pictureBoxCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxCalendar.Name = "pictureBoxCalendar";
             this.pictureBoxCalendar.Size = new System.Drawing.Size(376, 60);
@@ -1782,63 +1810,18 @@
             this.pictureBoxCalendar.TabStop = false;
             this.pictureBoxCalendar.Click += new System.EventHandler(this.pictureBoxCalendar_Click);
             // 
-            // settingsPictureBox
-            // 
-            this.settingsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.setings;
-            this.settingsPictureBox.Location = new System.Drawing.Point(46, 458);
-            this.settingsPictureBox.Margin = new System.Windows.Forms.Padding(6);
-            this.settingsPictureBox.Name = "settingsPictureBox";
-            this.settingsPictureBox.Size = new System.Drawing.Size(376, 60);
-            this.settingsPictureBox.TabIndex = 13;
-            this.settingsPictureBox.TabStop = false;
-            this.settingsPictureBox.Click += new System.EventHandler(this.settingsPictureBox_Click_1);
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // note0TextBox
-            // 
-            this.note0TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.note0TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.note0TextBox.Location = new System.Drawing.Point(40, 77);
-            this.note0TextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.note0TextBox.Multiline = true;
-            this.note0TextBox.Name = "note0TextBox";
-            this.note0TextBox.Size = new System.Drawing.Size(232, 170);
-            this.note0TextBox.TabIndex = 19;
-            // 
-            // note1TextBox
-            // 
-            this.note1TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.note1TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.note1TextBox.Location = new System.Drawing.Point(40, 377);
-            this.note1TextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.note1TextBox.Multiline = true;
-            this.note1TextBox.Name = "note1TextBox";
-            this.note1TextBox.Size = new System.Drawing.Size(232, 170);
-            this.note1TextBox.TabIndex = 20;
-            // 
-            // note2TextBox
-            // 
-            this.note2TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.note2TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.note2TextBox.Location = new System.Drawing.Point(40, 676);
-            this.note2TextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.note2TextBox.Multiline = true;
-            this.note2TextBox.Name = "note2TextBox";
-            this.note2TextBox.Size = new System.Drawing.Size(232, 170);
-            this.note2TextBox.TabIndex = 21;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2214, 1056);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimizeBox = false;
@@ -1848,6 +1831,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.mainPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPageLogIn.ResumeLayout(false);
             this.tabPageLogIn.PerformLayout();
@@ -1907,8 +1891,6 @@
             this.sortPanel.ResumeLayout(false);
             this.sortPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).EndInit();
-            this.tabPageFriends.ResumeLayout(false);
-            this.tabPageFriends.PerformLayout();
             this.tabPageCalendar.ResumeLayout(false);
             this.tabPageCalendar.PerformLayout();
             this.notesPanel.ResumeLayout(false);
@@ -1919,7 +1901,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.tabPageloading.ResumeLayout(false);
+            this.tabPageloading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.panel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
@@ -1927,10 +1911,8 @@
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.friendsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1943,135 +1925,134 @@
         private System.Windows.Forms.TextBox userNametextBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox homePictureBox;
+        private System.Windows.Forms.PictureBox albumsPictureBox;
+        private System.Windows.Forms.Label labelLogOut;
+        private System.Windows.Forms.PictureBox pictureBoxCalendar;
+        private System.Windows.Forms.PictureBox pictureBoxFaceCupid;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPageHome;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TabPage tabPageAlbums;
-        private System.Windows.Forms.TabPage tabPageCupid;
-        private System.Windows.Forms.TabPage tabPageSettings;
         private System.Windows.Forms.TabPage tabPageLogIn;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label post3Date;
+        private System.Windows.Forms.TabPage tabPageHome;
+        private System.Windows.Forms.Panel postsPanel;
+        private System.Windows.Forms.Panel post0;
+        private System.Windows.Forms.Label likesLabel3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label post3Content;
+        private System.Windows.Forms.PictureBox postPictureBox;
         private System.Windows.Forms.Label post3Publisher;
+        private System.Windows.Forms.Label post3Date;
+        private System.Windows.Forms.Panel post3;
+        private System.Windows.Forms.Label likesLabel2;
+        private System.Windows.Forms.Label likes2;
+        private System.Windows.Forms.Label post2Content;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label post2Publisher;
+        private System.Windows.Forms.Label post2Date;
+        private System.Windows.Forms.Panel post1;
+        private System.Windows.Forms.Label likesLabel1;
+        private System.Windows.Forms.Label likes1;
+        private System.Windows.Forms.Label post1Content;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label post1Publisher;
+        private System.Windows.Forms.Label post1Date;
+        private System.Windows.Forms.Panel post2;
+        private System.Windows.Forms.Label likesLabel0;
+        private System.Windows.Forms.Label likes0;
+        private System.Windows.Forms.Label post0Content;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Label post0Publisher;
+        private System.Windows.Forms.Label post0Date;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label createPostLabel;
-        private System.Windows.Forms.PictureBox postPictureBox;
-        private System.Windows.Forms.TabPage tabPageFriends;
-        private System.Windows.Forms.ListBox listBoxFriends;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label MyFriendsLabel;
-        private System.Windows.Forms.Panel album2Panel;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel album1Panel;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TabPage tabPageAlbums;
         private System.Windows.Forms.Panel album0Panel;
         private System.Windows.Forms.Label albumName0;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.Panel album1Panel;
         private System.Windows.Forms.Label albumName1;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Panel album2Panel;
         private System.Windows.Forms.Label albumName2;
-        private System.Windows.Forms.Panel post0;
-        private System.Windows.Forms.Label post3Content;
-        private System.Windows.Forms.Panel post3;
-        private System.Windows.Forms.Label post2Content;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Label post2Publisher;
-        private System.Windows.Forms.Label post2Date;
-        private System.Windows.Forms.Panel post2;
-        private System.Windows.Forms.Label post0Content;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Label post0Publisher;
-        private System.Windows.Forms.Label post0Date;
-        private System.Windows.Forms.Panel post1;
-        private System.Windows.Forms.Label post1Content;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label post1Publisher;
-        private System.Windows.Forms.Label post1Date;
-        private System.Windows.Forms.Panel postsPanel;
-        private System.Windows.Forms.PictureBox homePictureBox;
-        private System.Windows.Forms.PictureBox albumsPictureBox;
-        private System.Windows.Forms.PictureBox friendsPictureBox;
-        private System.Windows.Forms.PictureBox settingsPictureBox;
-        private System.Windows.Forms.Label labelLogOut;
-        private System.Windows.Forms.Label likes0;
-        private System.Windows.Forms.Label likesLabel3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label likesLabel2;
-        private System.Windows.Forms.Label likes2;
-        private System.Windows.Forms.Label likesLabel1;
-        private System.Windows.Forms.Label likes1;
-        private System.Windows.Forms.Label likesLabel0;
-        private System.Windows.Forms.TabPage tabPageCalendar;
-        private System.Windows.Forms.Label upcomingBirthdaysLabel;
-        private System.Windows.Forms.Label labelCalendar;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.PictureBox pictureBoxCalendar;
-        private System.Windows.Forms.PictureBox pictureBoxFaceCupid;
-        private System.Windows.Forms.Panel sortPanel;
-        private System.Windows.Forms.CheckBox checkBoxFriends;
-        private System.Windows.Forms.CheckBox checkBoxFieldOfStudy;
-        private System.Windows.Forms.CheckBox checkBoxHomeTown;
-        private System.Windows.Forms.CheckBox checkBoxLikedPages;
-        private System.Windows.Forms.CheckBox checkBoxCheckIns;
-        private System.Windows.Forms.CheckBox checkBoxGroups;
-        private System.Windows.Forms.CheckBox checkBoxEvents;
-        private System.Windows.Forms.Label SortByLabel;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TabPage tabPageCupid;
+        private System.Windows.Forms.PictureBox sendMsgToMatchButton;
+        private System.Windows.Forms.Label postOnMatchWallLabel;
+        private System.Windows.Forms.TextBox postOnMatchWallTextBox;
+        private System.Windows.Forms.Label choosMatchLabel;
+        private System.Windows.Forms.Panel resPanel;
+        private System.Windows.Forms.Panel match3Panel;
+        private System.Windows.Forms.Label scoreLabel3;
+        private System.Windows.Forms.Label match3Name;
+        private System.Windows.Forms.PictureBox match3PictureBox;
+        private System.Windows.Forms.Panel match1Panel;
+        private System.Windows.Forms.Label scoreLabel2;
+        private System.Windows.Forms.Label match1Name;
+        private System.Windows.Forms.PictureBox match1PictureBox;
+        private System.Windows.Forms.Panel match2Panel;
+        private System.Windows.Forms.Label scoreLabel1;
+        private System.Windows.Forms.Label match2Name;
+        private System.Windows.Forms.PictureBox match2PictureBox;
         private System.Windows.Forms.Panel genderPanel;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.CheckBox checkBoxFemale;
         private System.Windows.Forms.CheckBox checkBoxMale;
         private System.Windows.Forms.Label genderLabel;
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.Panel resPanel;
-        private System.Windows.Forms.Panel match2Panel;
-        private System.Windows.Forms.PictureBox match2PictureBox;
-        private System.Windows.Forms.Panel match3Panel;
-        private System.Windows.Forms.PictureBox match3PictureBox;
-        private System.Windows.Forms.Panel match1Panel;
-        private System.Windows.Forms.PictureBox match1PictureBox;
-        private System.Windows.Forms.Label match3Name;
-        private System.Windows.Forms.Label match1Name;
-        private System.Windows.Forms.Label match2Name;
-        private System.Windows.Forms.Label scoreLabel3;
-        private System.Windows.Forms.Label scoreLabel2;
-        private System.Windows.Forms.Label scoreLabel1;
+        private System.Windows.Forms.Label SortByLabel;
+        private System.Windows.Forms.Panel sortPanel;
+        private System.Windows.Forms.CheckBox checkBoxFieldOfStudy;
+        private System.Windows.Forms.CheckBox checkBoxCheckIns;
+        private System.Windows.Forms.CheckBox checkBoxHomeTown;
+        private System.Windows.Forms.CheckBox checkBoxLikedPages;
+        private System.Windows.Forms.CheckBox checkBoxGroups;
+        private System.Windows.Forms.CheckBox checkBoxEvents;
+        private System.Windows.Forms.CheckBox checkBoxFriends;
         private System.Windows.Forms.PictureBox findMatchButtonPictureBox;
-        private System.Windows.Forms.Label choosMatchLabel;
-        private System.Windows.Forms.Label postOnMatchWallLabel;
-        private System.Windows.Forms.TextBox postOnMatchWallTextBox;
-        private System.Windows.Forms.PictureBox sendMsgToMatchButton;
-        private System.Windows.Forms.PictureBox wishHappyBirthdayButton;
-        private System.Windows.Forms.ListBox upcomingBirthdaysListBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label upcomingEventsLabel;
-        private System.Windows.Forms.ListBox upcomingEventsListBox;
-        private System.Windows.Forms.PictureBox goToFacebookLinkButton;
-        private System.Windows.Forms.PictureBox addMissionButton;
-        private System.Windows.Forms.CheckedListBox toDoListCheckedListBox;
-        private System.Windows.Forms.Label toDoListLabel;
-        private System.Windows.Forms.Label addMissionLabel;
-        private System.Windows.Forms.TextBox newMissionTextBox;
-        private System.Windows.Forms.PictureBox note1PictureBox;
+        private System.Windows.Forms.TabPage tabPageCalendar;
         private System.Windows.Forms.Panel notesPanel;
-        private System.Windows.Forms.PictureBox note0PictureBox;
-        private System.Windows.Forms.PictureBox note2PictureBox;
         private System.Windows.Forms.TextBox note2TextBox;
         private System.Windows.Forms.TextBox note1TextBox;
         private System.Windows.Forms.TextBox note0TextBox;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.PictureBox note0PictureBox;
+        private System.Windows.Forms.PictureBox note1PictureBox;
+        private System.Windows.Forms.PictureBox note2PictureBox;
+        private System.Windows.Forms.Label addMissionLabel;
+        private System.Windows.Forms.TextBox newMissionTextBox;
+        private System.Windows.Forms.PictureBox addMissionButton;
+        private System.Windows.Forms.CheckedListBox toDoListCheckedListBox;
+        private System.Windows.Forms.Label toDoListLabel;
+        private System.Windows.Forms.Label upcomingEventsLabel;
+        private System.Windows.Forms.PictureBox goToFacebookLinkButton;
+        private System.Windows.Forms.ListBox upcomingEventsListBox;
+        private System.Windows.Forms.PictureBox wishHappyBirthdayButton;
+        private System.Windows.Forms.ListBox upcomingBirthdaysListBox;
+        private System.Windows.Forms.Label upcomingBirthdaysLabel;
+        private System.Windows.Forms.Label labelCalendar;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.TabPage tabPageloading;
+        private System.Windows.Forms.Label loadingLabel;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Label myFriendsLabel;
+        private System.Windows.Forms.ListBox listBoxFriends;
     }
 }
 
