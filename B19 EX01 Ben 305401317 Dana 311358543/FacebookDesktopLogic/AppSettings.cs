@@ -18,9 +18,9 @@ namespace FacebookAppLogic
 
         public AppSettings()
         {
-            LastWindowLocation = new Point(600, 300);
-            RememberUser = false;
-            LastAccessToken = null;
+            this.LastWindowLocation = new Point(600, 300);
+            this.RememberUser = false;
+            this.LastAccessToken = null;
         }
 
         public static AppSettings LoadFromFile()

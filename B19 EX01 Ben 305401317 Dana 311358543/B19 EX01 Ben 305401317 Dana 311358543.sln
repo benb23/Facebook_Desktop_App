@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B19 EX01 Ben 305401317 Dana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacebookDesktopLogic", "FacebookDesktopLogic\FacebookDesktopLogic.csproj", "{A9500C99-76C7-4D50-9364-9387D84D7C10}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E38DEAD0-B5C7-40C4-B640-F1277B4E65BA}"
+	ProjectSection(SolutionItems) = preProject
+		B19 Ex01 Ben 305401317 Dana 311358543.docx = B19 Ex01 Ben 305401317 Dana 311358543.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

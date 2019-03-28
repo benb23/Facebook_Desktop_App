@@ -31,7 +31,7 @@ namespace FacebookAppLogic
         {
             if (!this.m_IsEventsLoaded)
             {
-                    foreach (Event eventItem in LoggedInUser.Events)
+                    foreach (Event eventItem in this.LoggedInUser.Events)
                     {
                         if (eventItem.StartTime.Value.Month == DateTime.Now.Month)
                         {
@@ -45,12 +45,12 @@ namespace FacebookAppLogic
 
         public void WishHappyBirthday(int i_Index)
         {
-            LoggedInUser.PostStatus("Happy Birthday" + this.m_UpcomingBirthdaysUsers[i_Index].Name);
+            this.LoggedInUser.PostStatus("Happy Birthday" + this.m_UpcomingBirthdaysUsers[i_Index].Name);
         }
 
         public void GoToFacebookLink(int i_Index)
         {
-            if (this.m_UpcomingEvents.Count!=0 && this.m_UpcomingEvents[i_Index] != null)
+            if (this.m_UpcomingEvents.Count != 0 && this.m_UpcomingEvents[i_Index] != null)
             {
                 string link = this.m_UpcomingEvents[i_Index].LinkToFacebook;
                 System.Diagnostics.Process.Start(link);
@@ -65,7 +65,7 @@ namespace FacebookAppLogic
         {
             if (!this.m_IsBirthdaysLoaded)
             {
-                foreach (User friend in FriendsList)
+                foreach (User friend in this.FriendsList)
                 {
                     if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
                     {
@@ -76,6 +76,5 @@ namespace FacebookAppLogic
                 this.m_IsBirthdaysLoaded = true;
             }
         }
-
     }
 }

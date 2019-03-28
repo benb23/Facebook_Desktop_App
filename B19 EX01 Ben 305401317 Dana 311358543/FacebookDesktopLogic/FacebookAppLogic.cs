@@ -6,37 +6,55 @@ using FacebookWrapper.ObjectModel;
 namespace FacebookAppLogic
 {
     public class FacebookDesktopLogic
-    {//352758402005372
-        private readonly string r_AppID = "1450160541956417";
+    {
+        private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
+
+        private readonly string r_AppID = "352758402005372";
+
+        public static FacebookDesktopLogic Instance
+        {
+            get
+            {
+                if (s_FacebookDesktopLogic == null)
+                {
+                    s_FacebookDesktopLogic = new FacebookDesktopLogic();
+                }
+
+                return s_FacebookDesktopLogic;
+            }
+        }
+
         public AppSettings AppSettings { get; set; }
+
         public LoginResult LoginResult { get; set; }
 
-        private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
         public List<string> LatestPhotos { get; set; }
 
         private FacebookCalendar m_Calendar = new FacebookCalendar();
 
+        private bool m_IsLogIn = false;
+
+        private bool m_IsPostsLoaded = false;
+
+        public string PictureNormalURL { get; set; }
+
+        private List<Post> m_RecentPosts = new List<Post>();
+
         public FacebookCalendar Calendar
         {
-            get { return m_Calendar; }
+            get { return this.m_Calendar; }
         }
 
         private FacebookCupid m_Cupid = new FacebookCupid();
 
         public FacebookCupid Cupid
         {
-            get { return m_Cupid; }
+            get { return this.m_Cupid; }
         }
-
-        private bool m_IsLogIn = false;
-        private bool m_IsPostsLoaded = false;
-        public string PictureNormalURL { get; set; }
-
-        private List<Post> m_RecentPosts = new List<Post>();
 
         public List<Post> RecentPosts
         {
-            get { return m_RecentPosts; }
+            get { return this.m_RecentPosts; }
         }
 
         public bool IsfriendListLoaded { get; set; }
@@ -45,8 +63,8 @@ namespace FacebookAppLogic
         
         public FacebookObjectCollection<User> FriendsList
         {
-            set { this.m_FriendsList = value; }
             get { return this.m_FriendsList; }
+            set { this.m_FriendsList = value; }
         }
 
         private User m_LoggedInUser;
@@ -57,8 +75,8 @@ namespace FacebookAppLogic
             set
             {
                 this.m_LoggedInUser = value;
-                Cupid.LoggedInUser = value;
-                Calendar.LoggedInUser = value;
+                this.Cupid.LoggedInUser = value;
+                this.Calendar.LoggedInUser = value;
             }
         }
 
@@ -81,19 +99,8 @@ namespace FacebookAppLogic
             }
         }
 
-        private FacebookDesktopLogic() { }
-
-        public static FacebookDesktopLogic Instance
+        private FacebookDesktopLogic()
         {
-            get
-            {
-                if (s_FacebookDesktopLogic == null)
-                {
-                    s_FacebookDesktopLogic = new FacebookDesktopLogic();
-                }
-
-                return s_FacebookDesktopLogic;
-            }
         }
 
         public bool LoginAndInit()
@@ -156,10 +163,9 @@ namespace FacebookAppLogic
             /// The documentation regarding facebook login and permissions can be found here: 
             // https://developers.facebook.com/docs/facebook-login/permissions#reference
 
-
             if (!string.IsNullOrEmpty(LoginResult.AccessToken))
             {
-                LoggedInUser = LoginResult.LoggedInUser;
+                this.LoggedInUser = LoginResult.LoggedInUser;
                 this.m_IsLogIn = true;
             }
             else
@@ -176,7 +182,7 @@ namespace FacebookAppLogic
             {
                 for (int i = 0; i < i_NumOfPosts; i++)
                 {
-                    this.m_RecentPosts.Add(LoggedInUser.Posts[i]);
+                    this.m_RecentPosts.Add(this.LoggedInUser.Posts[i]);
                 }
 
                 this.m_IsPostsLoaded = true;
@@ -200,18 +206,17 @@ namespace FacebookAppLogic
                 }
             }
 
-
             return Photos;
         }
 
         public int FetchLatestPhotos(int i_AlbumIndex, int i_NumOfPhotos)
         {
-            LatestPhotos = fetchLatestPhotosInAlbum(i_AlbumIndex, i_NumOfPhotos);
+            this.LatestPhotos = this.fetchLatestPhotosInAlbum(i_AlbumIndex, i_NumOfPhotos);
 
-            while (LatestPhotos.Count == 0)
+            while (this.LatestPhotos.Count == 0)
             {
                 i_AlbumIndex++;
-                LatestPhotos = fetchLatestPhotosInAlbum(i_AlbumIndex, i_NumOfPhotos);
+                this.LatestPhotos = this.fetchLatestPhotosInAlbum(i_AlbumIndex, i_NumOfPhotos);
             }
 
             return i_AlbumIndex;
