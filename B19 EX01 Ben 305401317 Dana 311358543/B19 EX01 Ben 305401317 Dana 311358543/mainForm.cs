@@ -53,7 +53,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             string profilePictureUrl = m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL;
             m_FacebookDesktopLogic.PictureNormalURL = profilePictureUrl;
             userPictureBox.LoadAsync(profilePictureUrl);
-            userPictureBox.BackColor = Color.Red;
+            roundImage();
             userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
         }
         private void initPostsPanel()
@@ -355,14 +355,13 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             m_FacebookDesktopLogic.Calendar.wishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
         }
 
-        private void userPictureBox_BackColorChanged(object sender, EventArgs e)
+        private void roundImage()
         {
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(0, 0, userPictureBox.Width, userPictureBox.Height);
             Region rg = new Region(gp);
             userPictureBox.Region = rg;
         }
-
         private void goToFacebookLinkButton_Click(object sender, EventArgs e)
         {
             try
