@@ -1760,7 +1760,7 @@
             this.wishHappyBirthdayButton.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.HappyBirthDayButton;
             this.wishHappyBirthdayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.wishHappyBirthdayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(549, 809);
+            this.wishHappyBirthdayButton.Location = new System.Drawing.Point(550, 809);
             this.wishHappyBirthdayButton.Margin = new System.Windows.Forms.Padding(6);
             this.wishHappyBirthdayButton.Name = "wishHappyBirthdayButton";
             this.wishHappyBirthdayButton.Size = new System.Drawing.Size(318, 62);
