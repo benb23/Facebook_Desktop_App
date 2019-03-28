@@ -1809,7 +1809,7 @@
             // 
             this.homePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homePictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.home;
-            this.homePictureBox.Location = new System.Drawing.Point(42, 568);
+            this.homePictureBox.Location = new System.Drawing.Point(46, 536);
             this.homePictureBox.Margin = new System.Windows.Forms.Padding(6, 20, 6, 6);
             this.homePictureBox.Name = "homePictureBox";
             this.homePictureBox.Size = new System.Drawing.Size(376, 60);
@@ -1821,7 +1821,7 @@
             // 
             this.albumsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.albumsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.albums;
-            this.albumsPictureBox.Location = new System.Drawing.Point(42, 640);
+            this.albumsPictureBox.Location = new System.Drawing.Point(46, 608);
             this.albumsPictureBox.Margin = new System.Windows.Forms.Padding(6);
             this.albumsPictureBox.Name = "albumsPictureBox";
             this.albumsPictureBox.Size = new System.Drawing.Size(376, 60);
@@ -1833,7 +1833,7 @@
             // 
             this.pictureBoxFaceCupid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxFaceCupid.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.faceCupid;
-            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(42, 712);
+            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 680);
             this.pictureBoxFaceCupid.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFaceCupid.Name = "pictureBoxFaceCupid";
             this.pictureBoxFaceCupid.Size = new System.Drawing.Size(376, 60);
@@ -1845,7 +1845,7 @@
             // 
             this.pictureBoxCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCalendar.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.calendar;
-            this.pictureBoxCalendar.Location = new System.Drawing.Point(42, 784);
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 752);
             this.pictureBoxCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxCalendar.Name = "pictureBoxCalendar";
             this.pictureBoxCalendar.Size = new System.Drawing.Size(376, 60);
