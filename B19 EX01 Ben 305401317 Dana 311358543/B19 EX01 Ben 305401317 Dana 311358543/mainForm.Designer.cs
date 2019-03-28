@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelLogOut = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.LogOutLabel = new System.Windows.Forms.Label();
+            this.headerPictureBox = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.userNametextBox = new System.Windows.Forms.TextBox();
@@ -76,7 +76,7 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.post0Publisher = new System.Windows.Forms.Label();
             this.post0Date = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.recentPostslabel = new System.Windows.Forms.Label();
             this.createPostLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -141,7 +141,7 @@
             this.note0PictureBox = new System.Windows.Forms.PictureBox();
             this.note1PictureBox = new System.Windows.Forms.PictureBox();
             this.note2PictureBox = new System.Windows.Forms.PictureBox();
-            this.addMissionLabel = new System.Windows.Forms.Label();
+            this.addTaskLabel = new System.Windows.Forms.Label();
             this.newMissionTextBox = new System.Windows.Forms.TextBox();
             this.addMissionButton = new System.Windows.Forms.PictureBox();
             this.toDoListCheckedListBox = new System.Windows.Forms.CheckedListBox();
@@ -152,22 +152,22 @@
             this.wishHappyBirthdayButton = new System.Windows.Forms.PictureBox();
             this.upcomingBirthdaysListBox = new System.Windows.Forms.ListBox();
             this.upcomingBirthdaysLabel = new System.Windows.Forms.Label();
-            this.labelCalendar = new System.Windows.Forms.Label();
+            this.calendarLabel = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tabPageloading = new System.Windows.Forms.TabPage();
             this.loadingLabel = new System.Windows.Forms.Label();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.menuPanel = new System.Windows.Forms.Panel();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.albumsPictureBox = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.userPictureBox = new System.Windows.Forms.PictureBox();
+            this.userNamePanel = new System.Windows.Forms.Panel();
+            this.profilePicturePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBoxFaceCupid = new System.Windows.Forms.PictureBox();
             this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.headerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.headerPictureBox)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageLogIn.SuspendLayout();
@@ -223,65 +223,64 @@
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).BeginInit();
             this.tabPageloading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
+            this.userNamePanel.SuspendLayout();
+            this.profilePicturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // headerPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(176)))));
-            this.panel1.Controls.Add(this.labelLogOut);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2214, 73);
-            this.panel1.TabIndex = 0;
+            this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(103)))), ((int)(((byte)(176)))));
+            this.headerPanel.Controls.Add(this.LogOutLabel);
+            this.headerPanel.Controls.Add(this.headerPictureBox);
+            this.headerPanel.Controls.Add(this.label7);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(2214, 73);
+            this.headerPanel.TabIndex = 0;
             // 
-            // labelLogOut
+            // LogOutLabel
             // 
-            this.labelLogOut.AutoSize = true;
-            this.labelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelLogOut.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelLogOut.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogOut.ForeColor = System.Drawing.Color.White;
-            this.labelLogOut.Location = new System.Drawing.Point(2091, 0);
-            this.labelLogOut.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.labelLogOut.Name = "labelLogOut";
-            this.labelLogOut.Padding = new System.Windows.Forms.Padding(0, 19, 6, 0);
-            this.labelLogOut.Size = new System.Drawing.Size(123, 48);
-            this.labelLogOut.TabIndex = 2;
-            this.labelLogOut.Text = "Log Out";
-            this.labelLogOut.Click += new System.EventHandler(this.labelLogOut_Click);
+            this.LogOutLabel.AutoSize = true;
+            this.LogOutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogOutLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LogOutLabel.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutLabel.ForeColor = System.Drawing.Color.White;
+            this.LogOutLabel.Location = new System.Drawing.Point(2091, 0);
+            this.LogOutLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LogOutLabel.Name = "LogOutLabel";
+            this.LogOutLabel.Padding = new System.Windows.Forms.Padding(0, 19, 6, 0);
+            this.LogOutLabel.Size = new System.Drawing.Size(123, 48);
+            this.LogOutLabel.TabIndex = 2;
+            this.LogOutLabel.Text = "Log Out";
+            this.LogOutLabel.Click += new System.EventHandler(this.labelLogOut_Click);
             // 
-            // pictureBox1
+            // headerPictureBox
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.FDlogo1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(2214, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.headerPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.headerPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.FDlogo1;
+            this.headerPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.headerPictureBox.Margin = new System.Windows.Forms.Padding(6);
+            this.headerPictureBox.Name = "headerPictureBox";
+            this.headerPictureBox.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.headerPictureBox.Size = new System.Drawing.Size(2214, 73);
+            this.headerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.headerPictureBox.TabIndex = 1;
+            this.headerPictureBox.TabStop = false;
             // 
             // label7
             // 
             this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 23);
-            this.label7.TabIndex = 0;
+            this.label7.TabIndex = 3;
             // 
             // contextMenuStrip1
             // 
@@ -304,10 +303,10 @@
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.tabControl);
-            this.mainPanel.Controls.Add(this.panel3);
+            this.mainPanel.Controls.Add(this.menuPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 73);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(6);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(2214, 983);
             this.mainPanel.TabIndex = 1;
@@ -323,7 +322,7 @@
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.tabControl.Location = new System.Drawing.Point(470, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1744, 983);
@@ -336,7 +335,7 @@
             this.tabPageLogIn.Controls.Add(this.label2);
             this.tabPageLogIn.Controls.Add(this.label1);
             this.tabPageLogIn.Location = new System.Drawing.Point(8, 44);
-            this.tabPageLogIn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageLogIn.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageLogIn.Name = "tabPageLogIn";
             this.tabPageLogIn.Size = new System.Drawing.Size(1728, 931);
             this.tabPageLogIn.TabIndex = 5;
@@ -347,7 +346,7 @@
             // 
             this.checkBoxRememberMe.AutoSize = true;
             this.checkBoxRememberMe.Location = new System.Drawing.Point(732, 196);
-            this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxRememberMe.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxRememberMe.Name = "checkBoxRememberMe";
             this.checkBoxRememberMe.Size = new System.Drawing.Size(216, 34);
             this.checkBoxRememberMe.TabIndex = 3;
@@ -360,7 +359,7 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Location = new System.Drawing.Point(732, 240);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(200, 58);
             this.pictureBox4.TabIndex = 2;
@@ -393,14 +392,14 @@
             this.tabPageHome.Controls.Add(this.myFriendsLabel);
             this.tabPageHome.Controls.Add(this.listBoxFriends);
             this.tabPageHome.Controls.Add(this.postsPanel);
-            this.tabPageHome.Controls.Add(this.label4);
+            this.tabPageHome.Controls.Add(this.recentPostslabel);
             this.tabPageHome.Controls.Add(this.createPostLabel);
             this.tabPageHome.Controls.Add(this.textBox1);
             this.tabPageHome.Controls.Add(this.pictureBox3);
             this.tabPageHome.Location = new System.Drawing.Point(8, 44);
-            this.tabPageHome.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageHome.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageHome.Name = "tabPageHome";
-            this.tabPageHome.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageHome.Padding = new System.Windows.Forms.Padding(6);
             this.tabPageHome.Size = new System.Drawing.Size(1728, 931);
             this.tabPageHome.TabIndex = 1;
             this.tabPageHome.Text = "Home";
@@ -423,7 +422,7 @@
             this.listBoxFriends.FormattingEnabled = true;
             this.listBoxFriends.ItemHeight = 30;
             this.listBoxFriends.Location = new System.Drawing.Point(890, 63);
-            this.listBoxFriends.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxFriends.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxFriends.Name = "listBoxFriends";
             this.listBoxFriends.Size = new System.Drawing.Size(478, 754);
             this.listBoxFriends.TabIndex = 14;
@@ -435,7 +434,7 @@
             this.postsPanel.Controls.Add(this.post1);
             this.postsPanel.Controls.Add(this.post2);
             this.postsPanel.Location = new System.Drawing.Point(56, 302);
-            this.postsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.postsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.postsPanel.Name = "postsPanel";
             this.postsPanel.Size = new System.Drawing.Size(668, 648);
             this.postsPanel.TabIndex = 13;
@@ -450,7 +449,7 @@
             this.post0.Controls.Add(this.post3Date);
             this.post0.Dock = System.Windows.Forms.DockStyle.Top;
             this.post0.Location = new System.Drawing.Point(0, 474);
-            this.post0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.post0.Margin = new System.Windows.Forms.Padding(4);
             this.post0.Name = "post0";
             this.post0.Size = new System.Drawing.Size(668, 158);
             this.post0.TabIndex = 9;
@@ -493,7 +492,7 @@
             this.postPictureBox.BackColor = System.Drawing.Color.Gainsboro;
             this.postPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.postPictureBox.Location = new System.Drawing.Point(24, 15);
-            this.postPictureBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.postPictureBox.Margin = new System.Windows.Forms.Padding(6);
             this.postPictureBox.Name = "postPictureBox";
             this.postPictureBox.Size = new System.Drawing.Size(132, 127);
             this.postPictureBox.TabIndex = 2;
@@ -531,7 +530,7 @@
             this.post3.Controls.Add(this.post2Date);
             this.post3.Dock = System.Windows.Forms.DockStyle.Top;
             this.post3.Location = new System.Drawing.Point(0, 316);
-            this.post3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.post3.Margin = new System.Windows.Forms.Padding(4);
             this.post3.Name = "post3";
             this.post3.Size = new System.Drawing.Size(668, 158);
             this.post3.TabIndex = 12;
@@ -574,7 +573,7 @@
             this.pictureBox14.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox14.Location = new System.Drawing.Point(24, 15);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(132, 127);
             this.pictureBox14.TabIndex = 2;
@@ -612,7 +611,7 @@
             this.post1.Controls.Add(this.post1Date);
             this.post1.Dock = System.Windows.Forms.DockStyle.Top;
             this.post1.Location = new System.Drawing.Point(0, 158);
-            this.post1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.post1.Margin = new System.Windows.Forms.Padding(4);
             this.post1.Name = "post1";
             this.post1.Size = new System.Drawing.Size(668, 158);
             this.post1.TabIndex = 10;
@@ -655,7 +654,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox5.Location = new System.Drawing.Point(24, 15);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(132, 127);
             this.pictureBox5.TabIndex = 2;
@@ -694,7 +693,7 @@
             this.post2.Dock = System.Windows.Forms.DockStyle.Top;
             this.post2.Font = new System.Drawing.Font("MingLiU-ExtB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.post2.Location = new System.Drawing.Point(0, 0);
-            this.post2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.post2.Margin = new System.Windows.Forms.Padding(4);
             this.post2.Name = "post2";
             this.post2.Size = new System.Drawing.Size(668, 158);
             this.post2.TabIndex = 11;
@@ -737,7 +736,7 @@
             this.pictureBox13.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox13.Location = new System.Drawing.Point(24, 15);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(132, 127);
             this.pictureBox13.TabIndex = 2;
@@ -765,17 +764,17 @@
             this.post0Date.TabIndex = 6;
             this.post0Date.Text = "Date that create";
             // 
-            // label4
+            // recentPostslabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(52, 252);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 30);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "My Recent Posts";
+            this.recentPostslabel.AutoSize = true;
+            this.recentPostslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentPostslabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.recentPostslabel.Location = new System.Drawing.Point(52, 252);
+            this.recentPostslabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.recentPostslabel.Name = "recentPostslabel";
+            this.recentPostslabel.Size = new System.Drawing.Size(177, 30);
+            this.recentPostslabel.TabIndex = 3;
+            this.recentPostslabel.Text = "Recent Posts";
             // 
             // createPostLabel
             // 
@@ -793,7 +792,7 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(56, 63);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(718, 96);
@@ -806,7 +805,7 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Location = new System.Drawing.Point(612, 171);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(164, 50);
             this.pictureBox3.TabIndex = 1;
@@ -820,9 +819,9 @@
             this.tabPageAlbums.Controls.Add(this.album1Panel);
             this.tabPageAlbums.Controls.Add(this.album2Panel);
             this.tabPageAlbums.Location = new System.Drawing.Point(8, 44);
-            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageAlbums.Name = "tabPageAlbums";
-            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(6);
             this.tabPageAlbums.Size = new System.Drawing.Size(1728, 931);
             this.tabPageAlbums.TabIndex = 2;
             this.tabPageAlbums.Text = "Albums";
@@ -836,7 +835,7 @@
             this.album0Panel.Controls.Add(this.pictureBox18);
             this.album0Panel.Controls.Add(this.pictureBox19);
             this.album0Panel.Location = new System.Drawing.Point(6, 631);
-            this.album0Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.album0Panel.Margin = new System.Windows.Forms.Padding(4);
             this.album0Panel.Name = "album0Panel";
             this.album0Panel.Size = new System.Drawing.Size(1604, 327);
             this.album0Panel.TabIndex = 2;
@@ -857,7 +856,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Location = new System.Drawing.Point(746, 87);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(200, 188);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -867,7 +866,7 @@
             // pictureBox17
             // 
             this.pictureBox17.Location = new System.Drawing.Point(498, 87);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(200, 188);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -877,7 +876,7 @@
             // pictureBox18
             // 
             this.pictureBox18.Location = new System.Drawing.Point(264, 87);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(200, 188);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -887,7 +886,7 @@
             // pictureBox19
             // 
             this.pictureBox19.Location = new System.Drawing.Point(32, 87);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(200, 188);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -902,7 +901,7 @@
             this.album1Panel.Controls.Add(this.pictureBox11);
             this.album1Panel.Controls.Add(this.pictureBox12);
             this.album1Panel.Location = new System.Drawing.Point(6, 310);
-            this.album1Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.album1Panel.Margin = new System.Windows.Forms.Padding(4);
             this.album1Panel.Name = "album1Panel";
             this.album1Panel.Size = new System.Drawing.Size(1604, 327);
             this.album1Panel.TabIndex = 1;
@@ -923,7 +922,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Location = new System.Drawing.Point(746, 87);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(200, 188);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -933,7 +932,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Location = new System.Drawing.Point(498, 87);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(200, 188);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -943,7 +942,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Location = new System.Drawing.Point(264, 87);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(200, 188);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -953,7 +952,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Location = new System.Drawing.Point(32, 87);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(200, 188);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -968,7 +967,7 @@
             this.album2Panel.Controls.Add(this.pictureBox6);
             this.album2Panel.Controls.Add(this.pictureBox2);
             this.album2Panel.Location = new System.Drawing.Point(6, 4);
-            this.album2Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.album2Panel.Margin = new System.Windows.Forms.Padding(4);
             this.album2Panel.Name = "album2Panel";
             this.album2Panel.Size = new System.Drawing.Size(1604, 310);
             this.album2Panel.TabIndex = 0;
@@ -989,7 +988,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(746, 71);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(200, 188);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -999,7 +998,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(498, 71);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(200, 188);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1009,7 +1008,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(264, 71);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(200, 188);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1019,7 +1018,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(32, 71);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 188);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1040,7 +1039,7 @@
             this.tabPageCupid.Controls.Add(this.sortPanel);
             this.tabPageCupid.Controls.Add(this.findMatchButtonPictureBox);
             this.tabPageCupid.Location = new System.Drawing.Point(8, 44);
-            this.tabPageCupid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageCupid.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageCupid.Name = "tabPageCupid";
             this.tabPageCupid.Size = new System.Drawing.Size(1728, 931);
             this.tabPageCupid.TabIndex = 3;
@@ -1055,7 +1054,7 @@
             this.sendMsgToMatchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sendMsgToMatchButton.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.PostClickButton;
             this.sendMsgToMatchButton.Location = new System.Drawing.Point(1486, 833);
-            this.sendMsgToMatchButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sendMsgToMatchButton.Margin = new System.Windows.Forms.Padding(6);
             this.sendMsgToMatchButton.Name = "sendMsgToMatchButton";
             this.sendMsgToMatchButton.Size = new System.Drawing.Size(164, 50);
             this.sendMsgToMatchButton.TabIndex = 13;
@@ -1080,7 +1079,7 @@
             // 
             this.postOnMatchWallTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.postOnMatchWallTextBox.Location = new System.Drawing.Point(1134, 75);
-            this.postOnMatchWallTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.postOnMatchWallTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.postOnMatchWallTextBox.Multiline = true;
             this.postOnMatchWallTextBox.Name = "postOnMatchWallTextBox";
             this.postOnMatchWallTextBox.Size = new System.Drawing.Size(514, 737);
@@ -1107,7 +1106,7 @@
             this.resPanel.Controls.Add(this.match1Panel);
             this.resPanel.Controls.Add(this.match2Panel);
             this.resPanel.Location = new System.Drawing.Point(122, 535);
-            this.resPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.resPanel.Margin = new System.Windows.Forms.Padding(4);
             this.resPanel.Name = "resPanel";
             this.resPanel.Size = new System.Drawing.Size(908, 346);
             this.resPanel.TabIndex = 8;
@@ -1118,7 +1117,7 @@
             this.match3Panel.Controls.Add(this.match3Name);
             this.match3Panel.Controls.Add(this.match3PictureBox);
             this.match3Panel.Location = new System.Drawing.Point(604, 27);
-            this.match3Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.match3Panel.Margin = new System.Windows.Forms.Padding(4);
             this.match3Panel.Name = "match3Panel";
             this.match3Panel.Size = new System.Drawing.Size(236, 283);
             this.match3Panel.TabIndex = 2;
@@ -1149,7 +1148,7 @@
             this.match3PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.match3PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
             this.match3PictureBox.Location = new System.Drawing.Point(0, 0);
-            this.match3PictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.match3PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.match3PictureBox.Name = "match3PictureBox";
             this.match3PictureBox.Size = new System.Drawing.Size(236, 214);
             this.match3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1163,7 +1162,7 @@
             this.match1Panel.Controls.Add(this.match1Name);
             this.match1Panel.Controls.Add(this.match1PictureBox);
             this.match1Panel.Location = new System.Drawing.Point(314, 27);
-            this.match1Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.match1Panel.Margin = new System.Windows.Forms.Padding(4);
             this.match1Panel.Name = "match1Panel";
             this.match1Panel.Size = new System.Drawing.Size(236, 283);
             this.match1Panel.TabIndex = 1;
@@ -1194,7 +1193,7 @@
             this.match1PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.match1PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
             this.match1PictureBox.Location = new System.Drawing.Point(0, 0);
-            this.match1PictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.match1PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.match1PictureBox.Name = "match1PictureBox";
             this.match1PictureBox.Size = new System.Drawing.Size(236, 214);
             this.match1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1208,7 +1207,7 @@
             this.match2Panel.Controls.Add(this.match2Name);
             this.match2Panel.Controls.Add(this.match2PictureBox);
             this.match2Panel.Location = new System.Drawing.Point(32, 27);
-            this.match2Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.match2Panel.Margin = new System.Windows.Forms.Padding(4);
             this.match2Panel.Name = "match2Panel";
             this.match2Panel.Size = new System.Drawing.Size(236, 283);
             this.match2Panel.TabIndex = 0;
@@ -1240,7 +1239,7 @@
             this.match2PictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.match2PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2428675;
             this.match2PictureBox.Location = new System.Drawing.Point(0, 0);
-            this.match2PictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.match2PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.match2PictureBox.Name = "match2PictureBox";
             this.match2PictureBox.Size = new System.Drawing.Size(236, 214);
             this.match2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1257,7 +1256,7 @@
             this.genderPanel.Controls.Add(this.checkBoxFemale);
             this.genderPanel.Controls.Add(this.checkBoxMale);
             this.genderPanel.Location = new System.Drawing.Point(784, 71);
-            this.genderPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.genderPanel.Margin = new System.Windows.Forms.Padding(4);
             this.genderPanel.Name = "genderPanel";
             this.genderPanel.Size = new System.Drawing.Size(274, 252);
             this.genderPanel.TabIndex = 5;
@@ -1266,7 +1265,7 @@
             // 
             this.pictureBox20.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.images;
             this.pictureBox20.Location = new System.Drawing.Point(132, 29);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(36, 35);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1277,7 +1276,7 @@
             // 
             this.pictureBox15.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources._2000px_Venus_symbol_svg;
             this.pictureBox15.Location = new System.Drawing.Point(162, 83);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(36, 35);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1289,7 +1288,7 @@
             this.checkBoxFemale.AutoSize = true;
             this.checkBoxFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxFemale.Location = new System.Drawing.Point(20, 83);
-            this.checkBoxFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxFemale.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxFemale.Name = "checkBoxFemale";
             this.checkBoxFemale.Size = new System.Drawing.Size(137, 34);
             this.checkBoxFemale.TabIndex = 2;
@@ -1301,7 +1300,7 @@
             this.checkBoxMale.AutoSize = true;
             this.checkBoxMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxMale.Location = new System.Drawing.Point(20, 37);
-            this.checkBoxMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxMale.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxMale.Name = "checkBoxMale";
             this.checkBoxMale.Size = new System.Drawing.Size(105, 34);
             this.checkBoxMale.TabIndex = 1;
@@ -1344,7 +1343,7 @@
             this.sortPanel.Controls.Add(this.checkBoxEvents);
             this.sortPanel.Controls.Add(this.checkBoxFriends);
             this.sortPanel.Location = new System.Drawing.Point(48, 71);
-            this.sortPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sortPanel.Margin = new System.Windows.Forms.Padding(4);
             this.sortPanel.Name = "sortPanel";
             this.sortPanel.Size = new System.Drawing.Size(684, 254);
             this.sortPanel.TabIndex = 0;
@@ -1354,7 +1353,7 @@
             this.checkBoxFieldOfStudy.AutoSize = true;
             this.checkBoxFieldOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxFieldOfStudy.Location = new System.Drawing.Point(364, 137);
-            this.checkBoxFieldOfStudy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxFieldOfStudy.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxFieldOfStudy.Name = "checkBoxFieldOfStudy";
             this.checkBoxFieldOfStudy.Size = new System.Drawing.Size(211, 34);
             this.checkBoxFieldOfStudy.TabIndex = 6;
@@ -1367,7 +1366,7 @@
             this.checkBoxCheckIns.AutoSize = true;
             this.checkBoxCheckIns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxCheckIns.Location = new System.Drawing.Point(20, 190);
-            this.checkBoxCheckIns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxCheckIns.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxCheckIns.Name = "checkBoxCheckIns";
             this.checkBoxCheckIns.Size = new System.Drawing.Size(145, 34);
             this.checkBoxCheckIns.TabIndex = 3;
@@ -1380,7 +1379,7 @@
             this.checkBoxHomeTown.AutoSize = true;
             this.checkBoxHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxHomeTown.Location = new System.Drawing.Point(364, 85);
-            this.checkBoxHomeTown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxHomeTown.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxHomeTown.Name = "checkBoxHomeTown";
             this.checkBoxHomeTown.Size = new System.Drawing.Size(185, 34);
             this.checkBoxHomeTown.TabIndex = 5;
@@ -1393,7 +1392,7 @@
             this.checkBoxLikedPages.AutoSize = true;
             this.checkBoxLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxLikedPages.Location = new System.Drawing.Point(364, 31);
-            this.checkBoxLikedPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxLikedPages.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxLikedPages.Name = "checkBoxLikedPages";
             this.checkBoxLikedPages.Size = new System.Drawing.Size(193, 34);
             this.checkBoxLikedPages.TabIndex = 4;
@@ -1406,7 +1405,7 @@
             this.checkBoxGroups.AutoSize = true;
             this.checkBoxGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxGroups.Location = new System.Drawing.Point(20, 137);
-            this.checkBoxGroups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxGroups.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxGroups.Name = "checkBoxGroups";
             this.checkBoxGroups.Size = new System.Drawing.Size(135, 34);
             this.checkBoxGroups.TabIndex = 2;
@@ -1419,7 +1418,7 @@
             this.checkBoxEvents.AutoSize = true;
             this.checkBoxEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxEvents.Location = new System.Drawing.Point(20, 85);
-            this.checkBoxEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxEvents.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxEvents.Name = "checkBoxEvents";
             this.checkBoxEvents.Size = new System.Drawing.Size(250, 34);
             this.checkBoxEvents.TabIndex = 1;
@@ -1432,7 +1431,7 @@
             this.checkBoxFriends.AutoSize = true;
             this.checkBoxFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkBoxFriends.Location = new System.Drawing.Point(20, 31);
-            this.checkBoxFriends.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxFriends.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxFriends.Name = "checkBoxFriends";
             this.checkBoxFriends.Size = new System.Drawing.Size(220, 34);
             this.checkBoxFriends.TabIndex = 0;
@@ -1445,7 +1444,7 @@
             this.findMatchButtonPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.findMatchButtonPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.findMatchButton;
             this.findMatchButtonPictureBox.Location = new System.Drawing.Point(400, 377);
-            this.findMatchButtonPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.findMatchButtonPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.findMatchButtonPictureBox.Name = "findMatchButtonPictureBox";
             this.findMatchButtonPictureBox.Size = new System.Drawing.Size(324, 100);
             this.findMatchButtonPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1456,7 +1455,7 @@
             // tabPageCalendar
             // 
             this.tabPageCalendar.Controls.Add(this.notesPanel);
-            this.tabPageCalendar.Controls.Add(this.addMissionLabel);
+            this.tabPageCalendar.Controls.Add(this.addTaskLabel);
             this.tabPageCalendar.Controls.Add(this.newMissionTextBox);
             this.tabPageCalendar.Controls.Add(this.addMissionButton);
             this.tabPageCalendar.Controls.Add(this.toDoListCheckedListBox);
@@ -1467,10 +1466,10 @@
             this.tabPageCalendar.Controls.Add(this.wishHappyBirthdayButton);
             this.tabPageCalendar.Controls.Add(this.upcomingBirthdaysListBox);
             this.tabPageCalendar.Controls.Add(this.upcomingBirthdaysLabel);
-            this.tabPageCalendar.Controls.Add(this.labelCalendar);
+            this.tabPageCalendar.Controls.Add(this.calendarLabel);
             this.tabPageCalendar.Controls.Add(this.monthCalendar1);
             this.tabPageCalendar.Location = new System.Drawing.Point(8, 44);
-            this.tabPageCalendar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageCalendar.Name = "tabPageCalendar";
             this.tabPageCalendar.Size = new System.Drawing.Size(1728, 931);
             this.tabPageCalendar.TabIndex = 7;
@@ -1486,7 +1485,7 @@
             this.notesPanel.Controls.Add(this.note1PictureBox);
             this.notesPanel.Controls.Add(this.note2PictureBox);
             this.notesPanel.Location = new System.Drawing.Point(1418, 23);
-            this.notesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.notesPanel.Margin = new System.Windows.Forms.Padding(4);
             this.notesPanel.Name = "notesPanel";
             this.notesPanel.Size = new System.Drawing.Size(308, 898);
             this.notesPanel.TabIndex = 18;
@@ -1496,7 +1495,7 @@
             this.note2TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.note2TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.note2TextBox.Location = new System.Drawing.Point(40, 677);
-            this.note2TextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.note2TextBox.Margin = new System.Windows.Forms.Padding(6);
             this.note2TextBox.Multiline = true;
             this.note2TextBox.Name = "note2TextBox";
             this.note2TextBox.Size = new System.Drawing.Size(232, 169);
@@ -1507,7 +1506,7 @@
             this.note1TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.note1TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.note1TextBox.Location = new System.Drawing.Point(40, 377);
-            this.note1TextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.note1TextBox.Margin = new System.Windows.Forms.Padding(6);
             this.note1TextBox.Multiline = true;
             this.note1TextBox.Name = "note1TextBox";
             this.note1TextBox.Size = new System.Drawing.Size(232, 169);
@@ -1518,7 +1517,7 @@
             this.note0TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.note0TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.note0TextBox.Location = new System.Drawing.Point(40, 77);
-            this.note0TextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.note0TextBox.Margin = new System.Windows.Forms.Padding(6);
             this.note0TextBox.Multiline = true;
             this.note0TextBox.Name = "note0TextBox";
             this.note0TextBox.Size = new System.Drawing.Size(232, 169);
@@ -1529,7 +1528,7 @@
             this.note0PictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.note0PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.note;
             this.note0PictureBox.Location = new System.Drawing.Point(0, -8);
-            this.note0PictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.note0PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.note0PictureBox.Name = "note0PictureBox";
             this.note0PictureBox.Size = new System.Drawing.Size(308, 302);
             this.note0PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1541,7 +1540,7 @@
             this.note1PictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.note1PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.note;
             this.note1PictureBox.Location = new System.Drawing.Point(0, 294);
-            this.note1PictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.note1PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.note1PictureBox.Name = "note1PictureBox";
             this.note1PictureBox.Size = new System.Drawing.Size(308, 302);
             this.note1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1553,29 +1552,29 @@
             this.note2PictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.note2PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.note;
             this.note2PictureBox.Location = new System.Drawing.Point(0, 596);
-            this.note2PictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.note2PictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.note2PictureBox.Name = "note2PictureBox";
             this.note2PictureBox.Size = new System.Drawing.Size(308, 302);
             this.note2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.note2PictureBox.TabIndex = 17;
             this.note2PictureBox.TabStop = false;
             // 
-            // addMissionLabel
+            // addTaskLabel
             // 
-            this.addMissionLabel.AutoSize = true;
-            this.addMissionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMissionLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.addMissionLabel.Location = new System.Drawing.Point(1008, 698);
-            this.addMissionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.addMissionLabel.Name = "addMissionLabel";
-            this.addMissionLabel.Size = new System.Drawing.Size(129, 30);
-            this.addMissionLabel.TabIndex = 14;
-            this.addMissionLabel.Text = "Add Task";
+            this.addTaskLabel.AutoSize = true;
+            this.addTaskLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTaskLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.addTaskLabel.Location = new System.Drawing.Point(1008, 698);
+            this.addTaskLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.addTaskLabel.Name = "addTaskLabel";
+            this.addTaskLabel.Size = new System.Drawing.Size(129, 30);
+            this.addTaskLabel.TabIndex = 14;
+            this.addTaskLabel.Text = "Add Task";
             // 
             // newMissionTextBox
             // 
             this.newMissionTextBox.Location = new System.Drawing.Point(1014, 750);
-            this.newMissionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newMissionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.newMissionTextBox.Name = "newMissionTextBox";
             this.newMissionTextBox.Size = new System.Drawing.Size(358, 37);
             this.newMissionTextBox.TabIndex = 13;
@@ -1587,7 +1586,7 @@
             this.addMissionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.addMissionButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addMissionButton.Location = new System.Drawing.Point(1008, 810);
-            this.addMissionButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.addMissionButton.Margin = new System.Windows.Forms.Padding(6);
             this.addMissionButton.Name = "addMissionButton";
             this.addMissionButton.Size = new System.Drawing.Size(358, 62);
             this.addMissionButton.TabIndex = 12;
@@ -1598,7 +1597,7 @@
             // 
             this.toDoListCheckedListBox.FormattingEnabled = true;
             this.toDoListCheckedListBox.Location = new System.Drawing.Point(1014, 71);
-            this.toDoListCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toDoListCheckedListBox.Margin = new System.Windows.Forms.Padding(4);
             this.toDoListCheckedListBox.Name = "toDoListCheckedListBox";
             this.toDoListCheckedListBox.Size = new System.Drawing.Size(352, 580);
             this.toDoListCheckedListBox.TabIndex = 11;
@@ -1634,7 +1633,7 @@
             this.goToFacebookLinkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.goToFacebookLinkButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.goToFacebookLinkButton.Location = new System.Drawing.Point(592, 385);
-            this.goToFacebookLinkButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.goToFacebookLinkButton.Margin = new System.Windows.Forms.Padding(6);
             this.goToFacebookLinkButton.Name = "goToFacebookLinkButton";
             this.goToFacebookLinkButton.Size = new System.Drawing.Size(318, 62);
             this.goToFacebookLinkButton.TabIndex = 9;
@@ -1646,7 +1645,7 @@
             this.upcomingEventsListBox.FormattingEnabled = true;
             this.upcomingEventsListBox.ItemHeight = 30;
             this.upcomingEventsListBox.Location = new System.Drawing.Point(592, 71);
-            this.upcomingEventsListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.upcomingEventsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.upcomingEventsListBox.Name = "upcomingEventsListBox";
             this.upcomingEventsListBox.Size = new System.Drawing.Size(392, 274);
             this.upcomingEventsListBox.TabIndex = 7;
@@ -1658,7 +1657,7 @@
             this.wishHappyBirthdayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.wishHappyBirthdayButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.wishHappyBirthdayButton.Location = new System.Drawing.Point(594, 810);
-            this.wishHappyBirthdayButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.wishHappyBirthdayButton.Margin = new System.Windows.Forms.Padding(6);
             this.wishHappyBirthdayButton.Name = "wishHappyBirthdayButton";
             this.wishHappyBirthdayButton.Size = new System.Drawing.Size(318, 62);
             this.wishHappyBirthdayButton.TabIndex = 6;
@@ -1670,7 +1669,7 @@
             this.upcomingBirthdaysListBox.FormattingEnabled = true;
             this.upcomingBirthdaysListBox.ItemHeight = 30;
             this.upcomingBirthdaysListBox.Location = new System.Drawing.Point(594, 494);
-            this.upcomingBirthdaysListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.upcomingBirthdaysListBox.Margin = new System.Windows.Forms.Padding(4);
             this.upcomingBirthdaysListBox.Name = "upcomingBirthdaysListBox";
             this.upcomingBirthdaysListBox.Size = new System.Drawing.Size(392, 274);
             this.upcomingBirthdaysListBox.TabIndex = 5;
@@ -1687,17 +1686,17 @@
             this.upcomingBirthdaysLabel.TabIndex = 4;
             this.upcomingBirthdaysLabel.Text = "Upcoming Birthdays";
             // 
-            // labelCalendar
+            // calendarLabel
             // 
-            this.labelCalendar.AutoSize = true;
-            this.labelCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCalendar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelCalendar.Location = new System.Drawing.Point(36, 23);
-            this.labelCalendar.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.labelCalendar.Name = "labelCalendar";
-            this.labelCalendar.Size = new System.Drawing.Size(125, 30);
-            this.labelCalendar.TabIndex = 3;
-            this.labelCalendar.Text = "Calendar";
+            this.calendarLabel.AutoSize = true;
+            this.calendarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calendarLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.calendarLabel.Location = new System.Drawing.Point(36, 23);
+            this.calendarLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.calendarLabel.Name = "calendarLabel";
+            this.calendarLabel.Size = new System.Drawing.Size(125, 30);
+            this.calendarLabel.TabIndex = 3;
+            this.calendarLabel.Text = "Calendar";
             // 
             // monthCalendar1
             // 
@@ -1712,7 +1711,7 @@
             this.tabPageloading.Controls.Add(this.loadingLabel);
             this.tabPageloading.Controls.Add(this.pictureBox21);
             this.tabPageloading.Location = new System.Drawing.Point(8, 44);
-            this.tabPageloading.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageloading.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageloading.Name = "tabPageloading";
             this.tabPageloading.Size = new System.Drawing.Size(1728, 931);
             this.tabPageloading.TabIndex = 8;
@@ -1734,28 +1733,28 @@
             // 
             this.pictureBox21.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.loading1;
             this.pictureBox21.Location = new System.Drawing.Point(656, 288);
-            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(340, 333);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox21.TabIndex = 4;
             this.pictureBox21.TabStop = false;
             // 
-            // panel3
+            // menuPanel
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Window;
-            this.panel3.Controls.Add(this.homePictureBox);
-            this.panel3.Controls.Add(this.albumsPictureBox);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Controls.Add(this.pictureBoxFaceCupid);
-            this.panel3.Controls.Add(this.pictureBoxCalendar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(470, 983);
-            this.panel3.TabIndex = 16;
+            this.menuPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.menuPanel.Controls.Add(this.homePictureBox);
+            this.menuPanel.Controls.Add(this.albumsPictureBox);
+            this.menuPanel.Controls.Add(this.userNamePanel);
+            this.menuPanel.Controls.Add(this.profilePicturePanel);
+            this.menuPanel.Controls.Add(this.pictureBoxFaceCupid);
+            this.menuPanel.Controls.Add(this.pictureBoxCalendar);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(470, 983);
+            this.menuPanel.TabIndex = 16;
             // 
             // homePictureBox
             // 
@@ -1774,54 +1773,54 @@
             this.albumsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.albumsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.albums;
             this.albumsPictureBox.Location = new System.Drawing.Point(46, 608);
-            this.albumsPictureBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.albumsPictureBox.Margin = new System.Windows.Forms.Padding(6);
             this.albumsPictureBox.Name = "albumsPictureBox";
             this.albumsPictureBox.Size = new System.Drawing.Size(376, 60);
             this.albumsPictureBox.TabIndex = 11;
             this.albumsPictureBox.TabStop = false;
             this.albumsPictureBox.Click += new System.EventHandler(this.albumsPictureBox_Click_1);
             // 
-            // panel2
+            // userNamePanel
             // 
-            this.panel2.Controls.Add(this.userNametextBox);
-            this.panel2.Location = new System.Drawing.Point(0, 408);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(470, 94);
-            this.panel2.TabIndex = 5;
+            this.userNamePanel.Controls.Add(this.userNametextBox);
+            this.userNamePanel.Location = new System.Drawing.Point(0, 408);
+            this.userNamePanel.Margin = new System.Windows.Forms.Padding(4);
+            this.userNamePanel.Name = "userNamePanel";
+            this.userNamePanel.Size = new System.Drawing.Size(470, 94);
+            this.userNamePanel.TabIndex = 5;
             // 
-            // flowLayoutPanel1
+            // profilePicturePanel
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
-            this.flowLayoutPanel1.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.ProfileCircle3;
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.flowLayoutPanel1.Controls.Add(this.userPictureBox);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(40, 19, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(470, 408);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.profilePicturePanel.BackColor = System.Drawing.SystemColors.Window;
+            this.profilePicturePanel.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.ProfileCircle3;
+            this.profilePicturePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.profilePicturePanel.Controls.Add(this.profilePictureBox);
+            this.profilePicturePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.profilePicturePanel.Location = new System.Drawing.Point(0, 0);
+            this.profilePicturePanel.Margin = new System.Windows.Forms.Padding(6);
+            this.profilePicturePanel.Name = "profilePicturePanel";
+            this.profilePicturePanel.Padding = new System.Windows.Forms.Padding(40, 19, 0, 0);
+            this.profilePicturePanel.Size = new System.Drawing.Size(470, 408);
+            this.profilePicturePanel.TabIndex = 3;
             // 
-            // userPictureBox
+            // profilePictureBox
             // 
-            this.userPictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.userPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.userPictureBox.Location = new System.Drawing.Point(46, 25);
-            this.userPictureBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.userPictureBox.Name = "userPictureBox";
-            this.userPictureBox.Size = new System.Drawing.Size(372, 358);
-            this.userPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userPictureBox.TabIndex = 0;
-            this.userPictureBox.TabStop = false;
+            this.profilePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.profilePictureBox.Location = new System.Drawing.Point(46, 25);
+            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(6);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(372, 358);
+            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePictureBox.TabIndex = 0;
+            this.profilePictureBox.TabStop = false;
             // 
             // pictureBoxFaceCupid
             // 
             this.pictureBoxFaceCupid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxFaceCupid.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.faceCupid;
             this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 681);
-            this.pictureBoxFaceCupid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBoxFaceCupid.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFaceCupid.Name = "pictureBoxFaceCupid";
             this.pictureBoxFaceCupid.Size = new System.Drawing.Size(376, 60);
             this.pictureBoxFaceCupid.TabIndex = 15;
@@ -1833,7 +1832,7 @@
             this.pictureBoxCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCalendar.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.calendar;
             this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 752);
-            this.pictureBoxCalendar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBoxCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxCalendar.Name = "pictureBoxCalendar";
             this.pictureBoxCalendar.Size = new System.Drawing.Size(376, 60);
             this.pictureBoxCalendar.TabIndex = 14;
@@ -1852,16 +1851,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2214, 1056);
             this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.headerPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimizeBox = false;
             this.Name = "mainForm";
             this.Text = "Facebook Desktop";
             this.Load += new System.EventHandler(this.mainForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.headerPictureBox)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPageLogIn.ResumeLayout(false);
@@ -1935,13 +1934,13 @@
             this.tabPageloading.ResumeLayout(false);
             this.tabPageloading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.menuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumsPictureBox)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
+            this.userNamePanel.ResumeLayout(false);
+            this.userNamePanel.PerformLayout();
+            this.profilePicturePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFaceCupid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
             this.ResumeLayout(false);
@@ -1950,20 +1949,20 @@
 
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox userPictureBox;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.PictureBox headerPictureBox;
+        private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.TextBox userNametextBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel profilePicturePanel;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox homePictureBox;
         private System.Windows.Forms.PictureBox albumsPictureBox;
-        private System.Windows.Forms.Label labelLogOut;
+        private System.Windows.Forms.Label LogOutLabel;
         private System.Windows.Forms.PictureBox pictureBoxCalendar;
         private System.Windows.Forms.PictureBox pictureBoxFaceCupid;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageLogIn;
@@ -2000,7 +1999,7 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label post0Publisher;
         private System.Windows.Forms.Label post0Date;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label recentPostslabel;
         private System.Windows.Forms.Label createPostLabel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -2065,7 +2064,7 @@
         private System.Windows.Forms.PictureBox note0PictureBox;
         private System.Windows.Forms.PictureBox note1PictureBox;
         private System.Windows.Forms.PictureBox note2PictureBox;
-        private System.Windows.Forms.Label addMissionLabel;
+        private System.Windows.Forms.Label addTaskLabel;
         private System.Windows.Forms.TextBox newMissionTextBox;
         private System.Windows.Forms.PictureBox addMissionButton;
         private System.Windows.Forms.CheckedListBox toDoListCheckedListBox;
@@ -2076,7 +2075,7 @@
         private System.Windows.Forms.PictureBox wishHappyBirthdayButton;
         private System.Windows.Forms.ListBox upcomingBirthdaysListBox;
         private System.Windows.Forms.Label upcomingBirthdaysLabel;
-        private System.Windows.Forms.Label labelCalendar;
+        private System.Windows.Forms.Label calendarLabel;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.TabPage tabPageloading;
         private System.Windows.Forms.Label loadingLabel;
@@ -2084,7 +2083,7 @@
         private System.Windows.Forms.Label myFriendsLabel;
         private System.Windows.Forms.ListBox listBoxFriends;
         private System.Windows.Forms.CheckBox checkBoxRememberMe;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel userNamePanel;
     }
 }
 

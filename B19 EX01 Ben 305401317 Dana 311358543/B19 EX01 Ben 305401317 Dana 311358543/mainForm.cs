@@ -52,7 +52,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             string profilePictureUrl = m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL;
             m_FacebookDesktopLogic.PictureNormalURL = profilePictureUrl;
-            userPictureBox.LoadAsync(profilePictureUrl);
+            profilePictureBox.LoadAsync(profilePictureUrl);
             roundImage();
             userNametextBox.Text = m_FacebookDesktopLogic.LoggedInUser.Name;
         }
@@ -175,7 +175,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 FacebookService.Logout(null);
                 tabControl.SelectedTab = tabPageLogIn;
                 m_FacebookDesktopLogic.LoggedInUser = null;
-                userPictureBox.Image = null ;
+                profilePictureBox.Image = null ;
                 userNametextBox.Text = string.Empty;
             }
             catch
@@ -358,9 +358,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private void roundImage()
         {
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, userPictureBox.Width, userPictureBox.Height);
+            gp.AddEllipse(0, 0, profilePictureBox.Width, profilePictureBox.Height);
             Region rg = new Region(gp);
-            userPictureBox.Region = rg;
+            profilePictureBox.Region = rg;
         }
         private void goToFacebookLinkButton_Click(object sender, EventArgs e)
         {
@@ -472,7 +472,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (this.checkBoxRememberMe.Checked && this.labelLogOut.Enabled == true)
+            if (this.checkBoxRememberMe.Checked && this.LogOutLabel.Enabled == true)
             {
                 this.updateAppSettings();
             }
