@@ -286,8 +286,8 @@
             this.userNametextBox.BackColor = System.Drawing.SystemColors.Window;
             this.userNametextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userNametextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNametextBox.Location = new System.Drawing.Point(80, 25);
-            this.userNametextBox.Margin = new System.Windows.Forms.Padding(40, 6, 6, 19);
+            this.userNametextBox.Location = new System.Drawing.Point(80, 59);
+            this.userNametextBox.Margin = new System.Windows.Forms.Padding(40, 40, 6, 19);
             this.userNametextBox.Name = "userNametextBox";
             this.userNametextBox.Size = new System.Drawing.Size(302, 48);
             this.userNametextBox.TabIndex = 1;
@@ -1044,11 +1044,11 @@
             this.flowLayoutPanel2.Controls.Add(this.pictureBoxFaceCupid);
             this.flowLayoutPanel2.Controls.Add(this.pictureBoxCalendar);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 444);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 429);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(40, 19, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(470, 539);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(470, 554);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // contextMenuStrip2
@@ -1809,7 +1809,7 @@
             // 
             this.homePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homePictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.home;
-            this.homePictureBox.Location = new System.Drawing.Point(46, 112);
+            this.homePictureBox.Location = new System.Drawing.Point(46, 146);
             this.homePictureBox.Margin = new System.Windows.Forms.Padding(6, 20, 6, 6);
             this.homePictureBox.Name = "homePictureBox";
             this.homePictureBox.Size = new System.Drawing.Size(376, 60);
@@ -1821,7 +1821,7 @@
             // 
             this.albumsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.albumsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.albums;
-            this.albumsPictureBox.Location = new System.Drawing.Point(46, 184);
+            this.albumsPictureBox.Location = new System.Drawing.Point(46, 218);
             this.albumsPictureBox.Margin = new System.Windows.Forms.Padding(6);
             this.albumsPictureBox.Name = "albumsPictureBox";
             this.albumsPictureBox.Size = new System.Drawing.Size(376, 60);
@@ -1833,7 +1833,7 @@
             // 
             this.pictureBoxFaceCupid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxFaceCupid.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.faceCupid;
-            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 256);
+            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 290);
             this.pictureBoxFaceCupid.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFaceCupid.Name = "pictureBoxFaceCupid";
             this.pictureBoxFaceCupid.Size = new System.Drawing.Size(376, 60);
@@ -1845,7 +1845,7 @@
             // 
             this.pictureBoxCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCalendar.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.calendar;
-            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 328);
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 362);
             this.pictureBoxCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxCalendar.Name = "pictureBoxCalendar";
             this.pictureBoxCalendar.Size = new System.Drawing.Size(376, 60);
@@ -1871,7 +1871,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 408);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(470, 36);
+            this.panel2.Size = new System.Drawing.Size(470, 21);
             this.panel2.TabIndex = 5;
             // 
             // mainForm
