@@ -490,11 +490,17 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             this.m_FacebookDesktopLogic.AppSettings.LastWindowLocation = this.Location;
             this.m_FacebookDesktopLogic.AppSettings.RememberUser = this.checkBoxRememberMe.Checked;
+
             if (this.m_FacebookDesktopLogic.LoggedInUser != null)
-            {
-                this.m_FacebookDesktopLogic.AppSettings.LastAccessToken = this.m_FacebookDesktopLogic.AppSettings.RememberUser
-                                                                  ? this.m_FacebookDesktopLogic.LoginResult.AccessToken
-                                                                  : null;
+            {          
+                if(this.m_FacebookDesktopLogic.AppSettings.RememberUser)
+                {
+                    this.m_FacebookDesktopLogic.AppSettings.LastAccessToken = this.m_FacebookDesktopLogic.LoginResult.AccessToken;
+                }
+                else
+                {
+                    this.m_FacebookDesktopLogic.AppSettings.LastAccessToken = null;
+                }
             }
 
             this.m_FacebookDesktopLogic.AppSettings.SaveToFile();
