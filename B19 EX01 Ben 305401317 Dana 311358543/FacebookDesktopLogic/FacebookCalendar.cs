@@ -27,7 +27,7 @@ namespace FacebookAppLogic
 
         public User LoggedInUser { get; set; }
 
-        public void fetchEvents()
+        public void FetchEvents()
         {
             if (!this.m_IsEventsLoaded)
             {
@@ -43,12 +43,12 @@ namespace FacebookAppLogic
              }
         }
 
-        public void wishHappyBirthday(int i_Index)
+        public void WishHappyBirthday(int i_Index)
         {
             LoggedInUser.PostStatus("Happy Birthday" + this.m_UpcomingBirthdaysUsers[i_Index].Name);
         }
 
-        public void goToFacebookLink(int i_Index)
+        public void GoToFacebookLink(int i_Index)
         {
             if (this.m_UpcomingEvents.Count!=0 && this.m_UpcomingEvents[i_Index] != null)
             {
@@ -61,7 +61,7 @@ namespace FacebookAppLogic
             }
         }
 
-        public void fetchBirthdays()
+        public void FetchBirthdays()
         {
             if (!this.m_IsBirthdaysLoaded)
             {

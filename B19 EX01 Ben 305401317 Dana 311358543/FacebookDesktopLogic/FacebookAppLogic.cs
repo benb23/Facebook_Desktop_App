@@ -6,8 +6,8 @@ using FacebookWrapper.ObjectModel;
 namespace FacebookAppLogic
 {
     public class FacebookDesktopLogic
-    {
-        private readonly string r_AppID = "352758402005372";
+    {//352758402005372
+        private readonly string r_AppID = "1450160541956417";
         public AppSettings AppSettings { get; set; }
         public LoginResult LoginResult { get; set; }
 
@@ -62,7 +62,7 @@ namespace FacebookAppLogic
             }
         }
 
-        public void fetchFriends()
+        public void FetchFriends()
         {
             if (!this.IsfriendListLoaded)
             {
@@ -83,7 +83,7 @@ namespace FacebookAppLogic
 
         private FacebookDesktopLogic() { }
 
-        public static FacebookDesktopLogic instance
+        public static FacebookDesktopLogic Instance
         {
             get
             {
@@ -170,7 +170,7 @@ namespace FacebookAppLogic
             return this.m_IsLogIn;
         }
 
-        public void fetchRecentPosts(int i_NumOfPosts)
+        public void FetchRecentPosts(int i_NumOfPosts)
         {
             if (!this.m_IsPostsLoaded)
             {

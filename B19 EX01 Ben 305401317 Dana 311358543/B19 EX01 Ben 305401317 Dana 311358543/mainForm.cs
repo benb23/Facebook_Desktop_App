@@ -16,7 +16,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private bool m_IsPostsListBoxLoaded = false;
 
-        private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.instance;
+        private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.Instance;
 
         public mainForm()
         {
@@ -34,7 +34,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             if(isLogIn)
             {
                 fetchBasicUserInfo();
-                m_FacebookDesktopLogic.fetchFriends();
+                m_FacebookDesktopLogic.FetchFriends();
                 if (!this.m_IsPostsListBoxLoaded)
                 {
                     loadHomeTab();
@@ -86,7 +86,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                m_FacebookDesktopLogic.fetchRecentPosts(postsPanel.Controls.Count);
+                m_FacebookDesktopLogic.FetchRecentPosts(postsPanel.Controls.Count);
                 initFriendsListBox();
             }
             catch
@@ -193,9 +193,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 m_FacebookDesktopLogic.Calendar.FriendsList = m_FacebookDesktopLogic.FriendsList;
                 try
                 {
-                    m_FacebookDesktopLogic.Calendar.fetchBirthdays();
+                    m_FacebookDesktopLogic.Calendar.FetchBirthdays();
                     initUpcomingBirthdaysListBox();
-                    m_FacebookDesktopLogic.Calendar.fetchEvents();
+                    m_FacebookDesktopLogic.Calendar.FetchEvents();
 
 
                 }
@@ -352,7 +352,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void wishHappyBirthdayButton_Click(object sender, EventArgs e)
         {
-            m_FacebookDesktopLogic.Calendar.wishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
+            m_FacebookDesktopLogic.Calendar.WishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
         }
 
         private void roundImage()
@@ -366,7 +366,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                m_FacebookDesktopLogic.Calendar.goToFacebookLink(upcomingEventsListBox.SelectedIndex);
+                m_FacebookDesktopLogic.Calendar.GoToFacebookLink(upcomingEventsListBox.SelectedIndex);
             }
             catch
             {
