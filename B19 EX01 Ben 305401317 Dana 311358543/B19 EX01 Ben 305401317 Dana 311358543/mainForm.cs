@@ -34,6 +34,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             if(isLogIn)
             {
                 fetchBasicUserInfo();
+                m_FacebookDesktopLogic.fetchFriends();
                 if (!this.m_IsPostsListBoxLoaded)
                 {
                     loadHomeTab();
@@ -85,7 +86,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                m_FacebookDesktopLogic.fetchFriends();
                 m_FacebookDesktopLogic.fetchRecentPosts(postsPanel.Controls.Count);
                 initFriendsListBox();
             }
