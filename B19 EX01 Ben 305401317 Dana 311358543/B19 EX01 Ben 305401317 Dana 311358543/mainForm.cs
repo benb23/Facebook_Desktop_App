@@ -479,7 +479,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
             else
             {
-                if (m_FacebookDesktopLogic.LoggedInUser != null) //todo ??
+                if (m_FacebookDesktopLogic.LoggedInUser != null) 
                 {
                     this.m_FacebookDesktopLogic.AppSettings.DeleteFile();
                 }
