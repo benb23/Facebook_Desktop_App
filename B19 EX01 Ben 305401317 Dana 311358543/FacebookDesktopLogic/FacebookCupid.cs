@@ -19,7 +19,6 @@ namespace FacebookAppLogic
             set { this.m_CupidResult = value; }
         }
 
-        private static FacebookCupid s_FacebookCupid = null;
         private List<Candidate> m_Candidates = new List<Candidate>();
         private Dictionary<string, int> m_Score = new Dictionary<string, int>();
         public FacebookObjectCollection<User> FriendsList { get; set; }
@@ -31,14 +30,13 @@ namespace FacebookAppLogic
         public bool CheckHomeTown { get; set; }
         public bool CheckFieldOfStudy { get; set; }
 
-        private FacebookCupid()
+        public FacebookCupid()
         {
             initScoreValues();
         }
 
         private void initScoreValues()
         {
-            //todo: from file?
             this.m_Score.Add("Friends", 10);
             this.m_Score.Add("Events", 4);
             this.m_Score.Add("Groups", 3);
@@ -228,8 +226,8 @@ namespace FacebookAppLogic
 
         public void FindMyMatch(User.eGender? i_Gender)
         {
-            FacebookCupid.instance.FriendsList = FacebookDesktopLogic.instance.FriendsList;          
-            FacebookCupid.instance.filterAndScoreCndidates(i_Gender);
+            this.FriendsList = FacebookDesktopLogic.instance.FriendsList;          
+            this.filterAndScoreCndidates(i_Gender);
         }
 
         private void filterAndScoreCndidates(User.eGender? i_checkedGender)
@@ -249,19 +247,6 @@ namespace FacebookAppLogic
                 CupidResult.Add(sortedCandidates.Last());
                 sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
                 CupidResult.Add(sortedCandidates.Last());
-            }
-        }
-
-        public static FacebookCupid instance
-        {
-            get
-            {
-                if (s_FacebookCupid == null)
-                {
-                    s_FacebookCupid = new FacebookCupid();
-                }
-
-                return s_FacebookCupid;
             }
         }
     }

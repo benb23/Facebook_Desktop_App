@@ -5,7 +5,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace FacebookAppLogic
 {
-    public class Calendar
+    public class FacebookCalendar
     {
         private bool m_IsEventsLoaded = false;
         private bool m_IsBirthdaysLoaded = false;
@@ -26,23 +26,6 @@ namespace FacebookAppLogic
         public FacebookObjectCollection<User> FriendsList { get; set; }
 
         public User LoggedInUser { get; set; }
-
-        private static Calendar s_Calendar = null;
-
-        private Calendar() { }
-
-        public static Calendar instance
-        {
-            get
-            {
-                if (s_Calendar == null)
-                {
-                    s_Calendar = new Calendar();
-                }
-
-                return s_Calendar;
-            }
-        }
 
         public void fetchEvents()
         {

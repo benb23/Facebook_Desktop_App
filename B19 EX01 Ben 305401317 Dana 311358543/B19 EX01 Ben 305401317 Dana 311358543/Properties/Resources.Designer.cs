@@ -103,6 +103,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddTaskButton {
+            get {
+                object obj = ResourceManager.GetObject("AddTaskButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap albums {
             get {
                 object obj = ResourceManager.GetObject("albums", resourceCulture);
@@ -116,6 +126,16 @@ namespace B19_EX01_Ben_305401317_Dana_311358543.Properties {
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EventButton {
+            get {
+                object obj = ResourceManager.GetObject("EventButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
