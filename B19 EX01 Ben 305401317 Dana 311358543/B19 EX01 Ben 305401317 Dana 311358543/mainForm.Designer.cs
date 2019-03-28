@@ -168,6 +168,7 @@
             this.pictureBoxFaceCupid = new System.Windows.Forms.PictureBox();
             this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -1024,6 +1025,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Window;
+            this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Controls.Add(this.flowLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1042,11 +1044,11 @@
             this.flowLayoutPanel2.Controls.Add(this.pictureBoxFaceCupid);
             this.flowLayoutPanel2.Controls.Add(this.pictureBoxCalendar);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 395);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 444);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(40, 19, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(470, 588);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(470, 539);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // contextMenuStrip2
@@ -1864,6 +1866,14 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 408);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(470, 36);
+            this.panel2.TabIndex = 5;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -2107,6 +2117,7 @@
         private System.Windows.Forms.CheckBox checkBoxRememberMe;
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
