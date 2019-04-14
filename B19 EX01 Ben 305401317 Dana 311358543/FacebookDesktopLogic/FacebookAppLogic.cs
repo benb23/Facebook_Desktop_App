@@ -28,13 +28,13 @@ namespace FacebookAppLogic
 
         public LoginResult LoginResult { get; set; }
 
-        public List<string> LatestPhotos { get; set; }
+        //public List<string> LatestPhotos { get; set; }
 
         private FacebookCalendar m_Calendar = new FacebookCalendar();
 
         private bool m_IsLogIn = false;
 
-        private bool m_IsPostsLoaded = false;
+        //private bool m_IsPostsLoaded = false;
 
         public string PictureNormalURL { get; set; }
 
@@ -57,7 +57,7 @@ namespace FacebookAppLogic
             get { return this.m_RecentPosts; }
         }
 
-        public bool IsfriendListLoaded { get; set; }
+        //public bool IsfriendListLoaded { get; set; }
 
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
         
@@ -80,24 +80,24 @@ namespace FacebookAppLogic
             }
         }
 
-        public void FetchFriends()
-        {
-            if (!this.IsfriendListLoaded)
-            {
-                foreach (User friend in this.LoggedInUser.Friends)
-                {
-                    this.FriendsList.Add(friend);
-                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-                }
+        //public void FetchFriends()
+        //{
+        //    if (!this.IsfriendListLoaded)
+        //    {
+        //        foreach (User friend in this.LoggedInUser.Friends)
+        //        {
+        //            this.FriendsList.Add(friend);
+        //            friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+        //        }
 
-                if (this.LoggedInUser.Friends.Count == 0)
-                {
-                    MessageBox.Show("No Friends to retrieve :(");
-                }
+        //        if (this.LoggedInUser.Friends.Count == 0)
+        //        {
+        //            MessageBox.Show("No Friends to retrieve :(");
+        //        }
 
-                this.IsfriendListLoaded = true;
-            }
-        }
+        //        this.IsfriendListLoaded = true;
+        //    }
+        //}
 
         private FacebookDesktopLogic()
         {
@@ -109,7 +109,8 @@ namespace FacebookAppLogic
 
             /// Use the FacebookService.Login method to display the login form to any user who wish to use this application.
             /// You can then save the result.AccessToken for future auto-connect to this user:
-            LoginResult = FacebookService.Login(this.r_AppID/*"1450160541956417"/*"352758402005372"*/, /// (desig patter's "Design Patterns Course App 2.4" app)
+            /// //todo: change
+            LoginResult = FacebookService.Login(/*this.r_AppID*/"1450160541956417", /// (desig patter's "Design Patterns Course App 2.4" app)
 
                 "public_profile",
                 "email",
@@ -176,20 +177,21 @@ namespace FacebookAppLogic
             return this.m_IsLogIn;
         }
 
-        public void FetchRecentPosts(int i_NumOfPosts)
-        {
-            if (!this.m_IsPostsLoaded)
-            {
-                for (int i = 0; i < i_NumOfPosts; i++)
-                {
-                    this.m_RecentPosts.Add(this.LoggedInUser.Posts[i]);
-                }
+        //public void FetchRecentPosts(int i_NumOfPosts)
+        //{
 
-                this.m_IsPostsLoaded = true;
-            }
-        }
+        //    if (!this.m_IsPostsLoaded)
+        //    {
+        //        for (int i = 0; i < i_NumOfPosts; i++)
+        //        {
+        //            this.m_RecentPosts.Add(this.LoggedInUser.Posts[i]);
+        //        }
 
-        private List<string> fetchLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
+        //        this.m_IsPostsLoaded = true;
+        //    }
+        //}
+
+        public List<string> fetchLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
         {
             List<string> Photos = new List<string>();
 
@@ -207,19 +209,6 @@ namespace FacebookAppLogic
             }
 
             return Photos;
-        }
-
-        public int FetchLatestPhotos(int i_AlbumIndex, int i_NumOfPhotos)
-        {
-            this.LatestPhotos = this.fetchLatestPhotosInAlbum(i_AlbumIndex, i_NumOfPhotos);
-
-            while (this.LatestPhotos.Count == 0)
-            {
-                i_AlbumIndex++;
-                this.LatestPhotos = this.fetchLatestPhotosInAlbum(i_AlbumIndex, i_NumOfPhotos);
-            }
-
-            return i_AlbumIndex;
         }
     }
 }

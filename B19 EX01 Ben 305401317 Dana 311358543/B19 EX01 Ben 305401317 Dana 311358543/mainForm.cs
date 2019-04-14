@@ -5,11 +5,19 @@ using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using FacebookAppLogic;
+using System.Threading;
 
 namespace B19_EX01_Ben_305401317_Dana_311358543
 {
     public partial class mainForm : Form
     {
+        private bool m_IsEventsLoaded = false;
+        private bool m_IsBirthdaysLoaded = false;
+
+        public bool IsfriendListLoaded { get; set; }
+        private bool IsPostsLoaded { get; set; }
+
+
         private enum ePostItem
         {
             NumOfLikes = 1,
@@ -32,7 +40,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             FirstPhotoIndex
         }
 
-        private bool m_IsPostsListBoxLoaded = false;
+        //private bool m_IsPostsListBoxLoaded = false;
 
         private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.Instance;
 
@@ -46,25 +54,43 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void logInButton_Click_(object sender, EventArgs e)
         {
-            tabControl.SelectedTab = this.tabPageloading;
-
             bool isLogIn = this.m_FacebookDesktopLogic.LoginAndInit();
             if(isLogIn)
             {
                 this.fetchBasicUserInfo();
-                this.m_FacebookDesktopLogic.FetchFriends();
-                if (!this.m_IsPostsListBoxLoaded)
-                {
-                    this.loadHomeTab();
-                    this.m_IsPostsListBoxLoaded = true;
-                }
-
-                tabControl.SelectedTab = this.tabPageHome;
+                loadHomeTab();
             }
             else
             {
                 MessageBox.Show("Error!"); 
                 tabControl.SelectedTab = this.tabPageLogIn;
+            }
+        }
+
+        public void FetchFriends()
+        {
+            if (!this.IsfriendListLoaded)
+            {
+                listBoxFriends.Invoke(new Action(
+                                        () => 
+                                        {
+                                            listBoxFriends.Items.Clear();
+                                            listBoxFriends.DisplayMember = "Name";
+                                        })); 
+
+                foreach (User friend in this.m_FacebookDesktopLogic.LoggedInUser.Friends)
+                {
+                    this.m_FacebookDesktopLogic.FriendsList.Add(friend);
+                    listBoxFriends.Invoke(new Action(() => listBoxFriends.Items.Add(friend)));
+                    friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
+                }
+
+                if (this.m_FacebookDesktopLogic.LoggedInUser.Friends.Count == 0)
+                {
+                    MessageBox.Show("No Friends to retrieve :(");
+                }
+
+                this.IsfriendListLoaded = true;
             }
         }
 
@@ -77,71 +103,68 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             userNametextBox.Text = this.m_FacebookDesktopLogic.LoggedInUser.Name;
         }
 
-        private void initPostsPanel()
+        private void createPostButton_Click(object sender, EventArgs e)
+        {
+            this.m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
+        }
+
+
+        public void FetchRecentPosts()
         {
             int postIndex = 0;
             string profilePictureUrl = this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL;
             string name = this.m_FacebookDesktopLogic.LoggedInUser.Name;
             Post post;
 
-            foreach (Panel posItem in postsPanel.Controls)
+            
+            if (!this.IsPostsLoaded)
             {
+            for (int i=0 ; i < postsPanel.Controls.Count ; i++) //??
+            {
+                this.m_FacebookDesktopLogic.RecentPosts.Add(this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex]);
                 post = this.m_FacebookDesktopLogic.RecentPosts[postIndex];
-                (posItem.Controls[(int)ePostItem.NumOfLikes] as Label).Text = post.LikedBy.Count.ToString();
-                (posItem.Controls[(int)ePostItem.Message] as Label).Text = post.Message;
-                (posItem.Controls[(int)ePostItem.Picture] as PictureBox).LoadAsync(post.From.PictureNormalURL);
-                (posItem.Controls[(int)ePostItem.Name] as Label).Text = name;
-                (posItem.Controls[(int)ePostItem.CreatedTime] as Label).Text = post.CreatedTime.Value.ToLongDateString();
-
+                postsPanel.Invoke(new Action(()=> addPostToPostsPanel(i,post)));
                 postIndex++;
             }
+
+            this.IsPostsLoaded = true;
         }
 
-        private void createPostButton_Click(object sender, EventArgs e)
+    }
+
+        private void addPostToPostsPanel(int i_PostIndex, Post i_Post)
         {
-            this.m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
+            (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.NumOfLikes] as Label).Text = i_Post.LikedBy.Count.ToString();
+            (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.Message] as Label).Text = i_Post.Message;
+            (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.Picture] as PictureBox).LoadAsync(i_Post.From.PictureNormalURL);
+            (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.Name] as Label).Text = i_Post.From.Name;
+            (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.CreatedTime] as Label).Text = i_Post.CreatedTime.Value.ToLongDateString();
         }
-
         private void loadHomeTab()
         {
             try
             {
-                this.m_FacebookDesktopLogic.FetchRecentPosts(postsPanel.Controls.Count);
-                this.initFriendsListBox();
+                tabControl.SelectedTab = this.tabPageHome;
+                new Thread(FetchFriends).Start();
+                new Thread(FetchRecentPosts).Start();
             }
             catch
             {
                 MessageBox.Show("There was a problem loading posts from Facebook.", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            this.initPostsPanel();
         }
 
-        private void updateLatestPhotos()
+        private void fetchLatestPhotos()
         {
             try
             {
-                int AlbumIndex = 0;
+                int albumIndex = 0;
 
                 foreach (Panel panel in tabPageAlbums.Controls)
                 {
-                    AlbumIndex = this.m_FacebookDesktopLogic.FetchLatestPhotos(AlbumIndex, panel.Controls.Count);
 
-                    (panel.Controls[(int)eAlbumItem.AlbumNameIndex] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Albums[AlbumIndex].Name;
-                    int currentItem = (int)eAlbumItem.FirstPhotoIndex;
-
-                    foreach (string photo in this.m_FacebookDesktopLogic.LatestPhotos)
-                    {
-                        if (currentItem >= panel.Controls.Count)
-                        {
-                            break;
-                        }
-
-                        (panel.Controls[currentItem] as PictureBox).LoadAsync(photo);
-                        currentItem++;
-                    }
-
-                    AlbumIndex++;
+                    tabPageAlbums.Invoke(new Action(()=> addNewAlbumToAlbumsPanel(albumIndex, panel)));
+                    albumIndex++;
                 }
             }
             catch
@@ -150,13 +173,32 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
+        private void addNewAlbumToAlbumsPanel(int i_AlbumIndex, Panel i_AlbumPanel)
+        {
+            List<string> latestPhotos;
+
+            latestPhotos = this.m_FacebookDesktopLogic.fetchLatestPhotosInAlbum(i_AlbumIndex, i_AlbumPanel.Controls.Count);
+
+            (i_AlbumPanel.Controls[(int)eAlbumItem.AlbumNameIndex] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Albums[i_AlbumIndex].Name;
+            int currentItem = (int)eAlbumItem.FirstPhotoIndex;
+
+            foreach (string photo in latestPhotos)
+            {
+                if (currentItem >= i_AlbumPanel.Controls.Count)
+                {
+                    break;
+                }
+
+                (i_AlbumPanel.Controls[currentItem] as PictureBox).LoadAsync(photo);
+                currentItem++;
+            }
+        }
+
         private void homePictureBox_Click(object sender, EventArgs e)
         {
             if (this.m_FacebookDesktopLogic.LoggedInUser != null)
             {
-                tabControl.SelectedTab = this.tabPageloading;
                 this.loadHomeTab(); 
-                tabControl.SelectedTab = this.tabPageHome;
             }
             else
             {
@@ -168,23 +210,12 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (this.m_FacebookDesktopLogic.LoggedInUser != null)
             {
-                tabControl.SelectedTab = this.tabPageloading;
-                this.updateLatestPhotos();
                 tabControl.SelectedTab = this.tabPageAlbums;
+                this.fetchLatestPhotos();
             }
             else
             {
                 MessageBox.Show("Please login !", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void initFriendsListBox()
-        {
-            listBoxFriends.Items.Clear();
-            listBoxFriends.DisplayMember = "Name";
-            foreach (User friend in this.m_FacebookDesktopLogic.FriendsList)
-            {
-                listBoxFriends.Items.Add(friend);
             }
         }
 
@@ -206,24 +237,20 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
-            tabControl.SelectedTab = this.tabPageloading;
-
             if (this.m_FacebookDesktopLogic.LoggedInUser != null)
             {
+                tabControl.SelectedTab = this.tabPageCalendar;
                 this.m_FacebookDesktopLogic.Calendar.FriendsList = this.m_FacebookDesktopLogic.FriendsList;
+
                 try
                 {
-                    this.m_FacebookDesktopLogic.Calendar.FetchBirthdays();
-                    this.initUpcomingBirthdaysListBox();
-                    this.m_FacebookDesktopLogic.Calendar.FetchEvents();
+                    loadCalendarTab();
                 }
                 catch
                 {
                     MessageBox.Show("There was a problem loading information Facebook ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                this.initUpcomingEventsListBox();
-                tabControl.SelectedTab = this.tabPageCalendar;
             }
             else
             {
@@ -231,26 +258,48 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
-        private void initUpcomingBirthdaysListBox()
+        public void FetchBirthdays()
         {
-            foreach (User user in this.m_FacebookDesktopLogic.Calendar.UpcomingBirthdaysUsers)
+            if (!this.m_IsBirthdaysLoaded)
             {
-                upcomingBirthdaysListBox.Items.Add(user.Name + " " + user.Birthday);
+                foreach (User friend in m_FacebookDesktopLogic.Calendar.FriendsList)
+                {
+                    if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
+                    {
+                        this.m_FacebookDesktopLogic.Calendar.UpcomingBirthdaysUsers.Add(friend);
+                        upcomingBirthdaysListBox.Invoke(new Action(()=> upcomingBirthdaysListBox.Items.Add(friend.Name + " " + friend.Birthday))); 
+                    }
+                }
+
+                this.m_IsBirthdaysLoaded = true;
             }
         }
 
-        private void initUpcomingEventsListBox()
+        private void loadCalendarTab()
         {
-            foreach (Event eventItem in this.m_FacebookDesktopLogic.Calendar.UpcomingEvents)
+            FetchBirthdays();
+            FetchEvents();
+        }
+
+        public void FetchEvents()
+        {
+            if (!this.m_IsEventsLoaded)
             {
-                upcomingEventsListBox.Items.Add(eventItem.Name + " " + eventItem.StartTime);
+                foreach (Event eventItem in this.m_FacebookDesktopLogic.LoggedInUser.Events)
+                {
+                    if (eventItem.StartTime.Value.Month == DateTime.Now.Month)
+                    {
+                        this.m_FacebookDesktopLogic.Calendar.UpcomingEvents.Add(eventItem);
+                        upcomingEventsListBox.Invoke(new Action(()=> upcomingEventsListBox.Items.Add(eventItem.Name + " " + eventItem.StartTime)));
+                    }
+                }
+
+                this.m_IsEventsLoaded = true;
             }
         }
 
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
         {
-            tabControl.SelectedTab = this.tabPageloading;
-
             if (this.m_FacebookDesktopLogic.LoggedInUser != null)
             {
                 tabControl.SelectedTab = this.tabPageCupid;

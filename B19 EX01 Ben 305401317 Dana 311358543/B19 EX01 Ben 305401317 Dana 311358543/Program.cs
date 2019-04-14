@@ -6,13 +6,13 @@ using System.Windows.Forms;
 
 namespace B19_EX01_Ben_305401317_Dana_311358543
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
