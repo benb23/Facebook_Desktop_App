@@ -231,10 +231,11 @@ namespace FacebookDesktopLogic
                 MessageBox.Show("Post published successfully.", ":)", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void FindMyMatch(User.eGender? i_Gender)
+        public List<Candidate> FindMyMatch(User.eGender? i_Gender)
         {
             this.FriendsList = FacebookAppLogic.Instance.FriendsList;          
             this.filterAndScoreCndidates(i_Gender);
+            return m_CupidResult;
         }
 
         private void filterAndScoreCndidates(User.eGender? i_checkedGender)

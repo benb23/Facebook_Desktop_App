@@ -55,12 +55,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             //pic.BringToFront();
 
             m_ProfileRoundPictureBox = new PictureProxy();
-            m_ProfileRoundPictureBox.BringToFront();
             m_ProfileRoundPictureBox.BackColor = System.Drawing.Color.Transparent;
             m_ProfileRoundPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            m_ProfileRoundPictureBox.Location = new System.Drawing.Point(46, 25);
+            m_ProfileRoundPictureBox.Location = new System.Drawing.Point(29, 14);
             m_ProfileRoundPictureBox.Margin = new System.Windows.Forms.Padding(6);
-            m_ProfileRoundPictureBox.Size = new System.Drawing.Size(372, 358);
+            m_ProfileRoundPictureBox.Size = new System.Drawing.Size(184, 184);
             m_ProfileRoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             m_ProfileRoundPictureBox.TabIndex = 0;
             m_ProfileRoundPictureBox.TabStop = false;
@@ -112,6 +111,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 }
 
                 this.IsfriendListLoaded = true;
+                //FacebookAppLogic.Instance.Calendar.FriendsList = FacebookAppLogic.Instance.FriendsList;
             }
         }
 
@@ -317,7 +317,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             if (FacebookAppLogic.Instance.LoggedInUser != null)
             {
                 tabControl.SelectedTab = this.tabPageCalendar;
-                FacebookAppLogic.Instance.Calendar.FriendsList = FacebookAppLogic.Instance.FriendsList;
+                //FacebookAppLogic.Instance.Calendar.FriendsList = FacebookAppLogic.Instance.FriendsList;
 
                 try
                 {
@@ -339,12 +339,12 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (!this.m_IsBirthdaysLoaded)
             {
-                FacebookAppLogic.Instance.Calendar.UpcomingBirthdaysUsers.Clear();
-                foreach (User friend in FacebookAppLogic.Instance.Calendar.FriendsList)
+                FacebookAppLogic.Instance.UpcomingBirthdaysUsers.Clear();
+                foreach (User friend in FacebookAppLogic.Instance.FriendsList)
                 {
                     if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
                     {
-                        FacebookAppLogic.Instance.Calendar.UpcomingBirthdaysUsers.Add(friend);
+                        FacebookAppLogic.Instance.UpcomingBirthdaysUsers.Add(friend);
                         upcomingBirthdaysListBox.Invoke(new Action(()=> upcomingBirthdaysListBox.Items.Add(friend.Name + " " + friend.Birthday))); 
                     }
                 }
@@ -401,8 +401,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                FacebookAppLogic.Instance.Cupid.FindMyMatch(this.getCheckedGender());
-                List<Candidate> cupidResult = FacebookAppLogic.Instance.Cupid.CupidResult;
+                List<Candidate> cupidResult = FacebookAppLogic.Instance.FindMyMatch(this.getCheckedGender());
+                //List<Candidate> cupidResult = FacebookAppLogic.Instance.Cupid.CupidResult;
                 int resIndex = 0;
 
                 if (cupidResult != null && cupidResult.Count != 0)
@@ -451,7 +451,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void updateChosenMatch(eMatch i_Match)
         {
-            FacebookAppLogic.Instance.Cupid.ChosenMatch = FacebookAppLogic.Instance.Cupid.CupidResult[(int)i_Match];
+
+            FacebookAppLogic.Instance.ChosenMatch = FacebookAppLogic.Instance.CupidResult[(int)i_Match];
             postOnMatchWallLabel.Visible = true;
             postOnMatchWallTextBox.Visible = true;
             sendMsgToMatchButton.Visible = true;
@@ -476,7 +477,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                FacebookAppLogic.Instance.Cupid.postOnMatchWall(postOnMatchWallTextBox.Text);
+                FacebookAppLogic.Instance.postOnMatchWall(postOnMatchWallTextBox.Text);
             }
             catch
             {
@@ -486,14 +487,14 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void wishHappyBirthdayButton_Click(object sender, EventArgs e)
         {
-            FacebookAppLogic.Instance.Calendar.WishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
+            FacebookAppLogic.Instance.WishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
         }
 
         private void goToFacebookLinkButton_Click(object sender, EventArgs e)
         {
             try
             {
-                FacebookAppLogic.Instance.Calendar.GoToFacebookLink(upcomingEventsListBox.SelectedIndex);
+                FacebookAppLogic.Instance.GoToFacebookLink(upcomingEventsListBox.SelectedIndex);
             }
             catch
             {
@@ -517,11 +518,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxFriends.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckFriends = true;
+                FacebookAppLogic.Instance.CheckFriends = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckFriends = false;
+                FacebookAppLogic.Instance.CheckFriends = false;
             }
         }
 
@@ -529,11 +530,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxEvents.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckEvents = true;
+                FacebookAppLogic.Instance.CheckEvents = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckEvents = false;
+                FacebookAppLogic.Instance.CheckEvents = false;
             }
         }
 
@@ -541,11 +542,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxGroups.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckGroups = true;
+                FacebookAppLogic.Instance.CheckGroups = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckGroups = false;
+                FacebookAppLogic.Instance.CheckGroups = false;
             }
         }
 
@@ -553,11 +554,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxCheckIns.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckCheckIns = true;
+                FacebookAppLogic.Instance.CheckCheckIns = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckCheckIns = false;
+                FacebookAppLogic.Instance.CheckCheckIns = false;
             }
         }
 
@@ -565,11 +566,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxLikedPages.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckLikedPages = true;
+                FacebookAppLogic.Instance.CheckLikedPages = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckLikedPages = false;
+                FacebookAppLogic.Instance.CheckLikedPages = false;
             }
         }
 
@@ -577,11 +578,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxHomeTown.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckHomeTown = true;
+                FacebookAppLogic.Instance.CheckHomeTown = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckHomeTown = false;
+                FacebookAppLogic.Instance.CheckHomeTown = false;
             }
         }
 
@@ -589,11 +590,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxFieldOfStudy.Checked)
             {
-                FacebookAppLogic.Instance.Cupid.CheckFieldOfStudy = true;
+                FacebookAppLogic.Instance.CheckFieldOfStudy = true;
             }
             else
             {
-                FacebookAppLogic.Instance.Cupid.CheckFieldOfStudy = false;
+                FacebookAppLogic.Instance.CheckFieldOfStudy = false;
             }
         }
 

@@ -21,7 +21,7 @@ namespace FacebookDesktopLogic
             get { return this.m_UpcomingEvents; }
         }
 
-        public FacebookObjectCollection<User> FriendsList { get; set; }
+        //public FacebookObjectCollection<User> FriendsList { get; set; }
 
         public User LoggedInUser { get; set; }
 

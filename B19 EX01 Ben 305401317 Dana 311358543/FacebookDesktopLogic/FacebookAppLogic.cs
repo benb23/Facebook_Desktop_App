@@ -53,7 +53,7 @@ namespace FacebookDesktopLogic
         {
             get
             {
-                if(m_Calendar == null)
+                if (m_Calendar == null)
                 {
                     m_Calendar = new FacebookCalendar();
                 }
@@ -84,7 +84,7 @@ namespace FacebookDesktopLogic
         //public bool IsfriendListLoaded { get; set; }
 
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
-        
+
         public FacebookObjectCollection<User> FriendsList
         {
             get { return this.m_FriendsList; }
@@ -181,6 +181,106 @@ namespace FacebookDesktopLogic
             return this.m_IsLogIn;
         }
 
+        public List<Candidate> CupidResult
+        {
+            get
+            {
+                return this.Cupid.CupidResult;
+            }
+        }
+
+        public Candidate ChosenMatch
+        {
+            set
+            {
+                this.Cupid.ChosenMatch = value;
+            }
+        }
+
+        public bool CheckFriends
+        {
+            set
+            {
+                this.Cupid.CheckFriends = value;
+            }
+        }
+
+        public bool CheckEvents
+        {
+            set
+            {
+                this.Cupid.CheckEvents = false;
+            }
+
+        }
+
+        public bool CheckGroups
+        {
+            set
+            {
+                this.Cupid.CheckGroups = false;
+            }
+        }
+
+        public bool CheckCheckIns
+        {
+            set
+            {
+                FacebookAppLogic.Instance.Cupid.CheckCheckIns = true;
+            }
+        }
+        
+        public bool CheckLikedPages
+        {
+            set
+            {
+                FacebookAppLogic.Instance.Cupid.CheckLikedPages = true;
+            }
+        }
+
+        public bool CheckHomeTown
+        {
+            set
+            {
+                FacebookAppLogic.Instance.Cupid.CheckHomeTown = true;
+            }
+        }
+
+        public bool CheckFieldOfStudy
+        {
+            set
+            {
+                FacebookAppLogic.Instance.Cupid.CheckFieldOfStudy = true;
+            }
+        }
+
+        public void postOnMatchWall(string i_Msg)
+        {
+            this.Cupid.postOnMatchWall(i_Msg);
+        }
+
+        public List<Candidate> FindMyMatch(User.eGender? i_Gender)
+        {
+            return this.Cupid.FindMyMatch(i_Gender);
+        }
+
+        public void WishHappyBirthday(int i_Index)
+        {
+            FacebookAppLogic.Instance.Calendar.WishHappyBirthday(i_Index);
+        }
+
+        public void GoToFacebookLink(int i_Index)
+        {
+            FacebookAppLogic.Instance.Calendar.GoToFacebookLink(i_Index);
+
+        }
+        public List<User> UpcomingBirthdaysUsers
+        {
+            get
+            {
+                return this.Calendar.UpcomingBirthdaysUsers;
+            }
+        }
         public List<string> fetchLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
         {
             List<string> Photos = new List<string>();

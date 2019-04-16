@@ -44,6 +44,7 @@
             this.userNametextBox = new System.Windows.Forms.TextBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.profilePicturePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.albumsPictureBox = new System.Windows.Forms.PictureBox();
             this.userNamePanel = new System.Windows.Forms.Panel();
@@ -174,7 +175,6 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.profilePicturePanel = new System.Windows.Forms.FlowLayoutPanel();
             descriptionLabel = new System.Windows.Forms.Label();
             endTimeLabel = new System.Windows.Forms.Label();
             locationLabel = new System.Windows.Forms.Label();
@@ -385,6 +385,19 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(470, 1045);
             this.menuPanel.TabIndex = 16;
+            // 
+            // profilePicturePanel
+            // 
+            this.profilePicturePanel.BackColor = System.Drawing.SystemColors.Window;
+            this.profilePicturePanel.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.ProfileCircle3;
+            this.profilePicturePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.profilePicturePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.profilePicturePanel.Location = new System.Drawing.Point(0, 0);
+            this.profilePicturePanel.Margin = new System.Windows.Forms.Padding(6);
+            this.profilePicturePanel.Name = "profilePicturePanel";
+            this.profilePicturePanel.Padding = new System.Windows.Forms.Padding(40, 19, 0, 0);
+            this.profilePicturePanel.Size = new System.Drawing.Size(470, 408);
+            this.profilePicturePanel.TabIndex = 3;
             // 
             // homePictureBox
             // 
@@ -1909,19 +1922,6 @@
             // postBindingSource
             // 
             this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
-            // 
-            // profilePicturePanel
-            // 
-            this.profilePicturePanel.BackColor = System.Drawing.SystemColors.Window;
-            this.profilePicturePanel.BackgroundImage = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.ProfileCircle3;
-            this.profilePicturePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.profilePicturePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.profilePicturePanel.Location = new System.Drawing.Point(0, 0);
-            this.profilePicturePanel.Margin = new System.Windows.Forms.Padding(6);
-            this.profilePicturePanel.Name = "profilePicturePanel";
-            this.profilePicturePanel.Padding = new System.Windows.Forms.Padding(40, 19, 0, 0);
-            this.profilePicturePanel.Size = new System.Drawing.Size(470, 408);
-            this.profilePicturePanel.TabIndex = 3;
             // 
             // AppForm
             // 
