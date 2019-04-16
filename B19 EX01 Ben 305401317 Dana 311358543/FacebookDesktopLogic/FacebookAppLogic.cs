@@ -112,7 +112,7 @@ namespace FacebookDesktopLogic
             /// You can then save the result.AccessToken for future auto-connect to this user:
             /// //todo: change
             ///          
-            LoginResult = FacebookService.Login(this.r_AppID/*"1450160541956417"*/, /// (desig patter's "Design Patterns Course App 2.4" app)
+            LoginResult = FacebookService.Login(/*this.r_AppID*/"1450160541956417", /// (desig patter's "Design Patterns Course App 2.4" app)
 
                 "public_profile",
                 "email",

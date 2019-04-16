@@ -120,7 +120,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             string profilePictureUrl = FacebookAppLogic.Instance.LoggedInUser.PictureNormalURL;
             FacebookAppLogic.Instance.PictureNormalURL = profilePictureUrl;
             m_ProfileRoundPictureBox.LoadAsync(profilePictureUrl);
-
             userNametextBox.Text = FacebookAppLogic.Instance.LoggedInUser.Name;
         }
 
