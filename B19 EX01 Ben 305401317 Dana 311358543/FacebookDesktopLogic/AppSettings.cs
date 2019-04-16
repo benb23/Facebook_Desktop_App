@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace FacebookAppLogic
+namespace FacebookDesktopLogic
 {
     public class AppSettings
     {

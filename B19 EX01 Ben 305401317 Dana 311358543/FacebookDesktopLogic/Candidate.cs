@@ -1,6 +1,6 @@
 ﻿using FacebookWrapper.ObjectModel;
 
-namespace FacebookAppLogic
+namespace FacebookDesktopLogic
 {
     public class Candidate
     {

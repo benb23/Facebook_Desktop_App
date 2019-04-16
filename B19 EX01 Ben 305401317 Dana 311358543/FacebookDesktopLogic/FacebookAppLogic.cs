@@ -1,25 +1,34 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
-namespace FacebookAppLogic
+namespace FacebookDesktopLogic
 {
-    public class FacebookDesktopLogic
+    public sealed class FacebookAppLogic
     {
-        private static FacebookDesktopLogic s_FacebookDesktopLogic = null;
+        private static FacebookAppLogic s_FacebookDesktopLogic = null;
+        private static object s_LockObj = new object();
+
+        private FacebookAppLogic()
+        {
+        }
 
         private readonly string r_AppID = "352758402005372";
 
-        public static FacebookDesktopLogic Instance
+        public static FacebookAppLogic Instance
         {
             get
             {
                 if (s_FacebookDesktopLogic == null)
                 {
-                    s_FacebookDesktopLogic = new FacebookDesktopLogic();
+                    lock (s_LockObj)
+                    {
+                        if (s_FacebookDesktopLogic == null)
+                        {
+                            s_FacebookDesktopLogic = new FacebookAppLogic();
+                        }
+                    }
                 }
-
                 return s_FacebookDesktopLogic;
             }
         }
@@ -28,9 +37,9 @@ namespace FacebookAppLogic
 
         public LoginResult LoginResult { get; set; }
 
-        //public List<string> LatestPhotos { get; set; }
+        //public UserCachingProxy  LogInUser { get; set; }
 
-        private FacebookCalendar m_Calendar = new FacebookCalendar();
+        private volatile FacebookCalendar m_Calendar;// = new FacebookCalendar();
 
         private bool m_IsLogIn = false;
 
@@ -42,14 +51,29 @@ namespace FacebookAppLogic
 
         public FacebookCalendar Calendar
         {
-            get { return this.m_Calendar; }
+            get
+            {
+                if(m_Calendar == null)
+                {
+                    m_Calendar = new FacebookCalendar();
+                }
+                return this.m_Calendar;
+            }
         }
 
-        private FacebookCupid m_Cupid = new FacebookCupid();
+        private volatile FacebookCupid m_Cupid;// = new FacebookCupid();
 
         public FacebookCupid Cupid
         {
-            get { return this.m_Cupid; }
+            get
+            {
+                if (m_Cupid == null)
+                {
+                    m_Cupid = new FacebookCupid();
+                }
+
+                return this.m_Cupid;
+            }
         }
 
         public List<Post> RecentPosts
@@ -80,29 +104,6 @@ namespace FacebookAppLogic
             }
         }
 
-        //public void FetchFriends()
-        //{
-        //    if (!this.IsfriendListLoaded)
-        //    {
-        //        foreach (User friend in this.LoggedInUser.Friends)
-        //        {
-        //            this.FriendsList.Add(friend);
-        //            friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
-        //        }
-
-        //        if (this.LoggedInUser.Friends.Count == 0)
-        //        {
-        //            MessageBox.Show("No Friends to retrieve :(");
-        //        }
-
-        //        this.IsfriendListLoaded = true;
-        //    }
-        //}
-
-        private FacebookDesktopLogic()
-        {
-        }
-
         public bool LoginAndInit()
         {
             /// Owner: design.patterns
@@ -110,7 +111,8 @@ namespace FacebookAppLogic
             /// Use the FacebookService.Login method to display the login form to any user who wish to use this application.
             /// You can then save the result.AccessToken for future auto-connect to this user:
             /// //todo: change
-            LoginResult = FacebookService.Login(/*this.r_AppID*/"1450160541956417", /// (desig patter's "Design Patterns Course App 2.4" app)
+            ///          
+            LoginResult = FacebookService.Login(this.r_AppID/*"1450160541956417"*/, /// (desig patter's "Design Patterns Course App 2.4" app)
 
                 "public_profile",
                 "email",
@@ -161,6 +163,8 @@ namespace FacebookAppLogic
                 /// "manage_notifications", (This permission is only available for apps using Graph API version v2.3 or older.)
 
                 );
+
+
             /// The documentation regarding facebook login and permissions can be found here: 
             // https://developers.facebook.com/docs/facebook-login/permissions#reference
 
@@ -176,20 +180,6 @@ namespace FacebookAppLogic
 
             return this.m_IsLogIn;
         }
-
-        //public void FetchRecentPosts(int i_NumOfPosts)
-        //{
-
-        //    if (!this.m_IsPostsLoaded)
-        //    {
-        //        for (int i = 0; i < i_NumOfPosts; i++)
-        //        {
-        //            this.m_RecentPosts.Add(this.LoggedInUser.Posts[i]);
-        //        }
-
-        //        this.m_IsPostsLoaded = true;
-        //    }
-        //}
 
         public List<string> fetchLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
         {

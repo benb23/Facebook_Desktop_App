@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
-namespace FacebookAppLogic
+namespace FacebookDesktopLogic
 {
     public class FacebookCalendar
     {
-        //private bool m_IsEventsLoaded = false;
-        //private bool m_IsBirthdaysLoaded = false;
         private List<User> m_UpcomingBirthdaysUsers = new List<User>();
 
         public List<User> UpcomingBirthdaysUsers
@@ -27,22 +25,6 @@ namespace FacebookAppLogic
 
         public User LoggedInUser { get; set; }
 
-        //public void FetchEvents()
-        //{
-        //    if (!this.m_IsEventsLoaded)
-        //    {
-        //            foreach (Event eventItem in this.LoggedInUser.Events)
-        //            {
-        //                if (eventItem.StartTime.Value.Month == DateTime.Now.Month)
-        //                {
-        //                    this.m_UpcomingEvents.Add(eventItem);
-        //                }
-        //            }
-
-        //            this.m_IsEventsLoaded = true;
-        //     }
-        //}
-
         public void WishHappyBirthday(int i_Index)
         {
             this.LoggedInUser.PostStatus("Happy Birthday" + this.m_UpcomingBirthdaysUsers[i_Index].Name);
@@ -60,21 +42,5 @@ namespace FacebookAppLogic
                 MessageBox.Show("No event selected! ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        //public void FetchBirthdays()
-        //{
-        //    if (!this.m_IsBirthdaysLoaded)
-        //    {
-        //        foreach (User friend in this.FriendsList)
-        //        {
-        //            if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
-        //            {
-        //                this.m_UpcomingBirthdaysUsers.Add(friend);
-        //            }
-        //        }
-
-        //        this.m_IsBirthdaysLoaded = true;
-        //    }
-        //}
     }
 }

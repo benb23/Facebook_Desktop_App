@@ -4,18 +4,19 @@ using System.Drawing;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
-using FacebookAppLogic;
+using FacebookDesktopLogic;
 using System.Threading;
 
 namespace B19_EX01_Ben_305401317_Dana_311358543
 {
-    public partial class mainForm : Form
+    public partial class AppForm : Form
     {
-        private bool m_IsEventsLoaded = false;
         private bool m_IsBirthdaysLoaded = false;
 
         public bool IsfriendListLoaded { get; set; }
         private bool IsPostsLoaded { get; set; }
+
+        PictureProxy m_ProfileRoundPictureBox;
 
 
         private enum ePostItem
@@ -40,21 +41,40 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             FirstPhotoIndex
         }
 
-        //private bool m_IsPostsListBoxLoaded = false;
+        //private FacebookAppLogic m_FacebookDesktopLogic = FacebookAppLogic.Instance;
 
-        private FacebookDesktopLogic m_FacebookDesktopLogic = FacebookDesktopLogic.Instance;
-
-        public mainForm()
+        public AppForm()
         {
+
             this.InitializeComponent();
-            this.m_FacebookDesktopLogic.AppSettings = AppSettings.LoadFromFile();
-            this.Location = this.m_FacebookDesktopLogic.AppSettings.LastWindowLocation;
-            checkBoxRememberMe.Checked = this.m_FacebookDesktopLogic.AppSettings.RememberUser;
+
+            //PictureBox pic = new PictureBox();
+            //pic.BackColor = Color.Red;
+            //pic.Location = new Point(300, 300);
+            //tabPageHome.Controls.Add(pic);
+            //pic.BringToFront();
+
+            m_ProfileRoundPictureBox = new PictureProxy();
+            m_ProfileRoundPictureBox.BringToFront();
+            m_ProfileRoundPictureBox.BackColor = System.Drawing.Color.Transparent;
+            m_ProfileRoundPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            m_ProfileRoundPictureBox.Location = new System.Drawing.Point(46, 25);
+            m_ProfileRoundPictureBox.Margin = new System.Windows.Forms.Padding(6);
+            m_ProfileRoundPictureBox.Size = new System.Drawing.Size(372, 358);
+            m_ProfileRoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            m_ProfileRoundPictureBox.TabIndex = 0;
+            m_ProfileRoundPictureBox.TabStop = false;
+            profilePicturePanel.Controls.Add(m_ProfileRoundPictureBox);
+
+            FacebookAppLogic.Instance.AppSettings = AppSettings.LoadFromFile();
+            this.Location = FacebookAppLogic.Instance.AppSettings.LastWindowLocation;
+            checkBoxRememberMe.Checked = FacebookAppLogic.Instance.AppSettings.RememberUser;
         }
 
+        
         private void logInButton_Click_(object sender, EventArgs e)
         {
-            bool isLogIn = this.m_FacebookDesktopLogic.LoginAndInit();
+            bool isLogIn = FacebookAppLogic.Instance.LoginAndInit();
             if(isLogIn)
             {
                 this.fetchBasicUserInfo();
@@ -71,6 +91,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (!this.IsfriendListLoaded)
             {
+                FacebookAppLogic.Instance.FriendsList.Clear();
                 listBoxFriends.Invoke(new Action(
                                         () => 
                                         {
@@ -78,14 +99,14 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                                             listBoxFriends.DisplayMember = "Name";
                                         })); 
 
-                foreach (User friend in this.m_FacebookDesktopLogic.LoggedInUser.Friends)
+                foreach (User friend in FacebookAppLogic.Instance.LoggedInUser.Friends)
                 {
-                    this.m_FacebookDesktopLogic.FriendsList.Add(friend);
+                    FacebookAppLogic.Instance.FriendsList.Add(friend);
                     listBoxFriends.Invoke(new Action(() => listBoxFriends.Items.Add(friend)));
                     friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
                 }
 
-                if (this.m_FacebookDesktopLogic.LoggedInUser.Friends.Count == 0)
+                if (FacebookAppLogic.Instance.LoggedInUser.Friends.Count == 0)
                 {
                     MessageBox.Show("No Friends to retrieve :(");
                 }
@@ -96,37 +117,39 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void fetchBasicUserInfo()
         {
-            string profilePictureUrl = this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL;
-            this.m_FacebookDesktopLogic.PictureNormalURL = profilePictureUrl;
-            profilePictureBox.LoadAsync(profilePictureUrl);
-            this.roundImage();
-            userNametextBox.Text = this.m_FacebookDesktopLogic.LoggedInUser.Name;
+            string profilePictureUrl = FacebookAppLogic.Instance.LoggedInUser.PictureNormalURL;
+            FacebookAppLogic.Instance.PictureNormalURL = profilePictureUrl;
+            m_ProfileRoundPictureBox.LoadAsync(profilePictureUrl);
+
+            userNametextBox.Text = FacebookAppLogic.Instance.LoggedInUser.Name;
         }
 
         private void createPostButton_Click(object sender, EventArgs e)
         {
-            this.m_FacebookDesktopLogic.LoggedInUser.PostStatus(textBox1.Text);
+            FacebookAppLogic.Instance.LoggedInUser.PostStatus(textBox1.Text);
         }
 
 
         public void FetchRecentPosts()
         {
             int postIndex = 0;
-            string profilePictureUrl = this.m_FacebookDesktopLogic.LoggedInUser.PictureNormalURL;
-            string name = this.m_FacebookDesktopLogic.LoggedInUser.Name;
+            string profilePictureUrl = FacebookAppLogic.Instance.LoggedInUser.PictureNormalURL;
+            string name = FacebookAppLogic.Instance.LoggedInUser.Name;
             Post post;
 
             
             if (!this.IsPostsLoaded)
             {
-            for (int i=0 ; i < postsPanel.Controls.Count ; i++) //??
-            {
-                this.m_FacebookDesktopLogic.RecentPosts.Add(this.m_FacebookDesktopLogic.LoggedInUser.Posts[postIndex]);
-                post = this.m_FacebookDesktopLogic.RecentPosts[postIndex];
-                postsPanel.Invoke(new Action(()=> addPostToPostsPanel(i,post)));
-                postIndex++;
-            }
-
+                if (FacebookAppLogic.Instance.LoggedInUser.Posts.Count > 0)
+                {
+                    for (int i = 0; i < postsPanel.Controls.Count; i++) //??
+                    {
+                        FacebookAppLogic.Instance.RecentPosts.Add(FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex]);
+                        post = FacebookAppLogic.Instance.RecentPosts[postIndex];
+                        postsPanel.Invoke(new Action(() => addPostToPostsPanel(i, post)));
+                        postIndex++;
+                    }
+                }
             this.IsPostsLoaded = true;
         }
 
@@ -134,6 +157,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void addPostToPostsPanel(int i_PostIndex, Post i_Post)
         {
+            foreach(Control control in postsPanel.Controls)
+            {
+                control.Visible = true;
+            }
+
             (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.NumOfLikes] as Label).Text = i_Post.LikedBy.Count.ToString();
             (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.Message] as Label).Text = i_Post.Message;
             (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.Picture] as PictureBox).LoadAsync(i_Post.From.PictureNormalURL);
@@ -177,9 +205,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             List<string> latestPhotos;
 
-            latestPhotos = this.m_FacebookDesktopLogic.fetchLatestPhotosInAlbum(i_AlbumIndex, i_AlbumPanel.Controls.Count);
+            latestPhotos = FacebookAppLogic.Instance.fetchLatestPhotosInAlbum(i_AlbumIndex, i_AlbumPanel.Controls.Count);
 
-            (i_AlbumPanel.Controls[(int)eAlbumItem.AlbumNameIndex] as Label).Text = this.m_FacebookDesktopLogic.LoggedInUser.Albums[i_AlbumIndex].Name;
+            (i_AlbumPanel.Controls[(int)eAlbumItem.AlbumNameIndex] as Label).Text = FacebookAppLogic.Instance.LoggedInUser.Albums[i_AlbumIndex].Name;
             int currentItem = (int)eAlbumItem.FirstPhotoIndex;
 
             foreach (string photo in latestPhotos)
@@ -196,8 +224,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void homePictureBox_Click(object sender, EventArgs e)
         {
-            if (this.m_FacebookDesktopLogic.LoggedInUser != null)
+            if (FacebookAppLogic.Instance.LoggedInUser != null)
             {
+                tabControl.SelectedTab = this.tabPageHome;
                 this.loadHomeTab(); 
             }
             else
@@ -208,7 +237,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void albumsPictureBox_Click_1(object sender, EventArgs e)
         {
-            if (this.m_FacebookDesktopLogic.LoggedInUser != null)
+            if (FacebookAppLogic.Instance.LoggedInUser != null)
             {
                 tabControl.SelectedTab = this.tabPageAlbums;
                 this.fetchLatestPhotos();
@@ -221,26 +250,75 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void labelLogOut_Click(object sender, EventArgs e)
         {
-            try
+            if (IsfriendListLoaded && IsPostsLoaded)
             {
-                FacebookService.Logout(null);
-                tabControl.SelectedTab = this.tabPageLogIn;
-                this.m_FacebookDesktopLogic.LoggedInUser = null;
-                profilePictureBox.Image = null;
-                userNametextBox.Text = string.Empty;
-            }
-            catch
-            {
-                MessageBox.Show("There was a problem. Try logging in again.", "Log-out Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    FacebookService.Logout(null);
+                    tabControl.SelectedTab = this.tabPageLogIn;
+                    cleanUserDataInUI();
+                    //FacebookAppLogic.Instance.cleanUserData();
+
+                }
+                catch
+                {
+                    MessageBox.Show("There was a problem. Try logging in again.", "Log-out Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
+        private void cleanUserDataInUI()
+        {
+            FacebookAppLogic.Instance.LoggedInUser = null;
+            m_ProfileRoundPictureBox.Image = null;
+            userNametextBox.Text = string.Empty;
+
+            foreach(Control control in postsPanel.Controls)
+            {
+                control.Visible = false;
+            }
+
+            //post0Picture.Image = null;
+            //post1Picture.Image = null;
+            //post2Picture.Image = null;
+            //post3Picture.Image = null;
+            //post0Content.Text = null;
+            //post1Content.Text = null;
+            //post2Content.Text = null;
+            //post3Content.Text = null;
+            //post0Publisher.Text = null;
+            //post1Publisher.Text = null;
+            //post2Publisher.Text = null;
+            //post3Publisher.Text = null;
+            //post0Date.Text = null;
+            //post1Date.Text = null;
+            //post2Date.Text = null;
+            //post3Date.Text = null;
+
+            listBoxFriends.Items.Clear();
+            if (upcomingBirthdaysListBox.Items.Count > 0)
+            {
+                upcomingBirthdaysListBox.Items.Clear();
+            }
+            if (upcomingEventsListBox.Items.Count > 0)
+            {
+                upcomingEventsListBox.Items.Clear();
+            }
+            match2Name.Text = null;
+            match2PictureBox = null;
+            match3Name.Text = null;
+            match3PictureBox = null;
+            match1Name.Text = null;
+            match1PictureBox = null;
+            IsfriendListLoaded = false;
+            IsPostsLoaded = false;
+        }
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
-            if (this.m_FacebookDesktopLogic.LoggedInUser != null)
+            if (FacebookAppLogic.Instance.LoggedInUser != null)
             {
                 tabControl.SelectedTab = this.tabPageCalendar;
-                this.m_FacebookDesktopLogic.Calendar.FriendsList = this.m_FacebookDesktopLogic.FriendsList;
+                FacebookAppLogic.Instance.Calendar.FriendsList = FacebookAppLogic.Instance.FriendsList;
 
                 try
                 {
@@ -262,11 +340,12 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (!this.m_IsBirthdaysLoaded)
             {
-                foreach (User friend in m_FacebookDesktopLogic.Calendar.FriendsList)
+                FacebookAppLogic.Instance.Calendar.UpcomingBirthdaysUsers.Clear();
+                foreach (User friend in FacebookAppLogic.Instance.Calendar.FriendsList)
                 {
                     if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
                     {
-                        this.m_FacebookDesktopLogic.Calendar.UpcomingBirthdaysUsers.Add(friend);
+                        FacebookAppLogic.Instance.Calendar.UpcomingBirthdaysUsers.Add(friend);
                         upcomingBirthdaysListBox.Invoke(new Action(()=> upcomingBirthdaysListBox.Items.Add(friend.Name + " " + friend.Birthday))); 
                     }
                 }
@@ -283,24 +362,13 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         public void FetchEvents()
         {
-            if (!this.m_IsEventsLoaded)
-            {
-                foreach (Event eventItem in this.m_FacebookDesktopLogic.LoggedInUser.Events)
-                {
-                    if (eventItem.StartTime.Value.Month == DateTime.Now.Month)
-                    {
-                        this.m_FacebookDesktopLogic.Calendar.UpcomingEvents.Add(eventItem);
-                        upcomingEventsListBox.Invoke(new Action(()=> upcomingEventsListBox.Items.Add(eventItem.Name + " " + eventItem.StartTime)));
-                    }
-                }
-
-                this.m_IsEventsLoaded = true;
-            }
+            eventBindingSource.DataSource = FacebookAppLogic.Instance.LoggedInUser.Events;
+            eventBindingSource.Filter = "Date = 'DateTime.Now.Month' "; // todo:??????
         }
 
         private void pictureBoxFaceCupid_Click(object sender, EventArgs e)
         {
-            if (this.m_FacebookDesktopLogic.LoggedInUser != null)
+            if (FacebookAppLogic.Instance.LoggedInUser != null)
             {
                 tabControl.SelectedTab = this.tabPageCupid;
             }
@@ -334,8 +402,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                this.m_FacebookDesktopLogic.Cupid.FindMyMatch(this.getCheckedGender());
-                List<Candidate> cupidResult = this.m_FacebookDesktopLogic.Cupid.CupidResult;
+                FacebookAppLogic.Instance.Cupid.FindMyMatch(this.getCheckedGender());
+                List<Candidate> cupidResult = FacebookAppLogic.Instance.Cupid.CupidResult;
                 int resIndex = 0;
 
                 if (cupidResult != null && cupidResult.Count != 0)
@@ -384,7 +452,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void updateChosenMatch(eMatch i_Match)
         {
-            this.m_FacebookDesktopLogic.Cupid.ChosenMatch = this.m_FacebookDesktopLogic.Cupid.CupidResult[(int)i_Match];
+            FacebookAppLogic.Instance.Cupid.ChosenMatch = FacebookAppLogic.Instance.Cupid.CupidResult[(int)i_Match];
             postOnMatchWallLabel.Visible = true;
             postOnMatchWallTextBox.Visible = true;
             sendMsgToMatchButton.Visible = true;
@@ -409,7 +477,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             try
             {
-                this.m_FacebookDesktopLogic.Cupid.postOnMatchWall(postOnMatchWallTextBox.Text);
+                FacebookAppLogic.Instance.Cupid.postOnMatchWall(postOnMatchWallTextBox.Text);
             }
             catch
             {
@@ -419,22 +487,14 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void wishHappyBirthdayButton_Click(object sender, EventArgs e)
         {
-            this.m_FacebookDesktopLogic.Calendar.WishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
-        }
-
-        private void roundImage()
-        {
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, profilePictureBox.Width, profilePictureBox.Height);
-            Region rg = new Region(gp);
-            profilePictureBox.Region = rg;
+            FacebookAppLogic.Instance.Calendar.WishHappyBirthday(upcomingBirthdaysListBox.SelectedIndex);
         }
 
         private void goToFacebookLinkButton_Click(object sender, EventArgs e)
         {
             try
             {
-                this.m_FacebookDesktopLogic.Calendar.GoToFacebookLink(upcomingEventsListBox.SelectedIndex);
+                FacebookAppLogic.Instance.Calendar.GoToFacebookLink(upcomingEventsListBox.SelectedIndex);
             }
             catch
             {
@@ -458,11 +518,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxFriends.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckFriends = true;
+                FacebookAppLogic.Instance.Cupid.CheckFriends = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckFriends = false;
+                FacebookAppLogic.Instance.Cupid.CheckFriends = false;
             }
         }
 
@@ -470,11 +530,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxEvents.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckEvents = true;
+                FacebookAppLogic.Instance.Cupid.CheckEvents = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckEvents = false;
+                FacebookAppLogic.Instance.Cupid.CheckEvents = false;
             }
         }
 
@@ -482,11 +542,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxGroups.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckGroups = true;
+                FacebookAppLogic.Instance.Cupid.CheckGroups = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckGroups = false;
+                FacebookAppLogic.Instance.Cupid.CheckGroups = false;
             }
         }
 
@@ -494,11 +554,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxCheckIns.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckCheckIns = true;
+                FacebookAppLogic.Instance.Cupid.CheckCheckIns = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckCheckIns = false;
+                FacebookAppLogic.Instance.Cupid.CheckCheckIns = false;
             }
         }
 
@@ -506,11 +566,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxLikedPages.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckLikedPages = true;
+                FacebookAppLogic.Instance.Cupid.CheckLikedPages = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckLikedPages = false;
+                FacebookAppLogic.Instance.Cupid.CheckLikedPages = false;
             }
         }
 
@@ -518,11 +578,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxHomeTown.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckHomeTown = true;
+                FacebookAppLogic.Instance.Cupid.CheckHomeTown = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckHomeTown = false;
+                FacebookAppLogic.Instance.Cupid.CheckHomeTown = false;
             }
         }
 
@@ -530,11 +590,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             if (checkBoxFieldOfStudy.Checked)
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckFieldOfStudy = true;
+                FacebookAppLogic.Instance.Cupid.CheckFieldOfStudy = true;
             }
             else
             {
-                this.m_FacebookDesktopLogic.Cupid.CheckFieldOfStudy = false;
+                FacebookAppLogic.Instance.Cupid.CheckFieldOfStudy = false;
             }
         }
 
@@ -546,31 +606,31 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
             else
             {
-                if (this.m_FacebookDesktopLogic.LoggedInUser != null) 
+                if (FacebookAppLogic.Instance.LoggedInUser != null) 
                 {
-                    this.m_FacebookDesktopLogic.AppSettings.DeleteFile();
+                    FacebookAppLogic.Instance.AppSettings.DeleteFile();
                 }
             }
         }
 
         private void updateAppSettings()
         {
-            this.m_FacebookDesktopLogic.AppSettings.LastWindowLocation = this.Location;
-            this.m_FacebookDesktopLogic.AppSettings.RememberUser = this.checkBoxRememberMe.Checked;
+            FacebookAppLogic.Instance.AppSettings.LastWindowLocation = this.Location;
+            FacebookAppLogic.Instance.AppSettings.RememberUser = this.checkBoxRememberMe.Checked;
 
-            if (this.m_FacebookDesktopLogic.LoggedInUser != null)
+            if (FacebookAppLogic.Instance.LoggedInUser != null)
             {          
-                if(this.m_FacebookDesktopLogic.AppSettings.RememberUser)
+                if(FacebookAppLogic.Instance.AppSettings.RememberUser)
                 {
-                    this.m_FacebookDesktopLogic.AppSettings.LastAccessToken = this.m_FacebookDesktopLogic.LoginResult.AccessToken;
+                    FacebookAppLogic.Instance.AppSettings.LastAccessToken = FacebookAppLogic.Instance.LoginResult.AccessToken;
                 }
                 else
                 {
-                    this.m_FacebookDesktopLogic.AppSettings.LastAccessToken = null;
+                    FacebookAppLogic.Instance.AppSettings.LastAccessToken = null;
                 }
             }
 
-            this.m_FacebookDesktopLogic.AppSettings.SaveToFile();
+            FacebookAppLogic.Instance.AppSettings.SaveToFile();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            Application.Run(new AppForm());
         }
     }
 }
