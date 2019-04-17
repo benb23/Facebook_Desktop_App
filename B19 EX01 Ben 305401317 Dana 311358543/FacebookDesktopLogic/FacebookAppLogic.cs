@@ -47,7 +47,7 @@ namespace FacebookDesktopLogic
 
         public string PictureNormalURL { get; set; }
 
-        private List<Post> m_RecentPosts = new List<Post>();
+        //private List<Post> m_RecentPosts = new List<Post>();
 
         public FacebookCalendar Calendar
         {
@@ -76,10 +76,10 @@ namespace FacebookDesktopLogic
             }
         }
 
-        public List<Post> RecentPosts
-        {
-            get { return this.m_RecentPosts; }
-        }
+        //public List<Post> RecentPosts
+        //{
+        //    get { return this.m_RecentPosts; }
+        //}
 
         //public bool IsfriendListLoaded { get; set; }
 

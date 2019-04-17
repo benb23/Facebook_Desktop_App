@@ -64,28 +64,24 @@
             this.likesLabel3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.post3Content = new System.Windows.Forms.Label();
-            this.post0Picture = new System.Windows.Forms.PictureBox();
             this.post3Publisher = new System.Windows.Forms.Label();
             this.post3Date = new System.Windows.Forms.Label();
             this.post3 = new System.Windows.Forms.Panel();
             this.likesLabel2 = new System.Windows.Forms.Label();
             this.likes2 = new System.Windows.Forms.Label();
             this.post2Content = new System.Windows.Forms.Label();
-            this.post3Picture = new System.Windows.Forms.PictureBox();
             this.post2Publisher = new System.Windows.Forms.Label();
             this.post2Date = new System.Windows.Forms.Label();
             this.post1 = new System.Windows.Forms.Panel();
             this.likesLabel1 = new System.Windows.Forms.Label();
             this.likes1 = new System.Windows.Forms.Label();
             this.post1Content = new System.Windows.Forms.Label();
-            this.post1Picture = new System.Windows.Forms.PictureBox();
             this.post1Publisher = new System.Windows.Forms.Label();
             this.post1Date = new System.Windows.Forms.Label();
             this.post2 = new System.Windows.Forms.Panel();
             this.likesLabel0 = new System.Windows.Forms.Label();
             this.likes0 = new System.Windows.Forms.Label();
             this.post0Content = new System.Windows.Forms.Label();
-            this.post2Picture = new System.Windows.Forms.PictureBox();
             this.post0Publisher = new System.Windows.Forms.Label();
             this.post0Date = new System.Windows.Forms.Label();
             this.recentPostslabel = new System.Windows.Forms.Label();
@@ -195,13 +191,9 @@
             this.tabPageHome.SuspendLayout();
             this.postsPanel.SuspendLayout();
             this.post0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post0Picture)).BeginInit();
             this.post3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post3Picture)).BeginInit();
             this.post1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post1Picture)).BeginInit();
             this.post2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post2Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPageAlbums.SuspendLayout();
             this.album0Panel.SuspendLayout();
@@ -587,7 +579,6 @@
             this.post0.Controls.Add(this.likesLabel3);
             this.post0.Controls.Add(this.label8);
             this.post0.Controls.Add(this.post3Content);
-            this.post0.Controls.Add(this.post0Picture);
             this.post0.Controls.Add(this.post3Publisher);
             this.post0.Controls.Add(this.post3Date);
             this.post0.Dock = System.Windows.Forms.DockStyle.Top;
@@ -630,17 +621,6 @@
             this.post3Content.TabIndex = 7;
             this.post3Content.Text = "content";
             // 
-            // post0Picture
-            // 
-            this.post0Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.post0Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.post0Picture.Location = new System.Drawing.Point(24, 15);
-            this.post0Picture.Margin = new System.Windows.Forms.Padding(6);
-            this.post0Picture.Name = "post0Picture";
-            this.post0Picture.Size = new System.Drawing.Size(132, 127);
-            this.post0Picture.TabIndex = 2;
-            this.post0Picture.TabStop = false;
-            // 
             // post3Publisher
             // 
             this.post3Publisher.AutoSize = true;
@@ -668,7 +648,6 @@
             this.post3.Controls.Add(this.likesLabel2);
             this.post3.Controls.Add(this.likes2);
             this.post3.Controls.Add(this.post2Content);
-            this.post3.Controls.Add(this.post3Picture);
             this.post3.Controls.Add(this.post2Publisher);
             this.post3.Controls.Add(this.post2Date);
             this.post3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -711,17 +690,6 @@
             this.post2Content.TabIndex = 7;
             this.post2Content.Text = "content";
             // 
-            // post3Picture
-            // 
-            this.post3Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.post3Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.post3Picture.Location = new System.Drawing.Point(24, 15);
-            this.post3Picture.Margin = new System.Windows.Forms.Padding(6);
-            this.post3Picture.Name = "post3Picture";
-            this.post3Picture.Size = new System.Drawing.Size(132, 127);
-            this.post3Picture.TabIndex = 2;
-            this.post3Picture.TabStop = false;
-            // 
             // post2Publisher
             // 
             this.post2Publisher.AutoSize = true;
@@ -749,7 +717,6 @@
             this.post1.Controls.Add(this.likesLabel1);
             this.post1.Controls.Add(this.likes1);
             this.post1.Controls.Add(this.post1Content);
-            this.post1.Controls.Add(this.post1Picture);
             this.post1.Controls.Add(this.post1Publisher);
             this.post1.Controls.Add(this.post1Date);
             this.post1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -792,17 +759,6 @@
             this.post1Content.TabIndex = 7;
             this.post1Content.Text = "content";
             // 
-            // post1Picture
-            // 
-            this.post1Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.post1Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.post1Picture.Location = new System.Drawing.Point(24, 15);
-            this.post1Picture.Margin = new System.Windows.Forms.Padding(6);
-            this.post1Picture.Name = "post1Picture";
-            this.post1Picture.Size = new System.Drawing.Size(132, 127);
-            this.post1Picture.TabIndex = 2;
-            this.post1Picture.TabStop = false;
-            // 
             // post1Publisher
             // 
             this.post1Publisher.AutoSize = true;
@@ -830,7 +786,6 @@
             this.post2.Controls.Add(this.likesLabel0);
             this.post2.Controls.Add(this.likes0);
             this.post2.Controls.Add(this.post0Content);
-            this.post2.Controls.Add(this.post2Picture);
             this.post2.Controls.Add(this.post0Publisher);
             this.post2.Controls.Add(this.post0Date);
             this.post2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -873,17 +828,6 @@
             this.post0Content.Size = new System.Drawing.Size(103, 30);
             this.post0Content.TabIndex = 7;
             this.post0Content.Text = "content";
-            // 
-            // post2Picture
-            // 
-            this.post2Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.post2Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.post2Picture.Location = new System.Drawing.Point(24, 15);
-            this.post2Picture.Margin = new System.Windows.Forms.Padding(6);
-            this.post2Picture.Name = "post2Picture";
-            this.post2Picture.Size = new System.Drawing.Size(132, 127);
-            this.post2Picture.TabIndex = 2;
-            this.post2Picture.TabStop = false;
             // 
             // post0Publisher
             // 
@@ -1956,16 +1900,12 @@
             this.postsPanel.ResumeLayout(false);
             this.post0.ResumeLayout(false);
             this.post0.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post0Picture)).EndInit();
             this.post3.ResumeLayout(false);
             this.post3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post3Picture)).EndInit();
             this.post1.ResumeLayout(false);
             this.post1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post1Picture)).EndInit();
             this.post2.ResumeLayout(false);
             this.post2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post2Picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPageAlbums.ResumeLayout(false);
             this.album0Panel.ResumeLayout(false);
@@ -2054,28 +1994,24 @@
         private System.Windows.Forms.Label likesLabel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label post3Content;
-        private System.Windows.Forms.PictureBox post0Picture;
         private System.Windows.Forms.Label post3Publisher;
         private System.Windows.Forms.Label post3Date;
         private System.Windows.Forms.Panel post3;
         private System.Windows.Forms.Label likesLabel2;
         private System.Windows.Forms.Label likes2;
         private System.Windows.Forms.Label post2Content;
-        private System.Windows.Forms.PictureBox post3Picture;
         private System.Windows.Forms.Label post2Publisher;
         private System.Windows.Forms.Label post2Date;
         private System.Windows.Forms.Panel post1;
         private System.Windows.Forms.Label likesLabel1;
         private System.Windows.Forms.Label likes1;
         private System.Windows.Forms.Label post1Content;
-        private System.Windows.Forms.PictureBox post1Picture;
         private System.Windows.Forms.Label post1Publisher;
         private System.Windows.Forms.Label post1Date;
         private System.Windows.Forms.Panel post2;
         private System.Windows.Forms.Label likesLabel0;
         private System.Windows.Forms.Label likes0;
         private System.Windows.Forms.Label post0Content;
-        private System.Windows.Forms.PictureBox post2Picture;
         private System.Windows.Forms.Label post0Publisher;
         private System.Windows.Forms.Label post0Date;
         private System.Windows.Forms.Label recentPostslabel;

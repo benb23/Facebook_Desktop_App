@@ -17,15 +17,18 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private bool IsPostsLoaded { get; set; }
 
         PictureProxy m_ProfileRoundPictureBox;
-
+        PictureProxy m_Post0Picture;
+        PictureProxy m_Post1Picture;
+        PictureProxy m_Post2Picture;
+        PictureProxy m_Post3Picture;
 
         private enum ePostItem
         {
             NumOfLikes = 1,
             Message,
-            Picture,
             Name,
-            CreatedTime
+            CreatedTime,
+            Picture
         }
 
         private enum eMatch
@@ -48,12 +51,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
             this.InitializeComponent();
 
-            //PictureBox pic = new PictureBox();
-            //pic.BackColor = Color.Red;
-            //pic.Location = new Point(300, 300);
-            //tabPageHome.Controls.Add(pic);
-            //pic.BringToFront();
-
             m_ProfileRoundPictureBox = new PictureProxy();
             m_ProfileRoundPictureBox.BackColor = System.Drawing.Color.Transparent;
             m_ProfileRoundPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -64,6 +61,49 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             m_ProfileRoundPictureBox.TabIndex = 0;
             m_ProfileRoundPictureBox.TabStop = false;
             profilePicturePanel.Controls.Add(m_ProfileRoundPictureBox);
+
+            m_Post0Picture = new PictureProxy();
+            this.m_Post0Picture.BackColor = System.Drawing.Color.Gainsboro;
+            this.m_Post0Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_Post0Picture.Location = new System.Drawing.Point(12, 8);
+            this.m_Post0Picture.Margin = new System.Windows.Forms.Padding(6);
+            this.m_Post0Picture.Name = "post0Picture";
+            this.m_Post0Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post0Picture.TabIndex = 2;
+            this.m_Post0Picture.TabStop = false;
+            this.post0.Controls.Add(this.m_Post0Picture);
+
+            m_Post1Picture = new PictureProxy();
+            this.m_Post1Picture.BackColor = System.Drawing.Color.Gainsboro;
+            this.m_Post1Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_Post1Picture.Location = new System.Drawing.Point(12, 8);
+            this.m_Post1Picture.Margin = new System.Windows.Forms.Padding(6);
+            this.m_Post1Picture.Name = "post1Picture";
+            this.m_Post1Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post1Picture.TabIndex = 2;
+            this.m_Post1Picture.TabStop = false;
+            this.post1.Controls.Add(this.m_Post1Picture);
+
+            m_Post3Picture = new PictureProxy();
+            this.m_Post3Picture.BackColor = System.Drawing.Color.Gainsboro;
+            this.m_Post3Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_Post3Picture.Location = new System.Drawing.Point(12, 8);
+            this.m_Post3Picture.Margin = new System.Windows.Forms.Padding(6);
+            this.m_Post3Picture.Name = "post3Picture";
+            this.m_Post3Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post3Picture.TabIndex = 2;
+            this.m_Post3Picture.TabStop = false;
+            this.post3.Controls.Add(this.m_Post3Picture);
+
+            m_Post2Picture = new PictureProxy();
+            this.m_Post2Picture.BackColor = System.Drawing.Color.Gainsboro;
+            this.m_Post2Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_Post2Picture.Location = new System.Drawing.Point(12, 8);
+            this.m_Post2Picture.Name = "post3Picture";
+            this.m_Post2Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post2Picture.TabIndex = 2;
+            this.m_Post2Picture.TabStop = false;
+            this.post2.Controls.Add(this.m_Post2Picture);
 
             FacebookAppLogic.Instance.AppSettings = AppSettings.LoadFromFile();
             this.Location = FacebookAppLogic.Instance.AppSettings.LastWindowLocation;
@@ -111,7 +151,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 }
 
                 this.IsfriendListLoaded = true;
-                //FacebookAppLogic.Instance.Calendar.FriendsList = FacebookAppLogic.Instance.FriendsList;
             }
         }
 
@@ -143,8 +182,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 {
                     for (int i = 0; i < postsPanel.Controls.Count; i++) //??
                     {
-                        FacebookAppLogic.Instance.RecentPosts.Add(FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex]);
-                        post = FacebookAppLogic.Instance.RecentPosts[postIndex];
+                        //FacebookAppLogic.Instance.RecentPosts.Add(FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex]);
+                        post = FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex];
                         postsPanel.Invoke(new Action(() => addPostToPostsPanel(i, post)));
                         postIndex++;
                     }
@@ -317,7 +356,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             if (FacebookAppLogic.Instance.LoggedInUser != null)
             {
                 tabControl.SelectedTab = this.tabPageCalendar;
-                //FacebookAppLogic.Instance.Calendar.FriendsList = FacebookAppLogic.Instance.FriendsList;
 
                 try
                 {
@@ -402,7 +440,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             try
             {
                 List<Candidate> cupidResult = FacebookAppLogic.Instance.FindMyMatch(this.getCheckedGender());
-                //List<Candidate> cupidResult = FacebookAppLogic.Instance.Cupid.CupidResult;
                 int resIndex = 0;
 
                 if (cupidResult != null && cupidResult.Count != 0)
