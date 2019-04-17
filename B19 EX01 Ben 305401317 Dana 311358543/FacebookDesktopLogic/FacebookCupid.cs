@@ -233,7 +233,7 @@ namespace FacebookDesktopLogic
 
         public List<Candidate> FindMyMatch(User.eGender? i_Gender)
         {
-            this.FriendsList = FacebookAppLogic.Instance.FriendsList;          
+            //this.FriendsList = FacebookAppLogic.Instance.FriendsList;          
             this.filterAndScoreCndidates(i_Gender);
             return m_CupidResult;
         }

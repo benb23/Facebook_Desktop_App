@@ -69,7 +69,8 @@ namespace FacebookDesktopLogic
             {
                 if (m_Cupid == null)
                 {
-                    m_Cupid = new FacebookCupid();
+                    this.m_Cupid = new FacebookCupid();
+                    this.m_Cupid.FriendsList = this.FriendsList;
                 }
 
                 return this.m_Cupid;
