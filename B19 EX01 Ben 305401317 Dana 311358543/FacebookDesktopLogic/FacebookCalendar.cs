@@ -16,13 +16,6 @@ namespace FacebookDesktopLogic
 
         private List<Event> m_UpcomingEvents = new List<Event>();
 
-        public List<Event> UpcomingEvents
-        {
-            get { return this.m_UpcomingEvents; }
-        }
-
-        //public FacebookObjectCollection<User> FriendsList { get; set; }
-
         public User LoggedInUser { get; set; }
 
         public void WishHappyBirthday(int i_Index)

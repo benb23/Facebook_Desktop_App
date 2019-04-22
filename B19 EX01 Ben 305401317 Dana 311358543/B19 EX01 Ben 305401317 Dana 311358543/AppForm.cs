@@ -11,16 +11,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 {
     public partial class AppForm : Form
     {
-        private bool m_IsBirthdaysLoaded = false;
-
-        public bool IsfriendListLoaded { get; set; }
-        private bool IsPostsLoaded { get; set; }
-
         PictureProxy m_ProfileRoundPictureBox;
         PictureProxy m_Post0Picture;
         PictureProxy m_Post1Picture;
         PictureProxy m_Post2Picture;
         PictureProxy m_Post3Picture;
+
+        private bool m_IsBirthdaysLoaded = false;
+        public bool IsfriendListLoaded { get; set; }
+        private bool IsPostsLoaded { get; set; }
 
         private enum ePostItem
         {
@@ -43,8 +42,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             AlbumNameIndex,
             FirstPhotoIndex
         }
-
-        //private FacebookAppLogic m_FacebookDesktopLogic = FacebookAppLogic.Instance;
 
         public AppForm()
         {
@@ -167,8 +164,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             FacebookAppLogic.Instance.LoggedInUser.PostStatus(textBox1.Text);
         }
 
-
-        public void FetchRecentPosts()
+        private void FetchRecentPosts()
         {
             int postIndex = 0;
             string profilePictureUrl = FacebookAppLogic.Instance.LoggedInUser.PictureNormalURL;
@@ -182,7 +178,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 {
                     for (int i = 0; i < postsPanel.Controls.Count; i++) //??
                     {
-                        //FacebookAppLogic.Instance.RecentPosts.Add(FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex]);
                         post = FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex];
                         postsPanel.Invoke(new Action(() => addPostToPostsPanel(i, post)));
                         postIndex++;
@@ -206,6 +201,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.Name] as Label).Text = i_Post.From.Name;
             (postsPanel.Controls[i_PostIndex].Controls[(int)ePostItem.CreatedTime] as Label).Text = i_Post.CreatedTime.Value.ToLongDateString();
         }
+
         private void loadHomeTab()
         {
             try
@@ -292,11 +288,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             {
                 try
                 {
-                    FacebookService.Logout(null);
-                    tabControl.SelectedTab = this.tabPageLogIn;
-                    cleanUserDataInUI();
-                    //FacebookAppLogic.Instance.cleanUserData();
-
+                    FacebookService.Logout(doAfterLogout);
                 }
                 catch
                 {
@@ -305,9 +297,15 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
+        private void doAfterLogout()
+        {
+            tabControl.SelectedTab = this.tabPageLogIn;
+            cleanUserDataInUI();
+            //FacebookAppLogic.Instance.cleanUserData();
+        }
+
         private void cleanUserDataInUI()
         {
-            FacebookAppLogic.Instance.LoggedInUser = null;
             m_ProfileRoundPictureBox.Image = null;
             userNametextBox.Text = string.Empty;
 
@@ -316,24 +314,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 control.Visible = false;
             }
 
-            //post0Picture.Image = null;
-            //post1Picture.Image = null;
-            //post2Picture.Image = null;
-            //post3Picture.Image = null;
-            //post0Content.Text = null;
-            //post1Content.Text = null;
-            //post2Content.Text = null;
-            //post3Content.Text = null;
-            //post0Publisher.Text = null;
-            //post1Publisher.Text = null;
-            //post2Publisher.Text = null;
-            //post3Publisher.Text = null;
-            //post0Date.Text = null;
-            //post1Date.Text = null;
-            //post2Date.Text = null;
-            //post3Date.Text = null;
-
             listBoxFriends.Items.Clear();
+
             if (upcomingBirthdaysListBox.Items.Count > 0)
             {
                 upcomingBirthdaysListBox.Items.Clear();
@@ -342,6 +324,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             {
                 upcomingEventsListBox.Items.Clear();
             }
+
             match2Name.Text = null;
             match2PictureBox = null;
             match3Name.Text = null;
@@ -351,6 +334,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             IsfriendListLoaded = false;
             IsPostsLoaded = false;
         }
+
         private void pictureBoxCalendar_Click(object sender, EventArgs e)
         {
             if (FacebookAppLogic.Instance.LoggedInUser != null)
@@ -373,7 +357,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
         }
 
-        public void FetchBirthdays()
+        private void FetchBirthdays()
         {
             if (!this.m_IsBirthdaysLoaded)
             {
