@@ -29,6 +29,7 @@ namespace FacebookDesktopLogic
                         }
                     }
                 }
+
                 return s_FacebookDesktopLogic;
             }
         }
@@ -37,17 +38,11 @@ namespace FacebookDesktopLogic
 
         public LoginResult LoginResult { get; set; }
 
-        //public UserCachingProxy  LogInUser { get; set; }
-
-        private volatile FacebookCalendar m_Calendar;// = new FacebookCalendar();
+        private volatile FacebookCalendar m_Calendar;
 
         private bool m_IsLogIn = false;
 
-        //private bool m_IsPostsLoaded = false;
-
         public string PictureNormalURL { get; set; }
-
-        //private List<Post> m_RecentPosts = new List<Post>();
 
         public FacebookCalendar Calendar
         {
@@ -57,11 +52,12 @@ namespace FacebookDesktopLogic
                 {
                     m_Calendar = new FacebookCalendar();
                 }
+
                 return this.m_Calendar;
             }
         }
 
-        private volatile FacebookCupid m_Cupid;// = new FacebookCupid();
+        private volatile FacebookCupid m_Cupid;
 
         public FacebookCupid Cupid
         {
@@ -76,13 +72,6 @@ namespace FacebookDesktopLogic
                 return this.m_Cupid;
             }
         }
-
-        //public List<Post> RecentPosts
-        //{
-        //    get { return this.m_RecentPosts; }
-        //}
-
-        //public bool IsfriendListLoaded { get; set; }
 
         private FacebookObjectCollection<User> m_FriendsList = new FacebookObjectCollection<User>();
 
@@ -113,7 +102,7 @@ namespace FacebookDesktopLogic
             /// You can then save the result.AccessToken for future auto-connect to this user:
             /// //todo: change
             ///          
-            LoginResult = FacebookService.Login(/*this.r_AppID*/"1450160541956417", /// (desig patter's "Design Patterns Course App 2.4" app)
+            LoginResult = FacebookService.Login(this.r_AppID, /// (desig patter's "Design Patterns Course App 2.4" app)
 
                 "public_profile",
                 "email",
@@ -162,9 +151,7 @@ namespace FacebookDesktopLogic
                 /// "read_mailbox", (This permission is only available for apps using Graph API version v2.3 or older.)
                 /// "read_stream", (This permission is only available for apps using Graph API version v2.3 or older.)
                 /// "manage_notifications", (This permission is only available for apps using Graph API version v2.3 or older.)
-
                 );
-
 
             /// The documentation regarding facebook login and permissions can be found here: 
             // https://developers.facebook.com/docs/facebook-login/permissions#reference
@@ -212,7 +199,6 @@ namespace FacebookDesktopLogic
             {
                 this.Cupid.CheckEvents = false;
             }
-
         }
 
         public bool CheckGroups
@@ -273,8 +259,8 @@ namespace FacebookDesktopLogic
         public void GoToFacebookLink(int i_Index)
         {
             FacebookAppLogic.Instance.Calendar.GoToFacebookLink(i_Index);
-
         }
+
         public List<User> UpcomingBirthdaysUsers
         {
             get
@@ -282,6 +268,7 @@ namespace FacebookDesktopLogic
                 return this.Calendar.UpcomingBirthdaysUsers;
             }
         }
+
         public List<string> fetchLatestPhotosInAlbum(int i_AlbumNumber, int i_NumOfItems)
         {
             List<string> Photos = new List<string>();

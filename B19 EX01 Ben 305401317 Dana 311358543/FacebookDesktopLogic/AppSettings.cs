@@ -10,18 +10,18 @@ namespace FacebookDesktopLogic
     {
         private static readonly string sr_FileLocation = Application.StartupPath + @"\appSettings.xml";
 
-        public string LastAccessToken { get; set; }
-
-        public Point LastWindowLocation { get; set; }
-
-        public bool RememberUser { get; set; }
-
         public AppSettings()
         {
             this.LastWindowLocation = new Point(600, 300);
             this.RememberUser = false;
             this.LastAccessToken = null;
         }
+
+        public string LastAccessToken { get; set; }
+
+        public Point LastWindowLocation { get; set; }
+
+        public bool RememberUser { get; set; }
 
         public static AppSettings LoadFromFile()
         {

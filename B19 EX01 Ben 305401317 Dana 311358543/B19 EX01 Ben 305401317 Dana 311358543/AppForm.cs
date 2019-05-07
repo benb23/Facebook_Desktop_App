@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using FacebookDesktopLogic;
-using System.Threading;
 
 namespace B19_EX01_Ben_305401317_Dana_311358543
 {
     public partial class AppForm : Form
     {
-        PictureProxy m_ProfileRoundPictureBox;
-        PictureProxy m_Post0Picture;
-        PictureProxy m_Post1Picture;
-        PictureProxy m_Post2Picture;
-        PictureProxy m_Post3Picture;
+        private PictureProxy m_ProfileRoundPictureBox;
+        private PictureProxy m_Post0Picture;
+        private PictureProxy m_Post1Picture;
+        private PictureProxy m_Post2Picture;
+        private PictureProxy m_Post3Picture;
 
         private bool m_IsBirthdaysLoaded = false;
+
         public bool IsfriendListLoaded { get; set; }
+
         private bool IsPostsLoaded { get; set; }
 
         private enum ePostItem
@@ -45,7 +47,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         public AppForm()
         {
-
             this.InitializeComponent();
 
             m_ProfileRoundPictureBox = new PictureProxy();
@@ -107,7 +108,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             checkBoxRememberMe.Checked = FacebookAppLogic.Instance.AppSettings.RememberUser;
         }
 
-        
         private void logInButton_Click_(object sender, EventArgs e)
         {
             bool isLogIn = FacebookAppLogic.Instance.LoginAndInit();
@@ -171,21 +171,20 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             string name = FacebookAppLogic.Instance.LoggedInUser.Name;
             Post post;
 
-            
             if (!this.IsPostsLoaded)
             {
                 if (FacebookAppLogic.Instance.LoggedInUser.Posts.Count > 0)
                 {
-                    for (int i = 0; i < postsPanel.Controls.Count; i++) //??
+                    for (int i = 0; i < postsPanel.Controls.Count; i++) 
                     {
                         post = FacebookAppLogic.Instance.LoggedInUser.Posts[postIndex];
                         postsPanel.Invoke(new Action(() => addPostToPostsPanel(i, post)));
                         postIndex++;
                     }
                 }
+
             this.IsPostsLoaded = true;
         }
-
     }
 
         private void addPostToPostsPanel(int i_PostIndex, Post i_Post)
@@ -224,8 +223,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
                 foreach (Panel panel in tabPageAlbums.Controls)
                 {
-
-                    tabPageAlbums.Invoke(new Action(()=> addNewAlbumToAlbumsPanel(albumIndex, panel)));
+                    tabPageAlbums.Invoke(new Action(() => addNewAlbumToAlbumsPanel(albumIndex, panel)));
                     albumIndex++;
                 }
             }
@@ -301,7 +299,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         {
             tabControl.SelectedTab = this.tabPageLogIn;
             cleanUserDataInUI();
-            //FacebookAppLogic.Instance.cleanUserData();
         }
 
         private void cleanUserDataInUI()
@@ -320,6 +317,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             {
                 upcomingBirthdaysListBox.Items.Clear();
             }
+
             if (upcomingEventsListBox.Items.Count > 0)
             {
                 upcomingEventsListBox.Items.Clear();
@@ -349,7 +347,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                 {
                     MessageBox.Show("There was a problem loading information Facebook ", " Problem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             else
             {
@@ -367,7 +364,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
                     if (DateTime.Parse(friend.Birthday).Month == DateTime.Now.Month)
                     {
                         FacebookAppLogic.Instance.UpcomingBirthdaysUsers.Add(friend);
-                        upcomingBirthdaysListBox.Invoke(new Action(()=> upcomingBirthdaysListBox.Items.Add(friend.Name + " " + friend.Birthday))); 
+                        upcomingBirthdaysListBox.Invoke(new Action(() => upcomingBirthdaysListBox.Items.Add(friend.Name + " " + friend.Birthday))); 
                     }
                 }
 
@@ -472,7 +469,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
 
         private void updateChosenMatch(eMatch i_Match)
         {
-
             FacebookAppLogic.Instance.ChosenMatch = FacebookAppLogic.Instance.CupidResult[(int)i_Match];
             postOnMatchWallLabel.Visible = true;
             postOnMatchWallTextBox.Visible = true;
