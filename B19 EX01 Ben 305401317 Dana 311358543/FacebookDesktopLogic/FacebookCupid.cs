@@ -10,7 +10,17 @@ namespace FacebookDesktopLogic
     {
         public Candidate ChosenMatch { get; set; }
 
-        public User LoggedInUser { get; set; }
+        private User m_LoggedInUser;
+
+        public User LoggedInUser
+        {
+            get { return m_LoggedInUser; }
+            set
+            {
+                m_LoggedInUser = value;
+                Sorter.LoggedInUser = value;
+            }
+        }
 
         private List<Candidate> m_CupidResult = new List<Candidate>(3);
 
@@ -22,38 +32,22 @@ namespace FacebookDesktopLogic
 
         private List<Candidate> m_Candidates = new List<Candidate>();
 
-        private Dictionary<string, int> m_Score = new Dictionary<string, int>();
+        private IFriendsSorter m_Sorter = new CupidFriendsSorter();
+        public IFriendsSorter Sorter
+        {
+            get { return m_Sorter; }
+            set
+            {
+                m_Sorter = value;
+                m_Sorter.LoggedInUser = this.LoggedInUser;
+            }
+        }
 
         public FacebookObjectCollection<User> FriendsList { get; set; }
 
-        public bool CheckFriends { get; set; }
-
-        public bool CheckEvents { get; set; }
-
-        public bool CheckGroups { get; set; }
-
-        public bool CheckCheckIns { get; set; }
-
-        public bool CheckLikedPages { get; set; }
-
-        public bool CheckHomeTown { get; set; }
-
-        public bool CheckFieldOfStudy { get; set; }
 
         public FacebookCupid()
         {
-            this.initScoreValues();
-        }
-
-        private void initScoreValues()
-        {
-            this.m_Score.Add("Friends", 10);
-            this.m_Score.Add("Events", 4);
-            this.m_Score.Add("Groups", 3);
-            this.m_Score.Add("CheckIns", 1);
-            this.m_Score.Add("LikedPages", 6);
-            this.m_Score.Add("HomeTown", 5);
-            this.m_Score.Add("FieldOfStudy", 8);
         }
 
         private void filterRelevantCandidatesByGender(User.eGender? i_Gender)
@@ -72,159 +66,6 @@ namespace FacebookDesktopLogic
             }
         }
 
-        private void scoreCandidates()
-        {
-            foreach (Candidate candidate in this.m_Candidates)
-            {
-                if (this.CheckFriends)
-                {
-                    this.scoreCandidateByMutualFriends(candidate);
-                }
-
-                if (this.CheckGroups)
-                {
-                    this.scoreCandidateByMutualGroups(candidate);
-                }
-
-                if (this.CheckFieldOfStudy)
-                {
-                    this.scoreCandidateByFieldOfStudy(candidate);
-                }
-
-                if (this.CheckHomeTown)
-                {
-                    this.scoreCandidateByHomeTown(candidate);
-                }
-
-                if (this.CheckLikedPages)
-                {
-                    this.scoreCandidateByMutualLikedPages(candidate);
-                }
-
-                if (this.CheckCheckIns)
-                {
-                    this.scoreCandidateByMutualCheckIns(candidate);
-                }
-
-                if (this.CheckEvents)
-                {
-                    this.scoreCandidateByMutualEvents(candidate);
-                }
-            }
-        }
-
-        private void scoreCandidateByMutualFriends(Candidate i_Candidate)
-        {
-            FacebookObjectCollection<User> candidateFriends = i_Candidate.User.Friends;
-
-            if (candidateFriends != null)
-            {
-                foreach (User friend in candidateFriends)
-                {
-                    if (this.LoggedInUser.Friends.Contains(friend))
-                    {
-                        i_Candidate.Score += this.m_Score["Friends"];
-                    }
-                }
-            }
-        }
-
-        private void scoreCandidateByMutualEvents(Candidate i_Candidate)
-        {
-            FacebookObjectCollection<Event> candidateEvents = i_Candidate.User.Events;
-
-            if (candidateEvents != null)
-            {
-                foreach (Event candidateEvent in candidateEvents)
-                {
-                    if (this.LoggedInUser.Events.Contains(candidateEvent))
-                    {
-                        i_Candidate.Score += this.m_Score["Events"];
-                    }
-                }
-            }
-}
-
-        private void scoreCandidateByMutualGroups(Candidate i_Candidate)
-        {
-            FacebookObjectCollection<Group> candidateGroups = i_Candidate.User.Groups;
-
-            if (candidateGroups != null)
-            {
-                foreach (Group group in candidateGroups)
-                {
-                    if (this.LoggedInUser.Groups.Contains(group))
-                    {
-                        i_Candidate.Score += this.m_Score["Groups"];
-                    }
-                }
-            }
-        }
-
-        private void scoreCandidateByMutualCheckIns(Candidate i_Candidate)
-        {
-            FacebookObjectCollection<Checkin> candidateCheckins = i_Candidate.User.Checkins;
-
-            if (candidateCheckins != null)
-            {
-                foreach (Checkin checkIn in candidateCheckins)
-                {
-                    if (this.LoggedInUser.Checkins.Contains(checkIn))
-                    {
-                        i_Candidate.Score += this.m_Score["CheckIns"];
-                    }
-                }
-            }
-        }
-
-        private void scoreCandidateByMutualLikedPages(Candidate i_Candidate)
-        {
-            FacebookObjectCollection<Page> candidateLikedPages = i_Candidate.User.LikedPages;
-
-            if (candidateLikedPages != null)
-            {
-                foreach (Page page in candidateLikedPages)
-                {
-                    if (this.LoggedInUser.LikedPages.Contains(page))
-                    {
-                        i_Candidate.Score += this.m_Score["LikedPages"];
-                    }
-                }
-            }
-        }
-
-        private void scoreCandidateByHomeTown(Candidate i_Candidate)
-        {
-            City candidateCity = i_Candidate.User.Hometown;
-            if (candidateCity != null)
-            {
-                if (candidateCity == this.LoggedInUser.Hometown)
-                {
-                    i_Candidate.Score += this.m_Score["HomeTown"];
-                }
-            }
-            else
-            {
-                throw new Exception();
-            }
-        }
-
-        private void scoreCandidateByFieldOfStudy(Candidate i_Candidate)
-        {
-            Education[] candidateEducation = i_Candidate.User.Educations;
-
-            if (candidateEducation != null)
-            {
-                foreach (Education education in candidateEducation)
-                {
-                    if (this.LoggedInUser.Educations.Contains(candidateEducation[0]))
-                    {
-                        i_Candidate.Score += this.m_Score["HomeTown"];
-                    }
-                }
-            }
-        }
-
         public void postOnMatchWall(string i_Msg)
         {
                 this.ChosenMatch.User.PostStatus(i_Msg);
@@ -240,7 +81,7 @@ namespace FacebookDesktopLogic
         private void filterAndScoreCndidates(User.eGender? i_checkedGender)
         {
             this.filterRelevantCandidatesByGender(i_checkedGender);
-            this.scoreCandidates();
+            this.Sorter.SortFriends();
             this.setCupidResult();
         }
 
@@ -248,12 +89,11 @@ namespace FacebookDesktopLogic
         {
             if (this.m_Candidates.Count != 0)
             {
-                List<Candidate> sortedCandidates = this.m_Candidates.OrderBy(p => p.Score).ToList();
-                this.CupidResult.Add(sortedCandidates.Last());
-                sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
-                this.CupidResult.Add(sortedCandidates.Last());
-                sortedCandidates.RemoveAt(sortedCandidates.Count - 1);
-                this.CupidResult.Add(sortedCandidates.Last());
+                this.CupidResult.Add(Sorter.Candidates.Last());
+                Sorter.Candidates.RemoveAt(Sorter.Candidates.Count - 1);
+                this.CupidResult.Add(Sorter.Candidates.Last());
+                Sorter.Candidates.RemoveAt(Sorter.Candidates.Count - 1);
+                this.CupidResult.Add(Sorter.Candidates.Last());
             }
         }
     }

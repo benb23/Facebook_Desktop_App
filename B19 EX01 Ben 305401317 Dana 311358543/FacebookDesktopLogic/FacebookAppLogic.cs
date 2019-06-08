@@ -13,7 +13,7 @@ namespace FacebookDesktopLogic
         {
         }
 
-        private readonly string r_AppID = "352758402005372";
+        private readonly string r_AppID = "1450160541956417";//our app id: "352758402005372";
 
         public static FacebookAppLogic Instance
         {
@@ -182,62 +182,6 @@ namespace FacebookDesktopLogic
             set
             {
                 this.Cupid.ChosenMatch = value;
-            }
-        }
-
-        public bool CheckFriends
-        {
-            set
-            {
-                this.Cupid.CheckFriends = value;
-            }
-        }
-
-        public bool CheckEvents
-        {
-            set
-            {
-                this.Cupid.CheckEvents = false;
-            }
-        }
-
-        public bool CheckGroups
-        {
-            set
-            {
-                this.Cupid.CheckGroups = false;
-            }
-        }
-
-        public bool CheckCheckIns
-        {
-            set
-            {
-                FacebookAppLogic.Instance.Cupid.CheckCheckIns = true;
-            }
-        }
-        
-        public bool CheckLikedPages
-        {
-            set
-            {
-                FacebookAppLogic.Instance.Cupid.CheckLikedPages = true;
-            }
-        }
-
-        public bool CheckHomeTown
-        {
-            set
-            {
-                FacebookAppLogic.Instance.Cupid.CheckHomeTown = true;
-            }
-        }
-
-        public bool CheckFieldOfStudy
-        {
-            set
-            {
-                FacebookAppLogic.Instance.Cupid.CheckFieldOfStudy = true;
             }
         }
 

@@ -16,6 +16,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private PictureProxy m_Post1Picture;
         private PictureProxy m_Post2Picture;
         private PictureProxy m_Post3Picture;
+        private Note m_Note = new Note(new Point(0,-8));
 
         private bool m_IsBirthdaysLoaded = false;
 
@@ -48,6 +49,8 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         public AppForm()
         {
             this.InitializeComponent();
+            this.notesPanel.Controls.Add(m_Note);
+
 
             m_ProfileRoundPictureBox = new PictureProxy();
             m_ProfileRoundPictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -531,90 +534,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.ClientSize = new Size((int)w, (int)h);
         }
 
-        private void checkBoxFriends_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxFriends.Checked)
-            {
-                FacebookAppLogic.Instance.CheckFriends = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckFriends = false;
-            }
-        }
-
-        private void checkBoxEvents_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxEvents.Checked)
-            {
-                FacebookAppLogic.Instance.CheckEvents = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckEvents = false;
-            }
-        }
-
-        private void checkBoxGroups_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxGroups.Checked)
-            {
-                FacebookAppLogic.Instance.CheckGroups = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckGroups = false;
-            }
-        }
-
-        private void checkBoxCheckIns_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxCheckIns.Checked)
-            {
-                FacebookAppLogic.Instance.CheckCheckIns = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckCheckIns = false;
-            }
-        }
-
-        private void checkBoxLikedPages_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxLikedPages.Checked)
-            {
-                FacebookAppLogic.Instance.CheckLikedPages = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckLikedPages = false;
-            }
-        }
-
-        private void checkBoxHomeTown_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxHomeTown.Checked)
-            {
-                FacebookAppLogic.Instance.CheckHomeTown = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckHomeTown = false;
-            }
-        }
-
-        private void checkBoxFieldOfStudy_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxFieldOfStudy.Checked)
-            {
-                FacebookAppLogic.Instance.CheckFieldOfStudy = true;
-            }
-            else
-            {
-                FacebookAppLogic.Instance.CheckFieldOfStudy = false;
-            }
-        }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (this.checkBoxRememberMe.Checked && this.LogOutLabel.Enabled == true)
@@ -648,6 +567,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
 
             FacebookAppLogic.Instance.AppSettings.SaveToFile();
+        }
+
+        private void note1TextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

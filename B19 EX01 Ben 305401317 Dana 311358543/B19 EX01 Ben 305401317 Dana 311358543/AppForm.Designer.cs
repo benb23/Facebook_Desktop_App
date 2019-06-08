@@ -131,15 +131,6 @@
             this.checkBoxFemale = new System.Windows.Forms.CheckBox();
             this.checkBoxMale = new System.Windows.Forms.CheckBox();
             this.genderLabel = new System.Windows.Forms.Label();
-            this.SortByLabel = new System.Windows.Forms.Label();
-            this.sortPanel = new System.Windows.Forms.Panel();
-            this.checkBoxFieldOfStudy = new System.Windows.Forms.CheckBox();
-            this.checkBoxCheckIns = new System.Windows.Forms.CheckBox();
-            this.checkBoxHomeTown = new System.Windows.Forms.CheckBox();
-            this.checkBoxLikedPages = new System.Windows.Forms.CheckBox();
-            this.checkBoxGroups = new System.Windows.Forms.CheckBox();
-            this.checkBoxEvents = new System.Windows.Forms.CheckBox();
-            this.checkBoxFriends = new System.Windows.Forms.CheckBox();
             this.findMatchButtonPictureBox = new System.Windows.Forms.PictureBox();
             this.tabPageCalendar = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -152,8 +143,6 @@
             this.notesPanel = new System.Windows.Forms.Panel();
             this.note2TextBox = new System.Windows.Forms.TextBox();
             this.note1TextBox = new System.Windows.Forms.TextBox();
-            this.note0TextBox = new System.Windows.Forms.TextBox();
-            this.note0PictureBox = new System.Windows.Forms.PictureBox();
             this.note1PictureBox = new System.Windows.Forms.PictureBox();
             this.note2PictureBox = new System.Windows.Forms.PictureBox();
             this.addTaskLabel = new System.Windows.Forms.Label();
@@ -223,13 +212,11 @@
             this.genderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.sortPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).BeginInit();
             this.tabPageCalendar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             this.notesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.note0PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.note1PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.note2PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).BeginInit();
@@ -1122,8 +1109,6 @@
             this.tabPageCupid.Controls.Add(this.resPanel);
             this.tabPageCupid.Controls.Add(this.genderPanel);
             this.tabPageCupid.Controls.Add(this.genderLabel);
-            this.tabPageCupid.Controls.Add(this.SortByLabel);
-            this.tabPageCupid.Controls.Add(this.sortPanel);
             this.tabPageCupid.Controls.Add(this.findMatchButtonPictureBox);
             this.tabPageCupid.Location = new System.Drawing.Point(8, 44);
             this.tabPageCupid.Margin = new System.Windows.Forms.Padding(6);
@@ -1342,7 +1327,7 @@
             this.genderPanel.Controls.Add(this.pictureBox15);
             this.genderPanel.Controls.Add(this.checkBoxFemale);
             this.genderPanel.Controls.Add(this.checkBoxMale);
-            this.genderPanel.Location = new System.Drawing.Point(784, 71);
+            this.genderPanel.Location = new System.Drawing.Point(60, 89);
             this.genderPanel.Margin = new System.Windows.Forms.Padding(4);
             this.genderPanel.Name = "genderPanel";
             this.genderPanel.Size = new System.Drawing.Size(274, 252);
@@ -1399,132 +1384,12 @@
             this.genderLabel.AutoSize = true;
             this.genderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genderLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.genderLabel.Location = new System.Drawing.Point(778, 29);
+            this.genderLabel.Location = new System.Drawing.Point(55, 42);
             this.genderLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(104, 30);
             this.genderLabel.TabIndex = 4;
             this.genderLabel.Text = "Gender";
-            // 
-            // SortByLabel
-            // 
-            this.SortByLabel.AutoSize = true;
-            this.SortByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SortByLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.SortByLabel.Location = new System.Drawing.Point(44, 29);
-            this.SortByLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.SortByLabel.Name = "SortByLabel";
-            this.SortByLabel.Size = new System.Drawing.Size(104, 30);
-            this.SortByLabel.TabIndex = 3;
-            this.SortByLabel.Text = "Sort By";
-            // 
-            // sortPanel
-            // 
-            this.sortPanel.BackColor = System.Drawing.Color.White;
-            this.sortPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sortPanel.Controls.Add(this.checkBoxFieldOfStudy);
-            this.sortPanel.Controls.Add(this.checkBoxCheckIns);
-            this.sortPanel.Controls.Add(this.checkBoxHomeTown);
-            this.sortPanel.Controls.Add(this.checkBoxLikedPages);
-            this.sortPanel.Controls.Add(this.checkBoxGroups);
-            this.sortPanel.Controls.Add(this.checkBoxEvents);
-            this.sortPanel.Controls.Add(this.checkBoxFriends);
-            this.sortPanel.Location = new System.Drawing.Point(48, 71);
-            this.sortPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.sortPanel.Name = "sortPanel";
-            this.sortPanel.Size = new System.Drawing.Size(684, 254);
-            this.sortPanel.TabIndex = 0;
-            // 
-            // checkBoxFieldOfStudy
-            // 
-            this.checkBoxFieldOfStudy.AutoSize = true;
-            this.checkBoxFieldOfStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxFieldOfStudy.Location = new System.Drawing.Point(364, 137);
-            this.checkBoxFieldOfStudy.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxFieldOfStudy.Name = "checkBoxFieldOfStudy";
-            this.checkBoxFieldOfStudy.Size = new System.Drawing.Size(211, 34);
-            this.checkBoxFieldOfStudy.TabIndex = 6;
-            this.checkBoxFieldOfStudy.Text = "Field of study";
-            this.checkBoxFieldOfStudy.UseVisualStyleBackColor = true;
-            this.checkBoxFieldOfStudy.CheckedChanged += new System.EventHandler(this.checkBoxFieldOfStudy_CheckedChanged);
-            // 
-            // checkBoxCheckIns
-            // 
-            this.checkBoxCheckIns.AutoSize = true;
-            this.checkBoxCheckIns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxCheckIns.Location = new System.Drawing.Point(20, 190);
-            this.checkBoxCheckIns.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxCheckIns.Name = "checkBoxCheckIns";
-            this.checkBoxCheckIns.Size = new System.Drawing.Size(145, 34);
-            this.checkBoxCheckIns.TabIndex = 3;
-            this.checkBoxCheckIns.Text = "CheckIn";
-            this.checkBoxCheckIns.UseVisualStyleBackColor = true;
-            this.checkBoxCheckIns.CheckedChanged += new System.EventHandler(this.checkBoxCheckIns_CheckedChanged);
-            // 
-            // checkBoxHomeTown
-            // 
-            this.checkBoxHomeTown.AutoSize = true;
-            this.checkBoxHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxHomeTown.Location = new System.Drawing.Point(364, 85);
-            this.checkBoxHomeTown.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxHomeTown.Name = "checkBoxHomeTown";
-            this.checkBoxHomeTown.Size = new System.Drawing.Size(185, 34);
-            this.checkBoxHomeTown.TabIndex = 5;
-            this.checkBoxHomeTown.Text = "HomeTown";
-            this.checkBoxHomeTown.UseVisualStyleBackColor = true;
-            this.checkBoxHomeTown.CheckedChanged += new System.EventHandler(this.checkBoxHomeTown_CheckedChanged);
-            // 
-            // checkBoxLikedPages
-            // 
-            this.checkBoxLikedPages.AutoSize = true;
-            this.checkBoxLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxLikedPages.Location = new System.Drawing.Point(364, 31);
-            this.checkBoxLikedPages.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxLikedPages.Name = "checkBoxLikedPages";
-            this.checkBoxLikedPages.Size = new System.Drawing.Size(193, 34);
-            this.checkBoxLikedPages.TabIndex = 4;
-            this.checkBoxLikedPages.Text = "Liked pages";
-            this.checkBoxLikedPages.UseVisualStyleBackColor = true;
-            this.checkBoxLikedPages.CheckedChanged += new System.EventHandler(this.checkBoxLikedPages_CheckedChanged);
-            // 
-            // checkBoxGroups
-            // 
-            this.checkBoxGroups.AutoSize = true;
-            this.checkBoxGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxGroups.Location = new System.Drawing.Point(20, 137);
-            this.checkBoxGroups.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxGroups.Name = "checkBoxGroups";
-            this.checkBoxGroups.Size = new System.Drawing.Size(135, 34);
-            this.checkBoxGroups.TabIndex = 2;
-            this.checkBoxGroups.Text = "Groups";
-            this.checkBoxGroups.UseVisualStyleBackColor = true;
-            this.checkBoxGroups.CheckedChanged += new System.EventHandler(this.checkBoxGroups_CheckedChanged);
-            // 
-            // checkBoxEvents
-            // 
-            this.checkBoxEvents.AutoSize = true;
-            this.checkBoxEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxEvents.Location = new System.Drawing.Point(20, 85);
-            this.checkBoxEvents.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxEvents.Name = "checkBoxEvents";
-            this.checkBoxEvents.Size = new System.Drawing.Size(250, 34);
-            this.checkBoxEvents.TabIndex = 1;
-            this.checkBoxEvents.Text = "Attending events";
-            this.checkBoxEvents.UseVisualStyleBackColor = true;
-            this.checkBoxEvents.CheckedChanged += new System.EventHandler(this.checkBoxEvents_CheckedChanged);
-            // 
-            // checkBoxFriends
-            // 
-            this.checkBoxFriends.AutoSize = true;
-            this.checkBoxFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.checkBoxFriends.Location = new System.Drawing.Point(20, 31);
-            this.checkBoxFriends.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBoxFriends.Name = "checkBoxFriends";
-            this.checkBoxFriends.Size = new System.Drawing.Size(220, 34);
-            this.checkBoxFriends.TabIndex = 0;
-            this.checkBoxFriends.Text = "Mutual friends";
-            this.checkBoxFriends.UseVisualStyleBackColor = true;
-            this.checkBoxFriends.CheckedChanged += new System.EventHandler(this.checkBoxFriends_CheckedChanged);
             // 
             // findMatchButtonPictureBox
             // 
@@ -1629,8 +1494,6 @@
             // 
             this.notesPanel.Controls.Add(this.note2TextBox);
             this.notesPanel.Controls.Add(this.note1TextBox);
-            this.notesPanel.Controls.Add(this.note0TextBox);
-            this.notesPanel.Controls.Add(this.note0PictureBox);
             this.notesPanel.Controls.Add(this.note1PictureBox);
             this.notesPanel.Controls.Add(this.note2PictureBox);
             this.notesPanel.Location = new System.Drawing.Point(1418, 23);
@@ -1660,29 +1523,7 @@
             this.note1TextBox.Name = "note1TextBox";
             this.note1TextBox.Size = new System.Drawing.Size(232, 169);
             this.note1TextBox.TabIndex = 20;
-            // 
-            // note0TextBox
-            // 
-            this.note0TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.note0TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.note0TextBox.Location = new System.Drawing.Point(40, 77);
-            this.note0TextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.note0TextBox.Multiline = true;
-            this.note0TextBox.Name = "note0TextBox";
-            this.note0TextBox.Size = new System.Drawing.Size(232, 169);
-            this.note0TextBox.TabIndex = 19;
-            // 
-            // note0PictureBox
-            // 
-            this.note0PictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.note0PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.note;
-            this.note0PictureBox.Location = new System.Drawing.Point(0, -8);
-            this.note0PictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.note0PictureBox.Name = "note0PictureBox";
-            this.note0PictureBox.Size = new System.Drawing.Size(308, 302);
-            this.note0PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.note0PictureBox.TabIndex = 16;
-            this.note0PictureBox.TabStop = false;
+            this.note1TextBox.TextChanged += new System.EventHandler(this.note1TextBox_TextChanged);
             // 
             // note1PictureBox
             // 
@@ -1943,8 +1784,6 @@
             this.genderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.sortPanel.ResumeLayout(false);
-            this.sortPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.findMatchButtonPictureBox)).EndInit();
             this.tabPageCalendar.ResumeLayout(false);
             this.tabPageCalendar.PerformLayout();
@@ -1953,7 +1792,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
             this.notesPanel.ResumeLayout(false);
             this.notesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.note0PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.note1PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.note2PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).EndInit();
@@ -2061,22 +1899,11 @@
         private System.Windows.Forms.CheckBox checkBoxFemale;
         private System.Windows.Forms.CheckBox checkBoxMale;
         private System.Windows.Forms.Label genderLabel;
-        private System.Windows.Forms.Label SortByLabel;
-        private System.Windows.Forms.Panel sortPanel;
-        private System.Windows.Forms.CheckBox checkBoxFieldOfStudy;
-        private System.Windows.Forms.CheckBox checkBoxCheckIns;
-        private System.Windows.Forms.CheckBox checkBoxHomeTown;
-        private System.Windows.Forms.CheckBox checkBoxLikedPages;
-        private System.Windows.Forms.CheckBox checkBoxGroups;
-        private System.Windows.Forms.CheckBox checkBoxEvents;
-        private System.Windows.Forms.CheckBox checkBoxFriends;
         private System.Windows.Forms.PictureBox findMatchButtonPictureBox;
         private System.Windows.Forms.TabPage tabPageCalendar;
         private System.Windows.Forms.Panel notesPanel;
         private System.Windows.Forms.TextBox note2TextBox;
         private System.Windows.Forms.TextBox note1TextBox;
-        private System.Windows.Forms.TextBox note0TextBox;
-        private System.Windows.Forms.PictureBox note0PictureBox;
         private System.Windows.Forms.PictureBox note1PictureBox;
         private System.Windows.Forms.PictureBox note2PictureBox;
         private System.Windows.Forms.Label addTaskLabel;
