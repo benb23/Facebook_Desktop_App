@@ -15,6 +15,7 @@ namespace FacebookDesktopLogic
             m_Note = i_Note;
         }
 
+
         public void Show() { }
 
     }
