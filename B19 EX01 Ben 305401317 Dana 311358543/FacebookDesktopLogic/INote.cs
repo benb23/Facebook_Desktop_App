@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace FacebookDesktopLogic
 {
     public interface INote
     {
-        void Show();
+
+        Point Location { get; set; }
     }
 }

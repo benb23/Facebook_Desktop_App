@@ -16,6 +16,7 @@ namespace FacebookDesktopLogic
             roundImage();
             base.OnPaint(pe);
         }
+
         private void roundImage()
         {
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();

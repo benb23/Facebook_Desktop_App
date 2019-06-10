@@ -9,9 +9,9 @@ namespace FacebookDesktopLogic
 {
     public interface IFriendsSorter
     {
-        User LoggedInUser { get; set; }
+        User LoggedInUser { get; set; } //todo: ??
 
-        List<Candidate> Candidates { get; set; }
+        List<Candidate> Candidates { get; set; }//todo: ??
 
         void SortFriends();
     }

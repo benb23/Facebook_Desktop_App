@@ -97,7 +97,6 @@ namespace FacebookDesktopLogic
         public bool LoginAndInit()
         {
             /// Owner: design.patterns
-
             /// Use the FacebookService.Login method to display the login form to any user who wish to use this application.
             /// You can then save the result.AccessToken for future auto-connect to this user:
             /// //todo: change

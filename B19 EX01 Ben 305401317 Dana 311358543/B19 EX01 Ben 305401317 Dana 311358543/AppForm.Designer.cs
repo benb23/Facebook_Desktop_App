@@ -141,10 +141,6 @@
             this.nameLabel1 = new System.Windows.Forms.Label();
             this.startTimeTextBox = new System.Windows.Forms.TextBox();
             this.notesPanel = new System.Windows.Forms.Panel();
-            this.note2TextBox = new System.Windows.Forms.TextBox();
-            this.note1TextBox = new System.Windows.Forms.TextBox();
-            this.note1PictureBox = new System.Windows.Forms.PictureBox();
-            this.note2PictureBox = new System.Windows.Forms.PictureBox();
             this.addTaskLabel = new System.Windows.Forms.Label();
             this.newMissionTextBox = new System.Windows.Forms.TextBox();
             this.addMissionButton = new System.Windows.Forms.PictureBox();
@@ -216,9 +212,6 @@
             this.tabPageCalendar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
-            this.notesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.note1PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.note2PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).BeginInit();
@@ -1492,62 +1485,12 @@
             // 
             // notesPanel
             // 
-            this.notesPanel.Controls.Add(this.note2TextBox);
-            this.notesPanel.Controls.Add(this.note1TextBox);
-            this.notesPanel.Controls.Add(this.note1PictureBox);
-            this.notesPanel.Controls.Add(this.note2PictureBox);
-            this.notesPanel.Location = new System.Drawing.Point(1418, 23);
+            this.notesPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.notesPanel.Location = new System.Drawing.Point(1420, 0);
             this.notesPanel.Margin = new System.Windows.Forms.Padding(4);
             this.notesPanel.Name = "notesPanel";
-            this.notesPanel.Size = new System.Drawing.Size(308, 898);
+            this.notesPanel.Size = new System.Drawing.Size(308, 981);
             this.notesPanel.TabIndex = 18;
-            // 
-            // note2TextBox
-            // 
-            this.note2TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.note2TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.note2TextBox.Location = new System.Drawing.Point(40, 677);
-            this.note2TextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.note2TextBox.Multiline = true;
-            this.note2TextBox.Name = "note2TextBox";
-            this.note2TextBox.Size = new System.Drawing.Size(232, 169);
-            this.note2TextBox.TabIndex = 21;
-            // 
-            // note1TextBox
-            // 
-            this.note1TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.note1TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.note1TextBox.Location = new System.Drawing.Point(40, 377);
-            this.note1TextBox.Margin = new System.Windows.Forms.Padding(6);
-            this.note1TextBox.Multiline = true;
-            this.note1TextBox.Name = "note1TextBox";
-            this.note1TextBox.Size = new System.Drawing.Size(232, 169);
-            this.note1TextBox.TabIndex = 20;
-            this.note1TextBox.TextChanged += new System.EventHandler(this.note1TextBox_TextChanged);
-            // 
-            // note1PictureBox
-            // 
-            this.note1PictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.note1PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.note;
-            this.note1PictureBox.Location = new System.Drawing.Point(0, 294);
-            this.note1PictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.note1PictureBox.Name = "note1PictureBox";
-            this.note1PictureBox.Size = new System.Drawing.Size(308, 302);
-            this.note1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.note1PictureBox.TabIndex = 15;
-            this.note1PictureBox.TabStop = false;
-            // 
-            // note2PictureBox
-            // 
-            this.note2PictureBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.note2PictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.note;
-            this.note2PictureBox.Location = new System.Drawing.Point(0, 596);
-            this.note2PictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.note2PictureBox.Name = "note2PictureBox";
-            this.note2PictureBox.Size = new System.Drawing.Size(308, 302);
-            this.note2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.note2PictureBox.TabIndex = 17;
-            this.note2PictureBox.TabStop = false;
             // 
             // addTaskLabel
             // 
@@ -1790,10 +1733,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
-            this.notesPanel.ResumeLayout(false);
-            this.notesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.note1PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.note2PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addMissionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goToFacebookLinkButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishHappyBirthdayButton)).EndInit();
@@ -1846,7 +1785,6 @@
         private System.Windows.Forms.Label post1Content;
         private System.Windows.Forms.Label post1Publisher;
         private System.Windows.Forms.Label post1Date;
-        private System.Windows.Forms.Panel post2;
         private System.Windows.Forms.Label likesLabel0;
         private System.Windows.Forms.Label likes0;
         private System.Windows.Forms.Label post0Content;
@@ -1902,10 +1840,6 @@
         private System.Windows.Forms.PictureBox findMatchButtonPictureBox;
         private System.Windows.Forms.TabPage tabPageCalendar;
         private System.Windows.Forms.Panel notesPanel;
-        private System.Windows.Forms.TextBox note2TextBox;
-        private System.Windows.Forms.TextBox note1TextBox;
-        private System.Windows.Forms.PictureBox note1PictureBox;
-        private System.Windows.Forms.PictureBox note2PictureBox;
         private System.Windows.Forms.Label addTaskLabel;
         private System.Windows.Forms.TextBox newMissionTextBox;
         private System.Windows.Forms.PictureBox addMissionButton;
@@ -1928,6 +1862,7 @@
         private System.Windows.Forms.Label nameLabel1;
         private System.Windows.Forms.TextBox startTimeTextBox;
         private System.Windows.Forms.FlowLayoutPanel profilePicturePanel;
+        private System.Windows.Forms.Panel post2;
     }
 }
 

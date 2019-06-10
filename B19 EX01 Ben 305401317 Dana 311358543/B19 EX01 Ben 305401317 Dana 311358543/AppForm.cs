@@ -16,7 +16,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private PictureProxy m_Post1Picture;
         private PictureProxy m_Post2Picture;
         private PictureProxy m_Post3Picture;
-        private Note m_Note = new Note(new Point(0,-8));
+        private Note m_Note0;
+        private Note m_Note1;
+
+        private INote m_NoteWithHeader;
 
         private bool m_IsBirthdaysLoaded = false;
 
@@ -49,59 +52,69 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         public AppForm()
         {
             this.InitializeComponent();
-            this.notesPanel.Controls.Add(m_Note);
 
+            m_Note0 = new Note();
+            notesPanel.Controls.Add(m_Note0);
+
+            //m_Note1 = new Note();
+            //notesPanel.Controls.Add(m_Note1);
+            //m_Note1.Location = new Point(m_Note1.Location.X, m_Note1.Location.Y + 200);
+
+
+            m_NoteWithHeader = new NoteWithHeader(new Note(), "danabanana!");
+            notesPanel.Controls.Add(m_NoteWithHeader as NoteDecorator);
+            m_NoteWithHeader.Location = new Point(m_NoteWithHeader.Location.X, m_NoteWithHeader.Location.Y +200);
 
             m_ProfileRoundPictureBox = new PictureProxy();
-            m_ProfileRoundPictureBox.BackColor = System.Drawing.Color.Transparent;
-            m_ProfileRoundPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            m_ProfileRoundPictureBox.Location = new System.Drawing.Point(29, 14);
-            m_ProfileRoundPictureBox.Margin = new System.Windows.Forms.Padding(6);
-            m_ProfileRoundPictureBox.Size = new System.Drawing.Size(184, 184);
-            m_ProfileRoundPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            m_ProfileRoundPictureBox.BackColor = Color.Transparent;
+            m_ProfileRoundPictureBox.BackgroundImageLayout = ImageLayout.None;
+            m_ProfileRoundPictureBox.Location = new Point(29, 14);
+            m_ProfileRoundPictureBox.Margin = new Padding(6);
+            m_ProfileRoundPictureBox.Size = new Size(184, 184);
+            m_ProfileRoundPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             m_ProfileRoundPictureBox.TabIndex = 0;
             m_ProfileRoundPictureBox.TabStop = false;
             profilePicturePanel.Controls.Add(m_ProfileRoundPictureBox);
 
             m_Post0Picture = new PictureProxy();
-            this.m_Post0Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.m_Post0Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_Post0Picture.Location = new System.Drawing.Point(12, 8);
-            this.m_Post0Picture.Margin = new System.Windows.Forms.Padding(6);
+            this.m_Post0Picture.BackColor = Color.Gainsboro;
+            this.m_Post0Picture.BackgroundImageLayout = ImageLayout.Center;
+            this.m_Post0Picture.Location = new Point(12, 8);
+            this.m_Post0Picture.Margin = new Padding(6);
             this.m_Post0Picture.Name = "post0Picture";
-            this.m_Post0Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post0Picture.Size = new Size(66, 66);
             this.m_Post0Picture.TabIndex = 2;
             this.m_Post0Picture.TabStop = false;
             this.post0.Controls.Add(this.m_Post0Picture);
 
             m_Post1Picture = new PictureProxy();
-            this.m_Post1Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.m_Post1Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_Post1Picture.Location = new System.Drawing.Point(12, 8);
-            this.m_Post1Picture.Margin = new System.Windows.Forms.Padding(6);
+            this.m_Post1Picture.BackColor = Color.Gainsboro;
+            this.m_Post1Picture.BackgroundImageLayout = ImageLayout.Center;
+            this.m_Post1Picture.Location = new Point(12, 8);
+            this.m_Post1Picture.Margin = new Padding(6);
             this.m_Post1Picture.Name = "post1Picture";
-            this.m_Post1Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post1Picture.Size = new Size(66, 66);
             this.m_Post1Picture.TabIndex = 2;
             this.m_Post1Picture.TabStop = false;
             this.post1.Controls.Add(this.m_Post1Picture);
 
             m_Post3Picture = new PictureProxy();
-            this.m_Post3Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.m_Post3Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_Post3Picture.Location = new System.Drawing.Point(12, 8);
-            this.m_Post3Picture.Margin = new System.Windows.Forms.Padding(6);
+            this.m_Post3Picture.BackColor = Color.Gainsboro;
+            this.m_Post3Picture.BackgroundImageLayout = ImageLayout.Center;
+            this.m_Post3Picture.Location = new Point(12, 8);
+            this.m_Post3Picture.Margin = new Padding(6);
             this.m_Post3Picture.Name = "post3Picture";
-            this.m_Post3Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post3Picture.Size = new Size(66, 66);
             this.m_Post3Picture.TabIndex = 2;
             this.m_Post3Picture.TabStop = false;
             this.post3.Controls.Add(this.m_Post3Picture);
 
             m_Post2Picture = new PictureProxy();
-            this.m_Post2Picture.BackColor = System.Drawing.Color.Gainsboro;
-            this.m_Post2Picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_Post2Picture.Location = new System.Drawing.Point(12, 8);
+            this.m_Post2Picture.BackColor = Color.Gainsboro;
+            this.m_Post2Picture.BackgroundImageLayout = ImageLayout.Center;
+            this.m_Post2Picture.Location = new Point(12, 8);
             this.m_Post2Picture.Name = "post3Picture";
-            this.m_Post2Picture.Size = new System.Drawing.Size(66, 66);
+            this.m_Post2Picture.Size = new Size(66, 66);
             this.m_Post2Picture.TabIndex = 2;
             this.m_Post2Picture.TabStop = false;
             this.post2.Controls.Add(this.m_Post2Picture);
@@ -570,6 +583,11 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         }
 
         private void note1TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void note2TextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

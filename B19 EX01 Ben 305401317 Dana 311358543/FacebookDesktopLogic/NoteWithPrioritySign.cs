@@ -8,6 +8,9 @@ namespace FacebookDesktopLogic
 {
     class NoteWithPrioritySign : NoteDecorator
     {
+        NoteWithPrioritySign(INote i_Note): base(i_Note)
+        {
 
+        }
     }
 }
