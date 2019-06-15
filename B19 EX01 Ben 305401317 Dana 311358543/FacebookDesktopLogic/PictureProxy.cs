@@ -9,24 +9,24 @@ using System.Windows.Forms;
 
 namespace FacebookDesktopLogic
 {
-    public class PictureProxy : PictureBox, IResizable
+    public class PictureProxy : PictureBox, IEmphasizable
     {
-        private Resizer m_Resizer;
+        private Emphasizer m_Emphasizer;
 
-        public PictureProxy(Resizer i_SizeIncreaser)
+        public PictureProxy(Emphasizer i_SizeIncreaser)
         {
-            this.m_Resizer = i_SizeIncreaser;
+            this.m_Emphasizer = i_SizeIncreaser;
         }
 
         protected override void OnMouseHover(EventArgs e)
         {
-            this.m_Resizer.IncreaseSize(this);
+            this.m_Emphasizer.Emphasize(this);
             base.OnMouseHover(e);
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
-            this.m_Resizer.DecreaseSize(this);
+            this.m_Emphasizer.DeEmphasize(this);
             base.OnMouseLeave(e);
         }
         protected override void OnPaint(PaintEventArgs pe)

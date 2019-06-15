@@ -58,9 +58,9 @@
     <Compile Include="FacebookCupid.cs" />
     <Compile Include="FacebookAppLogic.cs" />
     <Compile Include="IFriendsSorter.cs" />
-    <Compile Include="Resizer.cs" />
+    <Compile Include="Emphasizer.cs" />
     <Compile Include="INote.cs" />
-    <Compile Include="IResizable.cs" />
+    <Compile Include="IEmphasizable.cs" />
     <Compile Include="Note.cs">
       <SubType>Component</SubType>
     </Compile>

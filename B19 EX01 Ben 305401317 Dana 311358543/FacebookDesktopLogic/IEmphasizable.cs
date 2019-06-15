@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace FacebookDesktopLogic
 {
-    public interface IResizable
+    public interface IEmphasizable
     {
         Size Size { get; set; }
     }

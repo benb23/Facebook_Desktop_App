@@ -17,7 +17,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private PictureProxy m_Post2Picture;
         private PictureProxy m_Post3Picture;
         private Note m_Note0;
-        private Note m_Note1;
 
         private INote m_NoteWithHeader;
 
@@ -60,7 +59,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             notesPanel.Controls.Add(m_NoteWithHeader as NoteDecorator);
             m_NoteWithHeader.Location = new Point(m_NoteWithHeader.Location.X, m_NoteWithHeader.Location.Y + 160);
 
-            Resizer sizeIncreaser = new Resizer();
+            Emphasizer sizeIncreaser = new Emphasizer();
             
             m_ProfileRoundPictureBox = new PictureProxy(sizeIncreaser);
             m_ProfileRoundPictureBox.BackColor = Color.Transparent;
