@@ -32,7 +32,7 @@ namespace FacebookDesktopLogic
 
         private List<Candidate> m_Candidates = new List<Candidate>();
 
-        private IFriendsSorter m_Sorter = new CupidFriendsSorter();
+        private IFriendsSorter m_Sorter = new FriendsSorterByMutualFields();
         public IFriendsSorter Sorter
         {
             get { return m_Sorter; }

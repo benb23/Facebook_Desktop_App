@@ -9,7 +9,7 @@ namespace FacebookDesktopLogic
 {
     public interface INote
     {
-
+        Size Size { get; set; }
         Point Location { get; set; }
     }
 }

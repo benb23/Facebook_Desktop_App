@@ -52,20 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="CupidFriendsSorter.cs" />
+    <Compile Include="FriendsSorterByMutualFields.cs" />
     <Compile Include="FacebookCalendar.cs" />
     <Compile Include="Candidate.cs" />
     <Compile Include="FacebookCupid.cs" />
     <Compile Include="FacebookAppLogic.cs" />
     <Compile Include="IFriendsSorter.cs" />
+    <Compile Include="Resizer.cs" />
     <Compile Include="INote.cs" />
+    <Compile Include="IResizable.cs" />
     <Compile Include="Note.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="NoteDecorator.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="NoteWithBackground.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="NoteWithHeader.cs">

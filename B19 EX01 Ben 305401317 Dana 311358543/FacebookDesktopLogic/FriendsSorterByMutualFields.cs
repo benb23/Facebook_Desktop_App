@@ -7,14 +7,14 @@ using FacebookWrapper.ObjectModel;
 
 namespace FacebookDesktopLogic
 {
-    public class CupidFriendsSorter: IFriendsSorter
+    public class FriendsSorterByMutualFields: IFriendsSorter
     {
         public List<Candidate> Candidates { get; set; }
         public User LoggedInUser { get; set; }
 
-        Dictionary<string, int> ScoreValues = new Dictionary<string, int>(); // todo:change
+        Dictionary<string, int> ScoreValues = new Dictionary<string, int>(); 
 
-        public CupidFriendsSorter()
+        public FriendsSorterByMutualFields()
         {
             initScoreValues();
         }

@@ -9,8 +9,26 @@ using System.Windows.Forms;
 
 namespace FacebookDesktopLogic
 {
-    public class PictureProxy : PictureBox
+    public class PictureProxy : PictureBox, IResizable
     {
+        private Resizer m_Resizer;
+
+        public PictureProxy(Resizer i_SizeIncreaser)
+        {
+            this.m_Resizer = i_SizeIncreaser;
+        }
+
+        protected override void OnMouseHover(EventArgs e)
+        {
+            this.m_Resizer.IncreaseSize(this);
+            base.OnMouseHover(e);
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            this.m_Resizer.DecreaseSize(this);
+            base.OnMouseLeave(e);
+        }
         protected override void OnPaint(PaintEventArgs pe)
         {
             roundImage();

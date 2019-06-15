@@ -56,16 +56,13 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             m_Note0 = new Note();
             notesPanel.Controls.Add(m_Note0);
 
-            //m_Note1 = new Note();
-            //notesPanel.Controls.Add(m_Note1);
-            //m_Note1.Location = new Point(m_Note1.Location.X, m_Note1.Location.Y + 200);
-
-
-            m_NoteWithHeader = new NoteWithHeader(new Note(), "danabanana!");
+            m_NoteWithHeader = new NoteWithHeader(new Note(), "Shopping list");
             notesPanel.Controls.Add(m_NoteWithHeader as NoteDecorator);
-            m_NoteWithHeader.Location = new Point(m_NoteWithHeader.Location.X, m_NoteWithHeader.Location.Y +200);
+            m_NoteWithHeader.Location = new Point(m_NoteWithHeader.Location.X, m_NoteWithHeader.Location.Y + 160);
 
-            m_ProfileRoundPictureBox = new PictureProxy();
+            Resizer sizeIncreaser = new Resizer();
+            
+            m_ProfileRoundPictureBox = new PictureProxy(sizeIncreaser);
             m_ProfileRoundPictureBox.BackColor = Color.Transparent;
             m_ProfileRoundPictureBox.BackgroundImageLayout = ImageLayout.None;
             m_ProfileRoundPictureBox.Location = new Point(29, 14);
@@ -76,10 +73,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             m_ProfileRoundPictureBox.TabStop = false;
             profilePicturePanel.Controls.Add(m_ProfileRoundPictureBox);
 
-            m_Post0Picture = new PictureProxy();
+            m_Post0Picture = new PictureProxy(sizeIncreaser);
             this.m_Post0Picture.BackColor = Color.Gainsboro;
             this.m_Post0Picture.BackgroundImageLayout = ImageLayout.Center;
-            this.m_Post0Picture.Location = new Point(12, 8);
+            this.m_Post0Picture.Location = new Point(0, 8);
             this.m_Post0Picture.Margin = new Padding(6);
             this.m_Post0Picture.Name = "post0Picture";
             this.m_Post0Picture.Size = new Size(66, 66);
@@ -87,10 +84,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.m_Post0Picture.TabStop = false;
             this.post0.Controls.Add(this.m_Post0Picture);
 
-            m_Post1Picture = new PictureProxy();
+            m_Post1Picture = new PictureProxy(sizeIncreaser);
             this.m_Post1Picture.BackColor = Color.Gainsboro;
             this.m_Post1Picture.BackgroundImageLayout = ImageLayout.Center;
-            this.m_Post1Picture.Location = new Point(12, 8);
+            this.m_Post1Picture.Location = new Point(0, 8);
             this.m_Post1Picture.Margin = new Padding(6);
             this.m_Post1Picture.Name = "post1Picture";
             this.m_Post1Picture.Size = new Size(66, 66);
@@ -98,10 +95,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.m_Post1Picture.TabStop = false;
             this.post1.Controls.Add(this.m_Post1Picture);
 
-            m_Post3Picture = new PictureProxy();
+            m_Post3Picture = new PictureProxy(sizeIncreaser);
             this.m_Post3Picture.BackColor = Color.Gainsboro;
             this.m_Post3Picture.BackgroundImageLayout = ImageLayout.Center;
-            this.m_Post3Picture.Location = new Point(12, 8);
+            this.m_Post3Picture.Location = new Point(0, 8);
             this.m_Post3Picture.Margin = new Padding(6);
             this.m_Post3Picture.Name = "post3Picture";
             this.m_Post3Picture.Size = new Size(66, 66);
@@ -109,10 +106,10 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.m_Post3Picture.TabStop = false;
             this.post3.Controls.Add(this.m_Post3Picture);
 
-            m_Post2Picture = new PictureProxy();
+            m_Post2Picture = new PictureProxy(sizeIncreaser);
             this.m_Post2Picture.BackColor = Color.Gainsboro;
             this.m_Post2Picture.BackgroundImageLayout = ImageLayout.Center;
-            this.m_Post2Picture.Location = new Point(12, 8);
+            this.m_Post2Picture.Location = new Point(0, 8);
             this.m_Post2Picture.Name = "post3Picture";
             this.m_Post2Picture.Size = new Size(66, 66);
             this.m_Post2Picture.TabIndex = 2;

@@ -12,8 +12,10 @@ namespace FacebookDesktopLogic
     {
         public NoteWithHeader(INote i_Note, string i_Header) : base(i_Note)
         {
-            m_HeaderTextBox.Location = this.m_Note.Location;
+            this.Controls.Add(m_HeaderTextBox);
+            m_HeaderTextBox.Location = new Point(this.m_Note.Location.X, this.m_Note.Location.Y+ 10);
             m_HeaderTextBox.Text = i_Header;
+            m_HeaderTextBox.BringToFront();
         }
 
         public string Header
@@ -21,17 +23,7 @@ namespace FacebookDesktopLogic
             set { m_HeaderTextBox.Text = value; }
         }
 
-        private TextBox m_HeaderTextBox = new TextBox() { Size = new Size(100, 100)};
+        private TextBox m_HeaderTextBox = new TextBox() { Size = new Size(100, 100) };
 
-        public override void Operation()
-        {
-            base.Operation();
-            OperationX();
-        }
-
-        public void OperationX()
-        {
-            
-        }
     }
 }
