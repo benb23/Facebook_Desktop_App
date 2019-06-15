@@ -375,7 +375,7 @@
             // 
             this.homePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homePictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.home;
-            this.homePictureBox.Location = new System.Drawing.Point(46, 537);
+            this.homePictureBox.Location = new System.Drawing.Point(46, 550);
             this.homePictureBox.Margin = new System.Windows.Forms.Padding(6, 19, 6, 6);
             this.homePictureBox.Name = "homePictureBox";
             this.homePictureBox.Size = new System.Drawing.Size(376, 60);
@@ -387,7 +387,7 @@
             // 
             this.albumsPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.albumsPictureBox.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.albums;
-            this.albumsPictureBox.Location = new System.Drawing.Point(46, 608);
+            this.albumsPictureBox.Location = new System.Drawing.Point(46, 831);
             this.albumsPictureBox.Margin = new System.Windows.Forms.Padding(6);
             this.albumsPictureBox.Name = "albumsPictureBox";
             this.albumsPictureBox.Size = new System.Drawing.Size(376, 60);
@@ -408,7 +408,7 @@
             // 
             this.pictureBoxFaceCupid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxFaceCupid.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.faceCupid;
-            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 681);
+            this.pictureBoxFaceCupid.Location = new System.Drawing.Point(46, 739);
             this.pictureBoxFaceCupid.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxFaceCupid.Name = "pictureBoxFaceCupid";
             this.pictureBoxFaceCupid.Size = new System.Drawing.Size(376, 60);
@@ -420,7 +420,7 @@
             // 
             this.pictureBoxCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCalendar.Image = global::B19_EX01_Ben_305401317_Dana_311358543.Properties.Resources.calendar;
-            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 752);
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(46, 637);
             this.pictureBoxCalendar.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxCalendar.Name = "pictureBoxCalendar";
             this.pictureBoxCalendar.Size = new System.Drawing.Size(376, 60);
@@ -548,10 +548,10 @@
             this.postsPanel.Controls.Add(this.post3);
             this.postsPanel.Controls.Add(this.post1);
             this.postsPanel.Controls.Add(this.post2);
-            this.postsPanel.Location = new System.Drawing.Point(56, 302);
+            this.postsPanel.Location = new System.Drawing.Point(56, 231);
             this.postsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.postsPanel.Name = "postsPanel";
-            this.postsPanel.Size = new System.Drawing.Size(668, 648);
+            this.postsPanel.Size = new System.Drawing.Size(659, 745);
             this.postsPanel.TabIndex = 13;
             // 
             // post0
@@ -562,10 +562,10 @@
             this.post0.Controls.Add(this.post3Publisher);
             this.post0.Controls.Add(this.post3Date);
             this.post0.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post0.Location = new System.Drawing.Point(0, 474);
+            this.post0.Location = new System.Drawing.Point(0, 553);
             this.post0.Margin = new System.Windows.Forms.Padding(4);
             this.post0.Name = "post0";
-            this.post0.Size = new System.Drawing.Size(668, 158);
+            this.post0.Size = new System.Drawing.Size(659, 197);
             this.post0.TabIndex = 9;
             // 
             // likesLabel3
@@ -631,10 +631,10 @@
             this.post3.Controls.Add(this.post2Publisher);
             this.post3.Controls.Add(this.post2Date);
             this.post3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post3.Location = new System.Drawing.Point(0, 316);
+            this.post3.Location = new System.Drawing.Point(0, 353);
             this.post3.Margin = new System.Windows.Forms.Padding(4);
             this.post3.Name = "post3";
-            this.post3.Size = new System.Drawing.Size(668, 158);
+            this.post3.Size = new System.Drawing.Size(659, 200);
             this.post3.TabIndex = 12;
             // 
             // likesLabel2
@@ -700,10 +700,10 @@
             this.post1.Controls.Add(this.post1Publisher);
             this.post1.Controls.Add(this.post1Date);
             this.post1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.post1.Location = new System.Drawing.Point(0, 158);
+            this.post1.Location = new System.Drawing.Point(0, 169);
             this.post1.Margin = new System.Windows.Forms.Padding(4);
             this.post1.Name = "post1";
-            this.post1.Size = new System.Drawing.Size(668, 158);
+            this.post1.Size = new System.Drawing.Size(659, 184);
             this.post1.TabIndex = 10;
             // 
             // likesLabel1
@@ -773,7 +773,7 @@
             this.post2.Location = new System.Drawing.Point(0, 0);
             this.post2.Margin = new System.Windows.Forms.Padding(4);
             this.post2.Name = "post2";
-            this.post2.Size = new System.Drawing.Size(668, 158);
+            this.post2.Size = new System.Drawing.Size(659, 169);
             this.post2.TabIndex = 11;
             // 
             // likesLabel0
@@ -836,7 +836,7 @@
             this.recentPostslabel.AutoSize = true;
             this.recentPostslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recentPostslabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.recentPostslabel.Location = new System.Drawing.Point(52, 252);
+            this.recentPostslabel.Location = new System.Drawing.Point(51, 191);
             this.recentPostslabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.recentPostslabel.Name = "recentPostslabel";
             this.recentPostslabel.Size = new System.Drawing.Size(177, 30);
@@ -1749,7 +1749,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox homePictureBox;
         private System.Windows.Forms.PictureBox albumsPictureBox;
         private System.Windows.Forms.Label LogOutLabel;
         private System.Windows.Forms.PictureBox pictureBoxCalendar;
@@ -1863,6 +1862,7 @@
         private System.Windows.Forms.TextBox startTimeTextBox;
         private System.Windows.Forms.FlowLayoutPanel profilePicturePanel;
         private System.Windows.Forms.Panel post2;
+        private System.Windows.Forms.PictureBox homePictureBox;
     }
 }
 

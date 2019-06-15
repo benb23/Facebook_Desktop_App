@@ -12,6 +12,8 @@ namespace FacebookDesktopLogic
     public class PictureProxy : PictureBox, IEmphasizable
     {
         private Emphasizer m_Emphasizer;
+        private bool m_IsEmphasized = false;
+        private Size m_OriginalSize;
 
         public PictureProxy(Emphasizer i_SizeIncreaser)
         {
@@ -20,15 +22,24 @@ namespace FacebookDesktopLogic
 
         protected override void OnMouseHover(EventArgs e)
         {
-            this.m_Emphasizer.Emphasize(this);
+            if (!m_IsEmphasized)
+            {
+                this.m_Emphasizer.Emphasize(this);
+                m_IsEmphasized = true;
+            }
             base.OnMouseHover(e);
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
-            this.m_Emphasizer.DeEmphasize(this);
+            if (m_IsEmphasized)
+            {
+                this.m_Emphasizer.DeEmphasize(this);
+                m_IsEmphasized = false;
+            }
             base.OnMouseLeave(e);
         }
+
         protected override void OnPaint(PaintEventArgs pe)
         {
             roundImage();

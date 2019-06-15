@@ -17,7 +17,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         private PictureProxy m_Post2Picture;
         private PictureProxy m_Post3Picture;
         private Note m_Note0;
-
+        private INote m_NoteWithPrioritySign;
         private INote m_NoteWithHeader;
 
         private bool m_IsBirthdaysLoaded = false;
@@ -51,17 +51,20 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
         public AppForm()
         {
             this.InitializeComponent();
+            Emphasizer emphasizer = new Emphasizer();
 
-            m_Note0 = new Note();
+            m_Note0 = new Note(emphasizer);
             notesPanel.Controls.Add(m_Note0);
 
-            m_NoteWithHeader = new NoteWithHeader(new Note(), "Shopping list");
+            m_NoteWithHeader = new NoteWithHeader(new Note(emphasizer), "Shopping list");
             notesPanel.Controls.Add(m_NoteWithHeader as NoteDecorator);
             m_NoteWithHeader.Location = new Point(m_NoteWithHeader.Location.X, m_NoteWithHeader.Location.Y + 160);
 
-            Emphasizer sizeIncreaser = new Emphasizer();
-            
-            m_ProfileRoundPictureBox = new PictureProxy(sizeIncreaser);
+            m_NoteWithPrioritySign = new NoteWithPrioritySign(new Note(emphasizer));
+            notesPanel.Controls.Add(m_NoteWithPrioritySign as NoteDecorator);
+            m_NoteWithPrioritySign.Location = new Point(m_NoteWithPrioritySign.Location.X, m_NoteWithPrioritySign.Location.Y + 310);
+
+            m_ProfileRoundPictureBox = new PictureProxy(emphasizer);
             m_ProfileRoundPictureBox.BackColor = Color.Transparent;
             m_ProfileRoundPictureBox.BackgroundImageLayout = ImageLayout.None;
             m_ProfileRoundPictureBox.Location = new Point(29, 14);
@@ -72,7 +75,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             m_ProfileRoundPictureBox.TabStop = false;
             profilePicturePanel.Controls.Add(m_ProfileRoundPictureBox);
 
-            m_Post0Picture = new PictureProxy(sizeIncreaser);
+            m_Post0Picture = new PictureProxy(emphasizer);
             this.m_Post0Picture.BackColor = Color.Gainsboro;
             this.m_Post0Picture.BackgroundImageLayout = ImageLayout.Center;
             this.m_Post0Picture.Location = new Point(0, 8);
@@ -83,7 +86,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.m_Post0Picture.TabStop = false;
             this.post0.Controls.Add(this.m_Post0Picture);
 
-            m_Post1Picture = new PictureProxy(sizeIncreaser);
+            m_Post1Picture = new PictureProxy(emphasizer);
             this.m_Post1Picture.BackColor = Color.Gainsboro;
             this.m_Post1Picture.BackgroundImageLayout = ImageLayout.Center;
             this.m_Post1Picture.Location = new Point(0, 8);
@@ -94,7 +97,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.m_Post1Picture.TabStop = false;
             this.post1.Controls.Add(this.m_Post1Picture);
 
-            m_Post3Picture = new PictureProxy(sizeIncreaser);
+            m_Post3Picture = new PictureProxy(emphasizer);
             this.m_Post3Picture.BackColor = Color.Gainsboro;
             this.m_Post3Picture.BackgroundImageLayout = ImageLayout.Center;
             this.m_Post3Picture.Location = new Point(0, 8);
@@ -105,7 +108,7 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             this.m_Post3Picture.TabStop = false;
             this.post3.Controls.Add(this.m_Post3Picture);
 
-            m_Post2Picture = new PictureProxy(sizeIncreaser);
+            m_Post2Picture = new PictureProxy(emphasizer);
             this.m_Post2Picture.BackColor = Color.Gainsboro;
             this.m_Post2Picture.BackgroundImageLayout = ImageLayout.Center;
             this.m_Post2Picture.Location = new Point(0, 8);
@@ -576,16 +579,6 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             }
 
             FacebookAppLogic.Instance.AppSettings.SaveToFile();
-        }
-
-        private void note1TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void note2TextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

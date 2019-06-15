@@ -8,14 +8,28 @@ using System.Drawing;
 
 namespace FacebookDesktopLogic
 {
-    public class Note : Panel,INote
+    public class Note : Panel,INote, IEmphasizable
     {
-        public Note()
+        private Emphasizer m_Emphasizer;
+
+        public Note(Emphasizer i_Emphasizer)
         {
             InitializeComponent();
+            this.m_Emphasizer = i_Emphasizer;
+
         }
 
-        public void Operation() { }
+        protected override void OnMouseHover(EventArgs e)
+        {
+            this.m_Emphasizer.Emphasize(this);
+            base.OnMouseHover(e);
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            this.m_Emphasizer.DeEmphasize(this);
+            base.OnMouseLeave(e);
+        }
 
         public PictureBox m_BackgroundPicture;
 
