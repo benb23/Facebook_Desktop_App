@@ -11,11 +11,11 @@ namespace FacebookDesktopLogic
         {
             this.m_Emphasizable = i_Resizable;
             Resize(k_Delta);
-
         }
 
         public void DeEmphasize(IEmphasizable i_Resizable)
         {
+
             this.m_Emphasizable = i_Resizable;
             Resize(k_Delta * -1);
         }

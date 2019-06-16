@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -60,7 +56,7 @@ namespace FacebookDesktopLogic
             this.m_TextBox.Name = "m_TextBox";
             this.m_TextBox.Size = new System.Drawing.Size(this.Size.Width-100, 200);
             this.m_TextBox.TabIndex = 1;
-            this.m_TextBox.Text = "test";
+            this.m_TextBox.BorderStyle = BorderStyle.None;
             // 
             // Note
             // 

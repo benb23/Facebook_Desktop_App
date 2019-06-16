@@ -8,7 +8,7 @@ namespace FacebookDesktopLogic
 
         public NoteDecorator(INote i_Note)
         {
-            m_Note = i_Note;
+            this.m_Note = i_Note;
             this.Controls.Add(m_Note as Control);
             this.Size = m_Note.Size;
         }

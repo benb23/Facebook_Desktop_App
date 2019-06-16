@@ -15,6 +15,7 @@ namespace FacebookDesktopLogic
         private bool m_IsEmphasized = false;
         private Size m_OriginalSize;
 
+
         public PictureProxy(Emphasizer i_SizeIncreaser)
         {
             this.m_Emphasizer = i_SizeIncreaser;
@@ -25,7 +26,7 @@ namespace FacebookDesktopLogic
             if (!m_IsEmphasized)
             {
                 this.m_Emphasizer.Emphasize(this);
-                m_IsEmphasized = true;
+                this.m_IsEmphasized = true;
             }
             base.OnMouseHover(e);
         }
@@ -35,7 +36,7 @@ namespace FacebookDesktopLogic
             if (m_IsEmphasized)
             {
                 this.m_Emphasizer.DeEmphasize(this);
-                m_IsEmphasized = false;
+                this.m_IsEmphasized = false;
             }
             base.OnMouseLeave(e);
         }

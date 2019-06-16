@@ -13,9 +13,9 @@ namespace FacebookDesktopLogic
         public NoteWithHeader(INote i_Note, string i_Header) : base(i_Note)
         {
             this.Controls.Add(m_HeaderTextBox);
-            m_HeaderTextBox.Location = new Point(this.m_Note.Location.X, this.m_Note.Location.Y+ 10);
-            m_HeaderTextBox.Text = i_Header;
-            m_HeaderTextBox.BringToFront();
+            this.m_HeaderTextBox.Location = new Point(this.m_Note.Location.X, this.m_Note.Location.Y+ 10);
+            this. m_HeaderTextBox.Text = i_Header;
+            this.m_HeaderTextBox.BringToFront();
         }
 
         public string Header
