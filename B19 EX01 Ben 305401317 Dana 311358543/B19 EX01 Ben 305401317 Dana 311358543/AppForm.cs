@@ -60,9 +60,9 @@ namespace B19_EX01_Ben_305401317_Dana_311358543
             notesPanel.Controls.Add(m_NoteWithHeader as NoteDecorator);
             m_NoteWithHeader.Location = new Point(m_NoteWithHeader.Location.X, m_NoteWithHeader.Location.Y + 160);
 
-            m_NoteWithPrioritySign = new NoteWithPrioritySign(new Note(emphasizer));
+            m_NoteWithPrioritySign = new NoteWithPrioritySign(new NoteWithHeader(new Note(emphasizer), "dani"));
             notesPanel.Controls.Add(m_NoteWithPrioritySign as NoteDecorator);
-            m_NoteWithPrioritySign.Location = new Point(m_NoteWithPrioritySign.Location.X, m_NoteWithPrioritySign.Location.Y + 310);
+            m_NoteWithPrioritySign.Location = new Point(m_NoteWithPrioritySign.Location.X, m_NoteWithPrioritySign.Location.Y + 330);
 
             m_ProfileRoundPictureBox = new PictureProxy(emphasizer);
             m_ProfileRoundPictureBox.BackColor = Color.Transparent;
